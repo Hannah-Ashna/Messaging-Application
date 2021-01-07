@@ -18,17 +18,4 @@
   <packagedElement xmi:type="uml:Class" xmi:id="_XQ8H8FEDEeu_FLOHG8xOiA" name="User"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_HOtlAFEEEeu_FLOHG8xOiA" name="Subscribe to chatroom"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_YDOrEFEEEeu_FLOHG8xOiA" name="Unsubscribe from chatroom"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_SI-y0FEHEeuyqdHN2G9NDg" name="Add moderator"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_UC3FkFEHEeuyqdHN2G9NDg" name="Remove moderator"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_ZFstUFEHEeuyqdHN2G9NDg" name="Send Message"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_t-PpgFEHEeuyqdHN2G9NDg" name="View chatroom"/>
-  <packagedElement xmi:type="uml:Actor" xmi:id="_CQD84FEIEeuyqdHN2G9NDg" name="Moderator"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_DPOT0FEIEeuyqdHN2G9NDg" name="Remove message"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_ViNjAFEIEeuyqdHN2G9NDg" name="View Contacts"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_aL0LYFEIEeuyqdHN2G9NDg" name="Create chatroom"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_fdrtoFEIEeuyqdHN2G9NDg" name="Change password"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_nmAfoFEIEeuyqdHN2G9NDg" name="Delete chatroom"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_p0meIFEIEeuyqdHN2G9NDg" name="Change Profile picture"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_vfm5IFEIEeuyqdHN2G9NDg" name="Upload Image"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_xvPZcFEIEeuyqdHN2G9NDg" name="Download Image"/>
 </uml:Model>
