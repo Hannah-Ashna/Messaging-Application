@@ -5,8 +5,8 @@
 	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/SDI/SDI.uml:uml:Type:type">
 		<section name="History">
 			<list key="PreviousSelection">
-				<item value="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
 				<item value="platform:/resource/SDI/SDI.uml#_XQ8H8FEDEeu_FLOHG8xOiA"/>
+				<item value="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
 				<item value="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
 				<item value="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
 				<item value="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>

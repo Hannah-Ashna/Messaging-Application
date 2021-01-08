@@ -177,8 +177,14 @@
     <sharedElements xsi:type="basic:Part" xmi:id="_Qgk9IUu_Eeuy17cb8HcHEg" elementId="org.eclipse.papyrus.views.validation.ModelValidationView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Model Validation" iconURI="platform:/plugin/org.eclipse.papyrus.views.validation/icons/full/view16/model_validation.gif" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.papyrus.views.validation.internal.ModelValidationView"/>
       <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.papyrus.views.validation"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view columnWidths=&quot;0,300,300,300,300&quot; sortColumn=&quot;2&quot; sortDirection=&quot;128&quot;/>"/>
       <tags>View</tags>
       <tags>categoryTag:Papyrus</tags>
+      <menus xmi:id="_FWE2EFHNEeuyzNSi8MGzrQ" elementId="org.eclipse.papyrus.views.validation.ModelValidationView">
+        <tags>ViewMenu</tags>
+        <tags>menuContribution:menu</tags>
+      </menus>
+      <toolbar xmi:id="_FWE2EVHNEeuyzNSi8MGzrQ" elementId="org.eclipse.papyrus.views.validation.ModelValidationView" visible="false"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_Qgk9Iku_Eeuy17cb8HcHEg" elementId="org.eclipse.ui.views.ContentOutline" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Outline" iconURI="platform:/plugin/org.eclipse.ui.views/icons/full/eview16/outline_co.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.views.contentoutline.ContentOutline"/>
@@ -201,8 +207,14 @@
     <sharedElements xsi:type="basic:Part" xmi:id="_Qgk9Kku_Eeuy17cb8HcHEg" elementId="org.eclipse.papyrus.views.references.ReferencesView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="References" iconURI="platform:/plugin/org.eclipse.papyrus.views.references/icons/scopeset_obj.gif" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.papyrus.views.references.views.ReferencesView"/>
       <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.papyrus.views.references"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
       <tags>View</tags>
       <tags>categoryTag:Papyrus</tags>
+      <menus xmi:id="_Fi9bgFHNEeuyzNSi8MGzrQ" elementId="org.eclipse.papyrus.views.references.ReferencesView">
+        <tags>ViewMenu</tags>
+        <tags>menuContribution:menu</tags>
+      </menus>
+      <toolbar xmi:id="_Fi9bgVHNEeuyzNSi8MGzrQ" elementId="org.eclipse.papyrus.views.references.ReferencesView" visible="false"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_Qgk9K0u_Eeuy17cb8HcHEg" elementId="org.eclipse.papyrus.views.documentation.DocumentationView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Documentation" iconURI="platform:/plugin/org.eclipse.papyrus.views.documentation/icons/documentation.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.papyrus.views.documentation.views.DocumentationView"/>
@@ -217,7 +229,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Qgk9L0u_Eeuy17cb8HcHEg" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_iUwK8FEUEeuE1ZThcLnWlQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_Qgm2Bku_Eeuy17cb8HcHEg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_y8dh0FHJEeuyzNSi8MGzrQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_Qgm2Bku_Eeuy17cb8HcHEg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Qgk9PEu_Eeuy17cb8HcHEg" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -242,7 +254,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Qgk9lEu_Eeuy17cb8HcHEg" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_iUyAIFEUEeuE1ZThcLnWlQ" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_Qgm1jUu_Eeuy17cb8HcHEg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_y8fXAFHJEeuyzNSi8MGzrQ" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_Qgm1jUu_Eeuy17cb8HcHEg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Qgk9s0u_Eeuy17cb8HcHEg" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
