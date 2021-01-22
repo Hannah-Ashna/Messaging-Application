@@ -138,4 +138,11 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gOpJEFHPEeuyzNSi8MGzrQ" value="*"/>
     </ownedEnd>
   </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_MsJT8Fy-Eeu1RaWnon4lBg" name="Login">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_RKw0UFy-Eeu1RaWnon4lBg" name="Input login credentials"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_1JJuQFy-Eeu1RaWnon4lBg" name="Create Account"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_PcdfcFy-Eeu1RaWnon4lBg" name="User"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_piTm8Fy-Eeu1RaWnon4lBg"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_3b2wsFy-Eeu1RaWnon4lBg"/>
 </uml:Model>
