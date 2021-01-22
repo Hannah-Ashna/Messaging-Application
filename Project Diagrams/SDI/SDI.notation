@@ -787,30 +787,6 @@
     </styles>
     <element xmi:type="uml:Model" href="SDI.uml#_S5v-MErBEeuXmMxXDJeMJA"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_uI-voErBEeuXmMxXDJeMJA" type="PapyrusUMLComponentDiagram" name="Component Diagram" measurementUnit="Pixel">
-    <styles xmi:type="notation:StringValueStyle" xmi:id="_uI-voUrBEeuXmMxXDJeMJA" name="diagram_compatibility_version" stringValue="1.4.0"/>
-    <styles xmi:type="notation:DiagramStyle" xmi:id="_uI-vokrBEeuXmMxXDJeMJA"/>
-    <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_uI-vo0rBEeuXmMxXDJeMJA" diagramKindId="org.eclipse.papyrus.uml.diagram.component.root.package">
-      <owner xmi:type="uml:Model" href="SDI.uml#_S5v-MErBEeuXmMxXDJeMJA"/>
-    </styles>
-    <element xmi:type="uml:Model" href="SDI.uml#_S5v-MErBEeuXmMxXDJeMJA"/>
-  </notation:Diagram>
-  <notation:Diagram xmi:id="_yMOioErBEeuXmMxXDJeMJA" type="PapyrusUMLSequenceDiagram" name="Sequence Diagram" measurementUnit="Pixel">
-    <children xmi:type="notation:Shape" xmi:id="_yMOioUrBEeuXmMxXDJeMJA" type="Interaction_Shape">
-      <children xmi:type="notation:DecorationNode" xmi:id="_yMOiokrBEeuXmMxXDJeMJA" type="Interaction_NameLabel"/>
-      <children xmi:type="notation:BasicCompartment" xmi:id="_yMOio0rBEeuXmMxXDJeMJA" type="Interaction_SubfragmentCompartment">
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yMOipErBEeuXmMxXDJeMJA"/>
-      </children>
-      <element xmi:type="uml:Interaction" href="SDI.uml#_xWplgErBEeuXmMxXDJeMJA"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yMOipUrBEeuXmMxXDJeMJA"/>
-    </children>
-    <styles xmi:type="notation:StringValueStyle" xmi:id="_yMOipkrBEeuXmMxXDJeMJA" name="diagram_compatibility_version" stringValue="1.4.0"/>
-    <styles xmi:type="notation:DiagramStyle" xmi:id="_yMOip0rBEeuXmMxXDJeMJA"/>
-    <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_yMOiqErBEeuXmMxXDJeMJA" diagramKindId="org.eclipse.papyrus.uml.diagram.sequence">
-      <owner xmi:type="uml:Model" href="SDI.uml#_S5v-MErBEeuXmMxXDJeMJA"/>
-    </styles>
-    <element xmi:type="uml:Interaction" href="SDI.uml#_xWplgErBEeuXmMxXDJeMJA"/>
-  </notation:Diagram>
   <notation:Diagram xmi:id="_Kn5kQFy-Eeu1RaWnon4lBg" type="UseCase" name="LoginUseCase" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_MsSd4Fy-Eeu1RaWnon4lBg" type="Package_Shape">
       <children xmi:type="notation:DecorationNode" xmi:id="_MsYkgFy-Eeu1RaWnon4lBg" type="Package_NameLabel"/>
