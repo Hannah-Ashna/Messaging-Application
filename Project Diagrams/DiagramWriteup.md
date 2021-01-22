@@ -10,7 +10,7 @@ When a user attempts to send a message, the system will first need to validate t
 - If the user is online:
   - Their message is sent and their chat is updated
   - The contact they are talking to is notified
-  - Their chat history is updated within the database
+  - Their chat log file is updated and stored in the database
   
 - If the user is offline:
   - Their message is stored within the database temporarily
