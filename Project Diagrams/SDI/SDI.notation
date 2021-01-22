@@ -787,7 +787,7 @@
     </styles>
     <element xmi:type="uml:Model" href="SDI.uml#_S5v-MErBEeuXmMxXDJeMJA"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_Kn5kQFy-Eeu1RaWnon4lBg" type="UseCase" name="LoginUseCase" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_Kn5kQFy-Eeu1RaWnon4lBg" type="UseCase" name="UseCase - Login" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_MsSd4Fy-Eeu1RaWnon4lBg" type="Package_Shape">
       <children xmi:type="notation:DecorationNode" xmi:id="_MsYkgFy-Eeu1RaWnon4lBg" type="Package_NameLabel"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_MsZLkFy-Eeu1RaWnon4lBg" type="Package_PackagedElementCompartment">
@@ -1109,7 +1109,7 @@
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_G9uw4VzEEeu1RaWnon4lBg" id="(0.6666666666666666,0.0)"/>
     </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_8BpBUFzEEeu1RaWnon4lBg" type="UseCase" name="SendMessageUseCase" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_8BpBUFzEEeu1RaWnon4lBg" type="UseCase" name="UseCase - SendMessage" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_8iwxYFzEEeu1RaWnon4lBg" type="Package_Shape">
       <children xmi:type="notation:DecorationNode" xmi:id="_8iwxYlzEEeu1RaWnon4lBg" type="Package_NameLabel"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_8iwxY1zEEeu1RaWnon4lBg" type="Package_PackagedElementCompartment">
@@ -1459,7 +1459,7 @@
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sCR2EVzOEeu1RaWnon4lBg" id="(0.14285714285714285,0.15)"/>
     </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_2LpLYFzREeuxoPJc13bXVw" type="PapyrusUMLSequenceDiagram" name="SendMessageSequence" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_2LpLYFzREeuxoPJc13bXVw" type="PapyrusUMLSequenceDiagram" name="Sequence - SendMessage" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_2LpLYVzREeuxoPJc13bXVw" type="Interaction_Shape">
       <children xmi:type="notation:DecorationNode" xmi:id="_2LpLYlzREeuxoPJc13bXVw" type="Interaction_NameLabel"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_2LpLY1zREeuxoPJc13bXVw" type="Interaction_SubfragmentCompartment">
@@ -1505,7 +1505,7 @@
     </styles>
     <element xmi:type="uml:Interaction" href="SDI.uml#_wqB88FzREeuxoPJc13bXVw"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_fV8boFz1EeuhbZ2aKT7LXw" type="PapyrusUMLActivityDiagram" name="SendMessageActivity" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_fV8boFz1EeuhbZ2aKT7LXw" type="PapyrusUMLActivityDiagram" name="Activity - SendMessage" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_fV8boVz1EeuhbZ2aKT7LXw" type="Activity_Shape">
       <children xmi:type="notation:DecorationNode" xmi:id="_fV8bolz1EeuhbZ2aKT7LXw" type="Activity_NameLabel"/>
       <children xmi:type="notation:DecorationNode" xmi:id="_fV8bo1z1EeuhbZ2aKT7LXw" type="Activity_KeywordLabel"/>
