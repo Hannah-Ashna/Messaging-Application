@@ -163,9 +163,9 @@
       <extend xmi:type="uml:Extend" xmi:id="_fd37UFzDEeu1RaWnon4lBg" extendedCase="_hP0hcFzAEeu1RaWnon4lBg" extensionLocation="_fd4iYFzDEeu1RaWnon4lBg"/>
     </packagedElement>
   </packagedElement>
-  <packagedElement xmi:type="uml:Actor" xmi:id="_PcdfcFy-Eeu1RaWnon4lBg" name="User"/>
-  <packagedElement xmi:type="uml:Association" xmi:id="_piTm8Fy-Eeu1RaWnon4lBg"/>
-  <packagedElement xmi:type="uml:Association" xmi:id="_3b2wsFy-Eeu1RaWnon4lBg"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_PcdfcFy-Eeu1RaWnon4lBg" name="Existing User">
+    <generalization xmi:type="uml:Generalization" xmi:id="_G9SsAFzEEeu1RaWnon4lBg" general="_8d2RoFzDEeu1RaWnon4lBg"/>
+  </packagedElement>
   <packagedElement xmi:type="uml:Actor" xmi:id="_3DxLYFy_Eeu1RaWnon4lBg" name="User Credentials Database"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_7hes0Fy_Eeu1RaWnon4lBg"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_GxfogFzAEeu1RaWnon4lBg" memberEnd="_Gxg2oFzAEeu1RaWnon4lBg _GxiEwFzAEeu1RaWnon4lBg">
@@ -185,5 +185,20 @@
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_rRmdg1zCEeu1RaWnon4lBg" name="logout" type="_gC_3EFzCEeu1RaWnon4lBg" association="_rRmdgFzCEeu1RaWnon4lBg"/>
     <ownedEnd xmi:type="uml:Property" xmi:id="_rRmdhFzCEeu1RaWnon4lBg" name="user" type="_eNKW0FzCEeu1RaWnon4lBg" association="_rRmdgFzCEeu1RaWnon4lBg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_8d2RoFzDEeu1RaWnon4lBg" name="New User"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="__TheQFzDEeu1RaWnon4lBg" memberEnd="__TiFUlzDEeu1RaWnon4lBg __TiFU1zDEeu1RaWnon4lBg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__TiFUFzDEeu1RaWnon4lBg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__TiFUVzDEeu1RaWnon4lBg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="__TiFUlzDEeu1RaWnon4lBg" name="input login credentials" type="_RKw0UFy-Eeu1RaWnon4lBg" association="__TheQFzDEeu1RaWnon4lBg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="__TiFU1zDEeu1RaWnon4lBg" name="existing user" type="_PcdfcFy-Eeu1RaWnon4lBg" association="__TheQFzDEeu1RaWnon4lBg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_AgxUgFzEEeu1RaWnon4lBg" memberEnd="_Agx7klzEEeu1RaWnon4lBg _Agx7k1zEEeu1RaWnon4lBg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Agx7kFzEEeu1RaWnon4lBg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Agx7kVzEEeu1RaWnon4lBg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Agx7klzEEeu1RaWnon4lBg" name="create account" type="_1JJuQFy-Eeu1RaWnon4lBg" association="_AgxUgFzEEeu1RaWnon4lBg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Agx7k1zEEeu1RaWnon4lBg" name="new user" type="_8d2RoFzDEeu1RaWnon4lBg" association="_AgxUgFzEEeu1RaWnon4lBg"/>
   </packagedElement>
 </uml:Model>
