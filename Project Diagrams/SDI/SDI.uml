@@ -150,11 +150,17 @@
       <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_oWfCIFzAEeu1RaWnon4lBg" name="ExtensionPoint2"/>
     </packagedElement>
     <packagedElement xmi:type="uml:UseCase" xmi:id="_CrHpAFzAEeu1RaWnon4lBg" name="Store New Credentials"/>
-    <packagedElement xmi:type="uml:UseCase" xmi:id="_geZEgFzAEeu1RaWnon4lBg" name="Access User's Space">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_geZEgFzAEeu1RaWnon4lBg" name="Valid Password">
       <extend xmi:type="uml:Extend" xmi:id="_nywC8FzAEeu1RaWnon4lBg" extendedCase="_eEUEMFy_Eeu1RaWnon4lBg" extensionLocation="_nywqAFzAEeu1RaWnon4lBg"/>
+      <include xmi:type="uml:Include" xmi:id="_ZtPZcFzDEeu1RaWnon4lBg" addition="_W8DrQFzDEeu1RaWnon4lBg"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:UseCase" xmi:id="_hP0hcFzAEeu1RaWnon4lBg" name="Forgot Password">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_hP0hcFzAEeu1RaWnon4lBg" name="Invalid Password">
       <extend xmi:type="uml:Extend" xmi:id="_oWebEFzAEeu1RaWnon4lBg" extendedCase="_eEUEMFy_Eeu1RaWnon4lBg" extensionLocation="_oWfCIFzAEeu1RaWnon4lBg"/>
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_fd4iYFzDEeu1RaWnon4lBg" name="ExtensionPoint2"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_W8DrQFzDEeu1RaWnon4lBg" name="Access User Space"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_dDBCcFzDEeu1RaWnon4lBg" name="Fogot/Reset Password">
+      <extend xmi:type="uml:Extend" xmi:id="_fd37UFzDEeu1RaWnon4lBg" extendedCase="_hP0hcFzAEeu1RaWnon4lBg" extensionLocation="_fd4iYFzDEeu1RaWnon4lBg"/>
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Actor" xmi:id="_PcdfcFy-Eeu1RaWnon4lBg" name="User"/>
@@ -168,5 +174,16 @@
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_Gxg2oFzAEeu1RaWnon4lBg" name="store new credentials" type="_CrHpAFzAEeu1RaWnon4lBg" association="_GxfogFzAEeu1RaWnon4lBg"/>
     <ownedEnd xmi:type="uml:Property" xmi:id="_GxiEwFzAEeu1RaWnon4lBg" name="user credentials database" type="_3DxLYFy_Eeu1RaWnon4lBg" association="_GxfogFzAEeu1RaWnon4lBg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_ZRZAYFzCEeu1RaWnon4lBg" name="Logout">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_gC_3EFzCEeu1RaWnon4lBg" name="Logout"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_eNKW0FzCEeu1RaWnon4lBg" name="User"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_rRmdgFzCEeu1RaWnon4lBg" memberEnd="_rRmdg1zCEeu1RaWnon4lBg _rRmdhFzCEeu1RaWnon4lBg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_rRmdgVzCEeu1RaWnon4lBg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rRmdglzCEeu1RaWnon4lBg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_rRmdg1zCEeu1RaWnon4lBg" name="logout" type="_gC_3EFzCEeu1RaWnon4lBg" association="_rRmdgFzCEeu1RaWnon4lBg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_rRmdhFzCEeu1RaWnon4lBg" name="user" type="_eNKW0FzCEeu1RaWnon4lBg" association="_rRmdgFzCEeu1RaWnon4lBg"/>
   </packagedElement>
 </uml:Model>
