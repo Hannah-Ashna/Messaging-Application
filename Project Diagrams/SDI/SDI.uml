@@ -264,4 +264,32 @@
     <lifeline xmi:type="uml:Lifeline" xmi:id="_S9Sx0FzSEeuxoPJc13bXVw" name="Database"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_g1pBsFzSEeuxoPJc13bXVw" name="Chatroom"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_Lq_hgFzVEeuqD_JvkpUYmg" name="Messaging Application" node="_RFrokFzVEeuqD_JvkpUYmg _T_S6AFzVEeuqD_JvkpUYmg _bt_rEFzVEeuqD_JvkpUYmg _e2YYUFzVEeuqD_JvkpUYmg _hItnUFzVEeuqD_JvkpUYmg _iwqckFzVEeuqD_JvkpUYmg _rYfOAFzVEeuqD_JvkpUYmg _hR0qkFzWEeuqD_JvkpUYmg _2BnTYFzWEeuqD_JvkpUYmg _oZNHgFzXEeuqD_JvkpUYmg _tkmOUFzXEeuqD_JvkpUYmg _u2T4YFzYEeuqD_JvkpUYmg">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_uN24oFzVEeuqD_JvkpUYmg" target="_T_S6AFzVEeuqD_JvkpUYmg" source="_RFrokFzVEeuqD_JvkpUYmg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_-vGdYFzVEeuqD_JvkpUYmg" target="_rYfOAFzVEeuqD_JvkpUYmg" source="_T_S6AFzVEeuqD_JvkpUYmg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_hSKBwFzWEeuqD_JvkpUYmg" name="User is Online" target="_u2T4YFzYEeuqD_JvkpUYmg" source="_rYfOAFzVEeuqD_JvkpUYmg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_l_FD4FzWEeuqD_JvkpUYmg" target="_bt_rEFzVEeuqD_JvkpUYmg" source="_hR0qkFzWEeuqD_JvkpUYmg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_sAS_cFzWEeuqD_JvkpUYmg" target="_hItnUFzVEeuqD_JvkpUYmg" source="_hR0qkFzWEeuqD_JvkpUYmg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_tNPTsFzWEeuqD_JvkpUYmg" target="_e2YYUFzVEeuqD_JvkpUYmg" source="_hR0qkFzWEeuqD_JvkpUYmg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_51Ng0FzWEeuqD_JvkpUYmg" target="_iwqckFzVEeuqD_JvkpUYmg" source="_hItnUFzVEeuqD_JvkpUYmg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_KsAe0FzXEeuqD_JvkpUYmg" name="User is Offline" target="_2BnTYFzWEeuqD_JvkpUYmg" source="_rYfOAFzVEeuqD_JvkpUYmg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_tlLdIFzXEeuqD_JvkpUYmg" target="_tkmOUFzXEeuqD_JvkpUYmg" source="_e2YYUFzVEeuqD_JvkpUYmg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yV7PUFzXEeuqD_JvkpUYmg" target="_tkmOUFzXEeuqD_JvkpUYmg" source="_iwqckFzVEeuqD_JvkpUYmg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_7fgC8FzXEeuqD_JvkpUYmg" target="_tkmOUFzXEeuqD_JvkpUYmg" source="_bt_rEFzVEeuqD_JvkpUYmg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_aTX_0FzYEeuqD_JvkpUYmg" target="_oZNHgFzXEeuqD_JvkpUYmg" source="_tkmOUFzXEeuqD_JvkpUYmg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_nI_AUFzYEeuqD_JvkpUYmg" target="_rYfOAFzVEeuqD_JvkpUYmg" source="_2BnTYFzWEeuqD_JvkpUYmg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_5PCmwFzYEeuqD_JvkpUYmg" target="_hR0qkFzWEeuqD_JvkpUYmg" source="_u2T4YFzYEeuqD_JvkpUYmg"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_RFrokFzVEeuqD_JvkpUYmg" outgoing="_uN24oFzVEeuqD_JvkpUYmg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_T_S6AFzVEeuqD_JvkpUYmg" name="Send a message through the chat" incoming="_uN24oFzVEeuqD_JvkpUYmg" outgoing="_-vGdYFzVEeuqD_JvkpUYmg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_bt_rEFzVEeuqD_JvkpUYmg" name="Update the chat" incoming="_l_FD4FzWEeuqD_JvkpUYmg" outgoing="_7fgC8FzXEeuqD_JvkpUYmg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_e2YYUFzVEeuqD_JvkpUYmg" name="Notify the other user" incoming="_tNPTsFzWEeuqD_JvkpUYmg" outgoing="_tlLdIFzXEeuqD_JvkpUYmg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_hItnUFzVEeuqD_JvkpUYmg" name="Update the chat log file" incoming="_sAS_cFzWEeuqD_JvkpUYmg" outgoing="_51Ng0FzWEeuqD_JvkpUYmg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_iwqckFzVEeuqD_JvkpUYmg" name="Update the database with modified log file" incoming="_51Ng0FzWEeuqD_JvkpUYmg" outgoing="_yV7PUFzXEeuqD_JvkpUYmg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_rYfOAFzVEeuqD_JvkpUYmg" name="Check status of user's connection" incoming="_-vGdYFzVEeuqD_JvkpUYmg _nI_AUFzYEeuqD_JvkpUYmg" outgoing="_hSKBwFzWEeuqD_JvkpUYmg _KsAe0FzXEeuqD_JvkpUYmg"/>
+    <node xmi:type="uml:ForkNode" xmi:id="_hR0qkFzWEeuqD_JvkpUYmg" incoming="_5PCmwFzYEeuqD_JvkpUYmg" outgoing="_l_FD4FzWEeuqD_JvkpUYmg _sAS_cFzWEeuqD_JvkpUYmg _tNPTsFzWEeuqD_JvkpUYmg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_2BnTYFzWEeuqD_JvkpUYmg" name="Store Message in Database" incoming="_KsAe0FzXEeuqD_JvkpUYmg" outgoing="_nI_AUFzYEeuqD_JvkpUYmg"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_oZNHgFzXEeuqD_JvkpUYmg" incoming="_aTX_0FzYEeuqD_JvkpUYmg"/>
+    <node xmi:type="uml:JoinNode" xmi:id="_tkmOUFzXEeuqD_JvkpUYmg" name="" incoming="_tlLdIFzXEeuqD_JvkpUYmg _yV7PUFzXEeuqD_JvkpUYmg _7fgC8FzXEeuqD_JvkpUYmg" outgoing="_aTX_0FzYEeuqD_JvkpUYmg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_u2T4YFzYEeuqD_JvkpUYmg" name="Retrieve any stored messages" incoming="_hSKBwFzWEeuqD_JvkpUYmg" outgoing="_5PCmwFzYEeuqD_JvkpUYmg"/>
+  </packagedElement>
 </uml:Model>
