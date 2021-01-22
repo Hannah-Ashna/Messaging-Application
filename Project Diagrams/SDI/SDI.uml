@@ -138,7 +138,7 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gOpJEFHPEeuyzNSi8MGzrQ" value="*"/>
     </ownedEnd>
   </packagedElement>
-  <packagedElement xmi:type="uml:Package" xmi:id="_MsJT8Fy-Eeu1RaWnon4lBg" name="Login">
+  <packagedElement xmi:type="uml:Package" xmi:id="_MsJT8Fy-Eeu1RaWnon4lBg" name="Messaging Application">
     <packagedElement xmi:type="uml:UseCase" xmi:id="_RKw0UFy-Eeu1RaWnon4lBg" name="Input login credentials">
       <include xmi:type="uml:Include" xmi:id="_uLtlkFy_Eeu1RaWnon4lBg" addition="_eEUEMFy_Eeu1RaWnon4lBg"/>
     </packagedElement>
@@ -200,5 +200,47 @@
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_Agx7klzEEeu1RaWnon4lBg" name="create account" type="_1JJuQFy-Eeu1RaWnon4lBg" association="_AgxUgFzEEeu1RaWnon4lBg"/>
     <ownedEnd xmi:type="uml:Property" xmi:id="_Agx7k1zEEeu1RaWnon4lBg" name="new user" type="_8d2RoFzDEeu1RaWnon4lBg" association="_AgxUgFzEEeu1RaWnon4lBg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_8ivjQFzEEeu1RaWnon4lBg" name="Messaging Application">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_AZbg8FzFEeu1RaWnon4lBg" name="Send Message">
+      <include xmi:type="uml:Include" xmi:id="_VpDgYFzFEeu1RaWnon4lBg" addition="_Bvn30FzFEeu1RaWnon4lBg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_Bvn30FzFEeu1RaWnon4lBg" name="Validate Connection">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_XZ1hgVzFEeu1RaWnon4lBg" name="ExtensionPoint1"/>
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_X7dn4VzFEeu1RaWnon4lBg" name="ExtensionPoint2"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_DLMd8FzFEeu1RaWnon4lBg" name="User Offline">
+      <extend xmi:type="uml:Extend" xmi:id="_X7dn4FzFEeu1RaWnon4lBg" extendedCase="_Bvn30FzFEeu1RaWnon4lBg" extensionLocation="_X7dn4VzFEeu1RaWnon4lBg"/>
+      <include xmi:type="uml:Include" xmi:id="_kxUgAFzFEeu1RaWnon4lBg" addition="_eEL5oFzFEeu1RaWnon4lBg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_GJKq8FzFEeu1RaWnon4lBg" name="User Online">
+      <extend xmi:type="uml:Extend" xmi:id="_XZ1hgFzFEeu1RaWnon4lBg" extendedCase="_Bvn30FzFEeu1RaWnon4lBg" extensionLocation="_XZ1hgVzFEeu1RaWnon4lBg"/>
+      <include xmi:type="uml:Include" xmi:id="_amNW4FzFEeu1RaWnon4lBg" addition="_Hw6E0FzFEeu1RaWnon4lBg"/>
+      <include xmi:type="uml:Include" xmi:id="_cJyCcFzFEeu1RaWnon4lBg" addition="_I-NlcFzFEeu1RaWnon4lBg"/>
+      <include xmi:type="uml:Include" xmi:id="_wPpkgFzFEeu1RaWnon4lBg" addition="_tkMD0FzFEeu1RaWnon4lBg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_Hw6E0FzFEeu1RaWnon4lBg" name="Update Chat"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_I-NlcFzFEeu1RaWnon4lBg" name="Notify Contact"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_eEL5oFzFEeu1RaWnon4lBg" name="Store Message">
+      <include xmi:type="uml:Include" xmi:id="_5RCsgFzFEeu1RaWnon4lBg" addition="_Bvn30FzFEeu1RaWnon4lBg"/>
+      <include xmi:type="uml:Include" xmi:id="_61EEAFzFEeu1RaWnon4lBg" addition="_tkMD0FzFEeu1RaWnon4lBg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_tkMD0FzFEeu1RaWnon4lBg" name="Update Database"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_-f8PwFzEEeu1RaWnon4lBg" name="User"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_Ksvj0FzFEeu1RaWnon4lBg" name="Chat Database"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_TeyBMFzFEeu1RaWnon4lBg" memberEnd="_TeyoQFzFEeu1RaWnon4lBg _TeyoQVzFEeu1RaWnon4lBg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TeyBMVzFEeu1RaWnon4lBg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TeyBMlzFEeu1RaWnon4lBg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_TeyoQFzFEeu1RaWnon4lBg" name="send message" type="_AZbg8FzFEeu1RaWnon4lBg" association="_TeyBMFzFEeu1RaWnon4lBg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_TeyoQVzFEeu1RaWnon4lBg" name="user" type="_-f8PwFzEEeu1RaWnon4lBg" association="_TeyBMFzFEeu1RaWnon4lBg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_7q0AQFzFEeu1RaWnon4lBg" memberEnd="_7q0nUlzFEeu1RaWnon4lBg _7q0nU1zFEeu1RaWnon4lBg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7q0nUFzFEeu1RaWnon4lBg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7q0nUVzFEeu1RaWnon4lBg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_7q0nUlzFEeu1RaWnon4lBg" name="update database" type="_tkMD0FzFEeu1RaWnon4lBg" association="_7q0AQFzFEeu1RaWnon4lBg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_7q0nU1zFEeu1RaWnon4lBg" name="chat database" type="_Ksvj0FzFEeu1RaWnon4lBg" association="_7q0AQFzFEeu1RaWnon4lBg"/>
   </packagedElement>
 </uml:Model>
