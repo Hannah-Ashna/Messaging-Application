@@ -1460,22 +1460,27 @@
         <children xmi:type="notation:Shape" xmi:id="_Q5cqwFzSEeuxoPJc13bXVw" type="Lifeline_Shape">
           <children xmi:type="notation:DecorationNode" xmi:id="_Q5cqwlzSEeuxoPJc13bXVw" type="Lifeline_NameLabel"/>
           <element xmi:type="uml:Lifeline" href="SDI.uml#_Q5aOgFzSEeuxoPJc13bXVw"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q5cqwVzSEeuxoPJc13bXVw" x="474" y="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q5cqwVzSEeuxoPJc13bXVw" x="394" y="10"/>
         </children>
         <children xmi:type="notation:Shape" xmi:id="_S9UnAFzSEeuxoPJc13bXVw" type="Lifeline_Shape">
           <children xmi:type="notation:DecorationNode" xmi:id="_S9UnAlzSEeuxoPJc13bXVw" type="Lifeline_NameLabel"/>
           <element xmi:type="uml:Lifeline" href="SDI.uml#_S9Sx0FzSEeuxoPJc13bXVw"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S9UnAVzSEeuxoPJc13bXVw" x="714" y="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S9UnAVzSEeuxoPJc13bXVw" x="654" y="10"/>
         </children>
         <children xmi:type="notation:Shape" xmi:id="_g1rd8FzSEeuxoPJc13bXVw" type="Lifeline_Shape">
           <children xmi:type="notation:DecorationNode" xmi:id="_g1sFAFzSEeuxoPJc13bXVw" type="Lifeline_NameLabel"/>
           <element xmi:type="uml:Lifeline" href="SDI.uml#_g1pBsFzSEeuxoPJc13bXVw"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g1rd8VzSEeuxoPJc13bXVw" x="234" y="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g1rd8VzSEeuxoPJc13bXVw" x="194" y="10"/>
         </children>
         <children xmi:type="notation:Shape" xmi:id="_Fd4J4FzTEeuxoPJc13bXVw" type="Comment_Shape">
           <children xmi:type="notation:DecorationNode" xmi:id="_Fd4J4lzTEeuxoPJc13bXVw" type="Comment_BodyLabel"/>
           <element xmi:type="uml:Comment" href="SDI.uml#_Fd0fgFzTEeuxoPJc13bXVw"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fd4J4VzTEeuxoPJc13bXVw" x="114" y="96"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_nFJvkFzgEeuJpah4Y7gtCw" type="Lifeline_Shape">
+          <children xmi:type="notation:DecorationNode" xmi:id="_nFKWoFzgEeuJpah4Y7gtCw" type="Lifeline_NameLabel"/>
+          <element xmi:type="uml:Lifeline" href="SDI.uml#_nE_XgFzgEeuJpah4Y7gtCw"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nFJvkVzgEeuJpah4Y7gtCw" x="794" y="10"/>
         </children>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2LpLZFzREeuxoPJc13bXVw"/>
       </children>

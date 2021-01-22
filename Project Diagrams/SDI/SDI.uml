@@ -260,5 +260,6 @@
     <lifeline xmi:type="uml:Lifeline" xmi:id="_Q5aOgFzSEeuxoPJc13bXVw" name="Messaging Application"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_S9Sx0FzSEeuxoPJc13bXVw" name="Database"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_g1pBsFzSEeuxoPJc13bXVw" name="Chatroom"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_nE_XgFzgEeuJpah4Y7gtCw" name="Server"/>
   </packagedElement>
 </uml:Model>
