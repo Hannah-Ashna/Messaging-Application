@@ -1510,4 +1510,20 @@
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sCR2EVzOEeu1RaWnon4lBg" id="(0.14285714285714285,0.15)"/>
     </edges>
   </notation:Diagram>
+  <notation:Diagram xmi:id="_2LpLYFzREeuxoPJc13bXVw" type="PapyrusUMLSequenceDiagram" name="SendMessageSequence" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_2LpLYVzREeuxoPJc13bXVw" type="Interaction_Shape">
+      <children xmi:type="notation:DecorationNode" xmi:id="_2LpLYlzREeuxoPJc13bXVw" type="Interaction_NameLabel"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_2LpLY1zREeuxoPJc13bXVw" type="Interaction_SubfragmentCompartment">
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2LpLZFzREeuxoPJc13bXVw"/>
+      </children>
+      <element xmi:type="uml:Interaction" href="SDI.uml#_wqB88FzREeuxoPJc13bXVw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2LpLZVzREeuxoPJc13bXVw"/>
+    </children>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_2LpLZlzREeuxoPJc13bXVw" name="diagram_compatibility_version" stringValue="1.4.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_2LpLZ1zREeuxoPJc13bXVw"/>
+    <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_2LpLaFzREeuxoPJc13bXVw" diagramKindId="org.eclipse.papyrus.uml.diagram.sequence">
+      <owner xmi:type="uml:Model" href="SDI.uml#_S5v-MErBEeuXmMxXDJeMJA"/>
+    </styles>
+    <element xmi:type="uml:Interaction" href="SDI.uml#_wqB88FzREeuxoPJc13bXVw"/>
+  </notation:Diagram>
 </xmi:XMI>

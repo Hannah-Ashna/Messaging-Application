@@ -254,4 +254,5 @@
     <node xmi:type="uml:OpaqueAction" xmi:id="_Ep2ToFzNEeu1RaWnon4lBg" name="Authorise Credentials" incoming="_ZYYYMFzNEeu1RaWnon4lBg"/>
     <node xmi:type="uml:DecisionNode" xmi:id="_n1lBkFzNEeu1RaWnon4lBg" name="DecisionNode6"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_wqB88FzREeuxoPJc13bXVw" name="Send Message"/>
 </uml:Model>
