@@ -262,4 +262,32 @@
     <lifeline xmi:type="uml:Lifeline" xmi:id="_g1pBsFzSEeuxoPJc13bXVw" name="Chatroom"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_nE_XgFzgEeuJpah4Y7gtCw" name="Server"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_dqp-gFz1EeuhbZ2aKT7LXw" name="Messaging Application" node="_nced4Fz1EeuhbZ2aKT7LXw _qLJDkFz1EeuhbZ2aKT7LXw _yzI0IFz1EeuhbZ2aKT7LXw _47VhcFz1EeuhbZ2aKT7LXw _CjknAFz2EeuhbZ2aKT7LXw _MhY7AFz2EeuhbZ2aKT7LXw _XZVU8Fz2EeuhbZ2aKT7LXw _bIg8cFz2EeuhbZ2aKT7LXw _fMUJEFz2EeuhbZ2aKT7LXw _hOv64Fz2EeuhbZ2aKT7LXw _o-6rkFz2EeuhbZ2aKT7LXw _0vWMsFz2EeuhbZ2aKT7LXw">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_r5ElAFz1EeuhbZ2aKT7LXw" target="_qLJDkFz1EeuhbZ2aKT7LXw" source="_nced4Fz1EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yzsNwFz1EeuhbZ2aKT7LXw" target="_yzI0IFz1EeuhbZ2aKT7LXw" source="_qLJDkFz1EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_47n1UFz1EeuhbZ2aKT7LXw" name="User is Offline" target="_47VhcFz1EeuhbZ2aKT7LXw" source="_yzI0IFz1EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Cj6lQFz2EeuhbZ2aKT7LXw" name="User is Online" target="_CjknAFz2EeuhbZ2aKT7LXw" source="_yzI0IFz1EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_MhsdAFz2EeuhbZ2aKT7LXw" target="_MhY7AFz2EeuhbZ2aKT7LXw" source="_CjknAFz2EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_XZu9kFz2EeuhbZ2aKT7LXw" target="_XZVU8Fz2EeuhbZ2aKT7LXw" source="_MhY7AFz2EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_bI2ToFz2EeuhbZ2aKT7LXw" target="_bIg8cFz2EeuhbZ2aKT7LXw" source="_XZVU8Fz2EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_fMrVcFz2EeuhbZ2aKT7LXw" target="_fMUJEFz2EeuhbZ2aKT7LXw" source="_XZVU8Fz2EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_hPJjgFz2EeuhbZ2aKT7LXw" target="_hOv64Fz2EeuhbZ2aKT7LXw" source="_XZVU8Fz2EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_o_cQAFz2EeuhbZ2aKT7LXw" target="_o-6rkFz2EeuhbZ2aKT7LXw" source="_fMUJEFz2EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_tLQwMFz2EeuhbZ2aKT7LXw" target="_o-6rkFz2EeuhbZ2aKT7LXw" source="_bIg8cFz2EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_vT53sFz2EeuhbZ2aKT7LXw" target="_o-6rkFz2EeuhbZ2aKT7LXw" source="_hOv64Fz2EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_20VjQFz2EeuhbZ2aKT7LXw" target="_0vWMsFz2EeuhbZ2aKT7LXw" source="_o-6rkFz2EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_AO4yIFz3EeuhbZ2aKT7LXw" name="Loop back to check status until User is Online" target="_yzI0IFz1EeuhbZ2aKT7LXw" source="_47VhcFz1EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_nced4Fz1EeuhbZ2aKT7LXw" outgoing="_r5ElAFz1EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_qLJDkFz1EeuhbZ2aKT7LXw" name="Send a message through the chat" incoming="_r5ElAFz1EeuhbZ2aKT7LXw" outgoing="_yzsNwFz1EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_yzI0IFz1EeuhbZ2aKT7LXw" name="Check user connection" incoming="_yzsNwFz1EeuhbZ2aKT7LXw _AO4yIFz3EeuhbZ2aKT7LXw" outgoing="_47n1UFz1EeuhbZ2aKT7LXw _Cj6lQFz2EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_47VhcFz1EeuhbZ2aKT7LXw" name="Store message in Database" incoming="_47n1UFz1EeuhbZ2aKT7LXw" outgoing="_AO4yIFz3EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_CjknAFz2EeuhbZ2aKT7LXw" name="Retrieve any stored messages" incoming="_Cj6lQFz2EeuhbZ2aKT7LXw" outgoing="_MhsdAFz2EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_MhY7AFz2EeuhbZ2aKT7LXw" name="Create queue of messages to be sent" incoming="_MhsdAFz2EeuhbZ2aKT7LXw" outgoing="_XZu9kFz2EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:ForkNode" xmi:id="_XZVU8Fz2EeuhbZ2aKT7LXw" incoming="_XZu9kFz2EeuhbZ2aKT7LXw" outgoing="_bI2ToFz2EeuhbZ2aKT7LXw _fMrVcFz2EeuhbZ2aKT7LXw _hPJjgFz2EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_bIg8cFz2EeuhbZ2aKT7LXw" name="Notify the receiver" incoming="_bI2ToFz2EeuhbZ2aKT7LXw" outgoing="_tLQwMFz2EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_fMUJEFz2EeuhbZ2aKT7LXw" name="Update the chat log file" incoming="_fMrVcFz2EeuhbZ2aKT7LXw" outgoing="_o_cQAFz2EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_hOv64Fz2EeuhbZ2aKT7LXw" name="Update the chat" incoming="_hPJjgFz2EeuhbZ2aKT7LXw" outgoing="_vT53sFz2EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:JoinNode" xmi:id="_o-6rkFz2EeuhbZ2aKT7LXw" name="" incoming="_o_cQAFz2EeuhbZ2aKT7LXw _tLQwMFz2EeuhbZ2aKT7LXw _vT53sFz2EeuhbZ2aKT7LXw" outgoing="_20VjQFz2EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_0vWMsFz2EeuhbZ2aKT7LXw" incoming="_20VjQFz2EeuhbZ2aKT7LXw"/>
+  </packagedElement>
 </uml:Model>
