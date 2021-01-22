@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_S5v-MErBEeuXmMxXDJeMJA" name="SDI" URI="">
+  <ownedComment xmi:type="uml:Comment" xmi:id="_WXIwkFzUEeuqD_JvkpUYmg">
+    <body>Pre-requisite: User must be logged in</body>
+  </ownedComment>
   <packageImport xmi:type="uml:PackageImport" xmi:id="_S9Nh4ErBEeuXmMxXDJeMJA">
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
@@ -139,7 +142,7 @@
     </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_MsJT8Fy-Eeu1RaWnon4lBg" name="Messaging Application">
-    <packagedElement xmi:type="uml:UseCase" xmi:id="_RKw0UFy-Eeu1RaWnon4lBg" name="Input login credentials">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_RKw0UFy-Eeu1RaWnon4lBg" name="Login">
       <include xmi:type="uml:Include" xmi:id="_uLtlkFy_Eeu1RaWnon4lBg" addition="_eEUEMFy_Eeu1RaWnon4lBg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:UseCase" xmi:id="_1JJuQFy-Eeu1RaWnon4lBg" name="Create Account">
