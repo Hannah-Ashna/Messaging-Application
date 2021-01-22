@@ -145,7 +145,7 @@
     <packagedElement xmi:type="uml:UseCase" xmi:id="_1JJuQFy-Eeu1RaWnon4lBg" name="Create Account">
       <include xmi:type="uml:Include" xmi:id="_FslO4FzAEeu1RaWnon4lBg" addition="_CrHpAFzAEeu1RaWnon4lBg"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:UseCase" xmi:id="_eEUEMFy_Eeu1RaWnon4lBg" name="Authorize credentials">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_eEUEMFy_Eeu1RaWnon4lBg" name="Authorise credentials">
       <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_nywqAFzAEeu1RaWnon4lBg" name="ExtensionPoint1"/>
       <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_oWfCIFzAEeu1RaWnon4lBg" name="ExtensionPoint2"/>
     </packagedElement>
@@ -217,7 +217,7 @@
       <extend xmi:type="uml:Extend" xmi:id="_XZ1hgFzFEeu1RaWnon4lBg" extendedCase="_Bvn30FzFEeu1RaWnon4lBg" extensionLocation="_XZ1hgVzFEeu1RaWnon4lBg"/>
       <include xmi:type="uml:Include" xmi:id="_amNW4FzFEeu1RaWnon4lBg" addition="_Hw6E0FzFEeu1RaWnon4lBg"/>
       <include xmi:type="uml:Include" xmi:id="_cJyCcFzFEeu1RaWnon4lBg" addition="_I-NlcFzFEeu1RaWnon4lBg"/>
-      <include xmi:type="uml:Include" xmi:id="_wPpkgFzFEeu1RaWnon4lBg" addition="_tkMD0FzFEeu1RaWnon4lBg"/>
+      <include xmi:type="uml:Include" xmi:id="_qkFZwFzOEeu1RaWnon4lBg" addition="_gtRssFzOEeu1RaWnon4lBg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:UseCase" xmi:id="_Hw6E0FzFEeu1RaWnon4lBg" name="Update Chat"/>
     <packagedElement xmi:type="uml:UseCase" xmi:id="_I-NlcFzFEeu1RaWnon4lBg" name="Notify Contact"/>
@@ -226,6 +226,9 @@
       <include xmi:type="uml:Include" xmi:id="_61EEAFzFEeu1RaWnon4lBg" addition="_tkMD0FzFEeu1RaWnon4lBg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:UseCase" xmi:id="_tkMD0FzFEeu1RaWnon4lBg" name="Update Database"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_gtRssFzOEeu1RaWnon4lBg" name="Update logs">
+      <include xmi:type="uml:Include" xmi:id="_sB6psFzOEeu1RaWnon4lBg" addition="_tkMD0FzFEeu1RaWnon4lBg"/>
+    </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Actor" xmi:id="_-f8PwFzEEeu1RaWnon4lBg" name="User"/>
   <packagedElement xmi:type="uml:Actor" xmi:id="_Ksvj0FzFEeu1RaWnon4lBg" name="Chat Database"/>
@@ -242,5 +245,13 @@
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_7q0nUlzFEeu1RaWnon4lBg" name="update database" type="_tkMD0FzFEeu1RaWnon4lBg" association="_7q0AQFzFEeu1RaWnon4lBg"/>
     <ownedEnd xmi:type="uml:Property" xmi:id="_7q0nU1zFEeu1RaWnon4lBg" name="chat database" type="_Ksvj0FzFEeu1RaWnon4lBg" association="_7q0AQFzFEeu1RaWnon4lBg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_ZJbysFzMEeu1RaWnon4lBg" name="Login" node="_d2n6kFzMEeu1RaWnon4lBg _5JiSIFzMEeu1RaWnon4lBg _Ep2ToFzNEeu1RaWnon4lBg _n1lBkFzNEeu1RaWnon4lBg">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ZYYYMFzNEeu1RaWnon4lBg" target="_Ep2ToFzNEeu1RaWnon4lBg" source="_5JiSIFzMEeu1RaWnon4lBg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_aKcuUFzNEeu1RaWnon4lBg" target="_5JiSIFzMEeu1RaWnon4lBg" source="_d2n6kFzMEeu1RaWnon4lBg"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_d2n6kFzMEeu1RaWnon4lBg" outgoing="_aKcuUFzNEeu1RaWnon4lBg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_5JiSIFzMEeu1RaWnon4lBg" name="Input login credentials" incoming="_aKcuUFzNEeu1RaWnon4lBg" outgoing="_ZYYYMFzNEeu1RaWnon4lBg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Ep2ToFzNEeu1RaWnon4lBg" name="Authorise Credentials" incoming="_ZYYYMFzNEeu1RaWnon4lBg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_n1lBkFzNEeu1RaWnon4lBg" name="DecisionNode6"/>
   </packagedElement>
 </uml:Model>
