@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_S5v-MErBEeuXmMxXDJeMJA" name="SDI" URI="">
+  <ownedComment xmi:type="uml:Comment" xmi:id="_aaKzQFz3EeuhbZ2aKT7LXw">
+    <body>Pre-requisite: User must be logged in</body>
+  </ownedComment>
   <packageImport xmi:type="uml:PackageImport" xmi:id="_S9Nh4ErBEeuXmMxXDJeMJA">
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
