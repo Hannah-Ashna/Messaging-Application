@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_S5v-MErBEeuXmMxXDJeMJA" name="SDI">
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_S5v-MErBEeuXmMxXDJeMJA" name="SDI" URI="">
   <packageImport xmi:type="uml:PackageImport" xmi:id="_S9Nh4ErBEeuXmMxXDJeMJA">
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
@@ -139,10 +139,34 @@
     </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_MsJT8Fy-Eeu1RaWnon4lBg" name="Login">
-    <packagedElement xmi:type="uml:UseCase" xmi:id="_RKw0UFy-Eeu1RaWnon4lBg" name="Input login credentials"/>
-    <packagedElement xmi:type="uml:UseCase" xmi:id="_1JJuQFy-Eeu1RaWnon4lBg" name="Create Account"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_RKw0UFy-Eeu1RaWnon4lBg" name="Input login credentials">
+      <include xmi:type="uml:Include" xmi:id="_uLtlkFy_Eeu1RaWnon4lBg" addition="_eEUEMFy_Eeu1RaWnon4lBg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_1JJuQFy-Eeu1RaWnon4lBg" name="Create Account">
+      <include xmi:type="uml:Include" xmi:id="_FslO4FzAEeu1RaWnon4lBg" addition="_CrHpAFzAEeu1RaWnon4lBg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_eEUEMFy_Eeu1RaWnon4lBg" name="Authorize credentials">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_nywqAFzAEeu1RaWnon4lBg" name="ExtensionPoint1"/>
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_oWfCIFzAEeu1RaWnon4lBg" name="ExtensionPoint2"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_CrHpAFzAEeu1RaWnon4lBg" name="Store New Credentials"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_geZEgFzAEeu1RaWnon4lBg" name="Access User's Space">
+      <extend xmi:type="uml:Extend" xmi:id="_nywC8FzAEeu1RaWnon4lBg" extendedCase="_eEUEMFy_Eeu1RaWnon4lBg" extensionLocation="_nywqAFzAEeu1RaWnon4lBg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_hP0hcFzAEeu1RaWnon4lBg" name="Forgot Password">
+      <extend xmi:type="uml:Extend" xmi:id="_oWebEFzAEeu1RaWnon4lBg" extendedCase="_eEUEMFy_Eeu1RaWnon4lBg" extensionLocation="_oWfCIFzAEeu1RaWnon4lBg"/>
+    </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Actor" xmi:id="_PcdfcFy-Eeu1RaWnon4lBg" name="User"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_piTm8Fy-Eeu1RaWnon4lBg"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_3b2wsFy-Eeu1RaWnon4lBg"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_3DxLYFy_Eeu1RaWnon4lBg" name="User Credentials Database"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_7hes0Fy_Eeu1RaWnon4lBg"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_GxfogFzAEeu1RaWnon4lBg" memberEnd="_Gxg2oFzAEeu1RaWnon4lBg _GxiEwFzAEeu1RaWnon4lBg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GxgPkFzAEeu1RaWnon4lBg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GxgPkVzAEeu1RaWnon4lBg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Gxg2oFzAEeu1RaWnon4lBg" name="store new credentials" type="_CrHpAFzAEeu1RaWnon4lBg" association="_GxfogFzAEeu1RaWnon4lBg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_GxiEwFzAEeu1RaWnon4lBg" name="user credentials database" type="_3DxLYFy_Eeu1RaWnon4lBg" association="_GxfogFzAEeu1RaWnon4lBg"/>
+  </packagedElement>
 </uml:Model>
