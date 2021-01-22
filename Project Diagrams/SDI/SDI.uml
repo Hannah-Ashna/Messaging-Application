@@ -254,5 +254,11 @@
     <node xmi:type="uml:OpaqueAction" xmi:id="_Ep2ToFzNEeu1RaWnon4lBg" name="Authorise Credentials" incoming="_ZYYYMFzNEeu1RaWnon4lBg"/>
     <node xmi:type="uml:DecisionNode" xmi:id="_n1lBkFzNEeu1RaWnon4lBg" name="DecisionNode6"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Interaction" xmi:id="_wqB88FzREeuxoPJc13bXVw" name="Send Message"/>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_wqB88FzREeuxoPJc13bXVw" name="Send Message">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_Fd0fgFzTEeuxoPJc13bXVw"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_LAViUFzSEeuxoPJc13bXVw" name="User"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_Q5aOgFzSEeuxoPJc13bXVw" name="Messaging Application"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_S9Sx0FzSEeuxoPJc13bXVw" name="Database"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_g1pBsFzSEeuxoPJc13bXVw" name="Chatroom"/>
+  </packagedElement>
 </uml:Model>
