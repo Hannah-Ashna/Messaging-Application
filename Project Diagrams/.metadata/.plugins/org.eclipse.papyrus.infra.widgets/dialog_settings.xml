@@ -3,5 +3,6 @@
 	<section name="org.eclipse.papyrus.infra.widgets.providers.FlatFilteredContentProvider">
 	</section>
 	<section name="org.eclipse.papyrus.infra.widgets.editors.TreeSelectorDialog">
+		<item key="lastTab" value="default"/>
 	</section>
 </section>
