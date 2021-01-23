@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_S5v-MErBEeuXmMxXDJeMJA" name="SDI">
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_S5v-MErBEeuXmMxXDJeMJA" name="SDI" URI="">
+  <ownedComment xmi:type="uml:Comment" xmi:id="_aaKzQFz3EeuhbZ2aKT7LXw">
+    <body>Pre-requisite: User must be logged in</body>
+  </ownedComment>
   <packageImport xmi:type="uml:PackageImport" xmi:id="_S9Nh4ErBEeuXmMxXDJeMJA">
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
@@ -137,5 +140,157 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gOk3oFHPEeuyzNSi8MGzrQ"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gOpJEFHPEeuyzNSi8MGzrQ" value="*"/>
     </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_MsJT8Fy-Eeu1RaWnon4lBg" name="Messaging Application">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_RKw0UFy-Eeu1RaWnon4lBg" name="Input login credentials">
+      <include xmi:type="uml:Include" xmi:id="_uLtlkFy_Eeu1RaWnon4lBg" addition="_eEUEMFy_Eeu1RaWnon4lBg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_1JJuQFy-Eeu1RaWnon4lBg" name="Create Account">
+      <include xmi:type="uml:Include" xmi:id="_FslO4FzAEeu1RaWnon4lBg" addition="_CrHpAFzAEeu1RaWnon4lBg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_eEUEMFy_Eeu1RaWnon4lBg" name="Authorise credentials">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_nywqAFzAEeu1RaWnon4lBg" name="ExtensionPoint1"/>
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_oWfCIFzAEeu1RaWnon4lBg" name="ExtensionPoint2"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_CrHpAFzAEeu1RaWnon4lBg" name="Store New Credentials"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_geZEgFzAEeu1RaWnon4lBg" name="Valid Password">
+      <extend xmi:type="uml:Extend" xmi:id="_nywC8FzAEeu1RaWnon4lBg" extendedCase="_eEUEMFy_Eeu1RaWnon4lBg" extensionLocation="_nywqAFzAEeu1RaWnon4lBg"/>
+      <include xmi:type="uml:Include" xmi:id="_ZtPZcFzDEeu1RaWnon4lBg" addition="_W8DrQFzDEeu1RaWnon4lBg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_hP0hcFzAEeu1RaWnon4lBg" name="Invalid Password">
+      <extend xmi:type="uml:Extend" xmi:id="_oWebEFzAEeu1RaWnon4lBg" extendedCase="_eEUEMFy_Eeu1RaWnon4lBg" extensionLocation="_oWfCIFzAEeu1RaWnon4lBg"/>
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_fd4iYFzDEeu1RaWnon4lBg" name="ExtensionPoint2"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_W8DrQFzDEeu1RaWnon4lBg" name="Access User Space"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_dDBCcFzDEeu1RaWnon4lBg" name="Fogot/Reset Password">
+      <extend xmi:type="uml:Extend" xmi:id="_fd37UFzDEeu1RaWnon4lBg" extendedCase="_hP0hcFzAEeu1RaWnon4lBg" extensionLocation="_fd4iYFzDEeu1RaWnon4lBg"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_PcdfcFy-Eeu1RaWnon4lBg" name="Existing User">
+    <generalization xmi:type="uml:Generalization" xmi:id="_G9SsAFzEEeu1RaWnon4lBg" general="_8d2RoFzDEeu1RaWnon4lBg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_3DxLYFy_Eeu1RaWnon4lBg" name="User Credentials Database"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_7hes0Fy_Eeu1RaWnon4lBg"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_GxfogFzAEeu1RaWnon4lBg" memberEnd="_Gxg2oFzAEeu1RaWnon4lBg _GxiEwFzAEeu1RaWnon4lBg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GxgPkFzAEeu1RaWnon4lBg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GxgPkVzAEeu1RaWnon4lBg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Gxg2oFzAEeu1RaWnon4lBg" name="store new credentials" type="_CrHpAFzAEeu1RaWnon4lBg" association="_GxfogFzAEeu1RaWnon4lBg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_GxiEwFzAEeu1RaWnon4lBg" name="user credentials database" type="_3DxLYFy_Eeu1RaWnon4lBg" association="_GxfogFzAEeu1RaWnon4lBg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_ZRZAYFzCEeu1RaWnon4lBg" name="Logout">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_gC_3EFzCEeu1RaWnon4lBg" name="Logout"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_eNKW0FzCEeu1RaWnon4lBg" name="User"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_rRmdgFzCEeu1RaWnon4lBg" memberEnd="_rRmdg1zCEeu1RaWnon4lBg _rRmdhFzCEeu1RaWnon4lBg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_rRmdgVzCEeu1RaWnon4lBg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rRmdglzCEeu1RaWnon4lBg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_rRmdg1zCEeu1RaWnon4lBg" name="logout" type="_gC_3EFzCEeu1RaWnon4lBg" association="_rRmdgFzCEeu1RaWnon4lBg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_rRmdhFzCEeu1RaWnon4lBg" name="user" type="_eNKW0FzCEeu1RaWnon4lBg" association="_rRmdgFzCEeu1RaWnon4lBg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_8d2RoFzDEeu1RaWnon4lBg" name="New User"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="__TheQFzDEeu1RaWnon4lBg" memberEnd="__TiFUlzDEeu1RaWnon4lBg __TiFU1zDEeu1RaWnon4lBg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__TiFUFzDEeu1RaWnon4lBg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__TiFUVzDEeu1RaWnon4lBg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="__TiFUlzDEeu1RaWnon4lBg" name="input login credentials" type="_RKw0UFy-Eeu1RaWnon4lBg" association="__TheQFzDEeu1RaWnon4lBg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="__TiFU1zDEeu1RaWnon4lBg" name="existing user" type="_PcdfcFy-Eeu1RaWnon4lBg" association="__TheQFzDEeu1RaWnon4lBg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_AgxUgFzEEeu1RaWnon4lBg" memberEnd="_Agx7klzEEeu1RaWnon4lBg _Agx7k1zEEeu1RaWnon4lBg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Agx7kFzEEeu1RaWnon4lBg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Agx7kVzEEeu1RaWnon4lBg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Agx7klzEEeu1RaWnon4lBg" name="create account" type="_1JJuQFy-Eeu1RaWnon4lBg" association="_AgxUgFzEEeu1RaWnon4lBg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Agx7k1zEEeu1RaWnon4lBg" name="new user" type="_8d2RoFzDEeu1RaWnon4lBg" association="_AgxUgFzEEeu1RaWnon4lBg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_8ivjQFzEEeu1RaWnon4lBg" name="Messaging Application">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_AZbg8FzFEeu1RaWnon4lBg" name="Send Message">
+      <include xmi:type="uml:Include" xmi:id="_VpDgYFzFEeu1RaWnon4lBg" addition="_Bvn30FzFEeu1RaWnon4lBg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_Bvn30FzFEeu1RaWnon4lBg" name="Validate Connection">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_XZ1hgVzFEeu1RaWnon4lBg" name="ExtensionPoint1"/>
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_X7dn4VzFEeu1RaWnon4lBg" name="ExtensionPoint2"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_DLMd8FzFEeu1RaWnon4lBg" name="User Offline">
+      <extend xmi:type="uml:Extend" xmi:id="_X7dn4FzFEeu1RaWnon4lBg" extendedCase="_Bvn30FzFEeu1RaWnon4lBg" extensionLocation="_X7dn4VzFEeu1RaWnon4lBg"/>
+      <include xmi:type="uml:Include" xmi:id="_kxUgAFzFEeu1RaWnon4lBg" addition="_eEL5oFzFEeu1RaWnon4lBg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_GJKq8FzFEeu1RaWnon4lBg" name="User Online">
+      <extend xmi:type="uml:Extend" xmi:id="_XZ1hgFzFEeu1RaWnon4lBg" extendedCase="_Bvn30FzFEeu1RaWnon4lBg" extensionLocation="_XZ1hgVzFEeu1RaWnon4lBg"/>
+      <include xmi:type="uml:Include" xmi:id="_amNW4FzFEeu1RaWnon4lBg" addition="_Hw6E0FzFEeu1RaWnon4lBg"/>
+      <include xmi:type="uml:Include" xmi:id="_cJyCcFzFEeu1RaWnon4lBg" addition="_I-NlcFzFEeu1RaWnon4lBg"/>
+      <include xmi:type="uml:Include" xmi:id="_qkFZwFzOEeu1RaWnon4lBg" addition="_gtRssFzOEeu1RaWnon4lBg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_Hw6E0FzFEeu1RaWnon4lBg" name="Update Chat"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_I-NlcFzFEeu1RaWnon4lBg" name="Notify Contact"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_eEL5oFzFEeu1RaWnon4lBg" name="Store Message">
+      <include xmi:type="uml:Include" xmi:id="_5RCsgFzFEeu1RaWnon4lBg" addition="_Bvn30FzFEeu1RaWnon4lBg"/>
+      <include xmi:type="uml:Include" xmi:id="_61EEAFzFEeu1RaWnon4lBg" addition="_tkMD0FzFEeu1RaWnon4lBg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_tkMD0FzFEeu1RaWnon4lBg" name="Update Database"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_gtRssFzOEeu1RaWnon4lBg" name="Update logs">
+      <include xmi:type="uml:Include" xmi:id="_sB6psFzOEeu1RaWnon4lBg" addition="_tkMD0FzFEeu1RaWnon4lBg"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_-f8PwFzEEeu1RaWnon4lBg" name="User"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_Ksvj0FzFEeu1RaWnon4lBg" name="Chat Database"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_TeyBMFzFEeu1RaWnon4lBg" memberEnd="_TeyoQFzFEeu1RaWnon4lBg _TeyoQVzFEeu1RaWnon4lBg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TeyBMVzFEeu1RaWnon4lBg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TeyBMlzFEeu1RaWnon4lBg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_TeyoQFzFEeu1RaWnon4lBg" name="send message" type="_AZbg8FzFEeu1RaWnon4lBg" association="_TeyBMFzFEeu1RaWnon4lBg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_TeyoQVzFEeu1RaWnon4lBg" name="user" type="_-f8PwFzEEeu1RaWnon4lBg" association="_TeyBMFzFEeu1RaWnon4lBg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_7q0AQFzFEeu1RaWnon4lBg" memberEnd="_7q0nUlzFEeu1RaWnon4lBg _7q0nU1zFEeu1RaWnon4lBg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7q0nUFzFEeu1RaWnon4lBg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7q0nUVzFEeu1RaWnon4lBg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_7q0nUlzFEeu1RaWnon4lBg" name="update database" type="_tkMD0FzFEeu1RaWnon4lBg" association="_7q0AQFzFEeu1RaWnon4lBg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_7q0nU1zFEeu1RaWnon4lBg" name="chat database" type="_Ksvj0FzFEeu1RaWnon4lBg" association="_7q0AQFzFEeu1RaWnon4lBg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_ZJbysFzMEeu1RaWnon4lBg" name="Login" node="_d2n6kFzMEeu1RaWnon4lBg _5JiSIFzMEeu1RaWnon4lBg _Ep2ToFzNEeu1RaWnon4lBg _n1lBkFzNEeu1RaWnon4lBg">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ZYYYMFzNEeu1RaWnon4lBg" target="_Ep2ToFzNEeu1RaWnon4lBg" source="_5JiSIFzMEeu1RaWnon4lBg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_aKcuUFzNEeu1RaWnon4lBg" target="_5JiSIFzMEeu1RaWnon4lBg" source="_d2n6kFzMEeu1RaWnon4lBg"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_d2n6kFzMEeu1RaWnon4lBg" outgoing="_aKcuUFzNEeu1RaWnon4lBg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_5JiSIFzMEeu1RaWnon4lBg" name="Input login credentials" incoming="_aKcuUFzNEeu1RaWnon4lBg" outgoing="_ZYYYMFzNEeu1RaWnon4lBg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Ep2ToFzNEeu1RaWnon4lBg" name="Authorise Credentials" incoming="_ZYYYMFzNEeu1RaWnon4lBg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_n1lBkFzNEeu1RaWnon4lBg" name="DecisionNode6"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_wqB88FzREeuxoPJc13bXVw" name="Send Message">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_Fd0fgFzTEeuxoPJc13bXVw"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_LAViUFzSEeuxoPJc13bXVw" name="User"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_Q5aOgFzSEeuxoPJc13bXVw" name="Messaging Application"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_S9Sx0FzSEeuxoPJc13bXVw" name="Database"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_g1pBsFzSEeuxoPJc13bXVw" name="Chatroom"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_nE_XgFzgEeuJpah4Y7gtCw" name="Server"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_dqp-gFz1EeuhbZ2aKT7LXw" name="Messaging Application" node="_nced4Fz1EeuhbZ2aKT7LXw _qLJDkFz1EeuhbZ2aKT7LXw _yzI0IFz1EeuhbZ2aKT7LXw _47VhcFz1EeuhbZ2aKT7LXw _CjknAFz2EeuhbZ2aKT7LXw _MhY7AFz2EeuhbZ2aKT7LXw _XZVU8Fz2EeuhbZ2aKT7LXw _bIg8cFz2EeuhbZ2aKT7LXw _fMUJEFz2EeuhbZ2aKT7LXw _hOv64Fz2EeuhbZ2aKT7LXw _o-6rkFz2EeuhbZ2aKT7LXw _0vWMsFz2EeuhbZ2aKT7LXw">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_r5ElAFz1EeuhbZ2aKT7LXw" target="_qLJDkFz1EeuhbZ2aKT7LXw" source="_nced4Fz1EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yzsNwFz1EeuhbZ2aKT7LXw" target="_yzI0IFz1EeuhbZ2aKT7LXw" source="_qLJDkFz1EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_47n1UFz1EeuhbZ2aKT7LXw" name="User is Offline" target="_47VhcFz1EeuhbZ2aKT7LXw" source="_yzI0IFz1EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Cj6lQFz2EeuhbZ2aKT7LXw" name="User is Online" target="_CjknAFz2EeuhbZ2aKT7LXw" source="_yzI0IFz1EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_MhsdAFz2EeuhbZ2aKT7LXw" target="_MhY7AFz2EeuhbZ2aKT7LXw" source="_CjknAFz2EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_XZu9kFz2EeuhbZ2aKT7LXw" target="_XZVU8Fz2EeuhbZ2aKT7LXw" source="_MhY7AFz2EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_bI2ToFz2EeuhbZ2aKT7LXw" target="_bIg8cFz2EeuhbZ2aKT7LXw" source="_XZVU8Fz2EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_fMrVcFz2EeuhbZ2aKT7LXw" target="_fMUJEFz2EeuhbZ2aKT7LXw" source="_XZVU8Fz2EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_hPJjgFz2EeuhbZ2aKT7LXw" target="_hOv64Fz2EeuhbZ2aKT7LXw" source="_XZVU8Fz2EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_o_cQAFz2EeuhbZ2aKT7LXw" target="_o-6rkFz2EeuhbZ2aKT7LXw" source="_fMUJEFz2EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_tLQwMFz2EeuhbZ2aKT7LXw" target="_o-6rkFz2EeuhbZ2aKT7LXw" source="_bIg8cFz2EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_vT53sFz2EeuhbZ2aKT7LXw" target="_o-6rkFz2EeuhbZ2aKT7LXw" source="_hOv64Fz2EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_20VjQFz2EeuhbZ2aKT7LXw" target="_0vWMsFz2EeuhbZ2aKT7LXw" source="_o-6rkFz2EeuhbZ2aKT7LXw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_AO4yIFz3EeuhbZ2aKT7LXw" name="Loop back to check status until User is Online" target="_yzI0IFz1EeuhbZ2aKT7LXw" source="_47VhcFz1EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_nced4Fz1EeuhbZ2aKT7LXw" outgoing="_r5ElAFz1EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_qLJDkFz1EeuhbZ2aKT7LXw" name="Send a message through the chat" incoming="_r5ElAFz1EeuhbZ2aKT7LXw" outgoing="_yzsNwFz1EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_yzI0IFz1EeuhbZ2aKT7LXw" name="Check user connection" incoming="_yzsNwFz1EeuhbZ2aKT7LXw _AO4yIFz3EeuhbZ2aKT7LXw" outgoing="_47n1UFz1EeuhbZ2aKT7LXw _Cj6lQFz2EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_47VhcFz1EeuhbZ2aKT7LXw" name="Store message in Database" incoming="_47n1UFz1EeuhbZ2aKT7LXw" outgoing="_AO4yIFz3EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_CjknAFz2EeuhbZ2aKT7LXw" name="Retrieve any stored messages" incoming="_Cj6lQFz2EeuhbZ2aKT7LXw" outgoing="_MhsdAFz2EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_MhY7AFz2EeuhbZ2aKT7LXw" name="Create queue of messages to be sent" incoming="_MhsdAFz2EeuhbZ2aKT7LXw" outgoing="_XZu9kFz2EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:ForkNode" xmi:id="_XZVU8Fz2EeuhbZ2aKT7LXw" incoming="_XZu9kFz2EeuhbZ2aKT7LXw" outgoing="_bI2ToFz2EeuhbZ2aKT7LXw _fMrVcFz2EeuhbZ2aKT7LXw _hPJjgFz2EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_bIg8cFz2EeuhbZ2aKT7LXw" name="Notify the receiver" incoming="_bI2ToFz2EeuhbZ2aKT7LXw" outgoing="_tLQwMFz2EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_fMUJEFz2EeuhbZ2aKT7LXw" name="Update the chat log file" incoming="_fMrVcFz2EeuhbZ2aKT7LXw" outgoing="_o_cQAFz2EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_hOv64Fz2EeuhbZ2aKT7LXw" name="Update the chat" incoming="_hPJjgFz2EeuhbZ2aKT7LXw" outgoing="_vT53sFz2EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:JoinNode" xmi:id="_o-6rkFz2EeuhbZ2aKT7LXw" name="" incoming="_o_cQAFz2EeuhbZ2aKT7LXw _tLQwMFz2EeuhbZ2aKT7LXw _vT53sFz2EeuhbZ2aKT7LXw" outgoing="_20VjQFz2EeuhbZ2aKT7LXw"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_0vWMsFz2EeuhbZ2aKT7LXw" incoming="_20VjQFz2EeuhbZ2aKT7LXw"/>
   </packagedElement>
 </uml:Model>
