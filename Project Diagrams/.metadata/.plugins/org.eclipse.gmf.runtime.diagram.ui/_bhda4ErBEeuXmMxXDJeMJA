@@ -1,5 +1,5 @@
-#Sat Jan 23 20:34:05 GMT 2021
-viewport.x=0
+#Sun Jan 24 19:40:17 GMT 2021
+viewport.x=173
 zoom=1.0
 print.margin.right=0.5
 rulergrid.rulerunit=2
@@ -17,4 +17,4 @@ rulergrid.gridlevel=false
 print.margin.top=0.5
 print.useMillim=true
 print.usePortrait=true
-viewport.y=257
+viewport.y=437

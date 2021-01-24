@@ -3,7 +3,7 @@
   <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.browser.editor&quot; name=&quot;UseCaseDiagram.SVG&quot; tooltip=&quot;PPM/PPM/PPM/UseCaseDiagram.SVG&quot;>&#xD;&#xA;&lt;persistable path=&quot;/PPM/PPM/PPM/UseCaseDiagram.SVG&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.papyrus.infra.core.papyrusEditor&quot; name=&quot;PPM.di&quot; tooltip=&quot;PPM/PPM.di&quot;>&#xD;&#xA;&lt;persistable path=&quot;/PPM/PPM.di&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.papyrus.infra.core.papyrusEditor&quot; name=&quot;SDI.di&quot; tooltip=&quot;SDI/SDI.di&quot;>&#xD;&#xA;&lt;persistable path=&quot;/SDI/SDI.di&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_Qgk68Uu_Eeuy17cb8HcHEg" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_Qgk68ku_Eeuy17cb8HcHEg" x="-735" y="228" width="1920" height="1313">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_Qgk68Uu_Eeuy17cb8HcHEg" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_Qgk68ku_Eeuy17cb8HcHEg" x="-7" y="0" width="974" height="1057">
     <persistedState key="coolBarVisible" value="true"/>
     <persistedState key="perspectiveBarVisible" value="true"/>
     <persistedState key="isRestored" value="true"/>
@@ -40,14 +40,14 @@
           <tags>persp.perspSC:org.eclipse.ui.resourcePerspective</tags>
           <tags>persp.perspSC:org.eclipse.jdt.ui.JavaPerspective</tags>
           <children xsi:type="basic:PartSashContainer" xmi:id="_Qgk69Uu_Eeuy17cb8HcHEg" selectedElement="_Qgk6_0u_Eeuy17cb8HcHEg" horizontal="true">
-            <children xsi:type="basic:PartSashContainer" xmi:id="_Qgk69ku_Eeuy17cb8HcHEg" containerData="1000" selectedElement="_Qgk6-Uu_Eeuy17cb8HcHEg">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_Qgk69ku_Eeuy17cb8HcHEg" containerData="2704" selectedElement="_Qgk6-Uu_Eeuy17cb8HcHEg">
               <children xsi:type="basic:PartStack" xmi:id="_Qgk690u_Eeuy17cb8HcHEg" elementId="org.eclipse.ui.navigator.ProjectExplorerMStack" containerData="3300" selectedElement="_Qgk6-Eu_Eeuy17cb8HcHEg">
                 <children xsi:type="advanced:Placeholder" xmi:id="_Qgk6-Eu_Eeuy17cb8HcHEg" elementId="org.eclipse.ui.navigator.ProjectExplorer" ref="_Qgk84ku_Eeuy17cb8HcHEg" closeable="true">
                   <tags>View</tags>
                   <tags>categoryTag:General</tags>
                 </children>
               </children>
-              <children xsi:type="basic:PartSashContainer" xmi:id="_Qgk6-Uu_Eeuy17cb8HcHEg" containerData="6700" selectedElement="_Qgk6_Eu_Eeuy17cb8HcHEg">
+              <children xsi:type="basic:PartSashContainer" xmi:id="_Qgk6-Uu_Eeuy17cb8HcHEg" containerData="6700" selectedElement="_Qgk6-ku_Eeuy17cb8HcHEg">
                 <children xsi:type="basic:PartStack" xmi:id="_Qgk6-ku_Eeuy17cb8HcHEg" elementId="org.eclipse.papyrus.views.modelexplorer.modelexplorerMStack" containerData="5000" selectedElement="_Qgk6-0u_Eeuy17cb8HcHEg">
                   <children xsi:type="advanced:Placeholder" xmi:id="_Qgk6-0u_Eeuy17cb8HcHEg" elementId="org.eclipse.papyrus.views.modelexplorer.modelexplorer" ref="_Qgk8_ku_Eeuy17cb8HcHEg" closeable="true">
                     <tags>View</tags>
@@ -66,7 +66,7 @@
                 </children>
               </children>
             </children>
-            <children xsi:type="basic:PartSashContainer" xmi:id="_Qgk6_0u_Eeuy17cb8HcHEg" containerData="9000" selectedElement="_Qgk7AEu_Eeuy17cb8HcHEg">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_Qgk6_0u_Eeuy17cb8HcHEg" containerData="7296" selectedElement="_Qgk7AEu_Eeuy17cb8HcHEg">
               <children xsi:type="advanced:Placeholder" xmi:id="_Qgk7AEu_Eeuy17cb8HcHEg" elementId="org.eclipse.ui.editorss" containerData="7000" ref="_Qgk82ku_Eeuy17cb8HcHEg"/>
               <children xsi:type="basic:PartStack" xmi:id="_Qgk7AUu_Eeuy17cb8HcHEg" elementId="org.eclipse.papyrus.perspective.folder.bottom" containerData="3000" selectedElement="_Qgk7Aku_Eeuy17cb8HcHEg">
                 <children xsi:type="advanced:Placeholder" xmi:id="_Qgk7Aku_Eeuy17cb8HcHEg" elementId="org.eclipse.ui.views.PropertySheet" ref="_Qgk9GUu_Eeuy17cb8HcHEg" closeable="true">
@@ -219,8 +219,14 @@
     <sharedElements xsi:type="basic:Part" xmi:id="_Qgk9K0u_Eeuy17cb8HcHEg" elementId="org.eclipse.papyrus.views.documentation.DocumentationView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Documentation" iconURI="platform:/plugin/org.eclipse.papyrus.views.documentation/icons/documentation.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.papyrus.views.documentation.views.DocumentationView"/>
       <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.papyrus.views.documentation"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
       <tags>View</tags>
       <tags>categoryTag:Papyrus</tags>
+      <menus xmi:id="_Vol4UF5wEeuoDf1G-rjmnQ" elementId="org.eclipse.papyrus.views.documentation.DocumentationView">
+        <tags>ViewMenu</tags>
+        <tags>menuContribution:menu</tags>
+      </menus>
+      <toolbar xmi:id="_Vol4UV5wEeuoDf1G-rjmnQ" elementId="org.eclipse.papyrus.views.documentation.DocumentationView" visible="false"/>
     </sharedElements>
     <trimBars xmi:id="_Qgk9LEu_Eeuy17cb8HcHEg" elementId="org.eclipse.ui.main.toolbar" contributorURI="platform:/plugin/org.eclipse.ui.workbench">
       <children xsi:type="menu:ToolBar" xmi:id="_Qgk9LUu_Eeuy17cb8HcHEg" elementId="group.file" toBeRendered="false">
@@ -229,7 +235,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Qgk9L0u_Eeuy17cb8HcHEg" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_2aBScF19EeuaGLTSMcVHzg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_Qgm2Bku_Eeuy17cb8HcHEg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_kRUZEF5sEeuoDf1G-rjmnQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_Qgm2Bku_Eeuy17cb8HcHEg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Qgk9PEu_Eeuy17cb8HcHEg" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -254,7 +260,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Qgk9lEu_Eeuy17cb8HcHEg" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_2aCgkl19EeuaGLTSMcVHzg" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_Qgm1jUu_Eeuy17cb8HcHEg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_kRVnMl5sEeuoDf1G-rjmnQ" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_Qgm1jUu_Eeuy17cb8HcHEg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Qgk9s0u_Eeuy17cb8HcHEg" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>

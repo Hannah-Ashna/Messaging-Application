@@ -22,7 +22,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_og2rYFEVEeuE1ZThcLnWlQ" name="UserID" isStatic="true">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_edgFMFEXEeuE1ZThcLnWlQ" name="Name" visibility="protected">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_edgFMFEXEeuE1ZThcLnWlQ" name="Name" visibility="public">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_tFzbAFHKEeuyzNSi8MGzrQ" name="Status">
@@ -61,13 +61,9 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_sqPQsFEXEeuE1ZThcLnWlQ" name="ChatRoomTitle">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_y4rOkF5tEeuoDf1G-rjmnQ" name="Description">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-    </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_UB9lUFEVEeuE1ZThcLnWlQ" name="Media">
     <generalization xmi:type="uml:Generalization" xmi:id="_gwNP8FHNEeuyzNSi8MGzrQ" general="_nBp-8FEUEeuE1ZThcLnWlQ"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_fuRc8F5yEeuoDf1G-rjmnQ" name="MediaId"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_-wEDEFEWEeuE1ZThcLnWlQ" name="Download"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_BpfHQFEXEeuE1ZThcLnWlQ" name="Image">
@@ -87,7 +83,6 @@
   <packagedElement xmi:type="uml:Class" xmi:id="_OWuCEFHLEeuyzNSi8MGzrQ" name="Admin">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_we7WIFHOEeuyzNSi8MGzrQ" name="AddModerator" visibility="private"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_BNSw4FHPEeuyzNSi8MGzrQ" name="RemoveModerator" visibility="private"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_wyUMwF5yEeuoDf1G-rjmnQ" name="ChangeAdmin" visibility="private"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_8_ha0FHMEeuyzNSi8MGzrQ" memberEnd="_8_j3EFHMEeuyzNSi8MGzrQ _8_keIFHMEeuyzNSi8MGzrQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8_jQAFHMEeuyzNSi8MGzrQ" source="org.eclipse.papyrus">
@@ -296,10 +291,4 @@
     <node xmi:type="uml:JoinNode" xmi:id="_o-6rkFz2EeuhbZ2aKT7LXw" name="" incoming="_o_cQAFz2EeuhbZ2aKT7LXw _tLQwMFz2EeuhbZ2aKT7LXw _vT53sFz2EeuhbZ2aKT7LXw" outgoing="_20VjQFz2EeuhbZ2aKT7LXw"/>
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_0vWMsFz2EeuhbZ2aKT7LXw" incoming="_20VjQFz2EeuhbZ2aKT7LXw"/>
   </packagedElement>
-  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0GpdkF5tEeuoDf1G-rjmnQ">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0Gr50F5tEeuoDf1G-rjmnQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-      <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
-    </eAnnotations>
-    <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
-  </profileApplication>
 </uml:Model>
