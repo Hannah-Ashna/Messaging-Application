@@ -1,10 +1,8 @@
 # Explanations & Screenshots of the Diagrams:
 ### Login Use-Case:
-This diagram looks into the process of a user attempting to login into their account on the application. There are two primary use cases here which consider whether a user is a new or returning user.  
-If the user is new, they will first be required to create an account and have their credentials stored in a specific database. If the user is an existing user (hence, a child of a new user), they can use their credentials to log in.
-Their credentials are then authenticated against the data stored within the credentials database:
-- If the password is valid, they access their user space
-- If the password is invalid, they have the option to reset their password
+This diagram looks into the process of a user attempting to login into their account on the application. 
+Assuming that the user is an existing user, they can use their credentials to log in.
+Their credentials are then authenticated against the data stored within the credentials database.
 
 <p align = "center"><img src = "https://github.com/Hannah-Ashna/SDI-Project/blob/main/Project%20Diagrams/Diagrams/UseCase%20-%20Login.PNG"></p> 
 
@@ -23,6 +21,13 @@ When a user attempts to send a message, the system will first need to validate t
 <p align = "center"><img src = "https://github.com/Hannah-Ashna/SDI-Project/blob/main/Project%20Diagrams/Diagrams/UseCase%20-%20SendMessage.PNG"></p> 
 
 -------------------------------
+
+### Login Activity Diagram:
+The diagram first begins with the user attempting to login into the application by inputting their username and password. These credentials are then authenticated against the existing credentials within the database.
+- If the password is valid, they access their user space
+- If the password is invalid, they are notified of their credentials being inccorect and are asked to try again.
+
+<p align = "center"><img src = "https://github.com/Hannah-Ashna/SDI-Project/blob/main/Project%20Diagrams/Diagrams/Activity%20-%20Login.PNG"></p> 
 
 ### Send Message Activity Diagram:
 This diagram looks at the flow of activities involved in sending a message. The activity first begins when the user sends a message through the application. Their status is then checked to ensure they are connected to the server. In the case that they are offline, their message is temporarily stored on the database. The process then loops back to the check to see whether they are online yet.  
