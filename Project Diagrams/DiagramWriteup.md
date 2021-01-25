@@ -25,7 +25,7 @@ When a user attempts to send a message, the system will first need to validate t
 ### Login Activity Diagram:
 The diagram first begins with the user attempting to login into the application by inputting their username and password. These credentials are then authenticated against the existing credentials within the database.
 - If the password is valid, they access their user space
-- If the password is invalid, they are notified of their credentials being inccorect and are asked to try again.
+- If the password is invalid, they are notified of their credentials being incorrect and are asked to try again.
 
 <p align = "center"><img src = "https://github.com/Hannah-Ashna/SDI-Project/blob/main/Project%20Diagrams/Diagrams/Activity%20-%20Login.PNG"></p> 
 
