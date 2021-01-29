@@ -377,7 +377,7 @@
     <ownedEnd xmi:type="uml:Property" xmi:id="_MxdcEmJAEeuaXbx1SB4VAQ" name="moderator" type="_Dbbg0GJAEeuaXbx1SB4VAQ" association="_Mxc1AGJAEeuaXbx1SB4VAQ"/>
     <ownedEnd xmi:type="uml:Property" xmi:id="_MxdcE2JAEeuaXbx1SB4VAQ" name="make moderator" type="_JQw8gGJAEeuaXbx1SB4VAQ" association="_Mxc1AGJAEeuaXbx1SB4VAQ"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Activity" xmi:id="_dCR_MGJAEeuaXbx1SB4VAQ" name="Activity68" node="_kccDoGJAEeuaXbx1SB4VAQ _0mxkQGJAEeuaXbx1SB4VAQ _AOq_AGJCEeuaXbx1SB4VAQ _I5a2sGJEEeuaXbx1SB4VAQ _M4mCAGJEEeuaXbx1SB4VAQ _dDeVMGJEEeuaXbx1SB4VAQ _mgozMGJEEeuaXbx1SB4VAQ _dYbcEGJFEeuaXbx1SB4VAQ _01r7QGJGEeuaXbx1SB4VAQ _rcjhUGJJEeuaXbx1SB4VAQ _vzV7YGJJEeuaXbx1SB4VAQ">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_dCR_MGJAEeuaXbx1SB4VAQ" name="Messaging Application" node="_kccDoGJAEeuaXbx1SB4VAQ _0mxkQGJAEeuaXbx1SB4VAQ _AOq_AGJCEeuaXbx1SB4VAQ _I5a2sGJEEeuaXbx1SB4VAQ _M4mCAGJEEeuaXbx1SB4VAQ _dDeVMGJEEeuaXbx1SB4VAQ _mgozMGJEEeuaXbx1SB4VAQ _dYbcEGJFEeuaXbx1SB4VAQ _01r7QGJGEeuaXbx1SB4VAQ _rcjhUGJJEeuaXbx1SB4VAQ _vzV7YGJJEeuaXbx1SB4VAQ">
     <edge xmi:type="uml:ControlFlow" xmi:id="_0m5gEGJAEeuaXbx1SB4VAQ" target="_0mxkQGJAEeuaXbx1SB4VAQ" source="_kccDoGJAEeuaXbx1SB4VAQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_AO0wAGJCEeuaXbx1SB4VAQ" target="_AOq_AGJCEeuaXbx1SB4VAQ" source="_0mxkQGJAEeuaXbx1SB4VAQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_M40EcGJEEeuaXbx1SB4VAQ" name="Yes" target="_M4mCAGJEEeuaXbx1SB4VAQ" source="_I5a2sGJEEeuaXbx1SB4VAQ"/>
