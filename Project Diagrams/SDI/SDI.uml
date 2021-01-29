@@ -130,7 +130,7 @@
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Actor" xmi:id="_PcdfcFy-Eeu1RaWnon4lBg" name="Existing User"/>
-  <packagedElement xmi:type="uml:Actor" xmi:id="_3DxLYFy_Eeu1RaWnon4lBg" name="User Credentials Database"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_3DxLYFy_Eeu1RaWnon4lBg" name="Database"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_7hes0Fy_Eeu1RaWnon4lBg"/>
   <packagedElement xmi:type="uml:Package" xmi:id="_ZRZAYFzCEeu1RaWnon4lBg" name="Logout">
     <packagedElement xmi:type="uml:UseCase" xmi:id="_gC_3EFzCEeu1RaWnon4lBg" name="Logout"/>
@@ -178,9 +178,13 @@
     <packagedElement xmi:type="uml:UseCase" xmi:id="_gtRssFzOEeu1RaWnon4lBg" name="Update logs">
       <include xmi:type="uml:Include" xmi:id="_sB6psFzOEeu1RaWnon4lBg" addition="_tkMD0FzFEeu1RaWnon4lBg"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_JPMG0GJOEeuiIK5PXVaZbA" name="Receive message">
+      <include xmi:type="uml:Include" xmi:id="_NagQsGJOEeuiIK5PXVaZbA" addition="_Hw6E0FzFEeu1RaWnon4lBg"/>
+      <include xmi:type="uml:Include" xmi:id="_OWfX0GJOEeuiIK5PXVaZbA" addition="_I-NlcFzFEeu1RaWnon4lBg"/>
+    </packagedElement>
   </packagedElement>
-  <packagedElement xmi:type="uml:Actor" xmi:id="_-f8PwFzEEeu1RaWnon4lBg" name="User"/>
-  <packagedElement xmi:type="uml:Actor" xmi:id="_Ksvj0FzFEeu1RaWnon4lBg" name="Chat Database"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_-f8PwFzEEeu1RaWnon4lBg" name="Source User"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_Ksvj0FzFEeu1RaWnon4lBg" name="Database"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_TeyBMFzFEeu1RaWnon4lBg" memberEnd="_TeyoQFzFEeu1RaWnon4lBg _TeyoQVzFEeu1RaWnon4lBg">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TeyBMVzFEeu1RaWnon4lBg" source="org.eclipse.papyrus">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TeyBMlzFEeu1RaWnon4lBg" key="nature" value="UML_Nature"/>
@@ -396,6 +400,14 @@
     <node xmi:type="uml:OpaqueAction" xmi:id="_01r7QGJGEeuaXbx1SB4VAQ" name="Add Channel to Room" incoming="_02ArYGJGEeuaXbx1SB4VAQ" outgoing="_ltaNMGJJEeuaXbx1SB4VAQ"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_rcjhUGJJEeuaXbx1SB4VAQ" name="Update Database" incoming="_rc11MGJJEeuaXbx1SB4VAQ" outgoing="_vzsgsGJJEeuaXbx1SB4VAQ"/>
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_vzV7YGJJEeuaXbx1SB4VAQ" incoming="_vzsgsGJJEeuaXbx1SB4VAQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_hn2wQGJNEeuiIK5PXVaZbA" name="Target User"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Tx_XMGJOEeuiIK5PXVaZbA" memberEnd="_Tx_XM2JOEeuiIK5PXVaZbA _Tx_XNGJOEeuiIK5PXVaZbA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Tx_XMWJOEeuiIK5PXVaZbA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Tx_XMmJOEeuiIK5PXVaZbA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Tx_XM2JOEeuiIK5PXVaZbA" name="receive message" type="_JPMG0GJOEeuiIK5PXVaZbA" association="_Tx_XMGJOEeuiIK5PXVaZbA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Tx_XNGJOEeuiIK5PXVaZbA" name="target user" type="_hn2wQGJNEeuiIK5PXVaZbA" association="_Tx_XMGJOEeuiIK5PXVaZbA"/>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0GpdkF5tEeuoDf1G-rjmnQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0Gr50F5tEeuoDf1G-rjmnQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
