@@ -379,23 +379,23 @@
     <edge xmi:type="uml:ControlFlow" xmi:id="_mg5R4GJEEeuaXbx1SB4VAQ" name="Yes" target="_mgozMGJEEeuaXbx1SB4VAQ" source="_dDeVMGJEEeuaXbx1SB4VAQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_dYvlIGJFEeuaXbx1SB4VAQ" name="No" target="_dYbcEGJFEeuaXbx1SB4VAQ" source="_I5a2sGJEEeuaXbx1SB4VAQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_02ArYGJGEeuaXbx1SB4VAQ" name="Yes" target="_01r7QGJGEeuaXbx1SB4VAQ" source="_dYbcEGJFEeuaXbx1SB4VAQ"/>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_ZsnKQGJIEeuaXbx1SB4VAQ" target="_I5a2sGJEEeuaXbx1SB4VAQ" source="_mgozMGJEEeuaXbx1SB4VAQ"/>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_gqW_gGJIEeuaXbx1SB4VAQ" name="No" target="_I5a2sGJEEeuaXbx1SB4VAQ" source="_dDeVMGJEEeuaXbx1SB4VAQ"/>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_O_ZkMGJJEeuaXbx1SB4VAQ" target="_I5a2sGJEEeuaXbx1SB4VAQ" source="_AOq_AGJCEeuaXbx1SB4VAQ"/>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_ltaNMGJJEeuaXbx1SB4VAQ" target="_dYbcEGJFEeuaXbx1SB4VAQ" source="_01r7QGJGEeuaXbx1SB4VAQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ZsnKQGJIEeuaXbx1SB4VAQ" name="Add another user?" target="_I5a2sGJEEeuaXbx1SB4VAQ" source="_mgozMGJEEeuaXbx1SB4VAQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ltaNMGJJEeuaXbx1SB4VAQ" name="Add another channel?" target="_dYbcEGJFEeuaXbx1SB4VAQ" source="_01r7QGJGEeuaXbx1SB4VAQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_rc11MGJJEeuaXbx1SB4VAQ" name="No" target="_rcjhUGJJEeuaXbx1SB4VAQ" source="_dYbcEGJFEeuaXbx1SB4VAQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_vzsgsGJJEeuaXbx1SB4VAQ" target="_vzV7YGJJEeuaXbx1SB4VAQ" source="_rcjhUGJJEeuaXbx1SB4VAQ"/>
-    <node xmi:type="uml:InitialNode" xmi:id="_kccDoGJAEeuaXbx1SB4VAQ" name="InitialNode1" outgoing="_0m5gEGJAEeuaXbx1SB4VAQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_jOTbkGJLEeuiIK5PXVaZbA" target="_I5a2sGJEEeuaXbx1SB4VAQ" source="_AOq_AGJCEeuaXbx1SB4VAQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_L48pQGJMEeuiIK5PXVaZbA" name="No" target="_I5a2sGJEEeuaXbx1SB4VAQ" source="_dDeVMGJEEeuaXbx1SB4VAQ"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_kccDoGJAEeuaXbx1SB4VAQ" outgoing="_0m5gEGJAEeuaXbx1SB4VAQ"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_0mxkQGJAEeuaXbx1SB4VAQ" name="User makes new room" incoming="_0m5gEGJAEeuaXbx1SB4VAQ" outgoing="_AO0wAGJCEeuaXbx1SB4VAQ"/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_AOq_AGJCEeuaXbx1SB4VAQ" name="Make User Admin of Room" incoming="_AO0wAGJCEeuaXbx1SB4VAQ" outgoing="_O_ZkMGJJEeuaXbx1SB4VAQ"/>
-    <node xmi:type="uml:DecisionNode" xmi:id="_I5a2sGJEEeuaXbx1SB4VAQ" name="Add user to room?" incoming="_ZsnKQGJIEeuaXbx1SB4VAQ _gqW_gGJIEeuaXbx1SB4VAQ _O_ZkMGJJEeuaXbx1SB4VAQ" outgoing="_M40EcGJEEeuaXbx1SB4VAQ _dYvlIGJFEeuaXbx1SB4VAQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_AOq_AGJCEeuaXbx1SB4VAQ" name="Make User Admin of Room" incoming="_AO0wAGJCEeuaXbx1SB4VAQ" outgoing="_jOTbkGJLEeuiIK5PXVaZbA"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_I5a2sGJEEeuaXbx1SB4VAQ" name="Add user to room?" incoming="_jOTbkGJLEeuiIK5PXVaZbA _ZsnKQGJIEeuaXbx1SB4VAQ _L48pQGJMEeuiIK5PXVaZbA" outgoing="_M40EcGJEEeuaXbx1SB4VAQ _dYvlIGJFEeuaXbx1SB4VAQ"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_M4mCAGJEEeuaXbx1SB4VAQ" name="User added to room" incoming="_M40EcGJEEeuaXbx1SB4VAQ" outgoing="_dDuM0GJEEeuaXbx1SB4VAQ"/>
-    <node xmi:type="uml:DecisionNode" xmi:id="_dDeVMGJEEeuaXbx1SB4VAQ" name="Make user moderator?" incoming="_dDuM0GJEEeuaXbx1SB4VAQ" outgoing="_mg5R4GJEEeuaXbx1SB4VAQ _gqW_gGJIEeuaXbx1SB4VAQ"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_dDeVMGJEEeuaXbx1SB4VAQ" name="Make user moderator?" incoming="_dDuM0GJEEeuaXbx1SB4VAQ" outgoing="_mg5R4GJEEeuaXbx1SB4VAQ _L48pQGJMEeuiIK5PXVaZbA"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_mgozMGJEEeuaXbx1SB4VAQ" name="User made into moderator" incoming="_mg5R4GJEEeuaXbx1SB4VAQ" outgoing="_ZsnKQGJIEeuaXbx1SB4VAQ"/>
     <node xmi:type="uml:DecisionNode" xmi:id="_dYbcEGJFEeuaXbx1SB4VAQ" name="Add Channel?" incoming="_dYvlIGJFEeuaXbx1SB4VAQ _ltaNMGJJEeuaXbx1SB4VAQ" outgoing="_02ArYGJGEeuaXbx1SB4VAQ _rc11MGJJEeuaXbx1SB4VAQ"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_01r7QGJGEeuaXbx1SB4VAQ" name="Add Channel to Room" incoming="_02ArYGJGEeuaXbx1SB4VAQ" outgoing="_ltaNMGJJEeuaXbx1SB4VAQ"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_rcjhUGJJEeuaXbx1SB4VAQ" name="Update Database" incoming="_rc11MGJJEeuaXbx1SB4VAQ" outgoing="_vzsgsGJJEeuaXbx1SB4VAQ"/>
-    <node xmi:type="uml:ActivityFinalNode" xmi:id="_vzV7YGJJEeuaXbx1SB4VAQ" name="ActivityFinalNode23" incoming="_vzsgsGJJEeuaXbx1SB4VAQ"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_vzV7YGJJEeuaXbx1SB4VAQ" incoming="_vzsgsGJJEeuaXbx1SB4VAQ"/>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0GpdkF5tEeuoDf1G-rjmnQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0Gr50F5tEeuoDf1G-rjmnQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
