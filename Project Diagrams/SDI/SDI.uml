@@ -28,6 +28,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_tFzbAFHKEeuyzNSi8MGzrQ" name="Status">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_1uXYEGI4EeuaXbx1SB4VAQ" name="aUser" type="_XQ8H8FEDEeu_FLOHG8xOiA"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_fN5x8FEYEeuE1ZThcLnWlQ" name="ChangeName"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_qPafUF2UEeuaGLTSMcVHzg" name="SubscribeToRoom"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_tU30YF2UEeuaGLTSMcVHzg" name="UnSubscribeToRoom"/>
@@ -55,6 +56,7 @@
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_Rmkh4FHOEeuyzNSi8MGzrQ" name="User" visibility="protected" type="_XQ8H8FEDEeu_FLOHG8xOiA"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_6wGzoGI4EeuaXbx1SB4VAQ" name="aMessage" type="_nBp-8FEUEeuE1ZThcLnWlQ"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="__pJKsFEXEeuE1ZThcLnWlQ" name="GetMessage"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_pllUQFEUEeuE1ZThcLnWlQ" name="Channel" visibility="protected">
@@ -64,6 +66,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_y4rOkF5tEeuoDf1G-rjmnQ" name="Description">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_6fg9cGI5EeuaXbx1SB4VAQ" name="aChannel" type="_pllUQFEUEeuE1ZThcLnWlQ"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_UB9lUFEVEeuE1ZThcLnWlQ" name="Media">
     <generalization xmi:type="uml:Generalization" xmi:id="_gwNP8FHNEeuyzNSi8MGzrQ" general="_nBp-8FEUEeuE1ZThcLnWlQ"/>
@@ -201,12 +204,21 @@
     <node xmi:type="uml:DecisionNode" xmi:id="_n1lBkFzNEeu1RaWnon4lBg" name="DecisionNode6"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Interaction" xmi:id="_wqB88FzREeuxoPJc13bXVw" name="Send Message">
-    <ownedComment xmi:type="uml:Comment" xmi:id="_Fd0fgFzTEeuxoPJc13bXVw"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_LAViUFzSEeuxoPJc13bXVw" name="User"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_Q5aOgFzSEeuxoPJc13bXVw" name="Messaging Application"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_S9Sx0FzSEeuxoPJc13bXVw" name="Database"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_g1pBsFzSEeuxoPJc13bXVw" name="Chatroom"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_nE_XgFzgEeuJpah4Y7gtCw" name="Server"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ul9VgGI5EeuaXbx1SB4VAQ" name="" type="_BpfHQFEXEeuE1ZThcLnWlQ"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_3xzPcGI4EeuaXbx1SB4VAQ" name="Lifeline3" represents="_6wGzoGI4EeuaXbx1SB4VAQ" coveredBy="_QJnAcGI8EeuaXbx1SB4VAQ _jAF-QWI8EeuaXbx1SB4VAQ _dF4poGI8EeuaXbx1SB4VAQ _N49McWI8EeuaXbx1SB4VAQ _N48lYGI8EeuaXbx1SB4VAQ"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_YGmhoGI7EeuaXbx1SB4VAQ" name="Lifeline5" represents="_rRmdhFzCEeu1RaWnon4lBg" coveredBy="_jAF-QGI8EeuaXbx1SB4VAQ _BKhyAGI8EeuaXbx1SB4VAQ _BKhK8GI8EeuaXbx1SB4VAQ _dF4poWI8EeuaXbx1SB4VAQ _BKhyAWI8EeuaXbx1SB4VAQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_QJnAcGI8EeuaXbx1SB4VAQ" name="Message14SendEvent" covered="_3xzPcGI4EeuaXbx1SB4VAQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_N48lYGI8EeuaXbx1SB4VAQ" name="BehaviorExecutionSpecification11" covered="_3xzPcGI4EeuaXbx1SB4VAQ" finish="_N49McWI8EeuaXbx1SB4VAQ" start="_QJnAcGI8EeuaXbx1SB4VAQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jAF-QGI8EeuaXbx1SB4VAQ" name="Message17SendEvent" covered="_YGmhoGI7EeuaXbx1SB4VAQ" message="_jAFXMGI8EeuaXbx1SB4VAQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jAF-QWI8EeuaXbx1SB4VAQ" name="Message17ReceiveEvent" covered="_3xzPcGI4EeuaXbx1SB4VAQ" message="_jAFXMGI8EeuaXbx1SB4VAQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_dF4poGI8EeuaXbx1SB4VAQ" name="Message14SendEvent" covered="_3xzPcGI4EeuaXbx1SB4VAQ" message="_dF3bgGI8EeuaXbx1SB4VAQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_BKhyAGI8EeuaXbx1SB4VAQ" name="BehaviorExecutionSpecification11Start" covered="_YGmhoGI7EeuaXbx1SB4VAQ" execution="_BKhK8GI8EeuaXbx1SB4VAQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_dF4poWI8EeuaXbx1SB4VAQ" name="Message14ReceiveEvent" covered="_YGmhoGI7EeuaXbx1SB4VAQ" message="_dF3bgGI8EeuaXbx1SB4VAQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_BKhyAWI8EeuaXbx1SB4VAQ" name="BehaviorExecutionSpecification11Finish" covered="_YGmhoGI7EeuaXbx1SB4VAQ" execution="_BKhK8GI8EeuaXbx1SB4VAQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_N49McWI8EeuaXbx1SB4VAQ" name="BehaviorExecutionSpecification11Finish" covered="_3xzPcGI4EeuaXbx1SB4VAQ" execution="_N48lYGI8EeuaXbx1SB4VAQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_BKhK8GI8EeuaXbx1SB4VAQ" name="BehaviorExecutionSpecification11" covered="_YGmhoGI7EeuaXbx1SB4VAQ" finish="_BKhyAWI8EeuaXbx1SB4VAQ"/>
+    <message xmi:type="uml:Message" xmi:id="_dF3bgGI8EeuaXbx1SB4VAQ" name="Message14" messageSort="asynchCall" receiveEvent="_dF4poWI8EeuaXbx1SB4VAQ" sendEvent="_dF4poGI8EeuaXbx1SB4VAQ" signature="__pJKsFEXEeuE1ZThcLnWlQ"/>
+    <message xmi:type="uml:Message" xmi:id="_jAFXMGI8EeuaXbx1SB4VAQ" name="messageContents" messageSort="reply" receiveEvent="_jAF-QWI8EeuaXbx1SB4VAQ" sendEvent="_jAF-QGI8EeuaXbx1SB4VAQ"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Activity" xmi:id="_dqp-gFz1EeuhbZ2aKT7LXw" name="Messaging Application" node="_nced4Fz1EeuhbZ2aKT7LXw _qLJDkFz1EeuhbZ2aKT7LXw _yzI0IFz1EeuhbZ2aKT7LXw _47VhcFz1EeuhbZ2aKT7LXw _CjknAFz2EeuhbZ2aKT7LXw _MhY7AFz2EeuhbZ2aKT7LXw _XZVU8Fz2EeuhbZ2aKT7LXw _bIg8cFz2EeuhbZ2aKT7LXw _fMUJEFz2EeuhbZ2aKT7LXw _hOv64Fz2EeuhbZ2aKT7LXw _o-6rkFz2EeuhbZ2aKT7LXw _0vWMsFz2EeuhbZ2aKT7LXw">
     <edge xmi:type="uml:ControlFlow" xmi:id="_r5ElAFz1EeuhbZ2aKT7LXw" target="_qLJDkFz1EeuhbZ2aKT7LXw" source="_nced4Fz1EeuhbZ2aKT7LXw"/>
@@ -263,6 +275,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_5N9h4F-7EeudaKQrmQOL2g" name="Description">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_FqKQ8GI6EeuaXbx1SB4VAQ" name="aRoom" type="_4DPp8F-1EeuUJ8v5v-2WTw"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_GhDscF-4EeudaKQrmQOL2g" name="Moderates" memberEnd="_GhETgl-4EeudaKQrmQOL2g _GhETg1-4EeudaKQrmQOL2g">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GhETgF-4EeudaKQrmQOL2g" source="org.eclipse.papyrus">
@@ -303,6 +316,86 @@
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_fETG0l-6EeudaKQrmQOL2g" name="room" type="_4DPp8F-1EeuUJ8v5v-2WTw" association="_fESfwF-6EeudaKQrmQOL2g"/>
     <ownedEnd xmi:type="uml:Property" xmi:id="_fETG01-6EeudaKQrmQOL2g" name="user" type="_XQ8H8FEDEeu_FLOHG8xOiA" association="_fESfwF-6EeudaKQrmQOL2g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_VjDfcGI-EeuaXbx1SB4VAQ" name="Messaging Application">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_EbwK0GI_EeuaXbx1SB4VAQ" name="Make Room">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_22GYAGI_EeuaXbx1SB4VAQ" name="ExtensionPoint2"/>
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_3esCAGI_EeuaXbx1SB4VAQ" name="ExtensionPoint3"/>
+      <include xmi:type="uml:Include" xmi:id="_vnGasGI_EeuaXbx1SB4VAQ" addition="_bj2HwGI_EeuaXbx1SB4VAQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_bj2HwGI_EeuaXbx1SB4VAQ" name="Update Database"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_xOlV4GI_EeuaXbx1SB4VAQ" name="Add User">
+      <extend xmi:type="uml:Extend" xmi:id="_3era8GI_EeuaXbx1SB4VAQ" extendedCase="_EbwK0GI_EeuaXbx1SB4VAQ" extensionLocation="_3esCAGI_EeuaXbx1SB4VAQ"/>
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_MGnvUGJAEeuaXbx1SB4VAQ" name="ExtensionPoint3"/>
+      <include xmi:type="uml:Include" xmi:id="_8hd_YGI_EeuaXbx1SB4VAQ" addition="_bj2HwGI_EeuaXbx1SB4VAQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_zai3IGI_EeuaXbx1SB4VAQ" name="Create Channel">
+      <extend xmi:type="uml:Extend" xmi:id="_22FJ4GI_EeuaXbx1SB4VAQ" extendedCase="_EbwK0GI_EeuaXbx1SB4VAQ" extensionLocation="_22GYAGI_EeuaXbx1SB4VAQ"/>
+      <include xmi:type="uml:Include" xmi:id="_4vaqEGI_EeuaXbx1SB4VAQ" addition="_bj2HwGI_EeuaXbx1SB4VAQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_JQw8gGJAEeuaXbx1SB4VAQ" name="Make Moderator">
+      <extend xmi:type="uml:Extend" xmi:id="_MGnIQGJAEeuaXbx1SB4VAQ" extendedCase="_xOlV4GI_EeuaXbx1SB4VAQ" extensionLocation="_MGnvUGJAEeuaXbx1SB4VAQ"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_ZKpRMGI-EeuaXbx1SB4VAQ" name="Admin">
+    <generalization xmi:type="uml:Generalization" xmi:id="_H1q3gGJAEeuaXbx1SB4VAQ" general="_Dbbg0GJAEeuaXbx1SB4VAQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_dGk7QGI-EeuaXbx1SB4VAQ" name="Database"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_K302YGI_EeuaXbx1SB4VAQ" memberEnd="_K32rkGI_EeuaXbx1SB4VAQ _K32rkWI_EeuaXbx1SB4VAQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_K31dcGI_EeuaXbx1SB4VAQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_K31dcWI_EeuaXbx1SB4VAQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_K32rkGI_EeuaXbx1SB4VAQ" name="make room" type="_EbwK0GI_EeuaXbx1SB4VAQ" association="_K302YGI_EeuaXbx1SB4VAQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_K32rkWI_EeuaXbx1SB4VAQ" name="admin" type="_ZKpRMGI-EeuaXbx1SB4VAQ" association="_K302YGI_EeuaXbx1SB4VAQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_or6KMGI_EeuaXbx1SB4VAQ" memberEnd="_or6xQmI_EeuaXbx1SB4VAQ _or6xQ2I_EeuaXbx1SB4VAQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_or6xQGI_EeuaXbx1SB4VAQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_or6xQWI_EeuaXbx1SB4VAQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_or6xQmI_EeuaXbx1SB4VAQ" name="database" type="_dGk7QGI-EeuaXbx1SB4VAQ" association="_or6KMGI_EeuaXbx1SB4VAQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_or6xQ2I_EeuaXbx1SB4VAQ" name="update database" type="_bj2HwGI_EeuaXbx1SB4VAQ" association="_or6KMGI_EeuaXbx1SB4VAQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_-EjiwGI_EeuaXbx1SB4VAQ" name="User"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_BRCs4GJAEeuaXbx1SB4VAQ" memberEnd="_BRDT8mJAEeuaXbx1SB4VAQ _BRDT82JAEeuaXbx1SB4VAQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BRDT8GJAEeuaXbx1SB4VAQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BRDT8WJAEeuaXbx1SB4VAQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_BRDT8mJAEeuaXbx1SB4VAQ" name="user" type="_-EjiwGI_EeuaXbx1SB4VAQ" association="_BRCs4GJAEeuaXbx1SB4VAQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_BRDT82JAEeuaXbx1SB4VAQ" name="add user" type="_xOlV4GI_EeuaXbx1SB4VAQ" association="_BRCs4GJAEeuaXbx1SB4VAQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_Dbbg0GJAEeuaXbx1SB4VAQ" name="Moderator"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Mxc1AGJAEeuaXbx1SB4VAQ" memberEnd="_MxdcEmJAEeuaXbx1SB4VAQ _MxdcE2JAEeuaXbx1SB4VAQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MxdcEGJAEeuaXbx1SB4VAQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_MxdcEWJAEeuaXbx1SB4VAQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_MxdcEmJAEeuaXbx1SB4VAQ" name="moderator" type="_Dbbg0GJAEeuaXbx1SB4VAQ" association="_Mxc1AGJAEeuaXbx1SB4VAQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_MxdcE2JAEeuaXbx1SB4VAQ" name="make moderator" type="_JQw8gGJAEeuaXbx1SB4VAQ" association="_Mxc1AGJAEeuaXbx1SB4VAQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_dCR_MGJAEeuaXbx1SB4VAQ" name="Activity68" node="_kccDoGJAEeuaXbx1SB4VAQ _0mxkQGJAEeuaXbx1SB4VAQ _AOq_AGJCEeuaXbx1SB4VAQ _I5a2sGJEEeuaXbx1SB4VAQ _M4mCAGJEEeuaXbx1SB4VAQ _dDeVMGJEEeuaXbx1SB4VAQ _mgozMGJEEeuaXbx1SB4VAQ _dYbcEGJFEeuaXbx1SB4VAQ _01r7QGJGEeuaXbx1SB4VAQ _rcjhUGJJEeuaXbx1SB4VAQ _vzV7YGJJEeuaXbx1SB4VAQ">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_0m5gEGJAEeuaXbx1SB4VAQ" target="_0mxkQGJAEeuaXbx1SB4VAQ" source="_kccDoGJAEeuaXbx1SB4VAQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_AO0wAGJCEeuaXbx1SB4VAQ" target="_AOq_AGJCEeuaXbx1SB4VAQ" source="_0mxkQGJAEeuaXbx1SB4VAQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_M40EcGJEEeuaXbx1SB4VAQ" name="Yes" target="_M4mCAGJEEeuaXbx1SB4VAQ" source="_I5a2sGJEEeuaXbx1SB4VAQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_dDuM0GJEEeuaXbx1SB4VAQ" target="_dDeVMGJEEeuaXbx1SB4VAQ" source="_M4mCAGJEEeuaXbx1SB4VAQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_mg5R4GJEEeuaXbx1SB4VAQ" name="Yes" target="_mgozMGJEEeuaXbx1SB4VAQ" source="_dDeVMGJEEeuaXbx1SB4VAQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_dYvlIGJFEeuaXbx1SB4VAQ" name="No" target="_dYbcEGJFEeuaXbx1SB4VAQ" source="_I5a2sGJEEeuaXbx1SB4VAQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_02ArYGJGEeuaXbx1SB4VAQ" name="Yes" target="_01r7QGJGEeuaXbx1SB4VAQ" source="_dYbcEGJFEeuaXbx1SB4VAQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ZsnKQGJIEeuaXbx1SB4VAQ" target="_I5a2sGJEEeuaXbx1SB4VAQ" source="_mgozMGJEEeuaXbx1SB4VAQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_gqW_gGJIEeuaXbx1SB4VAQ" name="No" target="_I5a2sGJEEeuaXbx1SB4VAQ" source="_dDeVMGJEEeuaXbx1SB4VAQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_O_ZkMGJJEeuaXbx1SB4VAQ" target="_I5a2sGJEEeuaXbx1SB4VAQ" source="_AOq_AGJCEeuaXbx1SB4VAQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ltaNMGJJEeuaXbx1SB4VAQ" target="_dYbcEGJFEeuaXbx1SB4VAQ" source="_01r7QGJGEeuaXbx1SB4VAQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_rc11MGJJEeuaXbx1SB4VAQ" name="No" target="_rcjhUGJJEeuaXbx1SB4VAQ" source="_dYbcEGJFEeuaXbx1SB4VAQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_vzsgsGJJEeuaXbx1SB4VAQ" target="_vzV7YGJJEeuaXbx1SB4VAQ" source="_rcjhUGJJEeuaXbx1SB4VAQ"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_kccDoGJAEeuaXbx1SB4VAQ" name="InitialNode1" outgoing="_0m5gEGJAEeuaXbx1SB4VAQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_0mxkQGJAEeuaXbx1SB4VAQ" name="User makes new room" incoming="_0m5gEGJAEeuaXbx1SB4VAQ" outgoing="_AO0wAGJCEeuaXbx1SB4VAQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_AOq_AGJCEeuaXbx1SB4VAQ" name="Make User Admin of Room" incoming="_AO0wAGJCEeuaXbx1SB4VAQ" outgoing="_O_ZkMGJJEeuaXbx1SB4VAQ"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_I5a2sGJEEeuaXbx1SB4VAQ" name="Add user to room?" incoming="_ZsnKQGJIEeuaXbx1SB4VAQ _gqW_gGJIEeuaXbx1SB4VAQ _O_ZkMGJJEeuaXbx1SB4VAQ" outgoing="_M40EcGJEEeuaXbx1SB4VAQ _dYvlIGJFEeuaXbx1SB4VAQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_M4mCAGJEEeuaXbx1SB4VAQ" name="User added to room" incoming="_M40EcGJEEeuaXbx1SB4VAQ" outgoing="_dDuM0GJEEeuaXbx1SB4VAQ"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_dDeVMGJEEeuaXbx1SB4VAQ" name="Make user moderator?" incoming="_dDuM0GJEEeuaXbx1SB4VAQ" outgoing="_mg5R4GJEEeuaXbx1SB4VAQ _gqW_gGJIEeuaXbx1SB4VAQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_mgozMGJEEeuaXbx1SB4VAQ" name="User made into moderator" incoming="_mg5R4GJEEeuaXbx1SB4VAQ" outgoing="_ZsnKQGJIEeuaXbx1SB4VAQ"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_dYbcEGJFEeuaXbx1SB4VAQ" name="Add Channel?" incoming="_dYvlIGJFEeuaXbx1SB4VAQ _ltaNMGJJEeuaXbx1SB4VAQ" outgoing="_02ArYGJGEeuaXbx1SB4VAQ _rc11MGJJEeuaXbx1SB4VAQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_01r7QGJGEeuaXbx1SB4VAQ" name="Add Channel to Room" incoming="_02ArYGJGEeuaXbx1SB4VAQ" outgoing="_ltaNMGJJEeuaXbx1SB4VAQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_rcjhUGJJEeuaXbx1SB4VAQ" name="Update Database" incoming="_rc11MGJJEeuaXbx1SB4VAQ" outgoing="_vzsgsGJJEeuaXbx1SB4VAQ"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_vzV7YGJJEeuaXbx1SB4VAQ" name="ActivityFinalNode23" incoming="_vzsgsGJJEeuaXbx1SB4VAQ"/>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0GpdkF5tEeuoDf1G-rjmnQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0Gr50F5tEeuoDf1G-rjmnQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
