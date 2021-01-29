@@ -252,19 +252,21 @@
     <node xmi:type="uml:JoinNode" xmi:id="_o-6rkFz2EeuhbZ2aKT7LXw" name="" incoming="_o_cQAFz2EeuhbZ2aKT7LXw _tLQwMFz2EeuhbZ2aKT7LXw _vT53sFz2EeuhbZ2aKT7LXw" outgoing="_20VjQFz2EeuhbZ2aKT7LXw"/>
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_0vWMsFz2EeuhbZ2aKT7LXw" incoming="_20VjQFz2EeuhbZ2aKT7LXw"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Activity" xmi:id="_BByOkF5_Eeu8qc6zsVCMZQ" name="Messaging Application" node="_GhJaQF5_Eeu8qc6zsVCMZQ _IbxT4F5_Eeu8qc6zsVCMZQ _QvQ0EF5_Eeu8qc6zsVCMZQ _YUYyYF5_Eeu8qc6zsVCMZQ _euoR8F5_Eeu8qc6zsVCMZQ _xVb1AF5_Eeu8qc6zsVCMZQ">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_BByOkF5_Eeu8qc6zsVCMZQ" name="Messaging Application" node="_GhJaQF5_Eeu8qc6zsVCMZQ _IbxT4F5_Eeu8qc6zsVCMZQ _QvQ0EF5_Eeu8qc6zsVCMZQ _YUYyYF5_Eeu8qc6zsVCMZQ _euoR8F5_Eeu8qc6zsVCMZQ _xVb1AF5_Eeu8qc6zsVCMZQ _jk_wYGJjEeuEGfQYq4qkAg">
     <edge xmi:type="uml:ControlFlow" xmi:id="_IcBykF5_Eeu8qc6zsVCMZQ" target="_IbxT4F5_Eeu8qc6zsVCMZQ" source="_GhJaQF5_Eeu8qc6zsVCMZQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_QvjvAF5_Eeu8qc6zsVCMZQ" target="_QvQ0EF5_Eeu8qc6zsVCMZQ" source="_IbxT4F5_Eeu8qc6zsVCMZQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_YUrGQF5_Eeu8qc6zsVCMZQ" name="Credentials match" target="_YUYyYF5_Eeu8qc6zsVCMZQ" source="_QvQ0EF5_Eeu8qc6zsVCMZQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_eu5-wF5_Eeu8qc6zsVCMZQ" name="Credentials do not match" target="_euoR8F5_Eeu8qc6zsVCMZQ" source="_QvQ0EF5_Eeu8qc6zsVCMZQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_xVvXAF5_Eeu8qc6zsVCMZQ" target="_xVb1AF5_Eeu8qc6zsVCMZQ" source="_euoR8F5_Eeu8qc6zsVCMZQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_zx86wF5_Eeu8qc6zsVCMZQ" target="_IbxT4F5_Eeu8qc6zsVCMZQ" source="_xVb1AF5_Eeu8qc6zsVCMZQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_mjHHUGJjEeuEGfQYq4qkAg" target="_jk_wYGJjEeuEGfQYq4qkAg" source="_YUYyYF5_Eeu8qc6zsVCMZQ"/>
     <node xmi:type="uml:InitialNode" xmi:id="_GhJaQF5_Eeu8qc6zsVCMZQ" outgoing="_IcBykF5_Eeu8qc6zsVCMZQ"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_IbxT4F5_Eeu8qc6zsVCMZQ" name="Input username and password" incoming="_IcBykF5_Eeu8qc6zsVCMZQ _zx86wF5_Eeu8qc6zsVCMZQ" outgoing="_QvjvAF5_Eeu8qc6zsVCMZQ"/>
     <node xmi:type="uml:DecisionNode" xmi:id="_QvQ0EF5_Eeu8qc6zsVCMZQ" name="Check credentials combination against database" incoming="_QvjvAF5_Eeu8qc6zsVCMZQ" outgoing="_YUrGQF5_Eeu8qc6zsVCMZQ _eu5-wF5_Eeu8qc6zsVCMZQ"/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_YUYyYF5_Eeu8qc6zsVCMZQ" name="Log in user to their own space" incoming="_YUrGQF5_Eeu8qc6zsVCMZQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_YUYyYF5_Eeu8qc6zsVCMZQ" name="Log in user to their own space" incoming="_YUrGQF5_Eeu8qc6zsVCMZQ" outgoing="_mjHHUGJjEeuEGfQYq4qkAg"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_euoR8F5_Eeu8qc6zsVCMZQ" name="Notify user of incorrect credentials" incoming="_eu5-wF5_Eeu8qc6zsVCMZQ" outgoing="_xVvXAF5_Eeu8qc6zsVCMZQ"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_xVb1AF5_Eeu8qc6zsVCMZQ" name="Ask user to re-enter credentials" incoming="_xVvXAF5_Eeu8qc6zsVCMZQ" outgoing="_zx86wF5_Eeu8qc6zsVCMZQ"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_jk_wYGJjEeuEGfQYq4qkAg" incoming="_mjHHUGJjEeuEGfQYq4qkAg"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_4DPp8F-1EeuUJ8v5v-2WTw" name="Room">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_3Z58kF-2EeuUJ8v5v-2WTw" name="Name">
