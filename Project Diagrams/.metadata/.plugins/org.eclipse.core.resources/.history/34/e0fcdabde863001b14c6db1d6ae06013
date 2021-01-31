@@ -34,37 +34,13 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_xh6fcGPdEeu8eYn3suWhfA" name="NickName">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_fN5x8FEYEeuE1ZThcLnWlQ" name="ChangeName">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_Nlz9IGPgEeu8eYn3suWhfA" name="NewName" direction="return" effect="read">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedParameter>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_qPafUF2UEeuaGLTSMcVHzg" name="SubscribeToRoom">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_x4sq8GPhEeu8eYn3suWhfA" name="NewRoom" type="_4DPp8F-1EeuUJ8v5v-2WTw" effect="update"/>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_tU30YF2UEeuaGLTSMcVHzg" name="UnSubscribeToRoom">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_3VN-AGPhEeu8eYn3suWhfA" name="OldRoom" type="_4DPp8F-1EeuUJ8v5v-2WTw" effect="update"/>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="__kZGQGPeEeu8eYn3suWhfA" name="GetName">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_2IPC8GPgEeu8eYn3suWhfA" name="Name" direction="return" effect="read">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedParameter>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_Aa-wAGPfEeu8eYn3suWhfA" name="GetStatus">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_6qNZUGPgEeu8eYn3suWhfA" name="Status" direction="return" effect="read">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedParameter>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_BKZawGPfEeu8eYn3suWhfA" name="GetOnlineStat">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="__lzJkGPgEeu8eYn3suWhfA" name="Status" direction="return">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-      </ownedParameter>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_DyVtYGPfEeu8eYn3suWhfA" name="GetNickName">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_EXc6sGPhEeu8eYn3suWhfA" name="NickName" direction="return">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedParameter>
-    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_fN5x8FEYEeuE1ZThcLnWlQ" name="ChangeName"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_qPafUF2UEeuaGLTSMcVHzg" name="SubscribeToRoom"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_tU30YF2UEeuaGLTSMcVHzg" name="UnSubscribeToRoom"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="__kZGQGPeEeu8eYn3suWhfA" name="GetName"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Aa-wAGPfEeu8eYn3suWhfA" name="GetStatus"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_BKZawGPfEeu8eYn3suWhfA" name="GetOnlineStat"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_DyVtYGPfEeu8eYn3suWhfA" name="GetNickName"/>
   </packagedElement>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_HOtlAFEEEeu_FLOHG8xOiA" name="Subscribe to chatroom"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_YDOrEFEEEeu_FLOHG8xOiA" name="Unsubscribe from chatroom"/>
@@ -94,22 +70,15 @@
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_wXkWwGPeEeu8eYn3suWhfA" name="ChannelID" visibility="private"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="__pJKsFEXEeuE1ZThcLnWlQ" name="GetMessage">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="__Y9yAGPhEeu8eYn3suWhfA" name="Message" type="_nBp-8FEUEeuE1ZThcLnWlQ" direction="return"/>
-    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="__pJKsFEXEeuE1ZThcLnWlQ" name="GetMessage"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_kkmfAGPeEeu8eYn3suWhfA" name="GetDate">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_rS478GPeEeu8eYn3suWhfA" name="CurrentDate" direction="return" effect="read">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
       </ownedParameter>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_Af5k4GPiEeu8eYn3suWhfA" name="GetMessageContent">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_EuS38GPiEeu8eYn3suWhfA" name="Content" direction="return">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedParameter>
-    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_pllUQFEUEeuE1ZThcLnWlQ" name="Channel" visibility="protected">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_sqPQsFEXEeuE1ZThcLnWlQ" name="ChatRoomTitle" visibility="private">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_sqPQsFEXEeuE1ZThcLnWlQ" name="ChatRoomTitle">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_y4rOkF5tEeuoDf1G-rjmnQ" name="Description">
@@ -131,23 +100,10 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_8bTq4GPdEeu8eYn3suWhfA" name="NewMessage" type="_nBp-8FEUEeuE1ZThcLnWlQ"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_AydRUGPeEeu8eYn3suWhfA" name="ReceiveMessage">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_JzU04GPeEeu8eYn3suWhfA" name="Message" type="_nBp-8FEUEeuE1ZThcLnWlQ" effect="read"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_JzU04GPeEeu8eYn3suWhfA" name="NewMessage" type="_nBp-8FEUEeuE1ZThcLnWlQ" effect="read"/>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_af1ZAGPfEeu8eYn3suWhfA" name="GetTitle">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_fxfqcGPgEeu8eYn3suWhfA" name="ChannelTitle" direction="return" effect="read">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedParameter>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_zxHQAGPfEeu8eYn3suWhfA" name="GetDescription">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_LQICsGPhEeu8eYn3suWhfA" name="Description" direction="return">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedParameter>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_-RpPgGPfEeu8eYn3suWhfA" name="DeleteMessage">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_QmEMoGPhEeu8eYn3suWhfA" name="Message" type="_nBp-8FEUEeuE1ZThcLnWlQ" effect="delete"/>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_R3z90GPgEeu8eYn3suWhfA" name="SubscribeToChannel"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_Wr1GcGPgEeu8eYn3suWhfA" name="UnSubscribeFromChannel"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_af1ZAGPfEeu8eYn3suWhfA" name="GetTitle"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_zxHQAGPfEeu8eYn3suWhfA" name="GetDescription"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_UB9lUFEVEeuE1ZThcLnWlQ" name="Media" visibility="public">
     <generalization xmi:type="uml:Generalization" xmi:id="_gwNP8FHNEeuyzNSi8MGzrQ" general="_nBp-8FEUEeuE1ZThcLnWlQ"/>
@@ -168,30 +124,20 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_86vq0GPbEeu8eYn3suWhfA" name="Load"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_KySSAFHLEeuyzNSi8MGzrQ" name="Moderator" visibility="protected">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_rE19AF-5EeudaKQrmQOL2g" name="Moderator" type="_XQ8H8FEDEeu_FLOHG8xOiA" isDerived="true">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_rE19AF-5EeudaKQrmQOL2g" name="Moderator" type="_XQ8H8FEDEeu_FLOHG8xOiA">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_u2Xt4F-5EeudaKQrmQOL2g"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_u2bYQF-5EeudaKQrmQOL2g" value="*"/>
     </ownedAttribute>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_9ApwYFEVEeuE1ZThcLnWlQ" name="AddUser" visibility="protected">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_YRAfEGPhEeu8eYn3suWhfA" name="User" type="_XQ8H8FEDEeu_FLOHG8xOiA" effect="update"/>
-    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_9ApwYFEVEeuE1ZThcLnWlQ" name="AddUser" visibility="protected"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_oEC68F-4EeudaKQrmQOL2g" name="RemoveUser" visibility="protected"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_Y8D5IGPfEeu8eYn3suWhfA" name="GetUser">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_sjJYAGPgEeu8eYn3suWhfA" name="Mod" type="_XQ8H8FEDEeu_FLOHG8xOiA" direction="return" effect="read"/>
-    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Y8D5IGPfEeu8eYn3suWhfA" name="GetUser"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_OWuCEFHLEeuyzNSi8MGzrQ" name="Admin" visibility="protected">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_UDBcoF-4EeudaKQrmQOL2g" name="Admin" type="_XQ8H8FEDEeu_FLOHG8xOiA" isDerived="true"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_we7WIFHOEeuyzNSi8MGzrQ" name="AddModerator" visibility="private">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_ld9okGPhEeu8eYn3suWhfA" name="User" type="_XQ8H8FEDEeu_FLOHG8xOiA" effect="update"/>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_BNSw4FHPEeuyzNSi8MGzrQ" name="RemoveModerator" visibility="private">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pDu1YGPhEeu8eYn3suWhfA" name="User" type="_XQ8H8FEDEeu_FLOHG8xOiA" effect="update"/>
-    </ownedOperation>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_UDBcoF-4EeudaKQrmQOL2g" name="Admin" type="_XQ8H8FEDEeu_FLOHG8xOiA"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_we7WIFHOEeuyzNSi8MGzrQ" name="AddModerator" visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_BNSw4FHPEeuyzNSi8MGzrQ" name="RemoveModerator" visibility="private"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_wyUMwF5yEeuoDf1G-rjmnQ" name="ChangeAdmin" visibility="private"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_TcGQgGPfEeu8eYn3suWhfA" name="GetUser">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_cqF_MGPhEeu8eYn3suWhfA" name="User" type="_XQ8H8FEDEeu_FLOHG8xOiA" direction="return" effect="read"/>
-    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_TcGQgGPfEeu8eYn3suWhfA" name="GetUser"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_qX3twFHNEeuyzNSi8MGzrQ" name="Sends" memberEnd="_qX3tw1HNEeuyzNSi8MGzrQ _qX4U0FHNEeuyzNSi8MGzrQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qX3twVHNEeuyzNSi8MGzrQ" source="org.eclipse.papyrus">
