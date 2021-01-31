@@ -7,3 +7,4 @@ Our write-ups, diagrams and analysis are broken down into four main categories. 
 * **Software Architect** - [Project Design](https://github.com/Hannah-Ashna/SDI-Project/tree/main/Project%20Diagrams)
 * **Software Developer** - Reference Manual
 * **Software Tester** - Test Plan
+* **Final Submission** - [Documentation](https://github.com/Hannah-Ashna/SDI-Project/tree/main/Documentation)
