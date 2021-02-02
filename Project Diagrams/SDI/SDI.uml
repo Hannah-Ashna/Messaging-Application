@@ -547,6 +547,18 @@
       <subvertex xmi:type="uml:State" xmi:id="_jN-9UGV-Eeuqt77GaTrtWA" name="Message Sent"/>
     </region>
   </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_7v8d8GWDEeuiM-iQzC7jqQ" name="Interaction73">
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_Cf6V4GWEEeuiM-iQzC7jqQ" name="User"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_GrVNcGWEEeuiM-iQzC7jqQ" name="Application"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_IXnwIGWEEeuiM-iQzC7jqQ" name="Database"/>
+    <message xmi:type="uml:Message" xmi:id="_paIK8GWIEeuiM-iQzC7jqQ" name="Input Username and password" messageSort="asynchCall"/>
+    <message xmi:type="uml:Message" xmi:id="_tiUvYGWIEeuiM-iQzC7jqQ" name=""/>
+    <message xmi:type="uml:Message" xmi:id="_6wyUwGWIEeuiM-iQzC7jqQ" name="Verify login credentials" messageSort="asynchCall"/>
+    <message xmi:type="uml:Message" xmi:id="_9PLp0GWIEeuiM-iQzC7jqQ" name="Login Credentials Valid" messageSort="reply"/>
+    <message xmi:type="uml:Message" xmi:id="_Hv9g8GWJEeuiM-iQzC7jqQ" name="Login user to their space" messageSort="reply"/>
+    <message xmi:type="uml:Message" xmi:id="_LWs-IGWJEeuiM-iQzC7jqQ" name="Login Credentials Invalid" messageSort="reply"/>
+    <message xmi:type="uml:Message" xmi:id="_QbE28GWJEeuiM-iQzC7jqQ" name="Incorrect Credentials" messageSort="reply"/>
+  </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0GpdkF5tEeuoDf1G-rjmnQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0Gr50F5tEeuoDf1G-rjmnQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
