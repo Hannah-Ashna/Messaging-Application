@@ -531,6 +531,22 @@
       <subvertex xmi:type="uml:FinalState" xmi:id="_KpvhkGV1EeutZaOdWpjgww"/>
     </region>
   </packagedElement>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_PQ12QGV6Eeuqt77GaTrtWA" name="Messaging Application">
+    <region xmi:type="uml:Region" xmi:id="_P6-_cGV6Eeuqt77GaTrtWA" name="Region1">
+      <transition xmi:type="uml:Transition" xmi:id="_f9y7wGV6Eeuqt77GaTrtWA" name="Send message" source="_YA1FMGV6Eeuqt77GaTrtWA" target="_b4prUGV6Eeuqt77GaTrtWA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_D5kmkGV7Eeuqt77GaTrtWA" name="[User online]" source="_b4prUGV6Eeuqt77GaTrtWA" target="__LVV0GV6Eeuqt77GaTrtWA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_iDPv4GV7Eeuqt77GaTrtWA" name="[User offline, store message in database]" source="_b4prUGV6Eeuqt77GaTrtWA" target="_b4prUGV6Eeuqt77GaTrtWA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_27UyAGV7Eeuqt77GaTrtWA" name="[Post message]" source="__LVV0GV6Eeuqt77GaTrtWA" target="_zlYJ4GV7Eeuqt77GaTrtWA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_Mwl1IGV8Eeuqt77GaTrtWA" source="_jN-9UGV-Eeuqt77GaTrtWA" target="_K2HsgGV8Eeuqt77GaTrtWA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_sxpE4GV-Eeuqt77GaTrtWA" name="[Send message to recipient]" source="_zlYJ4GV7Eeuqt77GaTrtWA" target="_jN-9UGV-Eeuqt77GaTrtWA"/>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_YA1FMGV6Eeuqt77GaTrtWA"/>
+      <subvertex xmi:type="uml:State" xmi:id="_b4prUGV6Eeuqt77GaTrtWA" name="Connecting to Broker"/>
+      <subvertex xmi:type="uml:State" xmi:id="__LVV0GV6Eeuqt77GaTrtWA" name="Getting Message"/>
+      <subvertex xmi:type="uml:State" xmi:id="_zlYJ4GV7Eeuqt77GaTrtWA" name="Publishing message"/>
+      <subvertex xmi:type="uml:FinalState" xmi:id="_K2HsgGV8Eeuqt77GaTrtWA"/>
+      <subvertex xmi:type="uml:State" xmi:id="_jN-9UGV-Eeuqt77GaTrtWA" name="Message Sent"/>
+    </region>
+  </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0GpdkF5tEeuoDf1G-rjmnQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0Gr50F5tEeuoDf1G-rjmnQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
