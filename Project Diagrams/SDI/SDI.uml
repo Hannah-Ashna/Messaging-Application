@@ -515,6 +515,22 @@
     <ownedEnd xmi:type="uml:Property" xmi:id="_Tx_XM2JOEeuiIK5PXVaZbA" name="receive message" type="_JPMG0GJOEeuiIK5PXVaZbA" association="_Tx_XMGJOEeuiIK5PXVaZbA"/>
     <ownedEnd xmi:type="uml:Property" xmi:id="_Tx_XNGJOEeuiIK5PXVaZbA" name="target user" type="_hn2wQGJNEeuiIK5PXVaZbA" association="_Tx_XMGJOEeuiIK5PXVaZbA"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_3pG-sGVzEeutZaOdWpjgww" name="Messaging Application">
+    <region xmi:type="uml:Region" xmi:id="_4iBjsGVzEeutZaOdWpjgww" name="Region1">
+      <transition xmi:type="uml:Transition" xmi:id="_C_fBEGV0EeutZaOdWpjgww" name="Open login form" source="_7SmN4GVzEeutZaOdWpjgww" target="_-Ok20GVzEeutZaOdWpjgww"/>
+      <transition xmi:type="uml:Transition" xmi:id="_mOXwsGV0EeutZaOdWpjgww" name="Enter credentials" source="_-Ok20GVzEeutZaOdWpjgww" target="_i6DgQGV0EeutZaOdWpjgww"/>
+      <transition xmi:type="uml:Transition" xmi:id="_qC2u8GV0EeutZaOdWpjgww" name="Check with database" source="_i6DgQGV0EeutZaOdWpjgww" target="_gPGV4GV0EeutZaOdWpjgww"/>
+      <transition xmi:type="uml:Transition" xmi:id="_uzrZoGV0EeutZaOdWpjgww" name="[rejected, try again]" source="_gPGV4GV0EeutZaOdWpjgww" target="_-Ok20GVzEeutZaOdWpjgww"/>
+      <transition xmi:type="uml:Transition" xmi:id="_F_pJ8GV1EeutZaOdWpjgww" name="[accepted, load user space]" source="_gPGV4GV0EeutZaOdWpjgww" target="_X62nwGV0EeutZaOdWpjgww"/>
+      <transition xmi:type="uml:Transition" xmi:id="_MO-aAGV1EeutZaOdWpjgww" source="_X62nwGV0EeutZaOdWpjgww" target="_KpvhkGV1EeutZaOdWpjgww"/>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_7SmN4GVzEeutZaOdWpjgww"/>
+      <subvertex xmi:type="uml:State" xmi:id="_-Ok20GVzEeutZaOdWpjgww" name="Not logged in"/>
+      <subvertex xmi:type="uml:State" xmi:id="_X62nwGV0EeutZaOdWpjgww" name="Logged in"/>
+      <subvertex xmi:type="uml:State" xmi:id="_gPGV4GV0EeutZaOdWpjgww" name="Authorise"/>
+      <subvertex xmi:type="uml:State" xmi:id="_i6DgQGV0EeutZaOdWpjgww" name="Getting credentials"/>
+      <subvertex xmi:type="uml:FinalState" xmi:id="_KpvhkGV1EeutZaOdWpjgww"/>
+    </region>
+  </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0GpdkF5tEeuoDf1G-rjmnQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0Gr50F5tEeuoDf1G-rjmnQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
