@@ -741,7 +741,7 @@
     <message xmi:type="uml:Message" xmi:id="_zMrUAGWREeuTDMjc4UjNkA" name="Update Database" messageSort="asynchCall" receiveEvent="_zMr7EWWREeuTDMjc4UjNkA" sendEvent="_zMr7EGWREeuTDMjc4UjNkA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Component" xmi:id="_KilGoGWWEeuS343rV_0dVw" name="User"/>
-  <packagedElement xmi:type="uml:Interface" xmi:id="_FzP0QGWXEeuS343rV_0dVw" name="Send Messages"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_FzP0QGWXEeuS343rV_0dVw" name="Messaging"/>
   <packagedElement xmi:type="uml:Component" xmi:id="_HJAGQGWXEeuS343rV_0dVw" name="User">
     <packagedElement xmi:type="uml:Usage" xmi:id="_9EpP8GWXEeuS343rV_0dVw" client="_HJAGQGWXEeuS343rV_0dVw" supplier="_FzP0QGWXEeuS343rV_0dVw"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_MK19kGWZEeuS343rV_0dVw" client="_HJAGQGWXEeuS343rV_0dVw" supplier="_JI8S0GWZEeuS343rV_0dVw"/>
