@@ -559,7 +559,24 @@
     <message xmi:type="uml:Message" xmi:id="_LWs-IGWJEeuiM-iQzC7jqQ" name="Login Credentials Invalid" messageSort="reply"/>
     <message xmi:type="uml:Message" xmi:id="_QbE28GWJEeuiM-iQzC7jqQ" name="Incorrect Credentials" messageSort="reply"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Interaction" xmi:id="_TsIGEGWLEeucceLrYqr4Cg" name="Messaging Application"/>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_TsIGEGWLEeucceLrYqr4Cg" name="Messaging Application">
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_YTaaQGWLEeucceLrYqr4Cg" name="User" coveredBy="_o_cSsWWLEeucceLrYqr4Cg _mrSewWWLEeucceLrYqr4Cg _mrR3sGWLEeucceLrYqr4Cg"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_ZaU_AGWLEeucceLrYqr4Cg" name="Application" coveredBy="_o_cSsmWLEeucceLrYqr4Cg _r7RKoGWLEeucceLrYqr4Cg _nGd-4WWLEeucceLrYqr4Cg _nGdX0GWLEeucceLrYqr4Cg"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_aIdQUGWLEeucceLrYqr4Cg" name="Database" coveredBy="_nbMRsGWLEeucceLrYqr4Cg _nbLqoGWLEeucceLrYqr4Cg _r7RKoWWLEeucceLrYqr4Cg _nbMRsWWLEeucceLrYqr4Cg"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_o_cSsWWLEeucceLrYqr4Cg" name="Message13SendEvent" covered="_YTaaQGWLEeucceLrYqr4Cg" message="_o_cSsGWLEeucceLrYqr4Cg"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_mrR3sGWLEeucceLrYqr4Cg" name="ActionExecutionSpecification4" covered="_YTaaQGWLEeucceLrYqr4Cg" finish="_mrSewWWLEeucceLrYqr4Cg" start="_o_cSsWWLEeucceLrYqr4Cg"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_nbMRsGWLEeucceLrYqr4Cg" name="ActionExecutionSpecification10Start" covered="_aIdQUGWLEeucceLrYqr4Cg" execution="_nbLqoGWLEeucceLrYqr4Cg"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_nbLqoGWLEeucceLrYqr4Cg" name="ActionExecutionSpecification10" covered="_aIdQUGWLEeucceLrYqr4Cg" start="_nbMRsGWLEeucceLrYqr4Cg"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_o_cSsmWLEeucceLrYqr4Cg" name="Message13ReceiveEvent" covered="_ZaU_AGWLEeucceLrYqr4Cg" message="_o_cSsGWLEeucceLrYqr4Cg"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_nGdX0GWLEeucceLrYqr4Cg" name="ActionExecutionSpecification7" covered="_ZaU_AGWLEeucceLrYqr4Cg" finish="_nGd-4WWLEeucceLrYqr4Cg" start="_o_cSsmWLEeucceLrYqr4Cg"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_r7RKoGWLEeucceLrYqr4Cg" name="Message14SendEvent" covered="_ZaU_AGWLEeucceLrYqr4Cg" message="_r7QjkGWLEeucceLrYqr4Cg"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_r7RKoWWLEeucceLrYqr4Cg" name="Message14ReceiveEvent" covered="_aIdQUGWLEeucceLrYqr4Cg" message="_r7QjkGWLEeucceLrYqr4Cg"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_nbMRsWWLEeucceLrYqr4Cg" name="ActionExecutionSpecification10Finish" covered="_aIdQUGWLEeucceLrYqr4Cg" execution="_nbLqoGWLEeucceLrYqr4Cg"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_mrSewWWLEeucceLrYqr4Cg" name="ActionExecutionSpecification4Finish" covered="_YTaaQGWLEeucceLrYqr4Cg" execution="_mrR3sGWLEeucceLrYqr4Cg"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_nGd-4WWLEeucceLrYqr4Cg" name="ActionExecutionSpecification7Finish" covered="_ZaU_AGWLEeucceLrYqr4Cg" execution="_nGdX0GWLEeucceLrYqr4Cg"/>
+    <message xmi:type="uml:Message" xmi:id="_o_cSsGWLEeucceLrYqr4Cg" name="Input username &amp; password" receiveEvent="_o_cSsmWLEeucceLrYqr4Cg" sendEvent="_o_cSsWWLEeucceLrYqr4Cg"/>
+    <message xmi:type="uml:Message" xmi:id="_r7QjkGWLEeucceLrYqr4Cg" name="Verify login credentials" receiveEvent="_r7RKoWWLEeucceLrYqr4Cg" sendEvent="_r7RKoGWLEeucceLrYqr4Cg"/>
+  </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0GpdkF5tEeuoDf1G-rjmnQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0Gr50F5tEeuoDf1G-rjmnQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
