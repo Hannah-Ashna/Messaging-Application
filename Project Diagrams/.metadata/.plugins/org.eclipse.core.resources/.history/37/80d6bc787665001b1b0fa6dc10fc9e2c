@@ -130,6 +130,9 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_5eX_sGPdEeu8eYn3suWhfA" name="SendMessage">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_8bTq4GPdEeu8eYn3suWhfA" name="NewMessage" type="_nBp-8FEUEeuE1ZThcLnWlQ"/>
     </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_AydRUGPeEeu8eYn3suWhfA" name="ReceiveMessage">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_JzU04GPeEeu8eYn3suWhfA" name="Message" type="_nBp-8FEUEeuE1ZThcLnWlQ" effect="read"/>
+    </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_af1ZAGPfEeu8eYn3suWhfA" name="GetTitle">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_fxfqcGPgEeu8eYn3suWhfA" name="ChannelTitle" direction="return" effect="read">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>

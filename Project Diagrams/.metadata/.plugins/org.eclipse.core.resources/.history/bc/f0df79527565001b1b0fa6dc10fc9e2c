@@ -109,7 +109,7 @@
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_pllUQFEUEeuE1ZThcLnWlQ" name="Channel" visibility="protected">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_sqPQsFEXEeuE1ZThcLnWlQ" name="ChatRoomTitle" visibility="protected">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_sqPQsFEXEeuE1ZThcLnWlQ" name="ChatRoomTitle" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_y4rOkF5tEeuoDf1G-rjmnQ" name="Description">
@@ -129,6 +129,9 @@
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_5eX_sGPdEeu8eYn3suWhfA" name="SendMessage">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_8bTq4GPdEeu8eYn3suWhfA" name="NewMessage" type="_nBp-8FEUEeuE1ZThcLnWlQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_AydRUGPeEeu8eYn3suWhfA" name="ReceiveMessage">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_JzU04GPeEeu8eYn3suWhfA" name="Message" type="_nBp-8FEUEeuE1ZThcLnWlQ" effect="read"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_af1ZAGPfEeu8eYn3suWhfA" name="GetTitle">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_fxfqcGPgEeu8eYn3suWhfA" name="ChannelTitle" direction="return" effect="read">
@@ -165,7 +168,6 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_86vq0GPbEeu8eYn3suWhfA" name="Load"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_KySSAFHLEeuyzNSi8MGzrQ" name="Moderator" visibility="protected">
-    <generalization xmi:type="uml:Generalization" xmi:id="_1qvjoGVqEeuluc-gRsiLJw" general="_OWuCEFHLEeuyzNSi8MGzrQ"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_rE19AF-5EeudaKQrmQOL2g" name="Moderator" type="_XQ8H8FEDEeu_FLOHG8xOiA" isDerived="true">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_u2Xt4F-5EeudaKQrmQOL2g"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_u2bYQF-5EeudaKQrmQOL2g" value="*"/>
@@ -173,9 +175,7 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_9ApwYFEVEeuE1ZThcLnWlQ" name="AddUser" visibility="protected">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_YRAfEGPhEeu8eYn3suWhfA" name="User" type="_XQ8H8FEDEeu_FLOHG8xOiA" effect="update"/>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_oEC68F-4EeudaKQrmQOL2g" name="RemoveUser" visibility="protected">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_5WD0QGVpEeuluc-gRsiLJw" name="User" type="_XQ8H8FEDEeu_FLOHG8xOiA" effect="delete"/>
-    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_oEC68F-4EeudaKQrmQOL2g" name="RemoveUser" visibility="protected"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_Y8D5IGPfEeu8eYn3suWhfA" name="GetUser">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_sjJYAGPgEeu8eYn3suWhfA" name="Mod" type="_XQ8H8FEDEeu_FLOHG8xOiA" direction="return" effect="read"/>
     </ownedOperation>
@@ -188,8 +188,9 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_BNSw4FHPEeuyzNSi8MGzrQ" name="RemoveModerator" visibility="private">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_pDu1YGPhEeu8eYn3suWhfA" name="User" type="_XQ8H8FEDEeu_FLOHG8xOiA" effect="update"/>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_wyUMwF5yEeuoDf1G-rjmnQ" name="ChangeAdmin" visibility="private">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_7kUUMGVsEeuluc-gRsiLJw" name="User" type="_XQ8H8FEDEeu_FLOHG8xOiA" effect="update"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_wyUMwF5yEeuoDf1G-rjmnQ" name="ChangeAdmin" visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_TcGQgGPfEeu8eYn3suWhfA" name="GetUser">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_cqF_MGPhEeu8eYn3suWhfA" name="User" type="_XQ8H8FEDEeu_FLOHG8xOiA" direction="return" effect="read"/>
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_qX3twFHNEeuyzNSi8MGzrQ" name="Sends" memberEnd="_qX3tw1HNEeuyzNSi8MGzrQ _qX4U0FHNEeuyzNSi8MGzrQ">
@@ -301,17 +302,17 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Interaction" xmi:id="_wqB88FzREeuxoPJc13bXVw" name="Send Message">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_ul9VgGI5EeuaXbx1SB4VAQ" name="" type="_BpfHQFEXEeuE1ZThcLnWlQ"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_3xzPcGI4EeuaXbx1SB4VAQ" name="Lifeline3" represents="_6wGzoGI4EeuaXbx1SB4VAQ" coveredBy="_QJnAcGI8EeuaXbx1SB4VAQ _dF4poGI8EeuaXbx1SB4VAQ _N49McWI8EeuaXbx1SB4VAQ _N48lYGI8EeuaXbx1SB4VAQ _jAF-QWI8EeuaXbx1SB4VAQ"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_3xzPcGI4EeuaXbx1SB4VAQ" name="Lifeline3" represents="_6wGzoGI4EeuaXbx1SB4VAQ" coveredBy="_QJnAcGI8EeuaXbx1SB4VAQ _jAF-QWI8EeuaXbx1SB4VAQ _dF4poGI8EeuaXbx1SB4VAQ _N49McWI8EeuaXbx1SB4VAQ _N48lYGI8EeuaXbx1SB4VAQ"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_YGmhoGI7EeuaXbx1SB4VAQ" name="Lifeline5" represents="_rRmdhFzCEeu1RaWnon4lBg" coveredBy="_jAF-QGI8EeuaXbx1SB4VAQ _BKhyAGI8EeuaXbx1SB4VAQ _BKhK8GI8EeuaXbx1SB4VAQ _dF4poWI8EeuaXbx1SB4VAQ _BKhyAWI8EeuaXbx1SB4VAQ"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_QJnAcGI8EeuaXbx1SB4VAQ" name="Message14SendEvent" covered="_3xzPcGI4EeuaXbx1SB4VAQ"/>
     <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_N48lYGI8EeuaXbx1SB4VAQ" name="BehaviorExecutionSpecification11" covered="_3xzPcGI4EeuaXbx1SB4VAQ" finish="_N49McWI8EeuaXbx1SB4VAQ" start="_QJnAcGI8EeuaXbx1SB4VAQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_dF4poGI8EeuaXbx1SB4VAQ" name="Message14SendEvent" covered="_3xzPcGI4EeuaXbx1SB4VAQ" message="_dF3bgGI8EeuaXbx1SB4VAQ"/>
-    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_N49McWI8EeuaXbx1SB4VAQ" name="BehaviorExecutionSpecification11Finish" covered="_3xzPcGI4EeuaXbx1SB4VAQ" execution="_N48lYGI8EeuaXbx1SB4VAQ"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jAF-QGI8EeuaXbx1SB4VAQ" name="Message17SendEvent" covered="_YGmhoGI7EeuaXbx1SB4VAQ" message="_jAFXMGI8EeuaXbx1SB4VAQ"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jAF-QWI8EeuaXbx1SB4VAQ" name="Message17ReceiveEvent" covered="_3xzPcGI4EeuaXbx1SB4VAQ" message="_jAFXMGI8EeuaXbx1SB4VAQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_dF4poGI8EeuaXbx1SB4VAQ" name="Message14SendEvent" covered="_3xzPcGI4EeuaXbx1SB4VAQ" message="_dF3bgGI8EeuaXbx1SB4VAQ"/>
     <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_BKhyAGI8EeuaXbx1SB4VAQ" name="BehaviorExecutionSpecification11Start" covered="_YGmhoGI7EeuaXbx1SB4VAQ" execution="_BKhK8GI8EeuaXbx1SB4VAQ"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_dF4poWI8EeuaXbx1SB4VAQ" name="Message14ReceiveEvent" covered="_YGmhoGI7EeuaXbx1SB4VAQ" message="_dF3bgGI8EeuaXbx1SB4VAQ"/>
     <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_BKhyAWI8EeuaXbx1SB4VAQ" name="BehaviorExecutionSpecification11Finish" covered="_YGmhoGI7EeuaXbx1SB4VAQ" execution="_BKhK8GI8EeuaXbx1SB4VAQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_N49McWI8EeuaXbx1SB4VAQ" name="BehaviorExecutionSpecification11Finish" covered="_3xzPcGI4EeuaXbx1SB4VAQ" execution="_N48lYGI8EeuaXbx1SB4VAQ"/>
     <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_BKhK8GI8EeuaXbx1SB4VAQ" name="BehaviorExecutionSpecification11" covered="_YGmhoGI7EeuaXbx1SB4VAQ" finish="_BKhyAWI8EeuaXbx1SB4VAQ"/>
     <message xmi:type="uml:Message" xmi:id="_dF3bgGI8EeuaXbx1SB4VAQ" name="Message14" messageSort="asynchCall" receiveEvent="_dF4poWI8EeuaXbx1SB4VAQ" sendEvent="_dF4poGI8EeuaXbx1SB4VAQ" signature="__pJKsFEXEeuE1ZThcLnWlQ"/>
     <message xmi:type="uml:Message" xmi:id="_jAFXMGI8EeuaXbx1SB4VAQ" name="messageContents" messageSort="reply" receiveEvent="_jAF-QWI8EeuaXbx1SB4VAQ" sendEvent="_jAF-QGI8EeuaXbx1SB4VAQ"/>
@@ -391,9 +392,7 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HvzXgF-4EeudaKQrmQOL2g"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Hv2a0F-4EeudaKQrmQOL2g" value="*"/>
     </ownedEnd>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_GhETg1-4EeudaKQrmQOL2g" name="room" type="_4DPp8F-1EeuUJ8v5v-2WTw" association="_GhDscF-4EeudaKQrmQOL2g">
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kVlOoGVqEeuluc-gRsiLJw" value="*"/>
-    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_GhETg1-4EeudaKQrmQOL2g" name="room" type="_4DPp8F-1EeuUJ8v5v-2WTw" association="_GhDscF-4EeudaKQrmQOL2g"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_JjF6EF-4EeudaKQrmQOL2g" name="Administers" memberEnd="_JjGhIl-4EeudaKQrmQOL2g _JjGhI1-4EeudaKQrmQOL2g">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_JjGhIF-4EeudaKQrmQOL2g" source="org.eclipse.papyrus">
@@ -412,7 +411,7 @@
     </ownedEnd>
     <ownedEnd xmi:type="uml:Property" xmi:id="_2bjMAF-4EeudaKQrmQOL2g" name="channel" type="_pllUQFEUEeuE1ZThcLnWlQ" association="_2bik8F-4EeudaKQrmQOL2g"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_VPpLUF-5EeudaKQrmQOL2g" name="Contains" memberEnd="_VPpLU1-5EeudaKQrmQOL2g _VPpyYF-5EeudaKQrmQOL2g">
+  <packagedElement xmi:type="uml:Association" xmi:id="_VPpLUF-5EeudaKQrmQOL2g" memberEnd="_VPpLU1-5EeudaKQrmQOL2g _VPpyYF-5EeudaKQrmQOL2g">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VPpLUV-5EeudaKQrmQOL2g" source="org.eclipse.papyrus">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VPpLUl-5EeudaKQrmQOL2g" key="nature" value="UML_Nature"/>
     </eAnnotations>
@@ -422,9 +421,7 @@
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fETG0F-6EeudaKQrmQOL2g" source="org.eclipse.papyrus">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fETG0V-6EeudaKQrmQOL2g" key="nature" value="UML_Nature"/>
     </eAnnotations>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_fETG0l-6EeudaKQrmQOL2g" name="room" type="_4DPp8F-1EeuUJ8v5v-2WTw" association="_fESfwF-6EeudaKQrmQOL2g">
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WoCrIGVrEeuluc-gRsiLJw" value="*"/>
-    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_fETG0l-6EeudaKQrmQOL2g" name="room" type="_4DPp8F-1EeuUJ8v5v-2WTw" association="_fESfwF-6EeudaKQrmQOL2g"/>
     <ownedEnd xmi:type="uml:Property" xmi:id="_fETG01-6EeudaKQrmQOL2g" name="user" type="_XQ8H8FEDEeu_FLOHG8xOiA" association="_fESfwF-6EeudaKQrmQOL2g"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_VjDfcGI-EeuaXbx1SB4VAQ" name="Messaging Application">

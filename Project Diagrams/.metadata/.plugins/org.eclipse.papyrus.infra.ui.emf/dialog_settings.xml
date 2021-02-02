@@ -19,10 +19,10 @@
 	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:Type:type">
 		<section name="History">
 			<list key="PreviousSelection">
+				<item value="platform:/resource/SDI/SDI.uml#_XQ8H8FEDEeu_FLOHG8xOiA"/>
 				<item value="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
 				<item value="platform:/resource/SDI/SDI.uml#_nBp-8FEUEeuE1ZThcLnWlQ"/>
 				<item value="platform:/resource/SDI/SDI.uml#_4DPp8F-1EeuUJ8v5v-2WTw"/>
-				<item value="platform:/resource/SDI/SDI.uml#_XQ8H8FEDEeu_FLOHG8xOiA"/>
 				<item value="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
 				<item value="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
 			</list>
