@@ -1,0 +1,403 @@
+{
+  "formatVersion": 3,
+  "id": "root",
+  "ideas": {
+    "1": {
+      "title": "Requirements",
+      "id": 1,
+      "attr": {
+        "position": [
+          -1523,
+          -450,
+          1
+        ]
+      },
+      "ideas": {
+        "1": {
+          "title": "Non-Functional Requirements",
+          "id": 28,
+          "ideas": {
+            "1": {
+              "title": "Operational",
+              "id": 29,
+              "ideas": {
+                "1": {
+                  "title": "Application could run on both MacOS and Windows based desktops and laptops",
+                  "id": 30,
+                  "attr": {}
+                },
+                "2": {
+                  "title": "Clients must not connect directly to other clients without a server or a broker",
+                  "id": 31,
+                  "attr": {}
+                },
+                "3": {
+                  "title": "A server or a broker must allow multiple authorised clients to connect to it",
+                  "id": 32,
+                  "attr": {}
+                }
+              }
+            },
+            "2": {
+              "title": "Performance",
+              "id": 33,
+              "ideas": {
+                "1": {
+                  "title": "Files transfer should only start if the contact clicks in the link",
+                  "id": 34,
+                  "attr": {},
+                  "ideas": {
+                    "1": {
+                      "title": "This requirement also doubles as a security requirement to prevent the download of malicious files",
+                      "id": 36,
+                      "attr": {}
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Messages should be sent and received within 5-10 seconds",
+                  "id": 35,
+                  "attr": {}
+                }
+              }
+            },
+            "1.5": {
+              "title": "Accessibility",
+              "id": 38,
+              "ideas": {
+                "1": {
+                  "title": "Application could have a light and dark mode",
+                  "id": 39,
+                  "attr": {}
+                },
+                "2": {
+                  "title": "Application could have text-size customisation",
+                  "id": 40,
+                  "attr": {}
+                }
+              }
+            },
+            "1.75": {
+              "title": "Security",
+              "id": 41,
+              "ideas": {
+                "1": {
+                  "title": "Users must only access their space after the login",
+                  "id": 42,
+                  "attr": {}
+                },
+                "2": {
+                  "title": "Passwords must be saved securely locally",
+                  "id": 43,
+                  "attr": {}
+                },
+                "3": {
+                  "title": "Users should be logged off automatically after a specific amount of time",
+                  "id": 44,
+                  "attr": {},
+                  "ideas": {
+                    "1": {
+                      "title": "This requirement also doubles as a performance requirement",
+                      "id": 45,
+                      "attr": {}
+                    }
+                  }
+                }
+              }
+            },
+            "1.875": {
+              "title": "Cultural",
+              "id": 46,
+              "ideas": {
+                "1": {
+                  "title": "The application could have several language options",
+                  "id": 47,
+                  "attr": {}
+                }
+              }
+            },
+            "1.9375": {
+              "title": "Political",
+              "id": 48,
+              "ideas": {
+                "1": {
+                  "title": "Application must adhere to all local (and international) privacy laws",
+                  "id": 49,
+                  "attr": {},
+                  "ideas": {
+                    "1": {
+                      "title": "i.e. The EU - The General Data Protection Regulation (GDPR)",
+                      "id": 50,
+                      "attr": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "-10": {
+          "title": "Functional Requirements",
+          "id": 2,
+          "ideas": {
+            "1": {
+              "title": "Process",
+              "id": 3,
+              "ideas": {
+                "1": {
+                  "title": "Users must be able to send, receive and view messages through the application",
+                  "id": 6,
+                  "attr": {
+                    "position": [
+                      289,
+                      -141,
+                      1
+                    ]
+                  }
+                },
+                "2": {
+                  "title": "Users must be able to create chat rooms (rooms with more than two contacts)",
+                  "id": 7,
+                  "attr": {
+                    "position": [
+                      292,
+                      -39,
+                      2
+                    ]
+                  }
+                },
+                "3": {
+                  "title": "The user that creates the chat room must be classified as Admin",
+                  "id": 8,
+                  "attr": {
+                    "position": [
+                      280,
+                      61,
+                      3
+                    ]
+                  }
+                },
+                "0.75": {
+                  "title": "Application must provide a friendly User Interface (UI)",
+                  "id": 16,
+                  "attr": {
+                    "position": [
+                      673,
+                      -57,
+                      24
+                    ]
+                  }
+                },
+                "1.5": {
+                  "title": "Moderators must inherit all the admin permissions, however, Moderators cannot demote the Admin",
+                  "id": 15,
+                  "attr": {
+                    "position": [
+                      356,
+                      299,
+                      19
+                    ]
+                  }
+                },
+                "0.6875": {
+                  "title": "The moderator should be able to create and delete channels in the chatroom",
+                  "id": 11,
+                  "attr": {
+                    "position": [
+                      693,
+                      -313,
+                      26
+                    ]
+                  }
+                },
+                "0.71875": {
+                  "title": "Application should list all the personal contacts in the contacts pane",
+                  "id": 17,
+                  "attr": {
+                    "position": [
+                      680,
+                      -194,
+                      25
+                    ]
+                  }
+                },
+                "0.875": {
+                  "title": "Users must be able to see the active users in the chat room",
+                  "id": 18,
+                  "attr": {
+                    "position": [
+                      500,
+                      33,
+                      12
+                    ]
+                  }
+                },
+                "0.734375": {
+                  "title": "Users must be notified when a new notification is received",
+                  "id": 19,
+                  "attr": {
+                    "position": [
+                      448,
+                      -126,
+                      28
+                    ]
+                  }
+                },
+                "1.25": {
+                  "title": "Users should be able to change their status",
+                  "id": 20,
+                  "attr": {
+                    "position": [
+                      486,
+                      190,
+                      14
+                    ]
+                  }
+                },
+                "1.75": {
+                  "title": "User should be able to change their details including their picture",
+                  "id": 21,
+                  "attr": {
+                    "position": [
+                      593,
+                      392,
+                      18
+                    ]
+                  }
+                },
+                "2.5": {
+                  "title": "User pictures could be displayed in the channels",
+                  "id": 22,
+                  "attr": {
+                    "position": [
+                      547,
+                      514,
+                      20
+                    ]
+                  }
+                },
+                "1.375": {
+                  "title": "Application could allow to exchange files with contacts",
+                  "id": 23,
+                  "attr": {
+                    "position": [
+                      621,
+                      253,
+                      21
+                    ]
+                  }
+                },
+                "1.125": {
+                  "title": "User could be able to send emoji’s",
+                  "id": 24,
+                  "attr": {
+                    "position": [
+                      636,
+                      146,
+                      22
+                    ]
+                  }
+                },
+                "0.703125": {
+                  "title": "Messages could come with sent and read receipts",
+                  "id": 25,
+                  "attr": {
+                    "position": [
+                      442,
+                      -247,
+                      27
+                    ]
+                  }
+                },
+                "0.6953125": {
+                  "title": "The admin should be able to promote and demote users to moderators in chat rooms",
+                  "id": 9,
+                  "attr": {
+                    "position": [
+                      227,
+                      -253,
+                      29
+                    ]
+                  },
+                  "ideas": {}
+                },
+                "0.69140625": {
+                  "title": "The moderator should be able to invite users to a chatroom",
+                  "id": 13,
+                  "attr": {
+                    "position": [
+                      448,
+                      -256,
+                      30
+                    ]
+                  }
+                },
+                "0.69921875": {
+                  "title": "The moderator should be able to delete a user’s messages in the chatroom",
+                  "id": 12,
+                  "attr": {
+                    "position": [
+                      680,
+                      -181,
+                      31
+                    ]
+                  }
+                },
+                "0.697265625": {
+                  "title": "The moderator must be able to invite and remove users from a chatroom",
+                  "id": 14,
+                  "attr": {
+                    "position": [
+                      484,
+                      -165,
+                      32
+                    ]
+                  }
+                }
+              },
+              "attr": {
+                "position": [
+                  323.3750000000002,
+                  -120.00003051757835,
+                  3
+                ]
+              }
+            },
+            "0.5": {
+              "title": "Information",
+              "id": 5,
+              "ideas": {
+                "1": {
+                  "title": "Application could display the full history of the conversation when a specific contact is selected",
+                  "id": 26,
+                  "attr": {}
+                },
+                "2": {
+                  "title": "Offline messages could be stored in the client side and transmitted to the target user(s) once they are online",
+                  "id": 27,
+                  "attr": {}
+                }
+              },
+              "attr": {
+                "position": [
+                  111.37498474121139,
+                  -404.9999923706057,
+                  4
+                ]
+              }
+            }
+          },
+          "attr": {
+            "position": [
+              67,
+              -14,
+              1
+            ]
+          }
+        }
+      }
+    }
+  },
+  "title": "Requirements",
+  "links": []
+}
