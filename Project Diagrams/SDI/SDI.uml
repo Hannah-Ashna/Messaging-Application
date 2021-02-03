@@ -539,18 +539,26 @@
   </packagedElement>
   <packagedElement xmi:type="uml:StateMachine" xmi:id="_PQ12QGV6Eeuqt77GaTrtWA" name="Messaging Application">
     <region xmi:type="uml:Region" xmi:id="_P6-_cGV6Eeuqt77GaTrtWA" name="Region1">
-      <transition xmi:type="uml:Transition" xmi:id="_f9y7wGV6Eeuqt77GaTrtWA" name="Send message" source="_YA1FMGV6Eeuqt77GaTrtWA" target="_b4prUGV6Eeuqt77GaTrtWA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_f9y7wGV6Eeuqt77GaTrtWA" name="Send message" source="_L3NFEGY3Eeuh-NTv6Zkv6A" target="_b4prUGV6Eeuqt77GaTrtWA"/>
       <transition xmi:type="uml:Transition" xmi:id="_D5kmkGV7Eeuqt77GaTrtWA" name="[User online]" source="_b4prUGV6Eeuqt77GaTrtWA" target="__LVV0GV6Eeuqt77GaTrtWA"/>
-      <transition xmi:type="uml:Transition" xmi:id="_iDPv4GV7Eeuqt77GaTrtWA" name="[User offline, store message in database]" source="_b4prUGV6Eeuqt77GaTrtWA" target="_b4prUGV6Eeuqt77GaTrtWA"/>
-      <transition xmi:type="uml:Transition" xmi:id="_27UyAGV7Eeuqt77GaTrtWA" name="[Post message]" source="__LVV0GV6Eeuqt77GaTrtWA" target="_zlYJ4GV7Eeuqt77GaTrtWA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_iDPv4GV7Eeuqt77GaTrtWA" name="[User offline]" source="_b4prUGV6Eeuqt77GaTrtWA" target="_U4T5MGY3Eeuh-NTv6Zkv6A"/>
+      <transition xmi:type="uml:Transition" xmi:id="_27UyAGV7Eeuqt77GaTrtWA" name="[Post message]" source="__LVV0GV6Eeuqt77GaTrtWA" target="_ktWfQGY3Eeuh-NTv6Zkv6A"/>
       <transition xmi:type="uml:Transition" xmi:id="_Mwl1IGV8Eeuqt77GaTrtWA" source="_jN-9UGV-Eeuqt77GaTrtWA" target="_K2HsgGV8Eeuqt77GaTrtWA"/>
-      <transition xmi:type="uml:Transition" xmi:id="_sxpE4GV-Eeuqt77GaTrtWA" name="[Send message to recipient]" source="_zlYJ4GV7Eeuqt77GaTrtWA" target="_jN-9UGV-Eeuqt77GaTrtWA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_sxpE4GV-Eeuqt77GaTrtWA" name="[Message is available in topic]" source="_zlYJ4GV7Eeuqt77GaTrtWA" target="_jN-9UGV-Eeuqt77GaTrtWA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_RhzQYGY3Eeuh-NTv6Zkv6A" source="_YA1FMGV6Eeuqt77GaTrtWA" target="_L3NFEGY3Eeuh-NTv6Zkv6A"/>
+      <transition xmi:type="uml:Transition" xmi:id="_a3o-YGY3Eeuh-NTv6Zkv6A" source="_U4T5MGY3Eeuh-NTv6Zkv6A" target="_b4prUGV6Eeuqt77GaTrtWA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_swOJgGY3Eeuh-NTv6Zkv6A" source="_ktWfQGY3Eeuh-NTv6Zkv6A" target="_qec7MGY3Eeuh-NTv6Zkv6A"/>
+      <transition xmi:type="uml:Transition" xmi:id="_t6zGQGY3Eeuh-NTv6Zkv6A" source="_qec7MGY3Eeuh-NTv6Zkv6A" target="_zlYJ4GV7Eeuqt77GaTrtWA"/>
       <subvertex xmi:type="uml:Pseudostate" xmi:id="_YA1FMGV6Eeuqt77GaTrtWA"/>
       <subvertex xmi:type="uml:State" xmi:id="_b4prUGV6Eeuqt77GaTrtWA" name="Connecting to Broker"/>
       <subvertex xmi:type="uml:State" xmi:id="__LVV0GV6Eeuqt77GaTrtWA" name="Getting Message"/>
-      <subvertex xmi:type="uml:State" xmi:id="_zlYJ4GV7Eeuqt77GaTrtWA" name="Publishing message"/>
+      <subvertex xmi:type="uml:State" xmi:id="_zlYJ4GV7Eeuqt77GaTrtWA" name="Publish message in topic"/>
       <subvertex xmi:type="uml:FinalState" xmi:id="_K2HsgGV8Eeuqt77GaTrtWA"/>
       <subvertex xmi:type="uml:State" xmi:id="_jN-9UGV-Eeuqt77GaTrtWA" name="Message Sent"/>
+      <subvertex xmi:type="uml:State" xmi:id="_L3NFEGY3Eeuh-NTv6Zkv6A" name="User writes a message"/>
+      <subvertex xmi:type="uml:State" xmi:id="_U4T5MGY3Eeuh-NTv6Zkv6A" name="Store message in Database"/>
+      <subvertex xmi:type="uml:State" xmi:id="_ktWfQGY3Eeuh-NTv6Zkv6A" name="Pass message to publisher"/>
+      <subvertex xmi:type="uml:State" xmi:id="_qec7MGY3Eeuh-NTv6Zkv6A" name="Publisher connects to broker"/>
     </region>
   </packagedElement>
   <packagedElement xmi:type="uml:Interaction" xmi:id="_7v8d8GWDEeuiM-iQzC7jqQ" name="Messaging Application">
