@@ -780,6 +780,26 @@
   <packagedElement xmi:type="uml:Interface" xmi:id="_ODv1YGWYEeuS343rV_0dVw" name="Room Manager"/>
   <packagedElement xmi:type="uml:Interface" xmi:id="_nhOVUGWYEeuS343rV_0dVw" name="Channel List"/>
   <packagedElement xmi:type="uml:Interface" xmi:id="_SGdncGWZEeuS343rV_0dVw" name="Save Data"/>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_46J4gGZzEeuliecfMGHgCg" name="Messaging Application - Publisher">
+    <region xmi:type="uml:Region" xmi:id="_5jko8GZzEeuliecfMGHgCg" name="Region1">
+      <transition xmi:type="uml:Transition" xmi:id="_G9vIAGZ0EeuliecfMGHgCg" source="_9yL-cGZzEeuliecfMGHgCg" target="_-tAn8GZzEeuliecfMGHgCg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_X_VAwGZ0EeuliecfMGHgCg" name="[Establish connection]" source="_-tAn8GZzEeuliecfMGHgCg" target="_JKTGMGZ0EeuliecfMGHgCg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_sh2CkGZ0EeuliecfMGHgCg" name="[Fail]" source="_JKTGMGZ0EeuliecfMGHgCg" target="_jZk2gGZ0EeuliecfMGHgCg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_tN-IwGZ0EeuliecfMGHgCg" source="_jZk2gGZ0EeuliecfMGHgCg" target="_n5vPAGZ0EeuliecfMGHgCg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_xEd5MGZ0EeuliecfMGHgCg" name="[try again]" source="_n5vPAGZ0EeuliecfMGHgCg" target="_JKTGMGZ0EeuliecfMGHgCg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_9d3e0GZ0EeuliecfMGHgCg" name="[Success]" source="_JKTGMGZ0EeuliecfMGHgCg" target="_1HxWkGZ0EeuliecfMGHgCg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_JTkhgGZ1EeuliecfMGHgCg" source="_1HxWkGZ0EeuliecfMGHgCg" target="_HRzeEGZ1EeuliecfMGHgCg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_Oz9n8GZ1EeuliecfMGHgCg" source="_HRzeEGZ1EeuliecfMGHgCg" target="_MyI6IGZ1EeuliecfMGHgCg"/>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_9yL-cGZzEeuliecfMGHgCg"/>
+      <subvertex xmi:type="uml:State" xmi:id="_-tAn8GZzEeuliecfMGHgCg" name="Message created"/>
+      <subvertex xmi:type="uml:State" xmi:id="_JKTGMGZ0EeuliecfMGHgCg" name="Connect to Broker"/>
+      <subvertex xmi:type="uml:State" xmi:id="_jZk2gGZ0EeuliecfMGHgCg" name="Store Message in logfile"/>
+      <subvertex xmi:type="uml:State" xmi:id="_n5vPAGZ0EeuliecfMGHgCg" name="Store logfile name in Database"/>
+      <subvertex xmi:type="uml:State" xmi:id="_1HxWkGZ0EeuliecfMGHgCg" name="Retrieve Message"/>
+      <subvertex xmi:type="uml:State" xmi:id="_HRzeEGZ1EeuliecfMGHgCg" name="Publish to topic"/>
+      <subvertex xmi:type="uml:FinalState" xmi:id="_MyI6IGZ1EeuliecfMGHgCg" name=""/>
+    </region>
+  </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0GpdkF5tEeuoDf1G-rjmnQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0Gr50F5tEeuoDf1G-rjmnQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
