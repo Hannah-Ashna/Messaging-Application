@@ -525,16 +525,23 @@
     <region xmi:type="uml:Region" xmi:id="_4iBjsGVzEeutZaOdWpjgww" name="Region1">
       <transition xmi:type="uml:Transition" xmi:id="_C_fBEGV0EeutZaOdWpjgww" name="Open login form" source="_7SmN4GVzEeutZaOdWpjgww" target="_-Ok20GVzEeutZaOdWpjgww"/>
       <transition xmi:type="uml:Transition" xmi:id="_mOXwsGV0EeutZaOdWpjgww" name="Enter credentials" source="_-Ok20GVzEeutZaOdWpjgww" target="_i6DgQGV0EeutZaOdWpjgww"/>
-      <transition xmi:type="uml:Transition" xmi:id="_qC2u8GV0EeutZaOdWpjgww" name="Check with database" source="_i6DgQGV0EeutZaOdWpjgww" target="_gPGV4GV0EeutZaOdWpjgww"/>
+      <transition xmi:type="uml:Transition" xmi:id="_qC2u8GV0EeutZaOdWpjgww" name="Check with database" source="_i6DgQGV0EeutZaOdWpjgww" target="_-LP3UGZ2EeuliecfMGHgCg"/>
       <transition xmi:type="uml:Transition" xmi:id="_uzrZoGV0EeutZaOdWpjgww" name="[rejected, try again]" source="_gPGV4GV0EeutZaOdWpjgww" target="_-Ok20GVzEeutZaOdWpjgww"/>
       <transition xmi:type="uml:Transition" xmi:id="_F_pJ8GV1EeutZaOdWpjgww" name="[accepted, load user space]" source="_gPGV4GV0EeutZaOdWpjgww" target="_X62nwGV0EeutZaOdWpjgww"/>
       <transition xmi:type="uml:Transition" xmi:id="_MO-aAGV1EeutZaOdWpjgww" source="_X62nwGV0EeutZaOdWpjgww" target="_KpvhkGV1EeutZaOdWpjgww"/>
+      <transition xmi:type="uml:Transition" xmi:id="_Hnr8kGZ3EeuliecfMGHgCg" name="[Available]" source="_-LP3UGZ2EeuliecfMGHgCg" target="_gPGV4GV0EeutZaOdWpjgww"/>
+      <transition xmi:type="uml:Transition" xmi:id="_VqLm8GZ3EeuliecfMGHgCg" name="[Unavailable]" source="_-LP3UGZ2EeuliecfMGHgCg" target="_WPukAGZ3EeuliecfMGHgCg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_ZpxB8GZ3EeuliecfMGHgCg" source="_WPukAGZ3EeuliecfMGHgCg" target="_TfppEGZ3EeuliecfMGHgCg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_akyfwGZ3EeuliecfMGHgCg" name="[try again later]" source="_TfppEGZ3EeuliecfMGHgCg" target="_-Ok20GVzEeutZaOdWpjgww"/>
       <subvertex xmi:type="uml:Pseudostate" xmi:id="_7SmN4GVzEeutZaOdWpjgww"/>
       <subvertex xmi:type="uml:State" xmi:id="_-Ok20GVzEeutZaOdWpjgww" name="Not logged in"/>
       <subvertex xmi:type="uml:State" xmi:id="_X62nwGV0EeutZaOdWpjgww" name="Logged in"/>
       <subvertex xmi:type="uml:State" xmi:id="_gPGV4GV0EeutZaOdWpjgww" name="Authorise"/>
       <subvertex xmi:type="uml:State" xmi:id="_i6DgQGV0EeutZaOdWpjgww" name="Getting credentials"/>
       <subvertex xmi:type="uml:FinalState" xmi:id="_KpvhkGV1EeutZaOdWpjgww"/>
+      <subvertex xmi:type="uml:State" xmi:id="_-LP3UGZ2EeuliecfMGHgCg" name="Check Credentials Database Status"/>
+      <subvertex xmi:type="uml:State" xmi:id="_TfppEGZ3EeuliecfMGHgCg" name="Notify User of Error"/>
+      <subvertex xmi:type="uml:State" xmi:id="_WPukAGZ3EeuliecfMGHgCg" name="Notify Database Admin"/>
     </region>
   </packagedElement>
   <packagedElement xmi:type="uml:StateMachine" xmi:id="_PQ12QGV6Eeuqt77GaTrtWA" name="Messaging Application">
@@ -798,6 +805,27 @@
       <subvertex xmi:type="uml:State" xmi:id="_1HxWkGZ0EeuliecfMGHgCg" name="Retrieve Message"/>
       <subvertex xmi:type="uml:State" xmi:id="_HRzeEGZ1EeuliecfMGHgCg" name="Publish to topic"/>
       <subvertex xmi:type="uml:FinalState" xmi:id="_MyI6IGZ1EeuliecfMGHgCg" name=""/>
+    </region>
+  </packagedElement>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_lsiiMGZ1EeuliecfMGHgCg" name="Messaing Application - Subscriber">
+    <region xmi:type="uml:Region" xmi:id="_mNAyAGZ1EeuliecfMGHgCg" name="Region1">
+      <transition xmi:type="uml:Transition" xmi:id="_NCHaYGZ2EeuliecfMGHgCg" source="_mtV34GZ1EeuliecfMGHgCg" target="_nqrp4GZ1EeuliecfMGHgCg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_OHiKUGZ2EeuliecfMGHgCg" source="_nqrp4GZ1EeuliecfMGHgCg" target="_sILv8GZ1EeuliecfMGHgCg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_PGKVwGZ2EeuliecfMGHgCg" source="_sILv8GZ1EeuliecfMGHgCg" target="_Ao1JgGZ2EeuliecfMGHgCg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_YnT74GZ2EeuliecfMGHgCg" source="_Ao1JgGZ2EeuliecfMGHgCg" target="_WJJ3YGZ2EeuliecfMGHgCg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_b6aEUGZ2EeuliecfMGHgCg" source="_WJJ3YGZ2EeuliecfMGHgCg" target="_DF6P8GZ2EeuliecfMGHgCg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_dZPZ0GZ2EeuliecfMGHgCg" name="[Channel/Chatroom Found]" source="_DF6P8GZ2EeuliecfMGHgCg" target="_JG7XMGZ2EeuliecfMGHgCg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_hi9BMGZ2EeuliecfMGHgCg" source="_JG7XMGZ2EeuliecfMGHgCg" target="_LSjhQGZ2EeuliecfMGHgCg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_jx0FcGZ2EeuliecfMGHgCg" source="_LSjhQGZ2EeuliecfMGHgCg" target="_idjoQGZ2EeuliecfMGHgCg"/>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_mtV34GZ1EeuliecfMGHgCg"/>
+      <subvertex xmi:type="uml:State" xmi:id="_nqrp4GZ1EeuliecfMGHgCg" name="Message sent"/>
+      <subvertex xmi:type="uml:State" xmi:id="_sILv8GZ1EeuliecfMGHgCg" name="Published to Topic"/>
+      <subvertex xmi:type="uml:State" xmi:id="_Ao1JgGZ2EeuliecfMGHgCg" name="Retrieve message contents"/>
+      <subvertex xmi:type="uml:State" xmi:id="_DF6P8GZ2EeuliecfMGHgCg" name="Locate message destination"/>
+      <subvertex xmi:type="uml:State" xmi:id="_JG7XMGZ2EeuliecfMGHgCg" name="Update UI"/>
+      <subvertex xmi:type="uml:State" xmi:id="_LSjhQGZ2EeuliecfMGHgCg" name="Display message"/>
+      <subvertex xmi:type="uml:State" xmi:id="_WJJ3YGZ2EeuliecfMGHgCg" name="Distribute to Subscribers"/>
+      <subvertex xmi:type="uml:FinalState" xmi:id="_idjoQGZ2EeuliecfMGHgCg"/>
     </region>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0GpdkF5tEeuoDf1G-rjmnQ">
