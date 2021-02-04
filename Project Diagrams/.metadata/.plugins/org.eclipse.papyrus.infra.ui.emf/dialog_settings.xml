@@ -32,4 +32,13 @@
 	</section>
 	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:Element:annotatedElement">
 	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history_container_platform:/resource/SDI/SDI.uml:uml:NamedElement:signature">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/SDI/SDI.uml:uml:NamedElement:signature">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/SDI/SDI.uml#_5eX_sGPdEeu8eYn3suWhfA"/>
+			</list>
+		</section>
+	</section>
 </section>
