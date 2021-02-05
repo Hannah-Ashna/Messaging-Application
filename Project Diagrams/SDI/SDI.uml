@@ -3,12 +3,6 @@
   <ownedComment xmi:type="uml:Comment" xmi:id="_aaKzQFz3EeuhbZ2aKT7LXw">
     <body>Pre-requisite: User must be logged in</body>
   </ownedComment>
-  <ownedRule xmi:type="uml:Constraint" xmi:id="_JI8S0GWZEeuS343rV_0dVw" name="Logged in">
-    <specification xmi:type="uml:OpaqueExpression" xmi:id="_JI854GWZEeuS343rV_0dVw" name="constraintSpec">
-      <language>OCL</language>
-      <body>true</body>
-    </specification>
-  </ownedRule>
   <packageImport xmi:type="uml:PackageImport" xmi:id="_S9Nh4ErBEeuXmMxXDJeMJA">
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
@@ -769,33 +763,6 @@
     <message xmi:type="uml:Message" xmi:id="_IyRicGWdEeuMN57UobLpBw" name="Add user" messageSort="asynchCall" receiveEvent="_IyZeQGWdEeuMN57UobLpBw" sendEvent="_IyY3MGWdEeuMN57UobLpBw"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Component" xmi:id="_KilGoGWWEeuS343rV_0dVw" name="User"/>
-  <packagedElement xmi:type="uml:Interface" xmi:id="_FzP0QGWXEeuS343rV_0dVw" name="Messaging"/>
-  <packagedElement xmi:type="uml:Component" xmi:id="_HJAGQGWXEeuS343rV_0dVw" name="User">
-    <packagedElement xmi:type="uml:Usage" xmi:id="_9EpP8GWXEeuS343rV_0dVw" client="_HJAGQGWXEeuS343rV_0dVw" supplier="_FzP0QGWXEeuS343rV_0dVw"/>
-    <packagedElement xmi:type="uml:Dependency" xmi:id="_MK19kGWZEeuS343rV_0dVw" client="_HJAGQGWXEeuS343rV_0dVw" supplier="_JI8S0GWZEeuS343rV_0dVw"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Component" xmi:id="_IhotIGWXEeuS343rV_0dVw" name="Room">
-    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_llWegGWYEeuS343rV_0dVw" client="_IhotIGWXEeuS343rV_0dVw" supplier="_ODv1YGWYEeuS343rV_0dVw" contract="_ODv1YGWYEeuS343rV_0dVw"/>
-    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_rwa5oGWYEeuS343rV_0dVw" client="_IhotIGWXEeuS343rV_0dVw" supplier="_nhOVUGWYEeuS343rV_0dVw" contract="_nhOVUGWYEeuS343rV_0dVw"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Component" xmi:id="_JRy-wGWXEeuS343rV_0dVw" name="Channel">
-    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_zGzGwGWXEeuS343rV_0dVw" client="_JRy-wGWXEeuS343rV_0dVw" supplier="_FzP0QGWXEeuS343rV_0dVw" contract="_FzP0QGWXEeuS343rV_0dVw"/>
-    <packagedElement xmi:type="uml:Usage" xmi:id="_tBp4AGWYEeuS343rV_0dVw" client="_JRy-wGWXEeuS343rV_0dVw" supplier="_nhOVUGWYEeuS343rV_0dVw"/>
-    <packagedElement xmi:type="uml:Usage" xmi:id="_r9yKwGWZEeuS343rV_0dVw" client="_JRy-wGWXEeuS343rV_0dVw" supplier="_SGdncGWZEeuS343rV_0dVw"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Component" xmi:id="_jj8c4GWXEeuS343rV_0dVw" name="Admin">
-    <generalization xmi:type="uml:Generalization" xmi:id="_DIY7EGWYEeuS343rV_0dVw" general="_HJAGQGWXEeuS343rV_0dVw"/>
-    <packagedElement xmi:type="uml:Usage" xmi:id="_0FHTsGWYEeuS343rV_0dVw" client="_jj8c4GWXEeuS343rV_0dVw" supplier="_ODv1YGWYEeuS343rV_0dVw"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Component" xmi:id="_lUXRoGWXEeuS343rV_0dVw" name="Moderator">
-    <generalization xmi:type="uml:Generalization" xmi:id="_FI72gGWYEeuS343rV_0dVw" general="_jj8c4GWXEeuS343rV_0dVw"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Component" xmi:id="_IpnvAGWYEeuS343rV_0dVw" name="Database">
-    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_ZFNiQGWZEeuS343rV_0dVw" client="_IpnvAGWYEeuS343rV_0dVw" supplier="_SGdncGWZEeuS343rV_0dVw" contract="_SGdncGWZEeuS343rV_0dVw"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Interface" xmi:id="_ODv1YGWYEeuS343rV_0dVw" name="Room Manager"/>
-  <packagedElement xmi:type="uml:Interface" xmi:id="_nhOVUGWYEeuS343rV_0dVw" name="Channel List"/>
-  <packagedElement xmi:type="uml:Interface" xmi:id="_SGdncGWZEeuS343rV_0dVw" name="Save Data"/>
   <packagedElement xmi:type="uml:StateMachine" xmi:id="_46J4gGZzEeuliecfMGHgCg" name="Messaging Application - Publisher">
     <region xmi:type="uml:Region" xmi:id="_5jko8GZzEeuliecfMGHgCg" name="Region1">
       <transition xmi:type="uml:Transition" xmi:id="_G9vIAGZ0EeuliecfMGHgCg" source="_9yL-cGZzEeuliecfMGHgCg" target="_-tAn8GZzEeuliecfMGHgCg"/>
@@ -850,6 +817,61 @@
     <message xmi:type="uml:Message" xmi:id="_QGDjgGbZEeu7VKJwN3ccBA" name="1.1.Store Message" messageSort="asynchSignal" receiveEvent="_QGEKkGbZEeu7VKJwN3ccBA" sendEvent="_QGDjgWbZEeu7VKJwN3ccBA"/>
     <message xmi:type="uml:Message" xmi:id="_oVfjAGbZEeu7VKJwN3ccBA" name="1.2: Update chat" messageSort="asynchCall" receiveEvent="_oVfjAmbZEeu7VKJwN3ccBA" sendEvent="_oVfjAWbZEeu7VKJwN3ccBA"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_XvSp4GeWEeurJ6Rkxs5bbA" name="Messaging Application">
+    <ownedAttribute xmi:type="uml:Port" xmi:id="__IU-YGeZEeurJ6Rkxs5bbA" name="Port6" aggregation="composite"/>
+    <ownedAttribute xmi:type="uml:Port" xmi:id="_nZKk8GeaEeurJ6Rkxs5bbA" name="Port7" aggregation="composite"/>
+    <ownedAttribute xmi:type="uml:Port" xmi:id="_WYhCMGesEeurJ6Rkxs5bbA" name="Port10" aggregation="composite"/>
+    <nestedClassifier xmi:type="uml:Interface" xmi:id="_nAcqUGeXEeurJ6Rkxs5bbA" name="User View"/>
+    <nestedClassifier xmi:type="uml:Interface" xmi:id="_Oe0x0GebEeurJ6Rkxs5bbA" name="Room View"/>
+    <nestedClassifier xmi:type="uml:Interface" xmi:id="_1LTCoGebEeurJ6Rkxs5bbA" name="Channel View"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="__jQuQGeWEeurJ6Rkxs5bbA" name="GUI">
+      <packagedElement xmi:type="uml:Usage" xmi:id="_0hGL4GeXEeurJ6Rkxs5bbA" client="__jQuQGeWEeurJ6Rkxs5bbA" supplier="_nAcqUGeXEeurJ6Rkxs5bbA"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_wYrBIGebEeurJ6Rkxs5bbA" client="__jQuQGeWEeurJ6Rkxs5bbA" supplier="_Oe0x0GebEeurJ6Rkxs5bbA"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_BzfSMGecEeurJ6Rkxs5bbA" client="__jQuQGeWEeurJ6Rkxs5bbA" supplier="_1LTCoGebEeurJ6Rkxs5bbA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_MMrs4GeXEeurJ6Rkxs5bbA" name="User Account">
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_w4K9YGeXEeurJ6Rkxs5bbA" client="_MMrs4GeXEeurJ6Rkxs5bbA" supplier="_nAcqUGeXEeurJ6Rkxs5bbA" contract="_nAcqUGeXEeurJ6Rkxs5bbA"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_CqbMIGeaEeurJ6Rkxs5bbA" client="_MMrs4GeXEeurJ6Rkxs5bbA" supplier="_WLbjEGeZEeurJ6Rkxs5bbA" contract="_WLbjEGeZEeurJ6Rkxs5bbA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_R6PsoGeXEeurJ6Rkxs5bbA" name="Chatroom">
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_sTbDAGebEeurJ6Rkxs5bbA" client="_R6PsoGeXEeurJ6Rkxs5bbA" supplier="_Oe0x0GebEeurJ6Rkxs5bbA" contract="_Oe0x0GebEeurJ6Rkxs5bbA"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_Kf7DkGesEeurJ6Rkxs5bbA" client="_R6PsoGeXEeurJ6Rkxs5bbA" supplier="_Flei0GesEeurJ6Rkxs5bbA" contract="_Flei0GesEeurJ6Rkxs5bbA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_UduWAGeXEeurJ6Rkxs5bbA" name="Channel">
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_hWvIcGeaEeurJ6Rkxs5bbA" client="_UduWAGeXEeurJ6Rkxs5bbA" supplier="_GD-h4GeaEeurJ6Rkxs5bbA" contract="_GD-h4GeaEeurJ6Rkxs5bbA"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_DPnR8GecEeurJ6Rkxs5bbA" client="_UduWAGeXEeurJ6Rkxs5bbA" supplier="_1LTCoGebEeurJ6Rkxs5bbA" contract="_1LTCoGebEeurJ6Rkxs5bbA"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_bOWKsGeWEeurJ6Rkxs5bbA" name="Database">
+    <ownedAttribute xmi:type="uml:Port" xmi:id="_-J_G0GeZEeurJ6Rkxs5bbA" name="Port4" aggregation="composite"/>
+    <ownedAttribute xmi:type="uml:Port" xmi:id="_A13BwGebEeurJ6Rkxs5bbA" name="Port4" aggregation="composite"/>
+    <ownedAttribute xmi:type="uml:Port" xmi:id="_UpwaUGesEeurJ6Rkxs5bbA" name="Port7" aggregation="composite"/>
+    <nestedClassifier xmi:type="uml:Interface" xmi:id="_EfKDsGebEeurJ6Rkxs5bbA" name="roomID"/>
+    <nestedClassifier xmi:type="uml:Interface" xmi:id="_hkQh4GesEeurJ6Rkxs5bbA" name="channelID"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_3vHKkGeYEeurJ6Rkxs5bbA" name="User Table">
+      <packagedElement xmi:type="uml:Usage" xmi:id="_DVEroGeaEeurJ6Rkxs5bbA" client="_3vHKkGeYEeurJ6Rkxs5bbA" supplier="_WLbjEGeZEeurJ6Rkxs5bbA"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_WNJvcGebEeurJ6Rkxs5bbA" client="_3vHKkGeYEeurJ6Rkxs5bbA" supplier="_EfKDsGebEeurJ6Rkxs5bbA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="__fJYYGeYEeurJ6Rkxs5bbA" name="Channel Table">
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_OQJskGevEeurJ6Rkxs5bbA" client="__fJYYGeYEeurJ6Rkxs5bbA" supplier="_hkQh4GesEeurJ6Rkxs5bbA" contract="_hkQh4GesEeurJ6Rkxs5bbA"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_xuZ6cGeaEeurJ6Rkxs5bbA" client="__fJYYGeYEeurJ6Rkxs5bbA" supplier="_GD-h4GeaEeurJ6Rkxs5bbA"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_JdlFgGebEeurJ6Rkxs5bbA" client="__fJYYGeYEeurJ6Rkxs5bbA" supplier="_EfKDsGebEeurJ6Rkxs5bbA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_Ec4YgGerEeurJ6Rkxs5bbA" name="Message Backup">
+      <packagedElement xmi:type="uml:Usage" xmi:id="_O3NFgGevEeurJ6Rkxs5bbA" client="_Ec4YgGerEeurJ6Rkxs5bbA" supplier="_hkQh4GesEeurJ6Rkxs5bbA"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_POjQgGeZEeurJ6Rkxs5bbA" name="Broker">
+    <ownedAttribute xmi:type="uml:Port" xmi:id="_ZBcRcGeaEeurJ6Rkxs5bbA" name="API" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_WLbjEGeZEeurJ6Rkxs5bbA" name="userID"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_GD-h4GeaEeurJ6Rkxs5bbA" name="Send/Recieve Message"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_7dLXwGeYEeurJ6Rkxs5bbA" name="Chatroom Table">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_I_XfgGebEeurJ6Rkxs5bbA" client="_7dLXwGeYEeurJ6Rkxs5bbA" supplier="_EfKDsGebEeurJ6Rkxs5bbA" contract="_EfKDsGebEeurJ6Rkxs5bbA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_S87FEGesEeurJ6Rkxs5bbA" client="_7dLXwGeYEeurJ6Rkxs5bbA" supplier="_Flei0GesEeurJ6Rkxs5bbA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_Flei0GesEeurJ6Rkxs5bbA" name="roomID"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_R5Qr0GewEeurJ6Rkxs5bbA" client="_ZBcRcGeaEeurJ6Rkxs5bbA" supplier="_GD-h4GeaEeurJ6Rkxs5bbA"/>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0GpdkF5tEeuoDf1G-rjmnQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0Gr50F5tEeuoDf1G-rjmnQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
