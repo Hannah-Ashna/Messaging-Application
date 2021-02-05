@@ -772,7 +772,9 @@
       <transition xmi:type="uml:Transition" xmi:id="_xEd5MGZ0EeuliecfMGHgCg" name="[try again]" source="_n5vPAGZ0EeuliecfMGHgCg" target="_JKTGMGZ0EeuliecfMGHgCg"/>
       <transition xmi:type="uml:Transition" xmi:id="_9d3e0GZ0EeuliecfMGHgCg" name="[Success]" source="_JKTGMGZ0EeuliecfMGHgCg" target="_1HxWkGZ0EeuliecfMGHgCg"/>
       <transition xmi:type="uml:Transition" xmi:id="_JTkhgGZ1EeuliecfMGHgCg" source="_1HxWkGZ0EeuliecfMGHgCg" target="_HRzeEGZ1EeuliecfMGHgCg"/>
-      <transition xmi:type="uml:Transition" xmi:id="_Oz9n8GZ1EeuliecfMGHgCg" source="_HRzeEGZ1EeuliecfMGHgCg" target="_MyI6IGZ1EeuliecfMGHgCg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_9dduUGe1EeuBUoLo-8ArtA" source="_HRzeEGZ1EeuliecfMGHgCg" target="_6885YGe1EeuBUoLo-8ArtA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_-NyYAGe1EeuBUoLo-8ArtA" name="[New Message created]" source="_6885YGe1EeuBUoLo-8ArtA" target="_-tAn8GZzEeuliecfMGHgCg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_Ed0LoGe2EeuBUoLo-8ArtA" name="[No New Message]" source="_6885YGe1EeuBUoLo-8ArtA" target="_6885YGe1EeuBUoLo-8ArtA"/>
       <subvertex xmi:type="uml:Pseudostate" xmi:id="_9yL-cGZzEeuliecfMGHgCg"/>
       <subvertex xmi:type="uml:State" xmi:id="_-tAn8GZzEeuliecfMGHgCg" name="Message created"/>
       <subvertex xmi:type="uml:State" xmi:id="_JKTGMGZ0EeuliecfMGHgCg" name="Connect to Broker"/>
@@ -780,7 +782,7 @@
       <subvertex xmi:type="uml:State" xmi:id="_n5vPAGZ0EeuliecfMGHgCg" name="Store logfile name in Database"/>
       <subvertex xmi:type="uml:State" xmi:id="_1HxWkGZ0EeuliecfMGHgCg" name="Retrieve Message"/>
       <subvertex xmi:type="uml:State" xmi:id="_HRzeEGZ1EeuliecfMGHgCg" name="Publish to topic"/>
-      <subvertex xmi:type="uml:FinalState" xmi:id="_MyI6IGZ1EeuliecfMGHgCg" name=""/>
+      <subvertex xmi:type="uml:State" xmi:id="_6885YGe1EeuBUoLo-8ArtA" name="Wait for New Message"/>
     </region>
   </packagedElement>
   <packagedElement xmi:type="uml:StateMachine" xmi:id="_lsiiMGZ1EeuliecfMGHgCg" name="Messaing Application - Subscriber">
@@ -792,7 +794,9 @@
       <transition xmi:type="uml:Transition" xmi:id="_b6aEUGZ2EeuliecfMGHgCg" source="_WJJ3YGZ2EeuliecfMGHgCg" target="_DF6P8GZ2EeuliecfMGHgCg"/>
       <transition xmi:type="uml:Transition" xmi:id="_dZPZ0GZ2EeuliecfMGHgCg" name="[Channel/Chatroom Found]" source="_DF6P8GZ2EeuliecfMGHgCg" target="_JG7XMGZ2EeuliecfMGHgCg"/>
       <transition xmi:type="uml:Transition" xmi:id="_hi9BMGZ2EeuliecfMGHgCg" source="_JG7XMGZ2EeuliecfMGHgCg" target="_LSjhQGZ2EeuliecfMGHgCg"/>
-      <transition xmi:type="uml:Transition" xmi:id="_jx0FcGZ2EeuliecfMGHgCg" source="_LSjhQGZ2EeuliecfMGHgCg" target="_idjoQGZ2EeuliecfMGHgCg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_eXSggGe1EeuBUoLo-8ArtA" source="_LSjhQGZ2EeuliecfMGHgCg" target="_ZeoIcGe1EeuBUoLo-8ArtA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_gf5y0Ge1EeuBUoLo-8ArtA" name="[New Message Created]" source="_ZeoIcGe1EeuBUoLo-8ArtA" target="_mtV34GZ1EeuliecfMGHgCg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_rTzaQGe1EeuBUoLo-8ArtA" name="[No new Message]" source="_ZeoIcGe1EeuBUoLo-8ArtA" target="_ZeoIcGe1EeuBUoLo-8ArtA"/>
       <subvertex xmi:type="uml:Pseudostate" xmi:id="_mtV34GZ1EeuliecfMGHgCg"/>
       <subvertex xmi:type="uml:State" xmi:id="_nqrp4GZ1EeuliecfMGHgCg" name="Message sent"/>
       <subvertex xmi:type="uml:State" xmi:id="_sILv8GZ1EeuliecfMGHgCg" name="Published to Topic"/>
@@ -801,7 +805,7 @@
       <subvertex xmi:type="uml:State" xmi:id="_JG7XMGZ2EeuliecfMGHgCg" name="Update UI"/>
       <subvertex xmi:type="uml:State" xmi:id="_LSjhQGZ2EeuliecfMGHgCg" name="Display message"/>
       <subvertex xmi:type="uml:State" xmi:id="_WJJ3YGZ2EeuliecfMGHgCg" name="Distribute to Subscribers"/>
-      <subvertex xmi:type="uml:FinalState" xmi:id="_idjoQGZ2EeuliecfMGHgCg"/>
+      <subvertex xmi:type="uml:State" xmi:id="_ZeoIcGe1EeuBUoLo-8ArtA" name="Wait for new message"/>
     </region>
   </packagedElement>
   <packagedElement xmi:type="uml:Interaction" xmi:id="_9Xer4GbVEeu7VKJwN3ccBA" name="Send Message">
