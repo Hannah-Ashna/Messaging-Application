@@ -876,30 +876,6 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_Flei0GesEeurJ6Rkxs5bbA" name="Get Chatroom"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_R5Qr0GewEeurJ6Rkxs5bbA" client="_ZBcRcGeaEeurJ6Rkxs5bbA" supplier="_GD-h4GeaEeurJ6Rkxs5bbA"/>
-  <packagedElement xmi:type="uml:Device" xmi:id="_iWNokGiDEeuloLrYI-XNfQ" name="Server">
-    <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_UD91gGiEEeuloLrYI-XNfQ" name="Chat Server"/>
-    <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_WRVsAGiEEeuloLrYI-XNfQ" name="RDBMS"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Device" xmi:id="_lW9cwGiDEeuloLrYI-XNfQ" name="Client PC">
-    <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_oEPiYGiDEeuloLrYI-XNfQ" name="Application"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Artifact" xmi:id="_t0j7MGiDEeuloLrYI-XNfQ" name="Chat Application" fileName=""/>
-  <packagedElement xmi:type="uml:Artifact" xmi:id="_yHcFoGiDEeuloLrYI-XNfQ" name="MQTT Client"/>
-  <packagedElement xmi:type="uml:Dependency" xmi:id="_zl95IGiDEeuloLrYI-XNfQ" client="_t0j7MGiDEeuloLrYI-XNfQ" supplier="_yHcFoGiDEeuloLrYI-XNfQ"/>
-  <packagedElement xmi:type="uml:CommunicationPath" xmi:id="_9dtaUGiDEeuloLrYI-XNfQ" name="MQTT Protocol" memberEnd="_9dv2kGiDEeuloLrYI-XNfQ _9dwdoGiDEeuloLrYI-XNfQ">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9duocGiDEeuloLrYI-XNfQ" source="org.eclipse.papyrus">
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9dvPgGiDEeuloLrYI-XNfQ" key="nature" value="UML_Nature"/>
-    </eAnnotations>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_9dv2kGiDEeuloLrYI-XNfQ" name="client pc" type="_lW9cwGiDEeuloLrYI-XNfQ" association="_9dtaUGiDEeuloLrYI-XNfQ"/>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_9dwdoGiDEeuloLrYI-XNfQ" name="device89" type="_iWNokGiDEeuloLrYI-XNfQ" association="_9dtaUGiDEeuloLrYI-XNfQ"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Artifact" xmi:id="_Z6qjIGiEEeuloLrYI-XNfQ" name="MySQL"/>
-  <packagedElement xmi:type="uml:Artifact" xmi:id="_bwk74GiEEeuloLrYI-XNfQ" name="Boost file management"/>
-  <packagedElement xmi:type="uml:Dependency" xmi:id="_eI3B4GiEEeuloLrYI-XNfQ" client="_UD91gGiEEeuloLrYI-XNfQ" supplier="_WRVsAGiEEeuloLrYI-XNfQ"/>
-  <packagedElement xmi:type="uml:Dependency" xmi:id="_fIwYoGiEEeuloLrYI-XNfQ" client="_Z6qjIGiEEeuloLrYI-XNfQ" supplier="_bwk74GiEEeuloLrYI-XNfQ"/>
-  <packagedElement xmi:type="uml:Artifact" xmi:id="_foaJEGiEEeuloLrYI-XNfQ" name="Chat Server Application"/>
-  <packagedElement xmi:type="uml:Artifact" xmi:id="_jgd_wGiEEeuloLrYI-XNfQ" name="MQTT Broker"/>
-  <packagedElement xmi:type="uml:Dependency" xmi:id="_mWbgQGiEEeuloLrYI-XNfQ" client="_foaJEGiEEeuloLrYI-XNfQ" supplier="_jgd_wGiEEeuloLrYI-XNfQ"/>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0GpdkF5tEeuoDf1G-rjmnQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0Gr50F5tEeuoDf1G-rjmnQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
