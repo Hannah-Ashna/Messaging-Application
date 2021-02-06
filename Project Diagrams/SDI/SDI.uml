@@ -868,13 +868,13 @@
   <packagedElement xmi:type="uml:Component" xmi:id="_POjQgGeZEeurJ6Rkxs5bbA" name="Broker">
     <ownedAttribute xmi:type="uml:Port" xmi:id="_ZBcRcGeaEeurJ6Rkxs5bbA" name="API" aggregation="composite"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Interface" xmi:id="_WLbjEGeZEeurJ6Rkxs5bbA" name="userID"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_WLbjEGeZEeurJ6Rkxs5bbA" name="Get User"/>
   <packagedElement xmi:type="uml:Interface" xmi:id="_GD-h4GeaEeurJ6Rkxs5bbA" name="Send/Recieve Message"/>
   <packagedElement xmi:type="uml:Component" xmi:id="_7dLXwGeYEeurJ6Rkxs5bbA" name="Chatroom Table">
     <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_I_XfgGebEeurJ6Rkxs5bbA" client="_7dLXwGeYEeurJ6Rkxs5bbA" supplier="_EfKDsGebEeurJ6Rkxs5bbA" contract="_EfKDsGebEeurJ6Rkxs5bbA"/>
     <packagedElement xmi:type="uml:Usage" xmi:id="_S87FEGesEeurJ6Rkxs5bbA" client="_7dLXwGeYEeurJ6Rkxs5bbA" supplier="_Flei0GesEeurJ6Rkxs5bbA"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Interface" xmi:id="_Flei0GesEeurJ6Rkxs5bbA" name="roomID"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_Flei0GesEeurJ6Rkxs5bbA" name="Get Chatroom"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_R5Qr0GewEeurJ6Rkxs5bbA" client="_ZBcRcGeaEeurJ6Rkxs5bbA" supplier="_GD-h4GeaEeurJ6Rkxs5bbA"/>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0GpdkF5tEeuoDf1G-rjmnQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0Gr50F5tEeuoDf1G-rjmnQ" source="http://www.eclipse.org/uml2/2.0.0/UML">

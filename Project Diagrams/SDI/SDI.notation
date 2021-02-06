@@ -4337,7 +4337,7 @@
     </children>
     <children xmi:type="notation:Shape" xmi:id="_49pk0GeZEeurJ6Rkxs5bbA" type="Interface_Shape">
       <children xmi:type="notation:DecorationNode" xmi:id="_49pk0meZEeurJ6Rkxs5bbA" type="Interface_NameLabel">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_49pk02eZEeurJ6Rkxs5bbA" y="-20"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_49pk02eZEeurJ6Rkxs5bbA" x="-20" y="-20"/>
       </children>
       <children xmi:type="notation:DecorationNode" xmi:id="_49pk1GeZEeurJ6Rkxs5bbA" type="Interface_FloatingNameLabel">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_49pk1WeZEeurJ6Rkxs5bbA" y="15"/>
