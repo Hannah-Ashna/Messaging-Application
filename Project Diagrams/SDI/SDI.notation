@@ -457,7 +457,7 @@
     <styles xmi:type="notation:StringValueStyle" xmi:id="_bhda4UrBEeuXmMxXDJeMJA" name="diagram_compatibility_version" stringValue="1.4.0"/>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_bhda4krBEeuXmMxXDJeMJA"/>
     <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_bhda40rBEeuXmMxXDJeMJA" diagramKindId="org.eclipse.papyrus.uml.diagram.class">
-      <owner xmi:type="uml:Model" href="SDI.uml#_S5v-MErBEeuXmMxXDJeMJA"/>
+      <owner xmi:type="uml:Package" href="SDI.uml#_rljmMHBIEeuIgJA_H-c-Ig"/>
     </styles>
     <element xmi:type="uml:Model" href="SDI.uml#_S5v-MErBEeuXmMxXDJeMJA"/>
     <edges xmi:type="notation:Connector" xmi:id="_Y1T18FHNEeuyzNSi8MGzrQ" type="Generalization_Edge" source="_BpfuUFEXEeuE1ZThcLnWlQ" target="_UB-zcFEVEeuE1ZThcLnWlQ">
