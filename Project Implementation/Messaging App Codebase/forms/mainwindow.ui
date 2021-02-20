@@ -82,6 +82,19 @@
          </property>
         </widget>
        </item>
+       <item>
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
       </layout>
      </widget>
      <widget class="Line" name="line">
@@ -102,7 +115,7 @@
        <rect>
         <x>89</x>
         <y>10</y>
-        <width>171</width>
+        <width>181</width>
         <height>891</height>
        </rect>
       </property>
@@ -142,7 +155,7 @@
        <item>
         <widget class="QPushButton" name="channel1">
          <property name="text">
-          <string># idea-board</string>
+          <string>ideaboard</string>
          </property>
         </widget>
        </item>
@@ -335,8 +348,8 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>160</x>
         <y>920</y>
-        <width>101</width>
-        <height>135</height>
+        <width>111</width>
+        <height>131</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4">

@@ -17,6 +17,14 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(m_client, &QMqttClient::disconnected, this, &MainWindow::brokerDisconnected);
 
+    connect(m_client, &QMqttClient::messageReceived, this, [this](const QByteArray &message) {
+        const QString content = QDateTime::currentDateTime().toString()
+                    + QLatin1String(" : ")
+                    + message
+                    + QLatin1Char('\n');
+        ui->messageLog->insertPlainText(content);
+    });
+
     connect(ui->hostEdit, &QLineEdit::textChanged, m_client, &QMqttClient::setHostname);
     connect(ui->portSpinBox, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::setClientPort);
 
@@ -39,12 +47,6 @@ void MainWindow::setClientPort(int p)
     m_client->setPort(p);
 }
 
-void MainWindow::on_sendButton_clicked()
-{
-    ui->messageLog->insertPlainText(ui->sendInput->text() + "\n");
-    ui->sendInput->clear();
-}
-
 void MainWindow::on_buttonConnect_clicked()
 {
     if (m_client->state() == QMqttClient::Disconnected) {
@@ -58,6 +60,22 @@ void MainWindow::on_buttonConnect_clicked()
         ui->buttonConnect->setText(tr("Connect"));
         m_client->disconnectFromHost();
     }
+}
+
+void MainWindow::on_channel1_clicked()
+{
+    auto subscription = m_client->subscribe(ui->channel1->text());
+    if (!subscription) {
+        QMessageBox::critical(this, QLatin1String("Error"), QLatin1String("Could not subscribe. Is there a valid connection?"));
+        return;
+    }
+}
+
+void MainWindow::on_sendButton_clicked()
+{
+    if (m_client->publish(ui->channel1->text(), ui->sendInput->text().toUtf8()) == -1)
+        QMessageBox::critical(this, QLatin1String("Error"), QLatin1String("Could not publish message"));
+    ui->sendInput->clear();
 }
 
 void MainWindow::on_settingsButton_clicked()

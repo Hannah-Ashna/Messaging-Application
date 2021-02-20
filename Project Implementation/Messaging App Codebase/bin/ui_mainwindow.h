@@ -44,6 +44,7 @@ public:
     QVBoxLayout *verticalLayout_3;
     QPushButton *profileButton;
     QPushButton *settingsButton;
+    QSpacerItem *verticalSpacer_3;
     QFrame *line;
     QWidget *verticalLayoutWidget_2;
     QVBoxLayout *verticalLayout_2;
@@ -165,6 +166,10 @@ public:
 
         verticalLayout_3->addWidget(settingsButton);
 
+        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_3->addItem(verticalSpacer_3);
+
         line = new QFrame(MessagingPage);
         line->setObjectName(QString::fromUtf8("line"));
         line->setGeometry(QRect(270, 0, 20, 1061));
@@ -172,7 +177,7 @@ public:
         line->setFrameShadow(QFrame::Sunken);
         verticalLayoutWidget_2 = new QWidget(MessagingPage);
         verticalLayoutWidget_2->setObjectName(QString::fromUtf8("verticalLayoutWidget_2"));
-        verticalLayoutWidget_2->setGeometry(QRect(89, 10, 171, 891));
+        verticalLayoutWidget_2->setGeometry(QRect(89, 10, 181, 891));
         verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -268,7 +273,7 @@ public:
         messageLog->setGeometry(QRect(290, 60, 1431, 931));
         verticalLayoutWidget_4 = new QWidget(MessagingPage);
         verticalLayoutWidget_4->setObjectName(QString::fromUtf8("verticalLayoutWidget_4"));
-        verticalLayoutWidget_4->setGeometry(QRect(160, 920, 101, 135));
+        verticalLayoutWidget_4->setGeometry(QRect(160, 920, 111, 131));
         verticalLayout_4 = new QVBoxLayout(verticalLayoutWidget_4);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         verticalLayout_4->setContentsMargins(0, 0, 0, 0);
@@ -537,7 +542,7 @@ public:
         settingsButton->setText(QApplication::translate("MainWindow", "Settings", nullptr));
         groupName->setText(QApplication::translate("MainWindow", "SDI Group 30", nullptr));
         channelGroupName1->setText(QApplication::translate("MainWindow", "Discussion Area", nullptr));
-        channel1->setText(QApplication::translate("MainWindow", "# idea-board", nullptr));
+        channel1->setText(QApplication::translate("MainWindow", "ideaboard", nullptr));
         channel2->setText(QApplication::translate("MainWindow", " # general", nullptr));
         channel3->setText(QApplication::translate("MainWindow", "# key-documents", nullptr));
         channelGroupName2->setText(QApplication::translate("MainWindow", "Work", nullptr));
