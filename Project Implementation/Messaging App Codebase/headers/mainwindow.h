@@ -14,6 +14,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void on_settingsButton_clicked();
 
 private:
     Ui::MainWindow *ui;
