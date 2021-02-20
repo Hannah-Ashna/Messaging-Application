@@ -17,5 +17,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_sendButton_clicked()
 {
-	ui->messageLog->insertPlainText("uwu");
+    ui->messageLog->insertPlainText((ui->sendInput->text() + "\n"));
+    ui->sendInput->clear();
 }

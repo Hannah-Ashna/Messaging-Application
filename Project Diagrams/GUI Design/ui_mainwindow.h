@@ -18,10 +18,10 @@
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -90,24 +90,24 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QLineEdit *sendInput;
     QPushButton *sendButton;
-    QPlainTextEdit *messageLog;
     QFrame *line;
     QFrame *line_2;
     QFrame *line_3;
     QFrame *line_4;
     QFrame *line_5;
+    QTextBrowser *messageLog;
     QMenuBar *menuBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1876, 985);
+        MainWindow->resize(1920, 1080);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayoutWidget = new QWidget(centralwidget);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(0, 0, 71, 961));
+        verticalLayoutWidget->setGeometry(QRect(10, 10, 61, 1011));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -147,7 +147,7 @@ public:
 
         verticalLayoutWidget_2 = new QWidget(centralwidget);
         verticalLayoutWidget_2->setObjectName(QString::fromUtf8("verticalLayoutWidget_2"));
-        verticalLayoutWidget_2->setGeometry(QRect(89, 0, 171, 831));
+        verticalLayoutWidget_2->setGeometry(QRect(89, 10, 171, 891));
         verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -240,7 +240,7 @@ public:
 
         verticalLayoutWidget_3 = new QWidget(centralwidget);
         verticalLayoutWidget_3->setObjectName(QString::fromUtf8("verticalLayoutWidget_3"));
-        verticalLayoutWidget_3->setGeometry(QRect(90, 850, 61, 111));
+        verticalLayoutWidget_3->setGeometry(QRect(90, 920, 61, 101));
         verticalLayout_3 = new QVBoxLayout(verticalLayoutWidget_3);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -256,7 +256,7 @@ public:
 
         verticalLayoutWidget_4 = new QWidget(centralwidget);
         verticalLayoutWidget_4->setObjectName(QString::fromUtf8("verticalLayoutWidget_4"));
-        verticalLayoutWidget_4->setGeometry(QRect(160, 850, 101, 111));
+        verticalLayoutWidget_4->setGeometry(QRect(160, 920, 101, 101));
         verticalLayout_4 = new QVBoxLayout(verticalLayoutWidget_4);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         verticalLayout_4->setContentsMargins(0, 0, 0, 0);
@@ -288,7 +288,7 @@ public:
 
         horizontalLayoutWidget = new QWidget(centralwidget);
         horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(280, 0, 1401, 31));
+        horizontalLayoutWidget->setGeometry(QRect(280, 10, 1441, 31));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -326,7 +326,7 @@ public:
 
         verticalLayoutWidget_5 = new QWidget(centralwidget);
         verticalLayoutWidget_5->setObjectName(QString::fromUtf8("verticalLayoutWidget_5"));
-        verticalLayoutWidget_5->setGeometry(QRect(1700, 0, 171, 961));
+        verticalLayoutWidget_5->setGeometry(QRect(1740, 10, 171, 1011));
         verticalLayout_5 = new QVBoxLayout(verticalLayoutWidget_5);
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
         verticalLayout_5->setContentsMargins(0, 0, 0, 0);
@@ -370,7 +370,7 @@ public:
 
         horizontalLayoutWidget_2 = new QWidget(centralwidget);
         horizontalLayoutWidget_2->setObjectName(QString::fromUtf8("horizontalLayoutWidget_2"));
-        horizontalLayoutWidget_2->setGeometry(QRect(280, 920, 1401, 41));
+        horizontalLayoutWidget_2->setGeometry(QRect(280, 970, 1441, 51));
         horizontalLayout_2 = new QHBoxLayout(horizontalLayoutWidget_2);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -384,38 +384,38 @@ public:
 
         horizontalLayout_2->addWidget(sendButton);
 
-        messageLog = new QPlainTextEdit(centralwidget);
-        messageLog->setObjectName(QString::fromUtf8("messageLog"));
-        messageLog->setGeometry(QRect(280, 50, 1401, 871));
         line = new QFrame(centralwidget);
         line->setObjectName(QString::fromUtf8("line"));
-        line->setGeometry(QRect(260, 0, 20, 961));
+        line->setGeometry(QRect(260, 0, 20, 1031));
         line->setFrameShape(QFrame::VLine);
         line->setFrameShadow(QFrame::Sunken);
         line_2 = new QFrame(centralwidget);
         line_2->setObjectName(QString::fromUtf8("line_2"));
-        line_2->setGeometry(QRect(70, 0, 21, 961));
+        line_2->setGeometry(QRect(70, 0, 21, 1031));
         line_2->setFrameShape(QFrame::VLine);
         line_2->setFrameShadow(QFrame::Sunken);
         line_3 = new QFrame(centralwidget);
         line_3->setObjectName(QString::fromUtf8("line_3"));
-        line_3->setGeometry(QRect(77, 830, 191, 20));
+        line_3->setGeometry(QRect(80, 900, 191, 20));
         line_3->setFrameShape(QFrame::HLine);
         line_3->setFrameShadow(QFrame::Sunken);
         line_4 = new QFrame(centralwidget);
         line_4->setObjectName(QString::fromUtf8("line_4"));
-        line_4->setGeometry(QRect(1683, 0, 16, 961));
+        line_4->setGeometry(QRect(1721, 0, 20, 1031));
         line_4->setFrameShape(QFrame::VLine);
         line_4->setFrameShadow(QFrame::Sunken);
         line_5 = new QFrame(centralwidget);
         line_5->setObjectName(QString::fromUtf8("line_5"));
-        line_5->setGeometry(QRect(77, 30, 1791, 20));
+        line_5->setGeometry(QRect(80, 40, 1841, 20));
         line_5->setFrameShape(QFrame::HLine);
         line_5->setFrameShadow(QFrame::Sunken);
+        messageLog = new QTextBrowser(centralwidget);
+        messageLog->setObjectName(QString::fromUtf8("messageLog"));
+        messageLog->setGeometry(QRect(280, 60, 1441, 901));
         MainWindow->setCentralWidget(centralwidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1876, 20));
+        menuBar->setGeometry(QRect(0, 0, 1920, 20));
         MainWindow->setMenuBar(menuBar);
 
         retranslateUi(MainWindow);
