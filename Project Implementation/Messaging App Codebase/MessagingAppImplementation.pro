@@ -9,6 +9,7 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    src/settingswindow.cpp \
     src/admin.cpp \
     src/channel.cpp \
     src/image.cpp \
@@ -31,10 +32,12 @@ HEADERS += \
     headers/moderator.h \
     headers/room.h \
     headers/user.h \
-    headers/video.h
+    headers/video.h \
+    headers/settingswindow.h
 
 FORMS += \
-    forms/mainwindow.ui
+    forms/mainwindow.ui \
+    forms/settingswindow.ui
 
 INCLUDEPATH += headers/
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.14.0, 2021-02-20T18:59:16. -->
+<!-- Written by QtCreator 4.14.0, 2021-02-20T19:26:28. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -294,14 +294,15 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/Work/Qt Projects/MessagingAppImplementation/MessagingAppImplementation.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/Work/Qt Projects/MessagingAppImplementation/MessagingAppImplementation.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">MessagingAppImplementation2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/Work/SDI Project/SDI-Project/Project Implementation/Messaging App Codebase/MessagingAppImplementation.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/Work/SDI Project/SDI-Project/Project Implementation/Messaging App Codebase/MessagingAppImplementation.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/Work/Qt Projects/MessagingAppImplementation/bin/</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/Work/SDI Project/SDI-Project/Project Implementation/Messaging App Codebase/bin/</value>
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>
