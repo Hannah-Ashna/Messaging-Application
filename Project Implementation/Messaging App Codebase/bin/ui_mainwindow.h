@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.15.2
+** Created by: Qt User Interface Compiler version 5.12.8
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -22,6 +22,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QVBoxLayout>
@@ -108,7 +109,7 @@ public:
     QLabel *label_2;
     QLineEdit *hostEdit;
     QLabel *label_3;
-    QLineEdit *portEdit;
+    QSpinBox *portSpinBox;
     QPushButton *buttonConnect;
     QFrame *line_6;
     QFrame *line_7;
@@ -132,7 +133,7 @@ public:
         MessagingPage->setObjectName(QString::fromUtf8("MessagingPage"));
         horizontalLayoutWidget_2 = new QWidget(MessagingPage);
         horizontalLayoutWidget_2->setObjectName(QString::fromUtf8("horizontalLayoutWidget_2"));
-        horizontalLayoutWidget_2->setGeometry(QRect(280, 1000, 1441, 51));
+        horizontalLayoutWidget_2->setGeometry(QRect(290, 1000, 1431, 51));
         horizontalLayout_2 = new QHBoxLayout(horizontalLayoutWidget_2);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -166,7 +167,7 @@ public:
 
         line = new QFrame(MessagingPage);
         line->setObjectName(QString::fromUtf8("line"));
-        line->setGeometry(QRect(260, 0, 20, 1061));
+        line->setGeometry(QRect(270, 0, 20, 1061));
         line->setFrameShape(QFrame::VLine);
         line->setFrameShadow(QFrame::Sunken);
         verticalLayoutWidget_2 = new QWidget(MessagingPage);
@@ -264,10 +265,10 @@ public:
 
         messageLog = new QTextBrowser(MessagingPage);
         messageLog->setObjectName(QString::fromUtf8("messageLog"));
-        messageLog->setGeometry(QRect(280, 60, 1441, 931));
+        messageLog->setGeometry(QRect(290, 60, 1431, 931));
         verticalLayoutWidget_4 = new QWidget(MessagingPage);
         verticalLayoutWidget_4->setObjectName(QString::fromUtf8("verticalLayoutWidget_4"));
-        verticalLayoutWidget_4->setGeometry(QRect(160, 920, 101, 131));
+        verticalLayoutWidget_4->setGeometry(QRect(160, 920, 101, 135));
         verticalLayout_4 = new QVBoxLayout(verticalLayoutWidget_4);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         verticalLayout_4->setContentsMargins(0, 0, 0, 0);
@@ -452,7 +453,7 @@ public:
         label->setFont(font4);
         horizontalLayoutWidget_3 = new QWidget(SettingsPage);
         horizontalLayoutWidget_3->setObjectName(QString::fromUtf8("horizontalLayoutWidget_3"));
-        horizontalLayoutWidget_3->setGeometry(QRect(660, 60, 621, 51));
+        horizontalLayoutWidget_3->setGeometry(QRect(660, 60, 621, 61));
         horizontalLayout_3 = new QHBoxLayout(horizontalLayoutWidget_3);
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -473,10 +474,11 @@ public:
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_3);
 
-        portEdit = new QLineEdit(horizontalLayoutWidget_3);
-        portEdit->setObjectName(QString::fromUtf8("portEdit"));
+        portSpinBox = new QSpinBox(horizontalLayoutWidget_3);
+        portSpinBox->setObjectName(QString::fromUtf8("portSpinBox"));
+        portSpinBox->setMaximum(99999);
 
-        formLayout->setWidget(1, QFormLayout::FieldRole, portEdit);
+        formLayout->setWidget(1, QFormLayout::FieldRole, portSpinBox);
 
 
         horizontalLayout_3->addLayout(formLayout);
@@ -515,12 +517,12 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1920, 20));
+        menuBar->setGeometry(QRect(0, 0, 1920, 22));
         MainWindow->setMenuBar(menuBar);
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
         sendButton->setDefault(false);
 
 
@@ -529,59 +531,59 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        sendButton->setText(QCoreApplication::translate("MainWindow", "Send", nullptr));
-        profileButton->setText(QCoreApplication::translate("MainWindow", "Profile", nullptr));
-        settingsButton->setText(QCoreApplication::translate("MainWindow", "Settings", nullptr));
-        groupName->setText(QCoreApplication::translate("MainWindow", "SDI Group 30", nullptr));
-        channelGroupName1->setText(QCoreApplication::translate("MainWindow", "Discussion Area", nullptr));
-        channel1->setText(QCoreApplication::translate("MainWindow", "# idea-board", nullptr));
-        channel2->setText(QCoreApplication::translate("MainWindow", " # general", nullptr));
-        channel3->setText(QCoreApplication::translate("MainWindow", "# key-documents", nullptr));
-        channelGroupName2->setText(QCoreApplication::translate("MainWindow", "Work", nullptr));
-        channel4->setText(QCoreApplication::translate("MainWindow", "# meeting-schedule", nullptr));
-        channel5->setText(QCoreApplication::translate("MainWindow", "# pending-tasks", nullptr));
-        messageLog->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
+        sendButton->setText(QApplication::translate("MainWindow", "Send", nullptr));
+        profileButton->setText(QApplication::translate("MainWindow", "Profile", nullptr));
+        settingsButton->setText(QApplication::translate("MainWindow", "Settings", nullptr));
+        groupName->setText(QApplication::translate("MainWindow", "SDI Group 30", nullptr));
+        channelGroupName1->setText(QApplication::translate("MainWindow", "Discussion Area", nullptr));
+        channel1->setText(QApplication::translate("MainWindow", "# idea-board", nullptr));
+        channel2->setText(QApplication::translate("MainWindow", " # general", nullptr));
+        channel3->setText(QApplication::translate("MainWindow", "# key-documents", nullptr));
+        channelGroupName2->setText(QApplication::translate("MainWindow", "Work", nullptr));
+        channel4->setText(QApplication::translate("MainWindow", "# meeting-schedule", nullptr));
+        channel5->setText(QApplication::translate("MainWindow", "# pending-tasks", nullptr));
+        messageLog->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
-        statusLabel->setText(QCoreApplication::translate("MainWindow", "Status", nullptr));
-        activeRadio->setText(QCoreApplication::translate("MainWindow", "Active", nullptr));
-        awayRadio->setText(QCoreApplication::translate("MainWindow", "Away", nullptr));
-        doNotDisturbRadio->setText(QCoreApplication::translate("MainWindow", "Do Not Disturb", nullptr));
-        invisibleRadio->setText(QCoreApplication::translate("MainWindow", "Invisible", nullptr));
-        usersLabel->setText(QCoreApplication::translate("MainWindow", "Users", nullptr));
+"</style></head><body style=\" font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;\"><br /></p></body></html>", nullptr));
+        statusLabel->setText(QApplication::translate("MainWindow", "Status", nullptr));
+        activeRadio->setText(QApplication::translate("MainWindow", "Active", nullptr));
+        awayRadio->setText(QApplication::translate("MainWindow", "Away", nullptr));
+        doNotDisturbRadio->setText(QApplication::translate("MainWindow", "Do Not Disturb", nullptr));
+        invisibleRadio->setText(QApplication::translate("MainWindow", "Invisible", nullptr));
+        usersLabel->setText(QApplication::translate("MainWindow", "Users", nullptr));
 
         const bool __sortingEnabled = userList->isSortingEnabled();
         userList->setSortingEnabled(false);
         QListWidgetItem *___qlistwidgetitem = userList->item(0);
-        ___qlistwidgetitem->setText(QCoreApplication::translate("MainWindow", "Online - 4", nullptr));
+        ___qlistwidgetitem->setText(QApplication::translate("MainWindow", "Online - 4", nullptr));
         QListWidgetItem *___qlistwidgetitem1 = userList->item(1);
-        ___qlistwidgetitem1->setText(QCoreApplication::translate("MainWindow", "Jarad", nullptr));
+        ___qlistwidgetitem1->setText(QApplication::translate("MainWindow", "Jarad", nullptr));
         QListWidgetItem *___qlistwidgetitem2 = userList->item(2);
-        ___qlistwidgetitem2->setText(QCoreApplication::translate("MainWindow", "Hannah", nullptr));
+        ___qlistwidgetitem2->setText(QApplication::translate("MainWindow", "Hannah", nullptr));
         QListWidgetItem *___qlistwidgetitem3 = userList->item(3);
-        ___qlistwidgetitem3->setText(QCoreApplication::translate("MainWindow", "Hassaan", nullptr));
+        ___qlistwidgetitem3->setText(QApplication::translate("MainWindow", "Hassaan", nullptr));
         QListWidgetItem *___qlistwidgetitem4 = userList->item(5);
-        ___qlistwidgetitem4->setText(QCoreApplication::translate("MainWindow", "Offline - 1", nullptr));
+        ___qlistwidgetitem4->setText(QApplication::translate("MainWindow", "Offline - 1", nullptr));
         QListWidgetItem *___qlistwidgetitem5 = userList->item(6);
-        ___qlistwidgetitem5->setText(QCoreApplication::translate("MainWindow", "Nick", nullptr));
+        ___qlistwidgetitem5->setText(QApplication::translate("MainWindow", "Nick", nullptr));
         userList->setSortingEnabled(__sortingEnabled);
 
-        homeButton->setText(QCoreApplication::translate("MainWindow", "Home", nullptr));
-        groupButton1->setText(QCoreApplication::translate("MainWindow", "SDI", nullptr));
-        groupButton2->setText(QCoreApplication::translate("MainWindow", "PPM", nullptr));
-        groupButton3->setText(QCoreApplication::translate("MainWindow", "SE", nullptr));
-        groupButton4->setText(QCoreApplication::translate("MainWindow", "ML", nullptr));
-        addNewGroupButton->setText(QCoreApplication::translate("MainWindow", "+", nullptr));
-        channelLabel->setText(QCoreApplication::translate("MainWindow", "# general", nullptr));
-        searchButton->setText(QCoreApplication::translate("MainWindow", "Search", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Application Settings", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "Host:", nullptr));
-        label_3->setText(QCoreApplication::translate("MainWindow", "Port:", nullptr));
-        buttonConnect->setText(QCoreApplication::translate("MainWindow", "Connect", nullptr));
-        backButton->setText(QCoreApplication::translate("MainWindow", "Back", nullptr));
+        homeButton->setText(QApplication::translate("MainWindow", "Home", nullptr));
+        groupButton1->setText(QApplication::translate("MainWindow", "SDI", nullptr));
+        groupButton2->setText(QApplication::translate("MainWindow", "PPM", nullptr));
+        groupButton3->setText(QApplication::translate("MainWindow", "SE", nullptr));
+        groupButton4->setText(QApplication::translate("MainWindow", "ML", nullptr));
+        addNewGroupButton->setText(QApplication::translate("MainWindow", "+", nullptr));
+        channelLabel->setText(QApplication::translate("MainWindow", "# general", nullptr));
+        searchButton->setText(QApplication::translate("MainWindow", "Search", nullptr));
+        label->setText(QApplication::translate("MainWindow", "Application Settings", nullptr));
+        label_2->setText(QApplication::translate("MainWindow", "Host:", nullptr));
+        label_3->setText(QApplication::translate("MainWindow", "Port:", nullptr));
+        buttonConnect->setText(QApplication::translate("MainWindow", "Connect", nullptr));
+        backButton->setText(QApplication::translate("MainWindow", "Back", nullptr));
     } // retranslateUi
 
 };
