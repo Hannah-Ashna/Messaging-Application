@@ -5,6 +5,6 @@ As part of our second year module, Software Design and Implementation (SDI), we 
 Our write-ups, diagrams and analysis are broken down into four main categories. Each category is assigned to a particular role. 
 * **Project Manager** - [Project Plan](https://github.com/Hannah-Ashna/SDI-Project/tree/main/Project%20Plan)
 * **Software Architect** - [Project Design](https://github.com/Hannah-Ashna/SDI-Project/tree/main/Project%20Diagrams)
-* **Software Developer** - Reference Manual
+* **Software Developer** - [Reference Manual](https://github.com/Hannah-Ashna/SDI-Project/tree/main/Documentation/Doxygen%20Documentation)
 * **Software Tester** - Test Plan
 * **Final Submission** - [Documentation](https://github.com/Hannah-Ashna/SDI-Project/tree/main/Documentation)
