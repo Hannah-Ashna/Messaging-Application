@@ -62,18 +62,20 @@ void MainWindow::on_buttonConnect_clicked()
     }
 }
 
-void MainWindow::on_channel1_clicked()
+void MainWindow::on_channelDropDown_activated(int index)
 {
-    auto subscription = m_client->subscribe(ui->channel1->text());
+    auto subscription = m_client->subscribe(ui->channelDropDown->itemText(index));
     if (!subscription) {
         QMessageBox::critical(this, QLatin1String("Error"), QLatin1String("Could not subscribe. Is there a valid connection?"));
         return;
     }
+    ui->channelLabel->setText(ui->channelDropDown->itemText(index));
+    ui->messageLog->clear();
 }
 
 void MainWindow::on_sendButton_clicked()
 {
-    if (m_client->publish(ui->channel1->text(), ui->sendInput->text().toUtf8()) == -1)
+    if (m_client->publish(ui->channelDropDown->currentText(), ui->sendInput->text().toUtf8()) == -1)
         QMessageBox::critical(this, QLatin1String("Error"), QLatin1String("Could not publish message"));
     ui->sendInput->clear();
 }

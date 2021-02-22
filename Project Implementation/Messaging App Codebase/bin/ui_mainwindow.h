@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QHBoxLayout>
@@ -50,14 +51,9 @@ public:
     QVBoxLayout *verticalLayout_2;
     QLabel *groupName;
     QSpacerItem *horizontalSpacer_6;
-    QLabel *channelGroupName1;
-    QPushButton *channel1;
-    QPushButton *channel2;
-    QPushButton *channel3;
+    QLabel *channelLabel_2;
     QSpacerItem *horizontalSpacer_7;
-    QLabel *channelGroupName2;
-    QPushButton *channel4;
-    QPushButton *channel5;
+    QComboBox *channelDropDown;
     QSpacerItem *verticalSpacer_11;
     QSpacerItem *verticalSpacer_10;
     QSpacerItem *verticalSpacer_9;
@@ -134,7 +130,7 @@ public:
         MessagingPage->setObjectName(QString::fromUtf8("MessagingPage"));
         horizontalLayoutWidget_2 = new QWidget(MessagingPage);
         horizontalLayoutWidget_2->setObjectName(QString::fromUtf8("horizontalLayoutWidget_2"));
-        horizontalLayoutWidget_2->setGeometry(QRect(290, 1000, 1431, 51));
+        horizontalLayoutWidget_2->setGeometry(QRect(350, 1000, 1371, 51));
         horizontalLayout_2 = new QHBoxLayout(horizontalLayoutWidget_2);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -152,7 +148,7 @@ public:
 
         verticalLayoutWidget_3 = new QWidget(MessagingPage);
         verticalLayoutWidget_3->setObjectName(QString::fromUtf8("verticalLayoutWidget_3"));
-        verticalLayoutWidget_3->setGeometry(QRect(90, 920, 61, 131));
+        verticalLayoutWidget_3->setGeometry(QRect(110, 920, 81, 131));
         verticalLayout_3 = new QVBoxLayout(verticalLayoutWidget_3);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -172,12 +168,12 @@ public:
 
         line = new QFrame(MessagingPage);
         line->setObjectName(QString::fromUtf8("line"));
-        line->setGeometry(QRect(270, 0, 20, 1061));
+        line->setGeometry(QRect(330, 0, 21, 1061));
         line->setFrameShape(QFrame::VLine);
         line->setFrameShadow(QFrame::Sunken);
         verticalLayoutWidget_2 = new QWidget(MessagingPage);
         verticalLayoutWidget_2->setObjectName(QString::fromUtf8("verticalLayoutWidget_2"));
-        verticalLayoutWidget_2->setGeometry(QRect(89, 10, 181, 891));
+        verticalLayoutWidget_2->setGeometry(QRect(109, 10, 221, 891));
         verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -193,44 +189,24 @@ public:
 
         verticalLayout_2->addItem(horizontalSpacer_6);
 
-        channelGroupName1 = new QLabel(verticalLayoutWidget_2);
-        channelGroupName1->setObjectName(QString::fromUtf8("channelGroupName1"));
+        channelLabel_2 = new QLabel(verticalLayoutWidget_2);
+        channelLabel_2->setObjectName(QString::fromUtf8("channelLabel_2"));
 
-        verticalLayout_2->addWidget(channelGroupName1);
-
-        channel1 = new QPushButton(verticalLayoutWidget_2);
-        channel1->setObjectName(QString::fromUtf8("channel1"));
-
-        verticalLayout_2->addWidget(channel1);
-
-        channel2 = new QPushButton(verticalLayoutWidget_2);
-        channel2->setObjectName(QString::fromUtf8("channel2"));
-
-        verticalLayout_2->addWidget(channel2);
-
-        channel3 = new QPushButton(verticalLayoutWidget_2);
-        channel3->setObjectName(QString::fromUtf8("channel3"));
-
-        verticalLayout_2->addWidget(channel3);
+        verticalLayout_2->addWidget(channelLabel_2);
 
         horizontalSpacer_7 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         verticalLayout_2->addItem(horizontalSpacer_7);
 
-        channelGroupName2 = new QLabel(verticalLayoutWidget_2);
-        channelGroupName2->setObjectName(QString::fromUtf8("channelGroupName2"));
+        channelDropDown = new QComboBox(verticalLayoutWidget_2);
+        channelDropDown->addItem(QString());
+        channelDropDown->addItem(QString());
+        channelDropDown->addItem(QString());
+        channelDropDown->addItem(QString());
+        channelDropDown->addItem(QString());
+        channelDropDown->setObjectName(QString::fromUtf8("channelDropDown"));
 
-        verticalLayout_2->addWidget(channelGroupName2);
-
-        channel4 = new QPushButton(verticalLayoutWidget_2);
-        channel4->setObjectName(QString::fromUtf8("channel4"));
-
-        verticalLayout_2->addWidget(channel4);
-
-        channel5 = new QPushButton(verticalLayoutWidget_2);
-        channel5->setObjectName(QString::fromUtf8("channel5"));
-
-        verticalLayout_2->addWidget(channel5);
+        verticalLayout_2->addWidget(channelDropDown);
 
         verticalSpacer_11 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
@@ -270,10 +246,10 @@ public:
 
         messageLog = new QTextBrowser(MessagingPage);
         messageLog->setObjectName(QString::fromUtf8("messageLog"));
-        messageLog->setGeometry(QRect(290, 60, 1431, 931));
+        messageLog->setGeometry(QRect(350, 60, 1371, 931));
         verticalLayoutWidget_4 = new QWidget(MessagingPage);
         verticalLayoutWidget_4->setObjectName(QString::fromUtf8("verticalLayoutWidget_4"));
-        verticalLayoutWidget_4->setGeometry(QRect(160, 920, 111, 131));
+        verticalLayoutWidget_4->setGeometry(QRect(200, 920, 131, 135));
         verticalLayout_4 = new QVBoxLayout(verticalLayoutWidget_4);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         verticalLayout_4->setContentsMargins(0, 0, 0, 0);
@@ -305,12 +281,12 @@ public:
 
         line_5 = new QFrame(MessagingPage);
         line_5->setObjectName(QString::fromUtf8("line_5"));
-        line_5->setGeometry(QRect(80, 40, 1841, 20));
+        line_5->setGeometry(QRect(100, 40, 1821, 20));
         line_5->setFrameShape(QFrame::HLine);
         line_5->setFrameShadow(QFrame::Sunken);
         line_3 = new QFrame(MessagingPage);
         line_3->setObjectName(QString::fromUtf8("line_3"));
-        line_3->setGeometry(QRect(80, 900, 191, 20));
+        line_3->setGeometry(QRect(100, 900, 241, 20));
         line_3->setFrameShape(QFrame::HLine);
         line_3->setFrameShadow(QFrame::Sunken);
         verticalLayoutWidget_5 = new QWidget(MessagingPage);
@@ -364,7 +340,7 @@ public:
         line_4->setFrameShadow(QFrame::Sunken);
         verticalLayoutWidget = new QWidget(MessagingPage);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(10, 10, 61, 1041));
+        verticalLayoutWidget->setGeometry(QRect(10, 10, 82, 1041));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -404,12 +380,12 @@ public:
 
         line_2 = new QFrame(MessagingPage);
         line_2->setObjectName(QString::fromUtf8("line_2"));
-        line_2->setGeometry(QRect(70, 0, 21, 1061));
+        line_2->setGeometry(QRect(90, 0, 21, 1061));
         line_2->setFrameShape(QFrame::VLine);
         line_2->setFrameShadow(QFrame::Sunken);
         horizontalLayoutWidget = new QWidget(MessagingPage);
         horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(280, 10, 1441, 31));
+        horizontalLayoutWidget->setGeometry(QRect(360, 10, 1361, 31));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -541,13 +517,13 @@ public:
         profileButton->setText(QApplication::translate("MainWindow", "Profile", nullptr));
         settingsButton->setText(QApplication::translate("MainWindow", "Settings", nullptr));
         groupName->setText(QApplication::translate("MainWindow", "SDI Group 30", nullptr));
-        channelGroupName1->setText(QApplication::translate("MainWindow", "Discussion Area", nullptr));
-        channel1->setText(QApplication::translate("MainWindow", "ideaboard", nullptr));
-        channel2->setText(QApplication::translate("MainWindow", " # general", nullptr));
-        channel3->setText(QApplication::translate("MainWindow", "# key-documents", nullptr));
-        channelGroupName2->setText(QApplication::translate("MainWindow", "Work", nullptr));
-        channel4->setText(QApplication::translate("MainWindow", "# meeting-schedule", nullptr));
-        channel5->setText(QApplication::translate("MainWindow", "# pending-tasks", nullptr));
+        channelLabel_2->setText(QApplication::translate("MainWindow", "Channels", nullptr));
+        channelDropDown->setItemText(0, QApplication::translate("MainWindow", "general", nullptr));
+        channelDropDown->setItemText(1, QApplication::translate("MainWindow", "ideaboard", nullptr));
+        channelDropDown->setItemText(2, QApplication::translate("MainWindow", "keydocuments", nullptr));
+        channelDropDown->setItemText(3, QApplication::translate("MainWindow", "meetingschedule", nullptr));
+        channelDropDown->setItemText(4, QApplication::translate("MainWindow", "pendingtasks", nullptr));
+
         messageLog->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -582,7 +558,7 @@ public:
         groupButton3->setText(QApplication::translate("MainWindow", "SE", nullptr));
         groupButton4->setText(QApplication::translate("MainWindow", "ML", nullptr));
         addNewGroupButton->setText(QApplication::translate("MainWindow", "+", nullptr));
-        channelLabel->setText(QApplication::translate("MainWindow", "# general", nullptr));
+        channelLabel->setText(QApplication::translate("MainWindow", "general", nullptr));
         searchButton->setText(QApplication::translate("MainWindow", "Search", nullptr));
         label->setText(QApplication::translate("MainWindow", "Application Settings", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "Host:", nullptr));

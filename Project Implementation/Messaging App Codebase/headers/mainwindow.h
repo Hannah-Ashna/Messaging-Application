@@ -24,7 +24,7 @@ private slots:
     void on_settingsButton_clicked();
     void on_backButton_clicked();
     void on_buttonConnect_clicked();
-    void on_channel1_clicked();
+    void on_channelDropDown_activated(int index);
 
     void brokerDisconnected();
 
