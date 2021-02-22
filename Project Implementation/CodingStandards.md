@@ -68,7 +68,18 @@ You should use cpplint to detect style errors, it is preinstalled on QT creator 
 ***
 
 ### Naming:
+#### Variables / Functions
+Variables will always be named useing camel case. Type names and function names should start with a capital letter for each new word. **DO NOT** use underscores. Class data members should end in an underscore like `std::string myvar_;`
+#### Constants / Enumerators
+When declareing constants you should always captilise each new word and begin the constant with the letter k, this helps keep code clear. Enumerators should also be named like constants.
+Some abbrevations are ok as long as they are common or clear for example i/j for iteration or CPU for a central processing unit. When writeing a variable think would it hinder your code by useing the abrevation such that it would make it less understandable.
+#### File Names
+File names should always be lowercase we will use a underscore (_). C++ files should always end in `.cpp` while header files should end in `.h`. You should name your file as spesfic as possible use clear names like:
 
+  - `main_menu_gui.cpp`
+  - `admin_class.cpp`
+  - `admin_class_test.cpp`
+Note you should always end a test file in _test for the sake of simplicity.
 ***
 
 ### Comments:
@@ -89,7 +100,11 @@ By using Doxygen, the documentation process can be automated, by developing a Do
 ***
 
 ### Formatting:
-
+Code formatting is arbitrary but following the same guide helps keep consistency and make code easier to understand.
+#### Line length
+A line of code should always remain under 80 characters, this helps keep the code readable and understandable. It will be common that function declerations and returns will exceed the 80 character limit in this case it should be broken up onto sepreate lines.
+Parameter names should be short but clear if possible to assist in keeping code short.
+Use of tabs are **prefered** in this project and should be used in favor of spaces.
 ***
 
 ### Exception Rules:
