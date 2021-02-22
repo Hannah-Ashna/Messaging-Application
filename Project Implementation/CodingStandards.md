@@ -47,7 +47,7 @@ Each group should be seperated by one blank line. The exception to this rule is 
 #### Nonmember, Static Member and Global Functions:
 
 #### Local Variables:
-
+A function variable should be in the narrowest scope possible. Variables should be declared as close as possible to the use. Initialization should be used rather than separate declaration and assignment. If variables are needed in an condition statement such as an if statement they should be within that statement it may be appropriate to do this just above the constructor.
 #### Static and Global Variables:
 
 #### thread_local Variables:
@@ -59,7 +59,12 @@ Each group should be seperated by one blank line. The exception to this rule is 
 ***
 
 ### Functions:
-
+#### Short Functions
+Functions will always be short and focused keeping code short helps isolate bugs and testing. You should always look to break up large functions into smaller ones unless it adds unneeded complexity.
+#### Inputs/Outputs
+We should always use return values when possible where you should aim to return a value. When haveing non-optional parameters they should be constant refrences or values.
+#### Style
+You should use cpplint to detect style errors, it is preinstalled on QT creator but can be run seprately if needed.
 ***
 
 ### Naming:
