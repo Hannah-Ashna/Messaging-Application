@@ -74,7 +74,7 @@ Variables will always be named useing camel case. Type names and function names 
 When declareing constants you should always captilise each new word and begin the constant with the letter k, this helps keep code clear. Enumerators should also be named like constants.
 Some abbrevations are ok as long as they are common or clear for example i/j for iteration or CPU for a central processing unit. When writeing a variable think would it hinder your code by useing the abrevation such that it would make it less understandable.
 #### File Names
-File names should always be lowercase we will use a underscore (_). C++ files should always end in `.cpp` while header files should end in `.h`. You should name your file as spesfic as possible use clear names like:
+File names should always be lowercase we will use a underscore (_) between words. C++ files should always end in `.cpp` while header files should end in `.h`. You should name your file as specific as possible use clear names like:
 
   - `main_menu_gui.cpp`
   - `admin_class.cpp`
