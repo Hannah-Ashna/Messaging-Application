@@ -27,6 +27,14 @@ Forward declarations, declaration of an entity without an associated definition,
 Functions should not be defined inline, with exception of short, performance-critical functions. While inlining of small individul functions may cause them to generate more efficient object code, overuse may cause a overall decline in program speed as cost is increased. As a rule, functions should not be inline if they are longer than 10 lines.
 
 #### Names and Order of Includes
+To ensure that missing includes are caught early, include headers should be grouped in the following order: 
+- The Related header e.g. `#include "main.h"`
+- The C system headers e.g. `#include <stddef.h>`
+- The C++ standard library headers e.g. `#include <string>`
+- The other libraries' headers e.g. `#include "basictypes.h"` 
+- The project's headers e.g. `#include "other.h"`
+
+Each group should be seperated by one blank line. The exception to this rule is system-specific code which needs conditional includes, these may be put after other includes. System-specific should be small and localized.
 
 ***
 
