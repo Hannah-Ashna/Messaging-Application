@@ -1,5 +1,5 @@
 # SDI Project: Messages Exchange Platform
-As part of our second year module, Software Design and Implementation (SDI), we were tasked with the development of a messages exchange platform. One similar to Slack or Discord. In addition to the desig nand development of the application itself, our team had to also handle the documentation of the entire process from the initial project management stage till the final testing stage.
+As part of our second year module, Software Design and Implementation (SDI), we were tasked with the development of a messages exchange platform. One similar to Slack or Discord. In addition to the design and development of the application itself, our team had to also handle the documentation of the entire process from the initial project management stage till the final testing stage.
 
 ### Documentation:
 Our write-ups, diagrams and analysis are broken down into four main categories. Each category is assigned to a particular role. 
