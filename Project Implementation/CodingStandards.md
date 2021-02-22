@@ -1,5 +1,5 @@
 # Coding Standards
-
+https://google.github.io/styleguide/cppguide.html#Self_contained_Headers
 ### C++ Version:
 Please ensure that you use **C++17** throughout your contributions to this project. With regards to IDE preference, for development our team will use Eclipse 2020-12 as it is currently the most stable for development.
 
@@ -39,6 +39,18 @@ Each group should be seperated by one blank line. The exception to this rule is 
 ***
 
 ### Scoping:
+
+#### Namespaces
+
+#### Internal Linkage
+
+#### Nonmember, Static Member and Global Functions
+
+#### Local Variables
+
+#### Static and Global Variables
+
+#### thread_local Variables
 
 ***
 
