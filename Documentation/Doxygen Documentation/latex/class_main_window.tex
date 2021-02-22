@@ -1,0 +1,114 @@
+\hypertarget{class_main_window}{}\doxysection{Main\+Window Class Reference}
+\label{class_main_window}\index{MainWindow@{MainWindow}}
+
+
+Inheritance diagram for Main\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{class_main_window__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Main\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{class_main_window__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_a70e05d9b209dcb413fafc39c67b9019d}{set\+Client\+Port}} (int p)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (Q\+Widget $\ast$parent=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_a8ddc533eadf5adcefd407c10f9360865}{on\+\_\+send\+Button\+\_\+clicked}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_a62238ba85dfdabf52c83dda7bc90608d}{on\+\_\+settings\+Button\+\_\+clicked}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_a2dbe79cf6ee322a7d0c6fea43d3df45c}{on\+\_\+back\+Button\+\_\+clicked}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_a947fd6b620533b991bd5acd23a20a12c}{on\+\_\+button\+Connect\+\_\+clicked}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_a45a482711eb32c49020c744f8982aa1a}{on\+\_\+channel\+Drop\+Down\+\_\+activated}} (int index)
+\item 
+void \mbox{\hyperlink{class_main_window_ad3e203c02e1040c0ae11a278b7ac9f93}{broker\+Disconnected}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_main_window_a35466a70ed47252a0191168126a352a5}\label{class_main_window_a35466a70ed47252a0191168126a352a5}} 
+Ui\+::\+Main\+Window $\ast$ {\bfseries ui}
+\item 
+\mbox{\Hypertarget{class_main_window_a9f26a0d612bc5163a1e6ee792bab442a}\label{class_main_window_a9f26a0d612bc5163a1e6ee792bab442a}} 
+Q\+Mqtt\+Client $\ast$ {\bfseries m\+\_\+client}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_main_window_a996c5a2b6f77944776856f08ec30858d}\label{class_main_window_a996c5a2b6f77944776856f08ec30858d}} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Create new instance of Q\+Mqtt\+Client and set host and port values When C\+Lient is disconnected call broker\+Disconnect() When a message is recieved, create the format \textquotesingle{}Q\+Date + \char`\"{}\+:\char`\"{} + string\textquotesingle{} and send to message log
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_main_window_ad3e203c02e1040c0ae11a278b7ac9f93}\label{class_main_window_ad3e203c02e1040c0ae11a278b7ac9f93}} 
+\index{MainWindow@{MainWindow}!brokerDisconnected@{brokerDisconnected}}
+\index{brokerDisconnected@{brokerDisconnected}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{brokerDisconnected}{brokerDisconnected}}
+{\footnotesize\ttfamily void Main\+Window\+::broker\+Disconnected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+If client is disconnected, enable the host and port input boxes and set button text to \char`\"{}\+Connect\char`\"{}\mbox{\Hypertarget{class_main_window_a2dbe79cf6ee322a7d0c6fea43d3df45c}\label{class_main_window_a2dbe79cf6ee322a7d0c6fea43d3df45c}} 
+\index{MainWindow@{MainWindow}!on\_backButton\_clicked@{on\_backButton\_clicked}}
+\index{on\_backButton\_clicked@{on\_backButton\_clicked}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_backButton\_clicked}{on\_backButton\_clicked}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+back\+Button\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Set index of stacked widget to 0, take user to main page\mbox{\Hypertarget{class_main_window_a947fd6b620533b991bd5acd23a20a12c}\label{class_main_window_a947fd6b620533b991bd5acd23a20a12c}} 
+\index{MainWindow@{MainWindow}!on\_buttonConnect\_clicked@{on\_buttonConnect\_clicked}}
+\index{on\_buttonConnect\_clicked@{on\_buttonConnect\_clicked}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_buttonConnect\_clicked}{on\_buttonConnect\_clicked}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+button\+Connect\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+If client is disconnected, button should say \char`\"{}connect\char`\"{} and attempt to call connect\+To\+Host() and disable the button on click If client is connected, button should say \char`\"{}disconnect\char`\"{} and attempt to call disconnect\+From\+Host() and enable the button on click\mbox{\Hypertarget{class_main_window_a45a482711eb32c49020c744f8982aa1a}\label{class_main_window_a45a482711eb32c49020c744f8982aa1a}} 
+\index{MainWindow@{MainWindow}!on\_channelDropDown\_activated@{on\_channelDropDown\_activated}}
+\index{on\_channelDropDown\_activated@{on\_channelDropDown\_activated}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_channelDropDown\_activated}{on\_channelDropDown\_activated}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+channel\+Drop\+Down\+\_\+activated (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Set the current topic to the currently selected option from the dropdown box Set the label defining the topic for the user to the text in the currently selected dropdown box Clear the message log\mbox{\Hypertarget{class_main_window_a8ddc533eadf5adcefd407c10f9360865}\label{class_main_window_a8ddc533eadf5adcefd407c10f9360865}} 
+\index{MainWindow@{MainWindow}!on\_sendButton\_clicked@{on\_sendButton\_clicked}}
+\index{on\_sendButton\_clicked@{on\_sendButton\_clicked}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_sendButton\_clicked}{on\_sendButton\_clicked}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+send\+Button\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Publish text in input box to message log if client is successfully connected\mbox{\Hypertarget{class_main_window_a62238ba85dfdabf52c83dda7bc90608d}\label{class_main_window_a62238ba85dfdabf52c83dda7bc90608d}} 
+\index{MainWindow@{MainWindow}!on\_settingsButton\_clicked@{on\_settingsButton\_clicked}}
+\index{on\_settingsButton\_clicked@{on\_settingsButton\_clicked}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_settingsButton\_clicked}{on\_settingsButton\_clicked}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+settings\+Button\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Set index of stacked\+Widget to 1, take user to setting screen\mbox{\Hypertarget{class_main_window_a70e05d9b209dcb413fafc39c67b9019d}\label{class_main_window_a70e05d9b209dcb413fafc39c67b9019d}} 
+\index{MainWindow@{MainWindow}!setClientPort@{setClientPort}}
+\index{setClientPort@{setClientPort}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{setClientPort}{setClientPort}}
+{\footnotesize\ttfamily void Main\+Window\+::set\+Client\+Port (\begin{DoxyParamCaption}\item[{int}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Set client port
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ntu-\/user/git/\+S\+D\+I-\/\+Project/\+Project Implementation/\+Messaging App Codebase/headers/mainwindow.\+h\item 
+/home/ntu-\/user/git/\+S\+D\+I-\/\+Project/\+Project Implementation/\+Messaging App Codebase/src/mainwindow.\+cpp\end{DoxyCompactItemize}
