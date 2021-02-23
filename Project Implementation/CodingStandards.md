@@ -93,14 +93,39 @@ Comments improve readability and makes code more accessable to team members and 
 #### Comment Style:
 Commenting style should be consistent. Comments are to done using the Qt style provided by Doxygen, as seen below:
 
-`/*! \brief Brief Description
+`
+/*! \brief Brief Description
 Brief Description continued
 
 Detailed description starts here
 more detailed description
-*/`
+*/
+`
 
 By using Doxygen, the documentation process can be automated, by developing a Doxyfile.
+
+#### File Comments:
+File comments describe the contents of a file.Due to the nature of the project, being non-commercial, the file comments should not need to include an author line or copyright notice. However, if a .h file declares multiple abstractions, a file-level comment should be used describe the file contents and how the abstractions are related. The comment should be short, as the detailed documentation of individual abstractions should be in the region of said abstractions. If a file declares, implements, or tests exactly one abstraction that is documented by a comment at the point of declaration, then file comments are not required. All other files must have file comments. File comments should not be duplicated in the .cc as well as the .h, as they would likely end up diverging. 
+
+#### Class Comments:
+Every class or struct declaration where their use is not immediately evident, should have a comment that describes its usage. The description should be as clear and concise as possible, while covering all relevant information on how to correctly use the class. Information included would extend to how (such as an example use of the class) and when to use the class, and any additional considerations such as synchronisation or threading. Specifically, comments describing the use of a class would be included with its declaration, and comments about the class operation and implementation should accompany the implementation of the class's methods.
+
+#### Function Comments:
+Similar to class comments, comments describing the use of a function should be at the function declaration and comments to describe the implementation of the function should be included with the function definition. 
+Function comments should not be unnecessarily verbose and should only cover what is not immediately obvious. At the function declaration, a comment may be an example of how to use the function. At the function definition, the comments should cover areas where the implementation is overly complex or not clear, and not reapeat comments in the function declaration. There should be very few comments at the function definition as good code should be clear on what it does without need of many comments. 
+
+#### Variable Comments:
+Variables should be named clearly enough to not need comments, however comments may be needed in certain cases. For class data members, comments may be used for Sentinel Values, those used as flags or pointers, where their use is not immediately clear. Another circumsatance is Global Variables, that should cover their use and why they are global.
+
+#### Implementation Comments:
+While good code should need few comments, where the implementation may cause confusion, comments should be used. Complicated blocks of conde may have a proceeding comment to explain the purpose of the entire block. Individual lines of code where their use is not clear, or specific choices may not be clear, may also require commenting to prevent future problems.
+Where the arguements of a function are not obvious, comments should be a last resort. Alternatives may include using named constants over literals, avoiding nesting functions in functions over using variables, replacing bool arguements with enum arguements.
+
+#### Punctuation, Spelling and Grammar
+Comments should be easy to read themselves, so they should have good punctuation, spelling, and grammar; including proper capitalisation, punctuation and complete sentences. Shorter, single line, comments may be written in a less formal shorthand as long as they are still readable, however whole sentences should be the priority. 
+
+#### TODO Comments
+TODO comments may be used for short-term tasks, such as something you may do the next day. The should be written in the format: `// TODO (<NAME>): <TASK>`. By using TODO as a standard keyword, TODO messages can be easily searched for using refactoring tool. TODO messages *must* be removed when the task is complete. The name attached to the task should almost always be name of the task writer, to make sure that everyone is aware who the task belongs to. If the task is addressed to another person, that person should also be informed directly of the task having been added. 
 
 ***
 
