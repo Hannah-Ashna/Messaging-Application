@@ -105,6 +105,8 @@ Code formatting is arbitrary but following the same guide helps keep consistency
 A line of code should always remain under 80 characters, this helps keep the code readable and understandable. It will be common that function declerations and returns will exceed the 80 character limit in this case it should be broken up onto sepreate lines.
 Parameter names should be short but clear if possible to assist in keeping code short.
 Use of tabs are **prefered** in this project and should be used in favor of spaces.
+#### Class format
+Sections should be placed in order, `public, protected` and `private`.
 ***
 
 ### Exception Rules:
