@@ -39,19 +39,24 @@ Each group should be seperated by one blank line. The exception to this rule is 
 ***
 
 ### Scoping:
+Code should be placed under a namespace. 
 
 #### Namespaces:
+Namespace names should be all lowercase and underscored between words. You should avoid useing abbrevations unless they follow the rules layed out in the nameing section.
 
 #### Internal Linkage:
-
+You should use internal linkage when the code doesnt need to be refrenced elsewere in `.cpp` files you should not use them in `.h` files. Format them like regular name spaces.
 #### Nonmember, Static Member and Global Functions:
-
+You should always place non-member functions in a namespace and only use global functions when necessary. You should also not use group static members. Non member functions should not depend on external variables and exist in a namespace. 
 #### Local Variables:
 A function variable should be in the narrowest scope possible. Variables should be declared as close as possible to the use. Initialization should be used rather than separate declaration and assignment. If variables are needed in an condition statement such as an if statement they should be within that statement it may be appropriate to do this just above the constructor.
 #### Static and Global Variables:
+destruction should always guarantee trivial destructors.
+Global/static variable initalization will depend on the initalizer as a general rule you should always alow for a constant experession. An example of one that is allowed is:
+`int id = getid();` is allowed. Dynamic initalisation of static local variables is permitted.
 
 #### thread_local Variables:
-
+thered local variables that arent declared inside a function must be initalised with a compile time constant. You should use `thread_local`.
 ***
 
 ### Classes:
@@ -105,8 +110,10 @@ Code formatting is arbitrary but following the same guide helps keep consistency
 A line of code should always remain under 80 characters, this helps keep the code readable and understandable. It will be common that function declerations and returns will exceed the 80 character limit in this case it should be broken up onto sepreate lines.
 Parameter names should be short but clear if possible to assist in keeping code short.
 Use of tabs are **prefered** in this project and should be used in favor of spaces.
+Boolean expressions should also be broken up while the logical operators should always be at the end of the line.
 #### Class format
 Sections should be placed in order, `public, protected` and `private`.
+
 ***
 
 ### Exception Rules:
