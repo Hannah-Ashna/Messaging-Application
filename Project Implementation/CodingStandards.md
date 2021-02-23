@@ -1,5 +1,5 @@
 # Coding Standards
-https://google.github.io/styleguide/cppguide.html#Self_contained_Headers
+[Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html#Self_contained_Headers)
 ### C++ Version:
 Please ensure that you use **C++17** throughout your contributions to this project. With regards to IDE preference, for development our team will use Eclipse 2020-12 as it is currently the most stable for development.
 
@@ -93,14 +93,14 @@ Comments improve readability and makes code more accessable to team members and 
 #### Comment Style:
 Commenting style should be consistent. Comments are to done using the Qt style provided by Doxygen, as seen below:
 
-`
+```
 /*! \brief Brief Description
 Brief Description continued
 
 Detailed description starts here
 more detailed description
 */
-`
+```
 
 By using Doxygen, the documentation process can be automated, by developing a Doxyfile.
 
