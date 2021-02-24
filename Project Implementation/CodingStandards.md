@@ -60,17 +60,27 @@ thered local variables that arent declared inside a function must be initalised 
 ***
 
 ### Classes:
+Constructors must not call virtual functions. Do not define implicit conversion you should use the explicit keyword for conversion operaters and single argument constructors. Type conversion operators should be makred explicit in the class defintion. Every class's public interface should say which copy and move operations the class supports which should be done in the public section.
 
-
+#### Structs
+You should only use a struct for objects that are passive and carry data otherwise use a class.
+#### Inheritance
+We should use composition over inheritance. all inheritance should be public if done privately they you should try adding it as a member of the base class insted.
+#### Access
+You should make a data's members private unless they are constants. this helps protect data.
+#### Structure
+You should follow the formatting guide below. Group similer kinds of declarations together. Do not put large method definitions inline in the class defintion.
 ***
 
 ### Functions:
+Functions should be written useing the old style function defintions for example: `string funct(int y);` this helps readers and coders who work with other languages understand the code. Default arguments must not be used on virtual functions but you can use elsewhere.
 #### Short Functions
 Functions will always be short and focused keeping code short helps isolate bugs and testing. You should always look to break up large functions into smaller ones unless it adds unneeded complexity.
 #### Inputs/Outputs
 We should always use return values when possible where you should aim to return a value. When haveing non-optional parameters they should be constant refrences or values.
 #### Style
 You should use cpplint to detect style errors, it is preinstalled on QT creator but can be run seprately if needed.
+
 ***
 
 ### Naming:
@@ -139,12 +149,12 @@ Use of tabs are **prefered** in this project and should be used in favor of spac
 Boolean expressions should also be broken up while the logical operators should always be at the end of the line.
 #### Class format
 Sections should be placed in order, `public, protected` and `private`.
-
+#### Whitespace
+Try to minimise virtical white space, you should think of them as ending to a paragraph and use them spareingly they help you seperate ideas. Overuse of whitespace will make code more difficult to follow. Simply use them where you think they are approprite such as seperateing comments and functions.
 ***
-
-### Exception Rules:
-
-***
-
 ### Other C++ Features:
 #### Boost
+[Boost test guidelines](https://www.boost.org/doc/libs/1_45_0/libs/test/doc/html/utf/usage-recommendations/generic.html)
+You should use tests that are spesific and precice, try to avoid a complex test in favor of smaller tests. You should **Prefer** `BOOST_CHECK_EQUAL` over `BOOST_CHECK`. This is because you will see the incorrect value when the code failure.
+#### Group tests together
+You should aim to group similer tests together, and name each test so you know what it is checking to help with the debugging later on.
