@@ -13,18 +13,18 @@ Correct use of header files can help inprove the readability, size and performan
 All header files should be self-contained (compile on their own), they should not require specific conditions to be included, and should have header guards and include all other headers it needs. Header files should usually end in .h, with exception of .inc files used for inclusion. .inc files should only be used where a file designed to be included is not self-contained, for example it may be in an unusual location. They may not use header guards or include their prerequisites. They should see limited use however, and in all situations, a self contained header should be prioritised.
 
 #### #Define Guards:
-Within all header files ensure the use of #Define guards to prevent multiple inclusives and to avoid unneceassary code recursion. Conflicts or recursive errors could result in code failing to build.
+Within all header files ensure the use of #Define guards to prevent multiple inclusions and to avoid unnecessary code recursion. Conflicts or recursive errors could result in code failing to build.
 
 Guards should be named uniquely. The standard naming convention is `<FILENAME>_H`
 
 #### Include What You Use:
-The header file should only include all the header files needed for that source and header file, where either uses a symbol defined elsewhere. Transitive inclusions, inclusions where a header is included in one file but both use sybols from eachother, should be avoided at all cost. This allows includes to be simply removed without issues being caused elsewhere.
+The header file should only include all the header files needed for that source and header file, where either uses a symbol defined elsewhere. Transitive inclusions, inclusions where a header is included in one file but both use symbols from each other, should be avoided at all cost. This allows includes to be simply removed without issues being caused elsewhere.
 
 #### Forward Declarations:
-Forward declarations, declaration of an entity without an associated definition, should be avoided. While they do improve compile time and reduce the need for recompliation, they are likely to cause more mistakes and use more lines than just including the header.
+Forward declarations, declaration of an entity without an associated definition, should be avoided. While they do improve compile time and reduce the need for recompilation, they are likely to cause more mistakes and use more lines than just including the header.
 
 #### Inline Functions:
-Functions should not be defined inline, with exception of short, performance-critical functions. While inlining of small individul functions may cause them to generate more efficient object code, overuse may cause a overall decline in program speed as cost is increased. As a rule, functions should not be inline if they are longer than 10 lines.
+Functions should not be defined inline, with exception of short, performance-critical functions. While inclining of small individual functions may cause them to generate more efficient object code, overuse may cause a overall decline in program speed as cost is increased. As a rule, functions should not be inline if they are longer than 10 lines.
 
 #### Names and Order of Includes:
 To ensure that missing includes are caught early, include headers should be grouped in the following order: 
@@ -37,58 +37,56 @@ To ensure that missing includes are caught early, include headers should be grou
 Each group should be seperated by one blank line. The exception to this rule is system-specific code which needs conditional includes, these may be put after other includes. System-specific should be small and localized.
 
 ***
-
 ### Scoping:
 Code should be placed under a namespace. 
 
 #### Namespaces:
-Namespace names should be all lowercase and underscored between words. You should avoid useing abbrevations unless they follow the rules layed out in the nameing section.
+Namespace names should be all lowercase and underscored between words. You should avoid using abbreviations unless they follow the rules laid out in the naming section.
 
 #### Internal Linkage:
-You should use internal linkage when the code doesnt need to be refrenced elsewere in `.cpp` files you should not use them in `.h` files. Format them like regular name spaces.
-#### Nonmember, Static Member and Global Functions:
-You should always place non-member functions in a namespace and only use global functions when necessary. You should also not use group static members. Non member functions should not depend on external variables and exist in a namespace. 
+You should use internal linkage when the code doesn’t need to be referenced elsewhere in `.cpp` files you should not use them in `.h` files. Format them like regular name spaces.
+#### Non-member, Static Member and Global Functions:
+You should always place non-member functions in a namespace and only use global functions when necessary. You should also not use group static members. Non-member functions should not depend on external variables and exist in a namespace. 
 #### Local Variables:
-A function variable should be in the narrowest scope possible. Variables should be declared as close as possible to the use. Initialization should be used rather than separate declaration and assignment. If variables are needed in an condition statement such as an if statement they should be within that statement it may be appropriate to do this just above the constructor.
+A function variable should be in the narrowest scope possible. Variables should be declared as close as possible to the use. Initialization should be used rather than separate declaration and assignment. If variables are needed in a condition statement such as an if statement they should be within that statement it may be appropriate to do this just above the constructor.
 #### Static and Global Variables:
 destruction should always guarantee trivial destructors.
-Global/static variable initalization will depend on the initalizer as a general rule you should always alow for a constant experession. An example of one that is allowed is:
-`int id = getid();` is allowed. Dynamic initalisation of static local variables is permitted.
+Global/static variable initialization will depend on the initializer as a general rule you should always allow for a constant expression. An example of one that is allowed is:
+`int id = getid();` is allowed. Dynamic initialisation of static local variables is permitted.
 
 #### thread_local Variables:
-thered local variables that arent declared inside a function must be initalised with a compile time constant. You should use `thread_local`.
+threaded local variables that aren’t declared inside a function must be initialised with a compile time constant. You should use `thread_local`.
 ***
 
 ### Classes:
-Constructors must not call virtual functions. Do not define implicit conversion you should use the explicit keyword for conversion operaters and single argument constructors. Type conversion operators should be makred explicit in the class defintion. Every class's public interface should say which copy and move operations the class supports which should be done in the public section.
+Constructors must not call virtual functions. Do not define implicit conversion you should use the explicit keyword for conversion operators and single argument constructors. Type conversion operators should be marked explicit in the class definition. Every class's public interface should say which copy and move operations the class supports which should be done in the public section.
 
 #### Structs
 You should only use a struct for objects that are passive and carry data otherwise use a class.
 #### Inheritance
-We should use composition over inheritance. all inheritance should be public if done privately they you should try adding it as a member of the base class insted.
+We should use composition over inheritance. all inheritance should be public if done privately they you should try adding it as a member of the base class instead.
 #### Access
 You should make a data's members private unless they are constants. this helps protect data.
 #### Structure
-You should follow the formatting guide below. Group similer kinds of declarations together. Do not put large method definitions inline in the class defintion.
+You should follow the formatting guide below. Group similar kinds of declarations together. Do not put large method definitions inline in the class definition.
 ***
 
 ### Functions:
-Functions should be written useing the old style function defintions for example: `string funct(int y);` this helps readers and coders who work with other languages understand the code. Default arguments must not be used on virtual functions but you can use elsewhere.
+Functions should be written using the old style function definitions for example: `string funct(int y);` this helps readers and coders who work with other languages understand the code. Default arguments must not be used on virtual functions but you can use elsewhere.
 #### Short Functions
 Functions will always be short and focused keeping code short helps isolate bugs and testing. You should always look to break up large functions into smaller ones unless it adds unneeded complexity.
 #### Inputs/Outputs
-We should always use return values when possible where you should aim to return a value. When haveing non-optional parameters they should be constant refrences or values.
+We should always use return values when possible where you should aim to return a value. When having non-optional parameters they should be constant references or values.
 #### Style
-You should use cpplint to detect style errors, it is preinstalled on QT creator but can be run seprately if needed.
+You should use cpplint to detect style errors, it is preinstalled on QT creator but can be run separately if needed.
 
 ***
 
-### Naming:
 #### Variables / Functions
-Variables will always be named useing camel case. Type names and function names should start with a capital letter for each new word. **DO NOT** use underscores. Class data members should end in an underscore like `std::string myvar_;`
+Variables will always be named using camel case. Type names and function names should start with a capital letter for each new word. **DO NOT** use underscores. Class data members should end in an underscore like `std::string myvar_;`
 #### Constants / Enumerators
-When declareing constants you should always captilise each new word and begin the constant with the letter k, this helps keep code clear. Enumerators should also be named like constants.
-Some abbrevations are ok as long as they are common or clear for example i/j for iteration or CPU for a central processing unit. When writeing a variable think would it hinder your code by useing the abrevation such that it would make it less understandable.
+When declaring constants you should always capitalise each new word and begin the constant with the letter k, this helps keep code clear. Enumerators should also be named like constants.
+Some abbreviations are ok as long as they are common or clear for example i/j for iteration or CPU for a central processing unit. When writing a variable think would it hinder your code by using the abbreviation such that it would make it less understandable.
 #### File Names
 File names should always be lowercase we will use a underscore (_) between words. C++ files should always end in `.cpp` while header files should end in `.h`. You should name your file as specific as possible use clear names like:
 
