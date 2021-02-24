@@ -143,18 +143,18 @@ TODO comments may be used for short-term tasks, such as something you may do the
 ### Formatting:
 Code formatting is arbitrary but following the same guide helps keep consistency and make code easier to understand.
 #### Line length
-A line of code should always remain under 80 characters, this helps keep the code readable and understandable. It will be common that function declerations and returns will exceed the 80 character limit in this case it should be broken up onto sepreate lines.
-Parameter names should be short but clear if possible to assist in keeping code short.
-Use of tabs are **prefered** in this project and should be used in favor of spaces.
+A line of code should always remain under 80 characters, this helps keep the code readable and understandable. It will be common that function declarations and returns will exceed the 80-character limit in this case it should be broken up onto separate lines.
+Parameter names should be short but clear if possible, to assist in keeping code short.
+Use of tabs are **preferred** in this project and should be used in favour of spaces.
 Boolean expressions should also be broken up while the logical operators should always be at the end of the line.
 #### Class format
 Sections should be placed in order, `public, protected` and `private`.
 #### Whitespace
-Try to minimise virtical white space, you should think of them as ending to a paragraph and use them spareingly they help you seperate ideas. Overuse of whitespace will make code more difficult to follow. Simply use them where you think they are approprite such as seperateing comments and functions.
+Try to minimise vertical white space, you should think of them as ending to a paragraph and use them sparingly they help you separate ideas. Overuse of whitespace will make code more difficult to follow. Simply use them where you think they are appropriate such as separating comments and functions.
 ***
 ### Other C++ Features:
 #### Boost
 [Boost test guidelines](https://www.boost.org/doc/libs/1_45_0/libs/test/doc/html/utf/usage-recommendations/generic.html)
-You should use tests that are spesific and precice, try to avoid a complex test in favor of smaller tests. You should **Prefer** `BOOST_CHECK_EQUAL` over `BOOST_CHECK`. This is because you will see the incorrect value when the code failure.
+You should use tests that are specific and precise, try to avoid a complex test in favour of smaller tests. You should **Prefer** `BOOST_CHECK_EQUAL` over `BOOST_CHECK`. This is because you will see the incorrect value when the code failure.
 #### Group tests together
-You should aim to group similer tests together, and name each test so you know what it is checking to help with the debugging later on.
+You should aim to group similar tests together, and name each test so you know what it is checking to help with the debugging later on.
