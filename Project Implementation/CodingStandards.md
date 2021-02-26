@@ -33,7 +33,7 @@ Each group should be separated by one blank line. The exception to this rule is 
 ### Scoping:
 
 #### Namespaces:
-Code should be placed under a namespace, which divides the global scope into individual named scopes to prevent name collisions. Namespace names must be unique and should be all lowercase and underscored between words. You should avoid using abbreviations unless they follow the rules laid out in the naming section.
+Code should be placed under a namespace, which divides the global scope into individual named scopes to prevent name collisions. Namespace names must be unique and should be all lowercase and underscored between words. Avoid using abbreviations unless they follow the rules laid out in the naming section.
 #### Internal Linkage:
 Sections of code can be given internal linkage using an unnamed namespace (formatted the same as regular namespaces), and individual functions and variables can also be given internal linkage by declaring them as `static`. Internal linkage prevents whatever has been declared from being accessed from another file. Therefore, internal linkage should be used when the code doesn’t need to be referenced elsewhere in `.cpp` files. It should not be used in `.h` files.
 #### Non-member, Static Member and Global Functions:
@@ -46,7 +46,7 @@ Objects with static storage duration are disallowed unless there are guaranteed 
 ***
 
 ### Classes:
-Constructors must not call virtual functions. Do not define implicit conversion you should use the explicit keyword for conversion operators and single argument constructors. Type conversion operators should be marked explicit in the class definition. Every class's public interface should say which copy and move operations the class supports which should be done in the public section.
+Constructors must not call virtual functions. Do not define implicit conversion, one should use the explicit keyword for conversion operators and single argument constructors. Type conversion operators should be marked explicit in the class definition. Every class's public interface should say which copy and move operations the class supports which should be done in the public section.
 
 #### Structs:
 Structs should only be used for objects that are passive and carry data otherwise use a class.
@@ -60,14 +60,14 @@ In general, group similar kinds of declarations together and do not put large me
 ***
 
 ### Functions:
-Functions should be written using the old-style function definitions for example: `string funct(int y);` this helps readers and coders who work with other languages understand the code. Default arguments must not be used on virtual functions but you can use them elsewhere.
+Functions should be written using the old-style function definitions for example: `string funct(int y);` this helps readers and coders who work with other languages understand the code. Default arguments must not be used on virtual functions but they can be used elsewhere.
 
 #### Short Functions:
 Functions should always be short and focused; keeping code short helps isolate bugs and testing. Look to break up large functions into smaller ones unless it adds unneeded complexity.
 #### Inputs/Outputs:
 Use return values when possible over output parameters, this improves readability. Avoid returning pointers unless it is possible for them to be null, preferably return by value, failing that, return by reference. When having non-optional input parameters they should be constant references or values, while output or input/output ones should generally be references. 
 #### Style:
-You should use cpplint to detect style errors, it is preinstalled on QT creator but can be run separately if needed.
+Cpplint should be used to detect style errors, it is preinstalled on QT creator but can be run separately if needed.
 
 ***
 
@@ -83,7 +83,7 @@ File names should always be lowercase we will use an underscore `_` between word
   - `main_menu_gui.cpp`
   - `admin_class.cpp`
   - `admin_class_test.cpp`
-Note you should always end a test file in _test for the sake of simplicity.
+Note: Always end a test file in `_test` for the sake of simplicity.
 
 ***
 
