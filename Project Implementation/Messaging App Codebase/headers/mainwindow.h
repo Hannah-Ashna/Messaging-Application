@@ -1,8 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "headers/message.h"
+
 #include <QMainWindow>
 #include <QMqttClient>
+#include <QtCore/QString>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

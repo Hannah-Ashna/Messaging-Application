@@ -1,4 +1,5 @@
 #include "headers/mainwindow.h"
+#include "headers/message.h"
 #include "ui_mainwindow.h"
 
 #include <QtCore/QDateTime>
@@ -25,11 +26,10 @@ MainWindow::MainWindow(QWidget *parent)
     connect(m_client, &QMqttClient::disconnected, this, &MainWindow::brokerDisconnected);
 
     connect(m_client, &QMqttClient::messageReceived, this, [this](const QByteArray &message) {
-        const QString content = QDateTime::currentDateTime().toString()
-                    + QLatin1String(" : ")
-                    + message
-                    + QLatin1Char('\n');
-        ui->messageLog->insertPlainText(content);
+        Message m;
+
+        m.setMessageContent(QString(message).toStdString().c_str());
+        ui->messageLog->insertPlainText(m.getFormattedMessage());
     });
 
     connect(ui->hostEdit, &QLineEdit::textChanged, m_client, &QMqttClient::setHostname);

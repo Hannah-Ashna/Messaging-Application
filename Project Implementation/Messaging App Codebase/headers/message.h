@@ -2,6 +2,7 @@
 #define MESSAGE_H
 
 #include <string>
+#include <QtCore/QString>
 
 #include "user.h"
 
@@ -10,8 +11,9 @@ public:
     std::string messageContent;
 
     Message();
-    Message getMessage();
-    std::string getMessageContent();
+    QString getFormattedMessage();
+    QString getMessageContent();
+    void setMessageContent(std::string);
 };
 
 #endif // MESSAGE_H
