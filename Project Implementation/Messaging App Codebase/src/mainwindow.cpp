@@ -110,7 +110,7 @@ void MainWindow::on_settingsButton_clicked()
     /*!
       Set index of stackedWidget to 1, take user to setting screen
     */
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(3);
 }
 
 void MainWindow::on_backButton_clicked()
@@ -118,18 +118,13 @@ void MainWindow::on_backButton_clicked()
     /*!
       Set index of stacked widget to 0, take user to main page
     */
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget->setCurrentIndex(2);
 }
 
 void MainWindow::on_loginButton_clicked(){
     std::fstream credentialsFile;
-    credentialsFile.open("credentials.txt", std::ios::in);
+    credentialsFile.open("../credentials.txt", std::ios::in);
     if(!credentialsFile){
-        std::cout<< "UWU IT NO EXISTY"<< std::endl;
-        std::fstream UWUFILE;
-        UWUFILE.open("credentials.txt", std::ios::out);
-        UWUFILE << "UWU uwu";
-        UWUFILE.close();
     }
 
     else {
@@ -140,11 +135,31 @@ void MainWindow::on_loginButton_clicked(){
         while (std::getline(credentialsFile, line)) {
             if (username.toStdString().c_str() == line.substr(line.find(" ") + 1)){
                 if (password.toStdString().c_str() == line.substr(0, line.find(" "))){
-                    ui->stackedWidget->setCurrentIndex(1);
+                    ui->stackedWidget->setCurrentIndex(2);
                 }
             }
         }
 
         credentialsFile.close();
     }
+}
+
+void MainWindow::on_createAccButton_clicked(){
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::on_signupButton_clicked(){
+    QString username = ui->signupUserEdit->text();
+    QString password = ui->signupPassEdit->text();
+
+    if (username != NULL && password != NULL) {
+        std::fstream credentialsFile;
+        credentialsFile.open("../credentials.txt", std::ios::out);
+        credentialsFile << username.toStdString().c_str() << " " << password.toStdString().c_str();
+        credentialsFile.close();
+    }
+}
+
+void MainWindow::on_signupBackButton_clicked(){
+    ui->stackedWidget->setCurrentIndex(0);
 }
