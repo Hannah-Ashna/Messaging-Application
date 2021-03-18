@@ -4,6 +4,8 @@
 #include <QtCore/QDateTime>
 #include <QtMqtt/QMqttClient>
 #include <QtWidgets/QMessageBox>
+#include <fstream>
+#include <iostream>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -120,5 +122,29 @@ void MainWindow::on_backButton_clicked()
 }
 
 void MainWindow::on_loginButton_clicked(){
-    ui->stackedWidget->setCurrentIndex(1);
+    std::fstream credentialsFile;
+    credentialsFile.open("credentials.txt", std::ios::in);
+    if(!credentialsFile){
+        std::cout<< "UWU IT NO EXISTY"<< std::endl;
+        std::fstream UWUFILE;
+        UWUFILE.open("credentials.txt", std::ios::out);
+        UWUFILE << "UWU uwu";
+        UWUFILE.close();
+    }
+
+    else {
+        QString username = ui->passEdit->text();
+        QString password = ui->userEdit->text();
+
+        std::string line;
+        while (std::getline(credentialsFile, line)) {
+            if (username.toStdString().c_str() == line.substr(line.find(" ") + 1)){
+                if (password.toStdString().c_str() == line.substr(0, line.find(" "))){
+                    ui->stackedWidget->setCurrentIndex(1);
+                }
+            }
+        }
+
+        credentialsFile.close();
+    }
 }
