@@ -45,7 +45,7 @@ MainWindow::~MainWindow()
 void MainWindow::brokerDisconnected()
 {
     /*!
-      If client is disconnected, enable the host and port input boxes and set button text to "Connect"
+        If client is disconnected, enable the host and port input boxes and set button text to "Connect"
     */
     ui->hostEdit->setEnabled(true);
     ui->portSpinBox->setEnabled(true);
@@ -55,7 +55,7 @@ void MainWindow::brokerDisconnected()
 void MainWindow::setClientPort(int p)
 {
     /*!
-      Set client port
+        Set client port
     */
     m_client->setPort(p);
 }
@@ -63,8 +63,8 @@ void MainWindow::setClientPort(int p)
 void MainWindow::on_buttonConnect_clicked()
 {
     /*!
-      If client is disconnected, button should say "connect" and attempt to call connectToHost() and disable the button on click
-      If client is connected, button should say "disconnect" and attempt to call disconnectFromHost() and enable the button on click
+        If client is disconnected, button should say "connect" and attempt to call connectToHost() and disable the button on click
+        If client is connected, button should say "disconnect" and attempt to call disconnectFromHost() and enable the button on click
     */
     if (m_client->state() == QMqttClient::Disconnected) {
         ui->hostEdit->setEnabled(false);
@@ -82,9 +82,9 @@ void MainWindow::on_buttonConnect_clicked()
 void MainWindow::on_channelDropDown_activated(int index)
 {
     /*!
-      Set the current topic to the currently selected option from the dropdown box
-      Set the label defining the topic for the user to the text in the currently selected dropdown box
-      Clear the message log
+        Set the current topic to the currently selected option from the dropdown box
+        Set the label defining the topic for the user to the text in the currently selected dropdown box
+        Clear the message log
     */
     auto subscription = m_client->subscribe(ui->channelDropDown->itemText(index));
     if (!subscription) {
@@ -98,7 +98,7 @@ void MainWindow::on_channelDropDown_activated(int index)
 void MainWindow::on_sendButton_clicked()
 {
     /*!
-      Publish text in input box to message log if client is successfully connected
+        Publish text in input box to message log if client is successfully connected
     */
     if (m_client->publish(ui->channelDropDown->currentText(), ui->sendInput->text().toUtf8()) == -1)
         QMessageBox::critical(this, QLatin1String("Error"), QLatin1String("Could not publish message"));
@@ -108,7 +108,7 @@ void MainWindow::on_sendButton_clicked()
 void MainWindow::on_settingsButton_clicked()
 {
     /*!
-      Set index of stackedWidget to 1, take user to setting screen
+        Set index of stackedWidget to 3, take user to setting screen
     */
     ui->stackedWidget->setCurrentIndex(3);
 }
@@ -116,12 +116,19 @@ void MainWindow::on_settingsButton_clicked()
 void MainWindow::on_backButton_clicked()
 {
     /*!
-      Set index of stacked widget to 0, take user to main page
+        Set index of stacked widget to 2, take user to main page
     */
     ui->stackedWidget->setCurrentIndex(2);
 }
 
-void MainWindow::on_loginButton_clicked(){
+void MainWindow::on_loginButton_clicked()
+{
+    /*!
+        Checks a user's credentials against the credentials.txt file and verifies
+        whether they have an account on the platform or not
+
+        If their username and password combination are a match they are logged into the application
+    */
     std::fstream credentialsFile;
     credentialsFile.open("../credentials.txt", std::ios::in);
     if(!credentialsFile){
@@ -135,6 +142,9 @@ void MainWindow::on_loginButton_clicked(){
         while (std::getline(credentialsFile, line)) {
             if (username.toStdString().c_str() == line.substr(line.find(" ") + 1)){
                 if (password.toStdString().c_str() == line.substr(0, line.find(" "))){
+                    /*!
+                        Set index of stacked widget to 2, take user to main page
+                    */
                     ui->stackedWidget->setCurrentIndex(2);
                 }
             }
@@ -144,11 +154,21 @@ void MainWindow::on_loginButton_clicked(){
     }
 }
 
-void MainWindow::on_createAccButton_clicked(){
+void MainWindow::on_createAccButton_clicked()
+{
+    /*!
+        Set index of stacked widget to 1, take user to to signup page
+    */
     ui->stackedWidget->setCurrentIndex(1);
 }
 
-void MainWindow::on_signupButton_clicked(){
+void MainWindow::on_signupButton_clicked()
+{
+    /*!
+      Gathers a user's input values for their password and username, checks if it is null
+      to ensure no empty credentials are added to the file.
+      If it is not NULL, the credentials are successfully registered
+    */
     QString username = ui->signupUserEdit->text();
     QString password = ui->signupPassEdit->text();
 
@@ -160,6 +180,10 @@ void MainWindow::on_signupButton_clicked(){
     }
 }
 
-void MainWindow::on_signupBackButton_clicked(){
+void MainWindow::on_signupBackButton_clicked()
+{
+    /*!
+        Set index of stacked widget to 0, take user to login page
+    */
     ui->stackedWidget->setCurrentIndex(0);
 }
