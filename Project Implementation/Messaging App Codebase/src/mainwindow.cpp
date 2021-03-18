@@ -108,7 +108,7 @@ void MainWindow::on_settingsButton_clicked()
     /*!
       Set index of stackedWidget to 1, take user to setting screen
     */
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget->setCurrentIndex(2);
 }
 
 void MainWindow::on_backButton_clicked()
@@ -116,5 +116,9 @@ void MainWindow::on_backButton_clicked()
     /*!
       Set index of stacked widget to 0, take user to main page
     */
-    ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::on_loginButton_clicked(){
+    ui->stackedWidget->setCurrentIndex(1);
 }
