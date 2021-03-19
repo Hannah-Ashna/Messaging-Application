@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="LoginPage">
      <widget class="QLabel" name="label_8">
@@ -291,7 +291,7 @@
           </font>
          </property>
          <property name="text">
-          <string>SDI Group 30</string>
+          <string>Group Name</string>
          </property>
         </widget>
        </item>
@@ -614,75 +614,6 @@ p, li { white-space: pre-wrap; }
            <pointsize>8</pointsize>
           </font>
          </property>
-         <item>
-          <property name="text">
-           <string>Online - 4</string>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Jarad</string>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Hannah</string>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Hassaan</string>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string/>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Offline - 1</string>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Nick</string>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-         </item>
         </widget>
        </item>
       </layout>
@@ -705,46 +636,11 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>82</width>
+        <width>81</width>
         <height>681</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QPushButton" name="homeButton">
-         <property name="text">
-          <string>Home</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="groupButton1">
-         <property name="text">
-          <string>SDI</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="groupButton2">
-         <property name="text">
-          <string>PPM</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="groupButton3">
-         <property name="text">
-          <string>SE</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="groupButton4">
-         <property name="text">
-          <string>ML</string>
-         </property>
-        </widget>
-       </item>
        <item>
         <widget class="QPushButton" name="addNewGroupButton">
          <property name="text">
@@ -934,19 +830,6 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
       </layout>
-     </widget>
-     <widget class="Line" name="line_7">
-      <property name="geometry">
-       <rect>
-        <x>640</x>
-        <y>0</y>
-        <width>21</width>
-        <height>1061</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
      </widget>
      <widget class="QWidget" name="horizontalLayoutWidget_4">
       <property name="geometry">
