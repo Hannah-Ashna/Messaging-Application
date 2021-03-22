@@ -5,24 +5,24 @@ Room::Room()
 
 }
 
-void Room::setName(std::string theName)
+void Room::setName(std::string name)
 {
-    name = theName;
+    this->name = name;
 }
 
 std::string Room::getName()
 {
-
+    return name;
 }
 
-void Room::setRoomID(int id)
+void Room::setRoomID(int roomID)
 {
-    roomID = id;
+    this->roomID = roomID;
 }
 
 int Room::getRoomID()
 {
-
+    return roomID;
 }
 
 void Room::addMembers(User member)
@@ -32,5 +32,9 @@ void Room::addMembers(User member)
 
 std::vector<User> Room::getMembers()
 {
+    return members;
+}
 
+void Room::addChannel(Channel channel) {
+    channels.push_back(channel);
 }

@@ -11,9 +11,6 @@
 #include <iostream>
 #include <vector>
 
-
-std::vector<Channel> channels;
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -43,7 +40,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->hostEdit, &QLineEdit::textChanged, m_client, &QMqttClient::setHostname);
     connect(ui->portSpinBox, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::setClientPort);
-
 }
 
 MainWindow::~MainWindow()
@@ -88,31 +84,63 @@ void MainWindow::on_buttonConnect_clicked()
     }
 }
 
-Channel MainWindow::getCurrentChannel() {
-    return channels[ui->channelDropDown->currentIndex()];
+
+
+Room MainWindow::getCurrentRoom(){
+    return rooms[ui->roomDropDown->currentIndex()];
+}
+
+void MainWindow::on_addRoomButton_clicked(){
+    Room room;
+
+    bool ok;
+    QString roomName = QInputDialog::getText(this, tr("Enter Room Name"), tr("Rom Name:"),QLineEdit::Normal, "",&ok);
+
+    if(ok && !roomName.isEmpty()) {
+        room.setName(roomName.toStdString().c_str());
+    }
+
+    ui->roomDropDown->addItem(QString::fromStdString(room.getName()));
+    rooms.push_back(room);
+}
+
+void MainWindow::on_deleteRoomButton_clicked() {
+    int index = ui->roomDropDown->currentIndex();
+    Room room = getCurrentRoom();
+
+    ui->roomDropDown->removeItem(index);
+    rooms.erase(rooms.begin() + index);
+}
+
+void MainWindow::on_roomDropDown_activated(int index) {
+    ui->roomLabel->setText(ui->roomDropDown->itemText(index));
 }
 
 
-void MainWindow::on_addChannelButton_clicked() {
-    Channel channel;
 
+Channel MainWindow::getCurrentChannel() {
+    return getCurrentRoom().channels[ui->channelDropDown->currentIndex()];
+}
+
+void MainWindow::on_addChannelButton_clicked() {
     bool ok;
     QString channelName = QInputDialog::getText(this, tr("Enter Channel Name"), tr("Channel Name:"),QLineEdit::Normal, "",&ok);
 
     if(ok && !channelName.isEmpty()) {
+        Channel channel;
         channel.setName(channelName.toStdString().c_str());
-    }
+        ui->channelDropDown->addItem(QString::fromStdString(channel.getName()));
 
-    ui->channelDropDown->addItem(QString::fromStdString(channel.getName()));
-    channels.push_back(channel);
+        getCurrentRoom().addChannel(channel);
+    }
 }
 
 void MainWindow::on_deleteChannelButton_clicked() {
-    int index = ui->channelDropDown->currentIndex();
     Channel channel = getCurrentChannel();
+    int index = ui->channelDropDown->currentIndex();
 
     ui->channelDropDown->removeItem(index);
-    channels.erase(channels.begin() + index);
+    getCurrentRoom().channels.erase(getCurrentRoom().channels.begin() + index);
 }
 
 void MainWindow::on_channelDropDown_activated(int index)
@@ -132,6 +160,7 @@ void MainWindow::on_channelDropDown_activated(int index)
 }
 
 
+
 void MainWindow::on_sendButton_clicked()
 {
     /*!
@@ -141,6 +170,8 @@ void MainWindow::on_sendButton_clicked()
         QMessageBox::critical(this, QLatin1String("Error"), QLatin1String("Could not publish message"));
     ui->sendInput->clear();
 }
+
+
 
 void MainWindow::on_settingsButton_clicked()
 {
@@ -157,6 +188,8 @@ void MainWindow::on_backButton_clicked()
     */
     ui->stackedWidget->setCurrentIndex(2);
 }
+
+
 
 void MainWindow::on_loginButton_clicked()
 {

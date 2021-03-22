@@ -3,6 +3,7 @@
 
 #include "headers/message.h"
 #include "headers/channel.h"
+#include "headers/room.h"
 
 #include <QMainWindow>
 #include <QMqttClient>
@@ -20,6 +21,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    std::vector<Channel> channels;
+    std::vector<Room> rooms;
+
 public slots:
     void setClientPort(int p);
 
@@ -30,6 +34,11 @@ private slots:
     void on_backButton_clicked();
 
     void on_buttonConnect_clicked();
+
+    void on_roomDropDown_activated(int index);
+    void on_addRoomButton_clicked();
+    void on_deleteRoomButton_clicked();
+    Room getCurrentRoom();
 
     void on_channelDropDown_activated(int index);
     void on_addChannelButton_clicked();
