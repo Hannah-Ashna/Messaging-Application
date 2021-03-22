@@ -13,7 +13,7 @@ public:
 
     Message();
 
-    QString getFormattedMessage();
+    QString getFormattedMessage(User& user);
     QString getMessageContent();
 
     void setMessageContent(std::string);

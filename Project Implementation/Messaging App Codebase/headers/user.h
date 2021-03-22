@@ -5,13 +5,14 @@
 
 class User
 {
-public:
+protected:
     std::string userID;
     std::string name;
     std::string nickname;
     std::string status;
     bool online;
 
+public:
     User();
     void setName(std::string username);
     std::string changeName();

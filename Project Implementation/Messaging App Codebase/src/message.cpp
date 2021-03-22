@@ -10,10 +10,10 @@ Message::Message()
 
 }
 
-QString Message::getFormattedMessage()
+QString Message::getFormattedMessage(User& user)
 {
     QString formattedMessage =
-            QDateTime::currentDateTime().toString()
+            QDateTime::currentDateTime().toString() + " " + QString::fromStdString(user.getName())
             + QLatin1String(" : ")
             + QString::fromStdString(messageContent)
             + QLatin1Char('\n');
