@@ -32,9 +32,9 @@ MainWindow::MainWindow(QWidget *parent)
         Message m;
         Channel c = getCurrentChannel();
 
+        m.setMessageContent(QString(message).toStdString().c_str());
         c.addMessage(m);
 
-        m.setMessageContent(QString(message).toStdString().c_str());
         ui->messageLog->insertPlainText(m.getFormattedMessage());
     });
 
@@ -113,7 +113,14 @@ void MainWindow::on_deleteRoomButton_clicked() {
 }
 
 void MainWindow::on_roomDropDown_activated(int index) {
+    Room room = getCurrentRoom();
+
     ui->roomLabel->setText(ui->roomDropDown->itemText(index));
+    ui->channelDropDown->clear();
+
+    for(int i = 0; i < room.channels.size(); i++) {
+        ui->channelDropDown->addItem(QString::fromStdString(room.channels[i].getName()));
+    }
 }
 
 
@@ -135,12 +142,12 @@ void MainWindow::on_addChannelButton_clicked() {
     }
 }
 
-void MainWindow::on_deleteChannelButton_clicked() {
-    Channel channel = getCurrentChannel();
-    int index = ui->channelDropDown->currentIndex();
+void MainWindow::on_deleteChannelButton_clicked() {    
+    //ui->channelDropDown->removeItem(ui->channelDropDown->currentIndex());
 
-    ui->channelDropDown->removeItem(index);
-    getCurrentRoom().channels.erase(getCurrentRoom().channels.begin() + index);
+    //Room room = getCurrentRoom();
+    //int index = std::find(room.channels.begin(), room.channels.end(), getCurrentChannel()) - room.channels.begin();
+    //getCurrentRoom().channels.erase(getCurrentRoom().channels.begin() + index);
 }
 
 void MainWindow::on_channelDropDown_activated(int index)

@@ -21,7 +21,6 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    std::vector<Channel> channels;
     std::vector<Room> rooms;
 
 public slots:
