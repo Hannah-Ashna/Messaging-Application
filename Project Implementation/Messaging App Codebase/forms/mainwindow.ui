@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="LoginPage">
      <widget class="QLabel" name="label_8">
@@ -278,7 +278,7 @@
        <rect>
         <x>109</x>
         <y>10</y>
-        <width>221</width>
+        <width>223</width>
         <height>531</height>
        </rect>
       </property>
@@ -329,33 +329,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QComboBox" name="channelDropDown">
-         <item>
-          <property name="text">
-           <string>general</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>ideaboard</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>keydocuments</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>meetingschedule</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>pendingtasks</string>
-          </property>
-         </item>
-        </widget>
+        <widget class="QComboBox" name="channelDropDown"/>
        </item>
        <item>
         <spacer name="verticalSpacer_11">
@@ -473,6 +447,24 @@
           </size>
          </property>
         </spacer>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QPushButton" name="addChannelButton">
+           <property name="text">
+            <string>Add Channel</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="deleteChannelButton">
+           <property name="text">
+            <string>Delete Channel</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </widget>
@@ -636,7 +628,7 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>81</width>
+        <width>82</width>
         <height>681</height>
        </rect>
       </property>

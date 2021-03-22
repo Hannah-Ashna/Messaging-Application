@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include "headers/message.h"
+#include "headers/channel.h"
 
 #include <QMainWindow>
 #include <QMqttClient>
@@ -24,14 +25,22 @@ public slots:
 
 private slots:
     void on_sendButton_clicked();
+
     void on_settingsButton_clicked();
     void on_backButton_clicked();
+
     void on_buttonConnect_clicked();
+
     void on_channelDropDown_activated(int index);
+    void on_addChannelButton_clicked();
+    void on_deleteChannelButton_clicked();
+    Channel getCurrentChannel();
+
     void on_loginButton_clicked();
     void on_createAccButton_clicked();
     void on_signupButton_clicked();
     void on_signupBackButton_clicked();
+
     void brokerDisconnected();
 
 private:

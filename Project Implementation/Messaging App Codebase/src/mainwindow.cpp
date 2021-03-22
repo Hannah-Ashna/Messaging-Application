@@ -5,8 +5,14 @@
 #include <QtCore/QDateTime>
 #include <QtMqtt/QMqttClient>
 #include <QtWidgets/QMessageBox>
+#include <QInputDialog>
+
 #include <fstream>
 #include <iostream>
+#include <vector>
+
+
+std::vector<Channel> channels;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -27,6 +33,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(m_client, &QMqttClient::messageReceived, this, [this](const QByteArray &message) {
         Message m;
+        Channel c = getCurrentChannel();
+
+        c.addMessage(m);
 
         m.setMessageContent(QString(message).toStdString().c_str());
         ui->messageLog->insertPlainText(m.getFormattedMessage());
@@ -79,6 +88,33 @@ void MainWindow::on_buttonConnect_clicked()
     }
 }
 
+Channel MainWindow::getCurrentChannel() {
+    return channels[ui->channelDropDown->currentIndex()];
+}
+
+
+void MainWindow::on_addChannelButton_clicked() {
+    Channel channel;
+
+    bool ok;
+    QString channelName = QInputDialog::getText(this, tr("Enter Channel Name"), tr("Channel Name:"),QLineEdit::Normal, "",&ok);
+
+    if(ok && !channelName.isEmpty()) {
+        channel.setName(channelName.toStdString().c_str());
+    }
+
+    ui->channelDropDown->addItem(QString::fromStdString(channel.getName()));
+    channels.push_back(channel);
+}
+
+void MainWindow::on_deleteChannelButton_clicked() {
+    int index = ui->channelDropDown->currentIndex();
+    Channel channel = getCurrentChannel();
+
+    ui->channelDropDown->removeItem(index);
+    channels.erase(channels.begin() + index);
+}
+
 void MainWindow::on_channelDropDown_activated(int index)
 {
     /*!
@@ -94,6 +130,7 @@ void MainWindow::on_channelDropDown_activated(int index)
     ui->channelLabel->setText(ui->channelDropDown->itemText(index));
     ui->messageLog->clear();
 }
+
 
 void MainWindow::on_sendButton_clicked()
 {

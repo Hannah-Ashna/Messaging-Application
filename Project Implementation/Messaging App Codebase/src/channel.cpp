@@ -5,43 +5,26 @@ Channel::Channel()
 
 }
 
-void Channel::changeTitle(std::string title)
+void Channel::setName(std::string theName)
 {
-
+    name = theName;
 }
 
-void Channel::changeDescription(std::string desc)
+std::string Channel::getName()
 {
-
+    return name;
 }
 
-void Channel::sendMessage(Message message)
+void Channel::addMessage(Message message)
 {
-
-}
-
-std::string Channel::getTitle()
-{
-
-}
-
-std::string Channel::getDescription()
-{
-
+    messages.push_back(message);
 }
 
 void Channel::deleteMessage(Message message)
 {
-
+    for(int i = 0; i < messages.size(); i++) {
+        if(message.getFormattedMessage() == messages[i].getFormattedMessage()) {
+            messages.erase(messages.begin() + i);
+        }
+    }
 }
-
-void Channel::subscribeToChannel()
-{
-
-}
-
-void Channel::unsubscribeFromChannel()
-{
-
-}
-

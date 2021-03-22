@@ -2,6 +2,8 @@
 
 #include <QtCore/QDateTime>
 
+std::string messageContent;
+
 Message::Message()
 {
 

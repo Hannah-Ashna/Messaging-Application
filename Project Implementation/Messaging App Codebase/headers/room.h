@@ -11,15 +11,17 @@ class Room
 {
 public:
     std::string name;
-    std::string description;
     std::vector<Channel> channel;
     int roomID;
 
     Room();
-    void changeName();
+    void setName();
     void getName();
-    void getDescription();
+
+    void setRoomID();
     void getRoomID();
+
+    void addMembers();
     void getMembers();
 
 protected:
