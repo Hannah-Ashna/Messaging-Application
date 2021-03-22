@@ -215,6 +215,8 @@ void MainWindow::on_loginButton_clicked()
                     /*!
                         Set index of stacked widget to 2, take user to main page
                     */
+                    User userLogin;
+                    userLogin.setName(username.toStdString().c_str());
                     ui->stackedWidget->setCurrentIndex(2);
                 }
             }
