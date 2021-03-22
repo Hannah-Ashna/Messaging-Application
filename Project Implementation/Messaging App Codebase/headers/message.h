@@ -9,6 +9,7 @@
 class Message {
 public:
     std::string messageContent;
+    std::string username;
 
     Message();
 
@@ -16,6 +17,7 @@ public:
     QString getMessageContent();
 
     void setMessageContent(std::string);
+    void notifyUser();
 };
 
 #endif // MESSAGE_H

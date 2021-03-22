@@ -13,6 +13,7 @@ public:
     bool online;
 
     User();
+    void setName(std::string username);
     std::string changeName();
     void subscribeToRoom();
     void unsubscribeFromRoom();

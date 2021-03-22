@@ -1,6 +1,7 @@
 #include "headers/message.h"
 
 #include <QtCore/QDateTime>
+#include <QMessageBox>
 
 std::string messageContent;
 
@@ -28,4 +29,15 @@ QString Message::getMessageContent()
 void Message::setMessageContent(std::string message)
 {
     messageContent = message;
+    notifyUser();
+}
+
+void Message::notifyUser()
+{
+    QMessageBox notification;
+    notification.setText("New Notification");
+    notification.setInformativeText(getFormattedMessage());
+    notification.setStandardButtons(QMessageBox::Ok);
+    notification.setDefaultButton(QMessageBox::Ok);
+    int ret = notification.exec();
 }
