@@ -35,12 +35,7 @@ MainWindow::MainWindow(QWidget *parent)
         m.setMessageContent(QString(message).toStdString().c_str());
         c.addMessage(m);
 
-<<<<<<< HEAD
-        ui->messageLog->insertPlainText(m.getFormattedMessage());
-=======
-        m.setMessageContent(QString(message).toStdString().c_str());
         ui->messageLog->insertPlainText(m.getFormattedMessage(currentUser));
->>>>>>> e80d45cb54b36924a2f421a5fcaf770241ee8897
     });
 
     connect(ui->hostEdit, &QLineEdit::textChanged, m_client, &QMqttClient::setHostname);

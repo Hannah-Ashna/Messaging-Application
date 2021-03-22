@@ -21,12 +21,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-<<<<<<< HEAD
-=======
-    User currentUser;
-
-    std::vector<Channel> channels;
->>>>>>> e80d45cb54b36924a2f421a5fcaf770241ee8897
+    User currentUser;    
     std::vector<Room> rooms;
 
 public slots:
