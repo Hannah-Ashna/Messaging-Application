@@ -21,6 +21,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    User currentUser;
+
     std::vector<Channel> channels;
     std::vector<Room> rooms;
 

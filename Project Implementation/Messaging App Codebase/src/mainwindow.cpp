@@ -35,7 +35,7 @@ MainWindow::MainWindow(QWidget *parent)
         c.addMessage(m);
 
         m.setMessageContent(QString(message).toStdString().c_str());
-        ui->messageLog->insertPlainText(m.getFormattedMessage());
+        ui->messageLog->insertPlainText(m.getFormattedMessage(currentUser));
     });
 
     connect(ui->hostEdit, &QLineEdit::textChanged, m_client, &QMqttClient::setHostname);
@@ -215,8 +215,7 @@ void MainWindow::on_loginButton_clicked()
                     /*!
                         Set index of stacked widget to 2, take user to main page
                     */
-                    User userLogin;
-                    userLogin.setName(username.toStdString().c_str());
+                    currentUser.setName(username.toStdString().c_str());
                     ui->stackedWidget->setCurrentIndex(2);
                 }
             }
