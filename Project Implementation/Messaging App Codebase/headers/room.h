@@ -15,14 +15,14 @@ public:
     int roomID;
 
     Room();
-    void setName();
-    void getName();
+    void setName(std::string theName);
+    std::string getName();
 
-    void setRoomID();
-    void getRoomID();
+    void setRoomID(int id);
+    int getRoomID();
 
-    void addMembers();
-    void getMembers();
+    void addMembers(User member);
+    std::vector<User> getMembers();
 
 protected:
     std::vector<User> members;
