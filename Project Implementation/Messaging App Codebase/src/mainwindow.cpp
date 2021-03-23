@@ -196,11 +196,12 @@ void MainWindow::on_addUserButton_clicked() {
 
     if(ok && !userName.isEmpty()) {
         rooms[getCurrentRoomIndex()].addMembers(userName.toStdString().c_str());
+        //TO DO FOR JAD PLS ADD USER
     }
 }
 
 void MainWindow::on_removeUserButton_clicked() {
-
+    //TO DO FOR JAD PLS DELETE USER
 }
 
 
