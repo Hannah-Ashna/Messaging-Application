@@ -12,6 +12,7 @@ class Room
 public:
     std::string name;
     std::vector<Channel> channels;
+    std::vector<std::string> members;
     int roomID;
 
     Room();
@@ -23,12 +24,11 @@ public:
 
     void addMembers(std::string member);
     std::vector<std::string> getMembers();
+    void removeMember(std::string member);
 
     void addChannel(Channel channel);
     std::vector<Channel> getChannelList();
 
-protected:
-    std::vector<std::string> members;
 };
 
 #endif // ROOM_H

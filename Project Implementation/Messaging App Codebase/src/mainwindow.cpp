@@ -118,7 +118,19 @@ void MainWindow::on_deleteRoomButton_clicked() {
     ui->roomDropDown->removeItem(index);
     rooms.erase(rooms.begin() + index);
 
-    // TO DO 4 JAD PLS DELETE ROOM SERIOUSLY I HATE C++ SO MUCH ************
+    std::ofstream roomFile (roomFilepath);
+    std::string line;
+    if(roomFile.is_open()){
+        for(int i = 0; i < rooms.size(); i++){
+            line = rooms.at(i).name;
+            for(int j = 0; j < rooms.at(i).channels.size(); j++){
+                line += " " + rooms.at(i).channels.at(j).getName();
+            }
+            roomFile << line;
+         }
+    }
+    roomFile.close();
+ // JAD
 }
 
 void MainWindow::on_roomDropDown_activated(int index) {
@@ -149,6 +161,18 @@ void MainWindow::on_addChannelButton_clicked() {
 
         rooms[getCurrentRoomIndex()].channels.push_back(channel);
 
+        std::ofstream roomFile (roomFilepath);
+        std::string line;
+        if(roomFile.is_open()){
+            for(int i = 0; i < rooms.size(); i++){
+                line = rooms.at(i).name;
+                for(int j = 0; j < rooms.at(i).channels.size(); j++){
+                    line += " " + rooms.at(i).channels.at(j).getName();
+                }
+                roomFile << line;
+             }
+        }
+        roomFile.close();
         // TO DO 4 JAD PLS ADD CHANNEL SERIOUSLY I HATE C++ SO MUCH ************
     }
 }
@@ -160,6 +184,18 @@ void MainWindow::on_deleteChannelButton_clicked() {
     ui->channelDropDown->removeItem(index);
     room.channels.erase(room.channels.begin() + index);
 
+    std::ofstream roomFile (roomFilepath);
+    std::string line;
+    if(roomFile.is_open()){
+        for(int i = 0; i < rooms.size(); i++){
+            line = rooms.at(i).name;
+            for(int j = 0; j < rooms.at(i).channels.size(); j++){
+                line += " " + rooms.at(i).channels.at(j).getName();
+            }
+            roomFile << line;
+         }
+    }
+    roomFile.close();
     // TO DO 4 JAD PLS DELETE CHANNEL SERIOUSLY I HATE C++ SO MUCH ************
 }
 
@@ -194,14 +230,80 @@ void MainWindow::on_addUserButton_clicked() {
     bool ok;
     QString userName = QInputDialog::getText(this, tr("Enter Username"), tr("Username:"),QLineEdit::Normal, "",&ok);
 
-    if(ok && !userName.isEmpty()) {
+    bool userFound = false;
+    int userIndex;
+    for (int i = 0; i < users.size(); i++) {
+        if(users.at(i).getName() == userName.toStdString().c_str()){
+            userFound = true;
+            userIndex = i;
+        }
+    }
+
+    if(ok && userFound && !userName.isEmpty()) {
+        users.at(userIndex).subscribeToRoom(rooms[getCurrentRoomIndex()].getName());
         rooms[getCurrentRoomIndex()].addMembers(userName.toStdString().c_str());
-        //TO DO FOR JAD PLS ADD USER
+
+        std::ofstream file (userFilepath);
+        std::string line;
+        if(file.is_open()){
+            for(int i = 0; i < users.size(); i++){
+                line = users.at(i).getName();
+                for(int j = 0; j < users.at(i).rooms.size(); j++){
+                    line += " " + users.at(i).rooms.at(j);
+                }
+                file << line;
+             }
+        }
+        file.close();
+    }
+    else{
+        QMessageBox notification;
+        notification.setText("User Not Found");
+        notification.setStandardButtons(QMessageBox::Ok);
+        notification.setDefaultButton(QMessageBox::Ok);
+        int ret = notification.exec();
     }
 }
 
 void MainWindow::on_removeUserButton_clicked() {
-    //TO DO FOR JAD PLS DELETE USER
+    bool ok;
+    QString userName = QInputDialog::getText(this, tr("Enter Username"), tr("Username:"),QLineEdit::Normal, "",&ok);
+
+    bool userFound = false;
+    int userIndex;
+    for (int i = 0; i < users.size(); i++) {
+        if(users.at(i).getName() == userName.toStdString().c_str()){
+            userFound = true;
+            userIndex = i;
+        }
+    }
+
+    if(ok && userFound && !userName.isEmpty()) {
+        users.at(userIndex).unsubscribeFromRoom(rooms[getCurrentRoomIndex()].getName());
+        rooms[getCurrentRoomIndex()].removeMember(userName.toStdString().c_str());
+
+        std::ofstream file (userFilepath);
+        std::string line;
+        if(file.is_open()){
+            for(int i = 0; i < users.size(); i++){
+                line = users.at(i).getName();
+                for(int j = 0; j < users.at(i).rooms.size(); j++){
+                    line += " " + users.at(i).rooms.at(j);
+                }
+                file << line;
+             }
+        }
+        file.close();
+    }
+    else{
+        QMessageBox notification;
+        notification.setText("User Not Found");
+        notification.setStandardButtons(QMessageBox::Ok);
+        notification.setDefaultButton(QMessageBox::Ok);
+        int ret = notification.exec();
+    }
+}
+
 }
 
 
@@ -301,11 +403,16 @@ void MainWindow::on_loginButton_clicked()
     }
 
     else {
+        // Adding users to user vector - JAD uwu
+        User user = User();
+
         QString username = ui->passEdit->text();
         QString password = ui->userEdit->text();
 
         std::string line;
         while (std::getline(credentialsFile, line)) {
+            user.setName(line.substr(line.find(" ") + 1));
+            users.push_back(user);
             if (username.toStdString().c_str() == line.substr(line.find(" ") + 1)){
                 if (password.toStdString().c_str() == line.substr(0, line.find(" "))){
                     /*!

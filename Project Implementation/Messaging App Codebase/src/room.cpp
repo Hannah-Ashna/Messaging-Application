@@ -27,12 +27,22 @@ int Room::getRoomID()
 
 void Room::addMembers(std::string member)
 {
+
     members.push_back(member);
 }
 
 std::vector<std::string> Room::getMembers()
 {
     return members;
+}
+
+void Room::removeMember(std::string member)
+{
+    for(int i = 0; i < members.size(); i++){
+        if(members.at(i) == member){
+            members.erase(members.begin() + i);
+        }
+    }
 }
 
 void Room::addChannel(Channel channel) {

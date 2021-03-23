@@ -17,14 +17,18 @@ std::string User::changeName()
 
 }
 
-void User::subscribeToRoom()
+void User::subscribeToRoom(std::string room)
 {
-
+    rooms.push_back(room);
 }
 
-void User::unsubscribeFromRoom()
+void User::unsubscribeFromRoom(std::string room)
 {
-
+    for(int i = 0; i < rooms.size(); i++){
+        if(rooms.at(i) == room){
+            rooms.erase(rooms.begin() + i);
+        }
+    }
 }
 
 std::string User::getName()

@@ -4,6 +4,7 @@
 #include "headers/message.h"
 #include "headers/channel.h"
 #include "headers/room.h"
+#include "headers/user.h"
 
 #include <QMainWindow>
 #include <QMqttClient>
@@ -25,6 +26,7 @@ public:
     User currentUser;
 
     std::vector<Room> rooms;
+    std::vector<User> users;
 
 
     MainWindow(QWidget *parent = nullptr);
