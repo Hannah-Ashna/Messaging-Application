@@ -46,6 +46,8 @@ private slots:
     Channel getCurrentChannel();
 
     void on_loginButton_clicked();
+    void read_userConfig(std::string username);
+    void read_roomConfig(std::string username);
     void on_createAccButton_clicked();
     void on_signupButton_clicked();
     void on_signupBackButton_clicked();
