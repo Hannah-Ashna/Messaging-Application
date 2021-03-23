@@ -36,7 +36,7 @@ void Message::notifyUser()
 {
     QMessageBox notification;
     notification.setText("New Notification");
-    notification.setInformativeText(getFormattedMessage());
+    //notification.setInformativeText(getFormattedMessage());
     notification.setStandardButtons(QMessageBox::Ok);
     notification.setDefaultButton(QMessageBox::Ok);
     int ret = notification.exec();

@@ -22,9 +22,9 @@ void Channel::addMessage(Message message)
 
 void Channel::deleteMessage(Message message)
 {
-    for(int i = 0; i < messages.size(); i++) {
-        if(message.getFormattedMessage() == messages[i].getFormattedMessage()) {
-            messages.erase(messages.begin() + i);
-        }
-    }
+    //for(int i = 0; i < messages.size(); i++) {
+    //    if(message.getFormattedMessage() == messages[i].getFormattedMessage()) {
+    //        messages.erase(messages.begin() + i);
+    //    }
+    //}
 }

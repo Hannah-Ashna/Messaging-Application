@@ -91,17 +91,16 @@ Room MainWindow::getCurrentRoom(){
 }
 
 void MainWindow::on_addRoomButton_clicked(){
-    Room room;
-
     bool ok;
     QString roomName = QInputDialog::getText(this, tr("Enter Room Name"), tr("Rom Name:"),QLineEdit::Normal, "",&ok);
 
     if(ok && !roomName.isEmpty()) {
+        Room room;
         room.setName(roomName.toStdString().c_str());
-    }
+        ui->roomDropDown->addItem(QString::fromStdString(room.getName()));
 
-    ui->roomDropDown->addItem(QString::fromStdString(room.getName()));
-    rooms.push_back(room);
+        rooms.push_back(room);
+    }  
 }
 
 void MainWindow::on_deleteRoomButton_clicked() {
@@ -114,6 +113,8 @@ void MainWindow::on_deleteRoomButton_clicked() {
 
 void MainWindow::on_roomDropDown_activated(int index) {
     Room room = getCurrentRoom();
+
+    std::cout << ui->roomDropDown->currentIndex() << std::endl;
 
     ui->roomLabel->setText(ui->roomDropDown->itemText(index));
     ui->channelDropDown->clear();
