@@ -102,6 +102,12 @@ void MainWindow::on_addRoomButton_clicked(){
         ui->roomDropDown->addItem(QString::fromStdString(room.getName()));
 
         rooms.push_back(room);
+
+        std::fstream configFile;
+        configFile.open(roomFilepath, std::ios::app);
+        configFile << roomName.toStdString().c_str() << "\n";
+
+        configFile.close();
     }  
 }
 
@@ -111,6 +117,8 @@ void MainWindow::on_deleteRoomButton_clicked() {
 
     ui->roomDropDown->removeItem(index);
     rooms.erase(rooms.begin() + index);
+
+    // TO DO 4 JAD PLS DELETE ROOM SERIOUSLY I HATE C++ SO MUCH ************
 }
 
 void MainWindow::on_roomDropDown_activated(int index) {
@@ -140,6 +148,8 @@ void MainWindow::on_addChannelButton_clicked() {
         ui->channelDropDown->addItem(QString::fromStdString(channel.getName()));
 
         rooms[getCurrentRoomIndex()].channels.push_back(channel);
+
+        // TO DO 4 JAD PLS ADD CHANNEL SERIOUSLY I HATE C++ SO MUCH ************
     }
 }
 
@@ -149,6 +159,8 @@ void MainWindow::on_deleteChannelButton_clicked() {
 
     ui->channelDropDown->removeItem(index);
     room.channels.erase(room.channels.begin() + index);
+
+    // TO DO 4 JAD PLS DELETE CHANNEL SERIOUSLY I HATE C++ SO MUCH ************
 }
 
 void MainWindow::on_channelDropDown_activated(int index)
@@ -266,7 +278,6 @@ void MainWindow::read_roomConfig(std::string roomName)
                     }
                 }
             }
-
         }
 
         roomConfigFile.close();
@@ -300,7 +311,6 @@ void MainWindow::on_loginButton_clicked()
                         Set index of stacked widget to 2, take user to main page
                     */
                     currentUser.setName(username.toStdString().c_str());
-                    // Function to add User's Rooms to Room Vector
                     read_userConfig(username.toStdString().c_str());
                     ui->stackedWidget->setCurrentIndex(2);
                 }
