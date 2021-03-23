@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="LoginPage">
      <widget class="QLabel" name="label_8">
@@ -620,14 +620,14 @@ p, li { white-space: pre-wrap; }
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_9">
          <item>
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QPushButton" name="addUserButton">
            <property name="text">
             <string>Add User</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_2">
+          <widget class="QPushButton" name="removeUserButton">
            <property name="text">
             <string>Remove User</string>
            </property>
@@ -636,7 +636,19 @@ p, li { white-space: pre-wrap; }
         </layout>
        </item>
        <item>
-        <widget class="QListWidget" name="userList">
+        <widget class="QLabel" name="usersLabel_2">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Online</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QListWidget" name="onlineUserList">
          <property name="enabled">
           <bool>true</bool>
          </property>
@@ -646,6 +658,21 @@ p, li { white-space: pre-wrap; }
           </font>
          </property>
         </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="usersLabel_3">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Offline</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QListView" name="offlineUserList"/>
        </item>
       </layout>
      </widget>

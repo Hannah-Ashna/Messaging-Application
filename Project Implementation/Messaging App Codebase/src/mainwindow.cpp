@@ -178,6 +178,20 @@ void MainWindow::on_sendButton_clicked()
     ui->sendInput->clear();
 }
 
+void MainWindow::on_addUserButton_clicked() {
+    bool ok;
+    QString userName = QInputDialog::getText(this, tr("Enter Username"), tr("Username:"),QLineEdit::Normal, "",&ok);
+
+    if(ok && !userName.isEmpty()) {
+        rooms[getCurrentRoomIndex()].addMembers(userName);
+    }
+}
+
+void MainWindow::on_removeUserButton_clicked() {
+
+}
+
+
 
 
 void MainWindow::on_settingsButton_clicked()
@@ -196,43 +210,6 @@ void MainWindow::on_backButton_clicked()
     ui->stackedWidget->setCurrentIndex(2);
 }
 
-
-
-void MainWindow::on_loginButton_clicked()
-{
-    /*!
-        Checks a user's credentials against the credentials.txt file and verifies
-        whether they have an account on the platform or not
-
-        If their username and password combination are a match they are logged into the application
-    */
-    std::fstream credentialsFile;
-    credentialsFile.open("../credentials.txt", std::ios::in);
-    if(!credentialsFile){
-    }
-
-    else {
-        QString username = ui->passEdit->text();
-        QString password = ui->userEdit->text();
-
-        std::string line;
-        while (std::getline(credentialsFile, line)) {
-            if (username.toStdString().c_str() == line.substr(line.find(" ") + 1)){
-                if (password.toStdString().c_str() == line.substr(0, line.find(" "))){
-                    /*!
-                        Set index of stacked widget to 2, take user to main page
-                    */
-                    currentUser.setName(username.toStdString().c_str());
-                    // Function to add User's Rooms to Room Vector
-                    read_userConfig(username.toStdString().c_str());
-                    ui->stackedWidget->setCurrentIndex(2);
-                }
-            }
-        }
-
-        credentialsFile.close();
-    }
-}
 
 
 void MainWindow::read_userConfig(std::string username)
@@ -294,6 +271,44 @@ void MainWindow::read_roomConfig(std::string roomName)
         }
 
         roomConfigFile.close();
+    }
+}
+
+
+
+void MainWindow::on_loginButton_clicked()
+{
+    /*!
+        Checks a user's credentials against the credentials.txt file and verifies
+        whether they have an account on the platform or not
+
+        If their username and password combination are a match they are logged into the application
+    */
+    std::fstream credentialsFile;
+    credentialsFile.open(credFilepath, std::ios::in);
+    if(!credentialsFile){
+    }
+
+    else {
+        QString username = ui->passEdit->text();
+        QString password = ui->userEdit->text();
+
+        std::string line;
+        while (std::getline(credentialsFile, line)) {
+            if (username.toStdString().c_str() == line.substr(line.find(" ") + 1)){
+                if (password.toStdString().c_str() == line.substr(0, line.find(" "))){
+                    /*!
+                        Set index of stacked widget to 2, take user to main page
+                    */
+                    currentUser.setName(username.toStdString().c_str());
+                    // Function to add User's Rooms to Room Vector
+                    read_userConfig(username.toStdString().c_str());
+                    ui->stackedWidget->setCurrentIndex(2);
+                }
+            }
+        }
+
+        credentialsFile.close();
     }
 }
 

@@ -25,7 +25,7 @@ int Room::getRoomID()
     return roomID;
 }
 
-void Room::addMembers(User member)
+void Room::addMembers(std::string member)
 {
     members.push_back(member);
 }

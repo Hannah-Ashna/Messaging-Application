@@ -18,9 +18,9 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    const std::string credFilepath = "";
-    const std::string userFilepath = "../userConfig.txt";
-    const std::string roomFilepath = "../roomConfig.txt";
+    const std::string credFilepath = "../config/credentials.txt";
+    const std::string userFilepath = "../config/userConfig.txt";
+    const std::string roomFilepath = "../config/roomConfig.txt";
 
     User currentUser;
 
@@ -35,25 +35,27 @@ public slots:
 
 private slots:
     void on_sendButton_clicked();
+    void on_addUserButton_clicked();
+    void on_removeUserButton_clicked();
 
     void on_settingsButton_clicked();
     void on_backButton_clicked();
-
     void on_buttonConnect_clicked();
 
+    int getCurrentRoomIndex();
     void on_roomDropDown_activated(int index);
     void on_addRoomButton_clicked();
     void on_deleteRoomButton_clicked();
-    int getCurrentRoomIndex();
 
+    Channel getCurrentChannel();
     void on_channelDropDown_activated(int index);
     void on_addChannelButton_clicked();
     void on_deleteChannelButton_clicked();
-    Channel getCurrentChannel();
 
-    void on_loginButton_clicked();
     void read_userConfig(std::string username);
     void read_roomConfig(std::string username);
+
+    void on_loginButton_clicked();    
     void on_createAccButton_clicked();
     void on_signupButton_clicked();
     void on_signupBackButton_clicked();
