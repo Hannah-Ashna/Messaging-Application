@@ -183,14 +183,13 @@ void MainWindow::on_addUserButton_clicked() {
     QString userName = QInputDialog::getText(this, tr("Enter Username"), tr("Username:"),QLineEdit::Normal, "",&ok);
 
     if(ok && !userName.isEmpty()) {
-        rooms[getCurrentRoomIndex()].addMembers(userName);
+        rooms[getCurrentRoomIndex()].addMembers(userName.toStdString().c_str());
     }
 }
 
 void MainWindow::on_removeUserButton_clicked() {
 
 }
-
 
 
 
@@ -306,8 +305,14 @@ void MainWindow::on_loginButton_clicked()
                     ui->stackedWidget->setCurrentIndex(2);
                 }
             }
+            else {
+                QMessageBox notification;
+                notification.setText("Incorrect Credentials");
+                notification.setStandardButtons(QMessageBox::Ok);
+                notification.setDefaultButton(QMessageBox::Ok);
+                int ret = notification.exec();
+            }
         }
-
         credentialsFile.close();
     }
 }

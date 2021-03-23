@@ -30,7 +30,7 @@ void Room::addMembers(std::string member)
     members.push_back(member);
 }
 
-std::vector<User> Room::getMembers()
+std::vector<std::string> Room::getMembers()
 {
     return members;
 }

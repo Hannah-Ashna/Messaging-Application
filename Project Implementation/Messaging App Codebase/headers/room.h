@@ -21,8 +21,8 @@ public:
     void setRoomID(int id);
     int getRoomID();
 
-    void addMembers(User member);
-    std::vector<User> getMembers();
+    void addMembers(std::string member);
+    std::vector<std::string> getMembers();
 
     void addChannel(Channel channel);
     std::vector<Channel> getChannelList();
