@@ -6,7 +6,9 @@
 #include <QtMqtt/QMqttClient>
 #include <QtWidgets/QMessageBox>
 #include <QInputDialog>
+#include <boost/algorithm/string.hpp>
 
+#include <algorithm>
 #include <fstream>
 #include <iostream>
 #include <vector>
@@ -221,12 +223,79 @@ void MainWindow::on_loginButton_clicked()
                         Set index of stacked widget to 2, take user to main page
                     */
                     currentUser.setName(username.toStdString().c_str());
+                    // Function to add User's Rooms to Room Vector
+                    read_userConfig(username.toStdString().c_str());
                     ui->stackedWidget->setCurrentIndex(2);
                 }
             }
         }
 
         credentialsFile.close();
+    }
+}
+
+
+void MainWindow::read_userConfig(std::string username)
+{
+    std::fstream configFile;
+    std::vector<std::string> roomData;
+    std::string line;
+
+    configFile.open("../userConfig.txt", std::ios::in);
+    if(!configFile){
+    }
+
+    else {
+        while (std::getline(configFile, line)) {
+            boost::split(roomData, line, boost::is_any_of(" "));
+            if (roomData[0] == username) {
+                for(int i = 1; i < roomData.size(); i++){
+                    Room room;
+                    room.setName(roomData[i]);
+                    ui->roomDropDown->addItem(QString::fromStdString(room.getName()));
+                    rooms.push_back(room);
+                    read_roomConfig(roomData[i]);
+                }
+            }
+
+        }
+
+        configFile.close();
+    }
+}
+
+void MainWindow::read_roomConfig(std::string roomName)
+{
+    std::fstream roomConfigFile;
+    std::vector<std::string> channelData;
+    std::string line;
+
+    roomConfigFile.open("../roomConfig.txt", std::ios::in);
+    if(!roomConfigFile){
+    }
+
+    else {
+        while (std::getline(roomConfigFile, line)) {
+            boost::split(channelData, line, boost::is_any_of(" "));
+            if (channelData[0] == roomName) {
+                for(int i = 1; i < channelData.size(); i++){
+                    std::cout<< "EEEEEEEEEEE"<< std::endl;
+                    Channel channel;
+                    channel.setName(channelData[i]);
+                    ui->channelDropDown->addItem(QString::fromStdString(channel.getName()));
+
+                    for(int j = 0; j < rooms.size(); j++){
+                        std::cout<< "AAAAAAAAAAAAAAAAA"<< std::endl;
+                        if (rooms[j].getName() == roomName){
+                            rooms[j].channels.push_back(channel);
+                        }
+                    }
+                }
+            }
+
+        }
+
+        roomConfigFile.close();
     }
 }
 
