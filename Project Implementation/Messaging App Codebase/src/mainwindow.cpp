@@ -279,13 +279,11 @@ void MainWindow::read_roomConfig(std::string roomName)
             boost::split(channelData, line, boost::is_any_of(" "));
             if (channelData[0] == roomName) {
                 for(int i = 1; i < channelData.size(); i++){
-                    std::cout<< "EEEEEEEEEEE"<< std::endl;
                     Channel channel;
                     channel.setName(channelData[i]);
                     ui->channelDropDown->addItem(QString::fromStdString(channel.getName()));
 
                     for(int j = 0; j < rooms.size(); j++){
-                        std::cout<< "AAAAAAAAAAAAAAAAA"<< std::endl;
                         if (rooms[j].getName() == roomName){
                             rooms[j].channels.push_back(channel);
                         }
