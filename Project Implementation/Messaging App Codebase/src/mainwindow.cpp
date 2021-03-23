@@ -103,11 +103,19 @@ void MainWindow::on_addRoomButton_clicked(){
 
         rooms.push_back(room);
 
-        std::fstream configFile;
-        configFile.open(roomFilepath, std::ios::app);
-        configFile << roomName.toStdString().c_str() << "\n";
-
-        configFile.close();
+        std::ofstream roomFile (roomFilepath);
+        std::string line;
+        if(roomFile.is_open()){
+            for(int i = 0; i < rooms.size(); i++){
+                line = rooms.at(i).name;
+                for(int j = 0; j < rooms.at(i).channels.size(); j++){
+                    line += " " + rooms.at(i).channels.at(j).getName();
+                }
+                line += "\n";
+                roomFile << line;
+             }
+        }
+        roomFile.close();
     }  
 }
 
@@ -126,11 +134,11 @@ void MainWindow::on_deleteRoomButton_clicked() {
             for(int j = 0; j < rooms.at(i).channels.size(); j++){
                 line += " " + rooms.at(i).channels.at(j).getName();
             }
+            line += "\n";
             roomFile << line;
          }
     }
     roomFile.close();
- // JAD
 }
 
 void MainWindow::on_roomDropDown_activated(int index) {
@@ -169,11 +177,11 @@ void MainWindow::on_addChannelButton_clicked() {
                 for(int j = 0; j < rooms.at(i).channels.size(); j++){
                     line += " " + rooms.at(i).channels.at(j).getName();
                 }
+                line += "\n";
                 roomFile << line;
              }
         }
         roomFile.close();
-        // TO DO 4 JAD PLS ADD CHANNEL SERIOUSLY I HATE C++ SO MUCH ************
     }
 }
 
@@ -192,11 +200,11 @@ void MainWindow::on_deleteChannelButton_clicked() {
             for(int j = 0; j < rooms.at(i).channels.size(); j++){
                 line += " " + rooms.at(i).channels.at(j).getName();
             }
+            line += "\n";
             roomFile << line;
          }
     }
     roomFile.close();
-    // TO DO 4 JAD PLS DELETE CHANNEL SERIOUSLY I HATE C++ SO MUCH ************
 }
 
 void MainWindow::on_channelDropDown_activated(int index)
@@ -302,8 +310,6 @@ void MainWindow::on_removeUserButton_clicked() {
         notification.setDefaultButton(QMessageBox::Ok);
         int ret = notification.exec();
     }
-}
-
 }
 
 

@@ -1,1 +1,2 @@
-rmB
+RoomA 1 2
+RoomB 3 4
