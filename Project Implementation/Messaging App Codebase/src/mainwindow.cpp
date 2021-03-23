@@ -102,6 +102,12 @@ void MainWindow::on_addRoomButton_clicked(){
         ui->roomDropDown->addItem(QString::fromStdString(room.getName()));
 
         rooms.push_back(room);
+
+        std::fstream configFile;
+        configFile.open(roomFilepath, std::ios::app);
+        configFile << roomName.toStdString().c_str();
+
+        configFile.close();
     }  
 }
 
