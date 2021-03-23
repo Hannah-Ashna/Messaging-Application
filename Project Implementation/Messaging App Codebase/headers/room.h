@@ -28,7 +28,7 @@ public:
     std::vector<Channel> getChannelList();
 
 protected:
-    std::vector<User> members;
+    std::vector<std::string> members;
 };
 
 #endif // ROOM_H
