@@ -5,14 +5,14 @@ Channel::Channel()
 
 }
 
-void Channel::setName(std::string theName)
+void Channel::setName(std::string name)
 {
-    name = theName;
+    this->name = name;
 }
 
 std::string Channel::getName()
 {
-    return name;
+    return this->name;
 }
 
 void Channel::addMessage(Message message)
@@ -22,6 +22,7 @@ void Channel::addMessage(Message message)
 
 void Channel::deleteMessage(Message message)
 {
+    //FIX LATER
     //for(int i = 0; i < messages.size(); i++) {
     //    if(message.getFormattedMessage() == messages[i].getFormattedMessage()) {
     //        messages.erase(messages.begin() + i);

@@ -86,8 +86,8 @@ void MainWindow::on_buttonConnect_clicked()
 
 
 
-Room MainWindow::getCurrentRoom(){
-    return rooms[ui->roomDropDown->currentIndex()];
+int MainWindow::getCurrentRoomIndex(){
+    return ui->roomDropDown->currentIndex();
 }
 
 void MainWindow::on_addRoomButton_clicked(){
@@ -105,16 +105,14 @@ void MainWindow::on_addRoomButton_clicked(){
 
 void MainWindow::on_deleteRoomButton_clicked() {
     int index = ui->roomDropDown->currentIndex();
-    Room room = getCurrentRoom();
+    Room room = rooms[getCurrentRoomIndex()];
 
     ui->roomDropDown->removeItem(index);
     rooms.erase(rooms.begin() + index);
 }
 
 void MainWindow::on_roomDropDown_activated(int index) {
-    Room room = getCurrentRoom();
-
-    std::cout << ui->roomDropDown->currentIndex() << std::endl;
+    Room room = rooms[getCurrentRoomIndex()];
 
     ui->roomLabel->setText(ui->roomDropDown->itemText(index));
     ui->channelDropDown->clear();
@@ -127,7 +125,7 @@ void MainWindow::on_roomDropDown_activated(int index) {
 
 
 Channel MainWindow::getCurrentChannel() {
-    return getCurrentRoom().channels[ui->channelDropDown->currentIndex()];
+    return rooms[getCurrentRoomIndex()].channels[ui->channelDropDown->currentIndex()];
 }
 
 void MainWindow::on_addChannelButton_clicked() {
@@ -139,7 +137,7 @@ void MainWindow::on_addChannelButton_clicked() {
         channel.setName(channelName.toStdString().c_str());
         ui->channelDropDown->addItem(QString::fromStdString(channel.getName()));
 
-        getCurrentRoom().addChannel(channel);
+        rooms[getCurrentRoomIndex()].channels.push_back(channel);
     }
 }
 
@@ -158,6 +156,8 @@ void MainWindow::on_channelDropDown_activated(int index)
         Set the label defining the topic for the user to the text in the currently selected dropdown box
         Clear the message log
     */
+    std::cout << rooms[getCurrentRoomIndex()].channels.size() << std::endl;
+
     auto subscription = m_client->subscribe(ui->channelDropDown->itemText(index));
     if (!subscription) {
         QMessageBox::critical(this, QLatin1String("Error"), QLatin1String("Could not subscribe. Is there a valid connection?"));

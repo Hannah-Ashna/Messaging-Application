@@ -25,6 +25,7 @@ public:
     std::vector<User> getMembers();
 
     void addChannel(Channel channel);
+    std::vector<Channel> getChannelList();
 
 protected:
     std::vector<User> members;

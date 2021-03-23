@@ -38,7 +38,7 @@ private slots:
     void on_roomDropDown_activated(int index);
     void on_addRoomButton_clicked();
     void on_deleteRoomButton_clicked();
-    Room getCurrentRoom();
+    int getCurrentRoomIndex();
 
     void on_channelDropDown_activated(int index);
     void on_addChannelButton_clicked();

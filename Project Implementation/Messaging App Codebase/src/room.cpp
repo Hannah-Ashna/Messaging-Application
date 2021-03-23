@@ -38,3 +38,7 @@ std::vector<User> Room::getMembers()
 void Room::addChannel(Channel channel) {
     channels.push_back(channel);
 }
+
+std::vector<Channel> Room::getChannelList() {
+    return channels;
+}

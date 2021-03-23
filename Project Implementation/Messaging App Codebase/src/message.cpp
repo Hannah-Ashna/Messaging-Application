@@ -13,7 +13,8 @@ Message::Message()
 QString Message::getFormattedMessage(User& user)
 {
     QString formattedMessage =
-            QDateTime::currentDateTime().toString() + " " + QString::fromStdString(user.getName())
+            QDateTime::currentDateTime().toString() + " "
+            + QString::fromStdString(user.getName())
             + QLatin1String(" : ")
             + QString::fromStdString(messageContent)
             + QLatin1Char('\n');
@@ -36,7 +37,6 @@ void Message::notifyUser()
 {
     QMessageBox notification;
     notification.setText("New Notification");
-    //notification.setInformativeText(getFormattedMessage());
     notification.setStandardButtons(QMessageBox::Ok);
     notification.setDefaultButton(QMessageBox::Ok);
     int ret = notification.exec();
