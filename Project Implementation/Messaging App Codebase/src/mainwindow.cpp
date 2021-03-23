@@ -92,7 +92,7 @@ int MainWindow::getCurrentRoomIndex(){
 
 void MainWindow::on_addRoomButton_clicked(){
     bool ok;
-    QString roomName = QInputDialog::getText(this, tr("Enter Room Name"), tr("Rom Name:"),QLineEdit::Normal, "",&ok);
+    QString roomName = QInputDialog::getText(this, tr("Enter Room Name"), tr("Room Name:"),QLineEdit::Normal, "",&ok);
 
     if(ok && !roomName.isEmpty()) {
         Room room;

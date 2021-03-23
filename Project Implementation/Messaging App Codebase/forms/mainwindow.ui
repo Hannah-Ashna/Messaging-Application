@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="LoginPage">
      <widget class="QLabel" name="label_8">
@@ -226,7 +226,7 @@
        <rect>
         <x>10</x>
         <y>560</y>
-        <width>82</width>
+        <width>101</width>
         <height>131</height>
        </rect>
       </property>
@@ -503,9 +503,9 @@ p, li { white-space: pre-wrap; }
      <widget class="QWidget" name="verticalLayoutWidget_4">
       <property name="geometry">
        <rect>
-        <x>100</x>
+        <x>120</x>
         <y>560</y>
-        <width>131</width>
+        <width>111</width>
         <height>135</height>
        </rect>
       </property>
@@ -528,25 +528,31 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
        <item>
-        <widget class="QRadioButton" name="awayRadio">
+        <widget class="QRadioButton" name="invisibleRadio">
          <property name="text">
-          <string>Away</string>
+          <string>Invisible</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QRadioButton" name="doNotDisturbRadio">
          <property name="text">
-          <string>Do Not Disturb</string>
+          <string>Busy</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QRadioButton" name="invisibleRadio">
-         <property name="text">
-          <string>Invisible</string>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
          </property>
-        </widget>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
        </item>
       </layout>
      </widget>
@@ -581,7 +587,7 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>1060</x>
         <y>10</y>
-        <width>201</width>
+        <width>211</width>
         <height>681</height>
        </rect>
       </property>
@@ -784,7 +790,11 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QLineEdit" name="hostEdit"/>
+          <widget class="QLineEdit" name="hostEdit">
+           <property name="text">
+            <string>127.0.0.1</string>
+           </property>
+          </widget>
          </item>
          <item row="1" column="0">
           <widget class="QLabel" name="label_3">
@@ -797,6 +807,9 @@ p, li { white-space: pre-wrap; }
           <widget class="QSpinBox" name="portSpinBox">
            <property name="maximum">
             <number>99999</number>
+           </property>
+           <property name="value">
+            <number>1883</number>
            </property>
           </widget>
          </item>
