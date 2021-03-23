@@ -143,12 +143,12 @@ void MainWindow::on_addChannelButton_clicked() {
     }
 }
 
-void MainWindow::on_deleteChannelButton_clicked() {    
-    //ui->channelDropDown->removeItem(ui->channelDropDown->currentIndex());
+void MainWindow::on_deleteChannelButton_clicked() {
+    int index = ui->channelDropDown->currentIndex();
+    Room room = rooms[getCurrentRoomIndex()];
 
-    //Room room = getCurrentRoom();
-    //int index = std::find(room.channels.begin(), room.channels.end(), getCurrentChannel()) - room.channels.begin();
-    //getCurrentRoom().channels.erase(getCurrentRoom().channels.begin() + index);
+    ui->channelDropDown->removeItem(index);
+    room.channels.erase(room.channels.begin() + index);
 }
 
 void MainWindow::on_channelDropDown_activated(int index)
@@ -158,8 +158,6 @@ void MainWindow::on_channelDropDown_activated(int index)
         Set the label defining the topic for the user to the text in the currently selected dropdown box
         Clear the message log
     */
-    std::cout << rooms[getCurrentRoomIndex()].channels.size() << std::endl;
-
     auto subscription = m_client->subscribe(ui->channelDropDown->itemText(index));
     if (!subscription) {
         QMessageBox::critical(this, QLatin1String("Error"), QLatin1String("Could not subscribe. Is there a valid connection?"));
@@ -168,7 +166,6 @@ void MainWindow::on_channelDropDown_activated(int index)
     ui->channelLabel->setText(ui->channelDropDown->itemText(index));
     ui->messageLog->clear();
 }
-
 
 
 void MainWindow::on_sendButton_clicked()
