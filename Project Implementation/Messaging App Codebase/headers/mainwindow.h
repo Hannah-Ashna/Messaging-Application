@@ -18,9 +18,9 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    const std::string credFilepath = "../config/credentials.txt";
-    const std::string userFilepath = "../config/userConfig.txt";
-    const std::string roomFilepath = "../config/roomConfig.txt";
+    const std::string credFilepath = "../appconfig/credentials.txt";
+    const std::string userFilepath = "../appconfig/userConfig.txt";
+    const std::string roomFilepath = "../appconfig/roomConfig.txt";
 
     User currentUser;
 
