@@ -18,11 +18,17 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    const std::string credFilepath = "";
+    const std::string userFilepath = "../userConfig.txt";
+    const std::string roomFilepath = "../roomConfig.txt";
+
+    User currentUser;
+
+    std::vector<Room> rooms;
+
+
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
-    User currentUser;    
-    std::vector<Room> rooms;
 
 public slots:
     void setClientPort(int p);

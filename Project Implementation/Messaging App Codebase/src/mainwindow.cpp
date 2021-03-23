@@ -241,7 +241,7 @@ void MainWindow::read_userConfig(std::string username)
     std::vector<std::string> roomData;
     std::string line;
 
-    configFile.open("../userConfig.txt", std::ios::in);
+    configFile.open(userFilepath, std::ios::in);
     if(!configFile){
     }
 
@@ -270,7 +270,7 @@ void MainWindow::read_roomConfig(std::string roomName)
     std::vector<std::string> channelData;
     std::string line;
 
-    roomConfigFile.open("../roomConfig.txt", std::ios::in);
+    roomConfigFile.open(roomFilepath, std::ios::in);
     if(!roomConfigFile){
     }
 
@@ -317,7 +317,7 @@ void MainWindow::on_signupButton_clicked()
 
     if (username != NULL && password != NULL) {
         std::fstream credentialsFile;
-        credentialsFile.open("../credentials.txt", std::ios::out);
+        credentialsFile.open(credFilepath, std::ios::out);
         credentialsFile << username.toStdString().c_str() << " " << password.toStdString().c_str();
         credentialsFile.close();
     }
