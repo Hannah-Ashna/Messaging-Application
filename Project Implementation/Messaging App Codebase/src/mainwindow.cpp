@@ -229,44 +229,66 @@ void MainWindow::on_sendButton_clicked()
     /*!
         Publish text in input box to message log if client is successfully connected
     */
-    if (m_client->publish(ui->channelDropDown->currentText(), ui->sendInput->text().toUtf8()) == -1)
-        QMessageBox::critical(this, QLatin1String("Error"), QLatin1String("Could not publish message"));
-    ui->sendInput->clear();
+    try {
+        if (m_client->publish(ui->channelDropDown->currentText(), ui->sendInput->text().toUtf8()) == -1)
+            QMessageBox::critical(this, QLatin1String("Error"), QLatin1String("Could not publish message"));
+        ui->sendInput->clear();
+    }
+
+    catch(...){
+        QMessageBox notification;
+        notification.setText("Error - Could not send Message");
+        notification.setStandardButtons(QMessageBox::Ok);
+        notification.setDefaultButton(QMessageBox::Ok);
+        int ret = notification.exec();
+    }
 }
 
 void MainWindow::on_addUserButton_clicked() {
     bool ok;
-    QString userName = QInputDialog::getText(this, tr("Enter Username"), tr("Username:"),QLineEdit::Normal, "",&ok);
-
     bool userFound = false;
     int userIndex;
-    for (int i = 0; i < users.size(); i++) {
-        if(users.at(i).getName() == userName.toStdString().c_str()){
-            userFound = true;
-            userIndex = i;
+
+    try {
+        QString userName = QInputDialog::getText(this, tr("Enter Username"), tr("Username:"),QLineEdit::Normal, "",&ok);
+
+        for (int i = 0; i < users.size(); i++) {
+            if(users.at(i).getName() == userName.toStdString().c_str()){
+                userFound = true;
+                userIndex = i;
+            }
+        }
+
+        if(ok && userFound && !userName.isEmpty()) {
+            users.at(userIndex).subscribeToRoom(rooms[getCurrentRoomIndex()].getName());
+            rooms[getCurrentRoomIndex()].addMembers(userName.toStdString().c_str());
+
+            std::ofstream file (userFilepath);
+            std::string line;
+            if(file.is_open()){
+                for(int i = 0; i < users.size(); i++){
+                    line = users.at(i).getName();
+                    for(int j = 0; j < users.at(i).rooms.size(); j++){
+                        line += " " + users.at(i).rooms.at(j);
+                    }
+                    line += "\n";
+                    file << line;
+                 }
+            }
+            file.close();
+        }
+        else{
+            QMessageBox notification;
+            notification.setText("User Not Found");
+            notification.setStandardButtons(QMessageBox::Ok);
+            notification.setDefaultButton(QMessageBox::Ok);
+            int ret = notification.exec();
         }
     }
 
-    if(ok && userFound && !userName.isEmpty()) {
-        users.at(userIndex).subscribeToRoom(rooms[getCurrentRoomIndex()].getName());
-        rooms[getCurrentRoomIndex()].addMembers(userName.toStdString().c_str());
-
-        std::ofstream file (userFilepath);
-        std::string line;
-        if(file.is_open()){
-            for(int i = 0; i < users.size(); i++){
-                line = users.at(i).getName();
-                for(int j = 0; j < users.at(i).rooms.size(); j++){
-                    line += " " + users.at(i).rooms.at(j);
-                }
-                file << line;
-             }
-        }
-        file.close();
-    }
-    else{
+    catch (...){
         QMessageBox notification;
-        notification.setText("User Not Found");
+        notification.setText("Room not Selected");
         notification.setStandardButtons(QMessageBox::Ok);
         notification.setDefaultButton(QMessageBox::Ok);
         int ret = notification.exec();
@@ -275,43 +297,54 @@ void MainWindow::on_addUserButton_clicked() {
 
 void MainWindow::on_removeUserButton_clicked() {
     bool ok;
-    QString userName = QInputDialog::getText(this, tr("Enter Username"), tr("Username:"),QLineEdit::Normal, "",&ok);
-
     bool userFound = false;
     int userIndex;
-    for (int i = 0; i < users.size(); i++) {
-        if(users.at(i).getName() == userName.toStdString().c_str()){
-            userFound = true;
-            userIndex = i;
+
+    try {
+        QString userName = QInputDialog::getText(this, tr("Enter Username"), tr("Username:"),QLineEdit::Normal, "",&ok);
+
+        for (int i = 0; i < users.size(); i++) {
+            if(users.at(i).getName() == userName.toStdString().c_str()){
+                userFound = true;
+                userIndex = i;
+            }
+        }
+
+        if(ok && userFound && !userName.isEmpty()) {
+            users.at(userIndex).unsubscribeFromRoom(rooms[getCurrentRoomIndex()].getName());
+            rooms[getCurrentRoomIndex()].removeMember(userName.toStdString().c_str());
+
+            std::ofstream file (userFilepath);
+            std::string line;
+            if(file.is_open()){
+                for(int i = 0; i < users.size(); i++){
+                    line = users.at(i).getName();
+                    for(int j = 0; j < users.at(i).rooms.size(); j++){
+                        line += " " + users.at(i).rooms.at(j);
+                    }
+                    line += "\n";
+                    file << line;
+                 }
+            }
+            file.close();
+        }
+        else{
+            QMessageBox notification;
+            notification.setText("User Not Found");
+            notification.setStandardButtons(QMessageBox::Ok);
+            notification.setDefaultButton(QMessageBox::Ok);
+            int ret = notification.exec();
         }
     }
 
-    if(ok && userFound && !userName.isEmpty()) {
-        users.at(userIndex).unsubscribeFromRoom(rooms[getCurrentRoomIndex()].getName());
-        rooms[getCurrentRoomIndex()].removeMember(userName.toStdString().c_str());
-
-        std::ofstream file (userFilepath);
-        std::string line;
-        if(file.is_open()){
-            for(int i = 0; i < users.size(); i++){
-                line = users.at(i).getName();
-                for(int j = 0; j < users.at(i).rooms.size(); j++){
-                    line += " " + users.at(i).rooms.at(j);
-                }
-                file << line;
-             }
-        }
-        file.close();
-    }
-    else{
+    catch (...){
         QMessageBox notification;
-        notification.setText("User Not Found");
+        notification.setText("Room not Selected");
         notification.setStandardButtons(QMessageBox::Ok);
         notification.setDefaultButton(QMessageBox::Ok);
         int ret = notification.exec();
     }
 }
-
 
 
 void MainWindow::on_settingsButton_clicked()
@@ -427,14 +460,13 @@ void MainWindow::on_loginButton_clicked()
                     currentUser.setName(username.toStdString().c_str());
                     read_userConfig(username.toStdString().c_str());
                     ui->stackedWidget->setCurrentIndex(2);
+                } else {
+                    QMessageBox notification;
+                    notification.setText("Incorrect Credentials");
+                    notification.setStandardButtons(QMessageBox::Ok);
+                    notification.setDefaultButton(QMessageBox::Ok);
+                    int ret = notification.exec();
                 }
-            }
-            else {
-                QMessageBox notification;
-                notification.setText("Incorrect Credentials");
-                notification.setStandardButtons(QMessageBox::Ok);
-                notification.setDefaultButton(QMessageBox::Ok);
-                int ret = notification.exec();
             }
         }
         credentialsFile.close();
