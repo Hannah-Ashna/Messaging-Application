@@ -122,7 +122,7 @@ void MainWindow::on_roomDropDown_activated(int index) {
     ui->roomLabel->setText(ui->roomDropDown->itemText(index));
     ui->channelDropDown->clear();
 
-    for(int i = 0; i < room.channels.size(); i++) {
+    for(int i = 0; i < (int)room.channels.size(); i++) {
         ui->channelDropDown->addItem(QString::fromStdString(room.channels[i].getName()));
     }
 }
@@ -203,7 +203,7 @@ void MainWindow::on_addUserButton_clicked() {
     try {
         QString userName = QInputDialog::getText(this, tr("Enter Username"), tr("Username:"),QLineEdit::Normal, "",&ok);
 
-        for (int i = 0; i < users.size(); i++) {
+        for (int i = 0; i < (int)users.size(); i++) {
             if(users.at(i).getName() == userName.toStdString().c_str()){
                 userFound = true;
                 userIndex = i;
@@ -242,7 +242,7 @@ void MainWindow::on_removeUserButton_clicked() {
     try {
         QString userName = QInputDialog::getText(this, tr("Enter Username"), tr("Username:"),QLineEdit::Normal, "",&ok);
 
-        for (int i = 0; i < users.size(); i++) {
+        for (int i = 0; i < (int)users.size(); i++) {
             if(users.at(i).getName() == userName.toStdString().c_str()){
                 userFound = true;
                 userIndex = i;
@@ -297,16 +297,16 @@ void MainWindow::updateFile(std::string filePath, bool isUser) {
 
     if(file.is_open()) {
         if (isUser) {
-            for(int i = 0; i < users.size(); i++){
+            for(int i = 0; i < (int)users.size(); i++){
                 line = users.at(i).getName();
-                for(int j = 0; j < users.at(i).rooms.size(); j++){
+                for(int j = 0; j < (int)users.at(i).rooms.size(); j++){
                     line += " " + users.at(i).rooms.at(j);
                 }
             }
         } else {
-            for(int i = 0; i < rooms.size(); i++){
+            for(int i = 0; i < (int)rooms.size(); i++){
                 line = rooms.at(i).name;
-                for(int j = 0; j < rooms.at(i).channels.size(); j++){
+                for(int j = 0; j < (int)rooms.at(i).channels.size(); j++){
                     line += " " + rooms.at(i).channels.at(j).getName();
                 }
             }
@@ -332,7 +332,7 @@ void MainWindow::read_userConfig(std::string username)
         while (std::getline(configFile, line)) {
             boost::split(roomData, line, boost::is_any_of(" "));
             if (roomData[0] == username) {
-                for(int i = 1; i < roomData.size(); i++){
+                for(int i = 1; i < (int)roomData.size(); i++){
                     Room room;
                     room.setName(roomData[i]);
                     ui->roomDropDown->addItem(QString::fromStdString(room.getName()));
@@ -361,12 +361,12 @@ void MainWindow::read_roomConfig(std::string roomName)
         while (std::getline(roomConfigFile, line)) {
             boost::split(channelData, line, boost::is_any_of(" "));
             if (channelData[0] == roomName) {
-                for(int i = 1; i < channelData.size(); i++){
+                for(int i = 1; i < (int)channelData.size(); i++){
                     Channel channel;
                     channel.setName(channelData[i]);
                     ui->channelDropDown->addItem(QString::fromStdString(channel.getName()));
 
-                    for(int j = 0; j < rooms.size(); j++){
+                    for(int j = 0; j < (int)rooms.size(); j++){
                         if (rooms[j].getName() == roomName){
                             rooms[j].channels.push_back(channel);
                         }
