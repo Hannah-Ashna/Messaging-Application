@@ -23,28 +23,20 @@ public:
     const std::string userFilepath = "../appconfig/userConfig.txt";
     const std::string roomFilepath = "../appconfig/roomConfig.txt";
 
-    User currentUser;
-
     std::vector<Room> rooms;
     std::vector<User> users;
 
+    User currentUser;
 
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-public slots:
-    void setClientPort(int p);
-
 private slots:
-    void on_sendButton_clicked();
-    void on_addUserButton_clicked();
-    void on_removeUserButton_clicked();
-
-    void on_settingsButton_clicked();
-    void on_backButton_clicked();
+    void brokerDisconnected();
+    void setClientPort(int p);
     void on_buttonConnect_clicked();
 
-    void updateFile(std::string filePath, bool isUser);
+    void notifyUser(std::string message);
 
     int getCurrentRoomIndex();
     void on_roomDropDown_activated(int index);
@@ -56,6 +48,15 @@ private slots:
     void on_addChannelButton_clicked();
     void on_deleteChannelButton_clicked();
 
+    void on_sendButton_clicked();
+
+    void on_addUserButton_clicked();
+    void on_removeUserButton_clicked();
+
+    void on_settingsButton_clicked();
+    void on_backButton_clicked();
+
+    void updateFile(std::string filePath, bool isUser);
     void read_userConfig(std::string username);
     void read_roomConfig(std::string username);
 
@@ -63,8 +64,6 @@ private slots:
     void on_createAccButton_clicked();
     void on_signupButton_clicked();
     void on_signupBackButton_clicked();
-
-    void brokerDisconnected();
 
 private:
     Ui::MainWindow *ui;

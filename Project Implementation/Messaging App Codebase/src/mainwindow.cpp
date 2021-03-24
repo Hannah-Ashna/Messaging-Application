@@ -67,6 +67,16 @@ void MainWindow::setClientPort(int p)
     m_client->setPort(p);
 }
 
+
+void MainWindow::notifyUser(std::string message) {
+    QMessageBox notification;
+    notification.setText(QString::fromStdString(message));
+    notification.setStandardButtons(QMessageBox::Ok);
+    notification.setDefaultButton(QMessageBox::Ok);
+    int ret = notification.exec();
+}
+
+
 void MainWindow::on_buttonConnect_clicked()
 {
     /*!
@@ -107,13 +117,17 @@ void MainWindow::on_addRoomButton_clicked(){
 }
 
 void MainWindow::on_deleteRoomButton_clicked() {
-    int index = ui->roomDropDown->currentIndex();
-    Room room = rooms[getCurrentRoomIndex()];
+    if(ui->roomLabel->text() == "no-group-selected") {
+        notifyUser("Error: No Room Selected");
+    } else {
+        int index = ui->roomDropDown->currentIndex();
+        Room room = rooms[getCurrentRoomIndex()];
 
-    ui->roomDropDown->removeItem(index);
-    rooms.erase(rooms.begin() + index);
+        ui->roomDropDown->removeItem(index);
+        rooms.erase(rooms.begin() + index);
 
-    updateFile(roomFilepath, false);
+        updateFile(roomFilepath, false);
+    }
 }
 
 void MainWindow::on_roomDropDown_activated(int index) {
@@ -128,34 +142,42 @@ void MainWindow::on_roomDropDown_activated(int index) {
 }
 
 
-
 Channel MainWindow::getCurrentChannel() {
     return rooms[getCurrentRoomIndex()].channels[ui->channelDropDown->currentIndex()];
 }
 
 void MainWindow::on_addChannelButton_clicked() {
-    bool ok;
-    QString channelName = QInputDialog::getText(this, tr("Enter Channel Name"), tr("Channel Name:"),QLineEdit::Normal, "",&ok);
+    if(ui->roomLabel->text() == "no-group-selected") {
+        notifyUser("Error: No Room Selected");
+    }
+    else {
+        bool ok;
+        QString channelName = QInputDialog::getText(this, tr("Enter Channel Name"), tr("Channel Name:"),QLineEdit::Normal, "",&ok);
 
-    if(ok && !channelName.isEmpty()) {
-        Channel channel;
-        channel.setName(channelName.toStdString().c_str());
-        ui->channelDropDown->addItem(QString::fromStdString(channel.getName()));
+        if(ok && !channelName.isEmpty()) {
+            Channel channel;
+            channel.setName(channelName.toStdString().c_str());
+            ui->channelDropDown->addItem(QString::fromStdString(channel.getName()));
 
-        rooms[getCurrentRoomIndex()].channels.push_back(channel);
+            rooms[getCurrentRoomIndex()].channels.push_back(channel);
 
-        updateFile(roomFilepath, false);
+            updateFile(roomFilepath, false);
+        }
     }
 }
 
 void MainWindow::on_deleteChannelButton_clicked() {
-    int index = ui->channelDropDown->currentIndex();
-    Room room = rooms[getCurrentRoomIndex()];
+    if(ui->roomLabel->text() == "no-channel-connected") {
+        notifyUser("Error: No Channel Selected");
+    } else {
+        int index = ui->channelDropDown->currentIndex();
+        Room room = rooms[getCurrentRoomIndex()];
 
-    ui->channelDropDown->removeItem(index);
-    room.channels.erase(room.channels.begin() + index);
+        ui->channelDropDown->removeItem(index);
+        room.channels.erase(room.channels.begin() + index);
 
-    updateFile(roomFilepath, false);
+        updateFile(roomFilepath, false);
+    }
 }
 
 void MainWindow::on_channelDropDown_activated(int index)
@@ -181,17 +203,11 @@ void MainWindow::on_sendButton_clicked()
         Publish text in input box to message log if client is successfully connected
     */
     try {
-        if (m_client->publish(ui->channelDropDown->currentText(), ui->sendInput->text().toUtf8()) == -1)
-            QMessageBox::critical(this, QLatin1String("Error"), QLatin1String("Could not publish message"));
+        m_client->publish(ui->channelDropDown->currentText(), ui->sendInput->text().toUtf8());
         ui->sendInput->clear();
     }
-
     catch(...){
-        QMessageBox notification;
-        notification.setText("Error - Could not send Message");
-        notification.setStandardButtons(QMessageBox::Ok);
-        notification.setDefaultButton(QMessageBox::Ok);
-        int ret = notification.exec();
+        notifyUser("Error: Could not Send Message");
     }
 }
 
@@ -209,28 +225,23 @@ void MainWindow::on_addUserButton_clicked() {
                 userIndex = i;
             }
         }
-
         if(ok && userFound && !userName.isEmpty()) {
             users.at(userIndex).subscribeToRoom(rooms[getCurrentRoomIndex()].getName());
             rooms[getCurrentRoomIndex()].addMembers(userName.toStdString().c_str());
 
             updateFile(userFilepath, true);
         }
-        else{
-            QMessageBox notification;
-            notification.setText("User Not Found");
-            notification.setStandardButtons(QMessageBox::Ok);
-            notification.setDefaultButton(QMessageBox::Ok);
-            int ret = notification.exec();
+        else {
+            if(!userFound) {
+                notifyUser("Error: Username Not Found");
+            }
+            if(userName.isEmpty()) {
+                notifyUser("Error: Username Field Empty");
+            }
         }
     }
-
     catch (...){
-        QMessageBox notification;
-        notification.setText("Room not Selected");
-        notification.setStandardButtons(QMessageBox::Ok);
-        notification.setDefaultButton(QMessageBox::Ok);
-        int ret = notification.exec();
+        notifyUser("Error: Room Not Selected");
     }
 }
 
@@ -254,21 +265,18 @@ void MainWindow::on_removeUserButton_clicked() {
             rooms[getCurrentRoomIndex()].removeMember(userName.toStdString().c_str());
 
             updateFile(userFilepath, true);
-        } else{
-            QMessageBox notification;
-            notification.setText("User Not Found");
-            notification.setStandardButtons(QMessageBox::Ok);
-            notification.setDefaultButton(QMessageBox::Ok);
-            int ret = notification.exec();
+        } else {
+            if(!userFound){
+                notifyUser("Error: Username not found");
+            }
+            if(userName.isEmpty()) {
+                notifyUser("Error: Username Field Empty");
+            }
         }
     }
 
     catch (...){
-        QMessageBox notification;
-        notification.setText("Room not Selected");
-        notification.setStandardButtons(QMessageBox::Ok);
-        notification.setDefaultButton(QMessageBox::Ok);
-        int ret = notification.exec();
+        notifyUser("Error: Room Not Selected");
     }
 }
 
@@ -412,11 +420,7 @@ void MainWindow::on_loginButton_clicked()
                     read_userConfig(username.toStdString().c_str());
                     ui->stackedWidget->setCurrentIndex(2);
                 } else {
-                    QMessageBox notification;
-                    notification.setText("Incorrect Credentials");
-                    notification.setStandardButtons(QMessageBox::Ok);
-                    notification.setDefaultButton(QMessageBox::Ok);
-                    int ret = notification.exec();
+                    notifyUser("Login Credentials Invalid");
                 }
             }
         }
@@ -447,6 +451,8 @@ void MainWindow::on_signupButton_clicked()
         credentialsFile.open(credFilepath, std::ios::out);
         credentialsFile << username.toStdString().c_str() << " " << password.toStdString().c_str();
         credentialsFile.close();
+    } else {
+        notifyUser("Error: Fields must not be empty");
     }
 }
 
