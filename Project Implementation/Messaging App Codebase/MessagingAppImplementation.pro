@@ -1,4 +1,5 @@
 QT       += core gui network mqtt
+QT += testlib
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -18,6 +19,7 @@ SOURCES += \
     src/main.cpp \
     src/mainwindow.cpp \
     src/media.cpp \
+    src/unitTests.cpp \
     src/user.cpp \
     src/video.cpp
 
@@ -30,6 +32,7 @@ HEADERS += \
     headers/message.h \
     headers/moderator.h \
     headers/room.h \
+    headers/unitTests.h \
     headers/user.h \
     headers/video.h
 

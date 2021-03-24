@@ -106,9 +106,9 @@ void MainWindow::on_addRoomButton_clicked(){
         std::ofstream roomFile (roomFilepath);
         std::string line;
         if(roomFile.is_open()){
-            for(int i = 0; i < rooms.size(); i++){
+            for(unsigned int i = 0; i < rooms.size(); i++){
                 line = rooms.at(i).name;
-                for(int j = 0; j < rooms.at(i).channels.size(); j++){
+                for(unsigned int j = 0; j < rooms.at(i).channels.size(); j++){
                     line += " " + rooms.at(i).channels.at(j).getName();
                 }
                 line += "\n";
