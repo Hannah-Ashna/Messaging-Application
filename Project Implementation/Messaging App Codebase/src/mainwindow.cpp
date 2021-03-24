@@ -116,32 +116,6 @@ void MainWindow::on_addRoomButton_clicked(){
         rooms.push_back(room);
 
         updateFile(roomFilepath, false);
-
-        bool userFound;
-        int userIndex;
-
-        for (int i = 0; i < (int)users.size(); i++) {
-            if(users.at(i).getName() == currentUser.getName()){
-                userFound = true;
-                userIndex = i;
-            }
-        }
-        if(userFound) {
-            std::cout << "FUCKING SHIT: " << currentUser.getName() << std::endl;
-            users.at(userIndex).subscribeToRoom(rooms.back().getName());
-            rooms.back().addMembers(currentUser.getName());
-
-            std::ofstream file (userFilepath);
-            std::string line;
-            for(int i = 0; i < (int)users.size(); i++){
-                line = users.at(i).getName();
-                for(int j = 0; j < (int)users.at(i).rooms.size(); j++){
-                    line += " " + users.at(i).rooms.at(j);
-                }
-                line += "\n";
-                file << line;
-            }
-        }
     }
 }
 
