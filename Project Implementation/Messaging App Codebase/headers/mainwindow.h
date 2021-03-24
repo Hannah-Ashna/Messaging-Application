@@ -44,6 +44,8 @@ private slots:
     void on_backButton_clicked();
     void on_buttonConnect_clicked();
 
+    void updateFile(std::string filePath, bool isUser);
+
     int getCurrentRoomIndex();
     void on_roomDropDown_activated(int index);
     void on_addRoomButton_clicked();

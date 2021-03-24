@@ -2,7 +2,7 @@
 #include "unitTests.h"
 #include <QApplication>
 
-#define RUN_TESTS true // Set to false to run actual application
+#define RUN_TESTS false // Set to false to run actual application
 
 int main(int argc, char *argv[])
 {

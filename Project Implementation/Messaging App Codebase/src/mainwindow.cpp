@@ -87,6 +87,34 @@ void MainWindow::on_buttonConnect_clicked()
 }
 
 
+void MainWindow::updateFile(std::string filePath, bool isUser) {
+    std::ofstream file (filePath);
+    std::string line;
+
+    if(file.is_open()) {
+
+        if (isUser) {
+            for(int i = 0; i < users.size(); i++){
+                line = users.at(i).getName();
+                for(int j = 0; j < users.at(i).rooms.size(); j++){
+                    line += " " + users.at(i).rooms.at(j);
+                }
+            }
+        } else {
+            for(unsigned int i = 0; i < rooms.size(); i++){
+                line = rooms.at(i).name;
+                for(unsigned int j = 0; j < rooms.at(i).channels.size(); j++){
+                    line += " " + rooms.at(i).channels.at(j).getName();
+                }
+            }
+        }
+        line += "\n";
+        file << line;
+
+    }
+    file.close();
+}
+
 
 int MainWindow::getCurrentRoomIndex(){
     return ui->roomDropDown->currentIndex();
@@ -103,19 +131,7 @@ void MainWindow::on_addRoomButton_clicked(){
 
         rooms.push_back(room);
 
-        std::ofstream roomFile (roomFilepath);
-        std::string line;
-        if(roomFile.is_open()){
-            for(unsigned int i = 0; i < rooms.size(); i++){
-                line = rooms.at(i).name;
-                for(unsigned int j = 0; j < rooms.at(i).channels.size(); j++){
-                    line += " " + rooms.at(i).channels.at(j).getName();
-                }
-                line += "\n";
-                roomFile << line;
-             }
-        }
-        roomFile.close();
+        updateFile(roomFilepath, false);
     }  
 }
 
@@ -126,19 +142,7 @@ void MainWindow::on_deleteRoomButton_clicked() {
     ui->roomDropDown->removeItem(index);
     rooms.erase(rooms.begin() + index);
 
-    std::ofstream roomFile (roomFilepath);
-    std::string line;
-    if(roomFile.is_open()){
-        for(int i = 0; i < rooms.size(); i++){
-            line = rooms.at(i).name;
-            for(int j = 0; j < rooms.at(i).channels.size(); j++){
-                line += " " + rooms.at(i).channels.at(j).getName();
-            }
-            line += "\n";
-            roomFile << line;
-         }
-    }
-    roomFile.close();
+    updateFile(roomFilepath, false);
 }
 
 void MainWindow::on_roomDropDown_activated(int index) {
@@ -169,19 +173,7 @@ void MainWindow::on_addChannelButton_clicked() {
 
         rooms[getCurrentRoomIndex()].channels.push_back(channel);
 
-        std::ofstream roomFile (roomFilepath);
-        std::string line;
-        if(roomFile.is_open()){
-            for(int i = 0; i < rooms.size(); i++){
-                line = rooms.at(i).name;
-                for(int j = 0; j < rooms.at(i).channels.size(); j++){
-                    line += " " + rooms.at(i).channels.at(j).getName();
-                }
-                line += "\n";
-                roomFile << line;
-             }
-        }
-        roomFile.close();
+        updateFile(roomFilepath, false);
     }
 }
 
@@ -192,19 +184,7 @@ void MainWindow::on_deleteChannelButton_clicked() {
     ui->channelDropDown->removeItem(index);
     room.channels.erase(room.channels.begin() + index);
 
-    std::ofstream roomFile (roomFilepath);
-    std::string line;
-    if(roomFile.is_open()){
-        for(int i = 0; i < rooms.size(); i++){
-            line = rooms.at(i).name;
-            for(int j = 0; j < rooms.at(i).channels.size(); j++){
-                line += " " + rooms.at(i).channels.at(j).getName();
-            }
-            line += "\n";
-            roomFile << line;
-         }
-    }
-    roomFile.close();
+    updateFile(roomFilepath, false);
 }
 
 void MainWindow::on_channelDropDown_activated(int index)
@@ -263,19 +243,7 @@ void MainWindow::on_addUserButton_clicked() {
             users.at(userIndex).subscribeToRoom(rooms[getCurrentRoomIndex()].getName());
             rooms[getCurrentRoomIndex()].addMembers(userName.toStdString().c_str());
 
-            std::ofstream file (userFilepath);
-            std::string line;
-            if(file.is_open()){
-                for(int i = 0; i < users.size(); i++){
-                    line = users.at(i).getName();
-                    for(int j = 0; j < users.at(i).rooms.size(); j++){
-                        line += " " + users.at(i).rooms.at(j);
-                    }
-                    line += "\n";
-                    file << line;
-                 }
-            }
-            file.close();
+            updateFile(userFilepath, true);
         }
         else{
             QMessageBox notification;
@@ -314,21 +282,8 @@ void MainWindow::on_removeUserButton_clicked() {
             users.at(userIndex).unsubscribeFromRoom(rooms[getCurrentRoomIndex()].getName());
             rooms[getCurrentRoomIndex()].removeMember(userName.toStdString().c_str());
 
-            std::ofstream file (userFilepath);
-            std::string line;
-            if(file.is_open()){
-                for(int i = 0; i < users.size(); i++){
-                    line = users.at(i).getName();
-                    for(int j = 0; j < users.at(i).rooms.size(); j++){
-                        line += " " + users.at(i).rooms.at(j);
-                    }
-                    line += "\n";
-                    file << line;
-                 }
-            }
-            file.close();
-        }
-        else{
+            updateFile(userFilepath, true);
+        } else{
             QMessageBox notification;
             notification.setText("User Not Found");
             notification.setStandardButtons(QMessageBox::Ok);
@@ -438,9 +393,7 @@ void MainWindow::on_loginButton_clicked()
     */
     std::fstream credentialsFile;
     credentialsFile.open(credFilepath, std::ios::in);
-    if(!credentialsFile){
-    }
-
+    if(!credentialsFile){  }
     else {
         // Adding users to user vector - JAD uwu
         User user = User();
