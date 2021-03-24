@@ -19,9 +19,9 @@ SOURCES += \
     src/main.cpp \
     src/mainwindow.cpp \
     src/media.cpp \
-    src/unitTests.cpp \
     src/user.cpp \
-    src/video.cpp
+    src/video.cpp \
+    tests/unitTests.cpp
 
 HEADERS += \
     headers/admin.h \
