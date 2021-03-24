@@ -68,9 +68,8 @@ void MainWindow::setClientPort(int p)
 }
 
 void MainWindow::on_refreshButton_clicked() {
-    ui->roomDropDown->clear();
-    ui->channelDropDown->clear();
 
+    std::cout << rooms[getCurrentRoomIndex()].channels.size() << std::endl;
     read_userConfig(currentUser.getName());
 }
 
@@ -331,6 +330,10 @@ void MainWindow::read_userConfig(std::string username)
     std::vector<std::string> roomData;
     std::string line;
 
+    ui->roomDropDown->clear();
+    ui->channelDropDown->clear();
+    rooms.clear();
+
     configFile.open(userFilepath, std::ios::in);
     if(!configFile){
     }
@@ -344,12 +347,15 @@ void MainWindow::read_userConfig(std::string username)
                     room.setName(roomData[i]);
                     ui->roomDropDown->addItem(QString::fromStdString(room.getName()));
                     rooms.push_back(room);
+                    std::cout << "BEFORE ROOM CONFIG: " << rooms.at(getCurrentRoomIndex()).channels.size() << std::endl;
+
                     read_roomConfig(roomData[i]);
                 }
             }
 
         }
         configFile.close();
+        std::cout << "USER CONFIG: " << rooms.at(getCurrentRoomIndex()).channels.size() << std::endl;
     }
 }
 
@@ -371,7 +377,6 @@ void MainWindow::read_roomConfig(std::string roomName)
                     Channel channel;
                     channel.setName(channelData[i]);
                     ui->channelDropDown->addItem(QString::fromStdString(channel.getName()));
-
                     for(int j = 0; j < (int)rooms.size(); j++){
                         if (rooms[j].getName() == roomName){
                             rooms[j].channels.push_back(channel);
@@ -380,7 +385,7 @@ void MainWindow::read_roomConfig(std::string roomName)
                 }
             }
         }
-
+        std::cout << "ROOM CONFIG: " << rooms.at(getCurrentRoomIndex()).channels.size() << std::endl;
         roomConfigFile.close();
     }
 }
