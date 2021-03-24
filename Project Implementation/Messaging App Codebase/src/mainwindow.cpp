@@ -68,8 +68,6 @@ void MainWindow::setClientPort(int p)
 }
 
 void MainWindow::on_refreshButton_clicked() {
-
-    std::cout << rooms[getCurrentRoomIndex()].channels.size() << std::endl;
     read_userConfig(currentUser.getName());
 }
 
@@ -332,7 +330,9 @@ void MainWindow::read_userConfig(std::string username)
 
     ui->roomDropDown->clear();
     ui->channelDropDown->clear();
-    rooms.clear();
+    for (int i = 0; i < rooms.size(); i++){
+        rooms[i].channels.clear();
+    }
 
     configFile.open(userFilepath, std::ios::in);
     if(!configFile){
