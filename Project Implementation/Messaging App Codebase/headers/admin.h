@@ -2,8 +2,9 @@
 #define ADMIN_H
 
 #include "user.h"
+#include "moderator.h"
 
-class Admin
+class Admin: public Moderator
 {
 public:
     User admin;

@@ -12,11 +12,6 @@ void User::setName(std::string username){
 
 }
 
-std::string User::changeName()
-{
-
-}
-
 void User::subscribeToRoom(std::string room)
 {
     rooms.push_back(room);
@@ -34,11 +29,6 @@ void User::unsubscribeFromRoom(std::string room)
 std::string User::getName()
 {
     return name;
-}
-
-std::string User::getNickname()
-{
-
 }
 
 std::string User::getStatus()

@@ -3,10 +3,9 @@
 
 #include <vector>
 
-#include "admin.h"
 #include "user.h"
 
-class Moderator: public Admin
+class Moderator: public User
 {
 public:
     std::vector<User> moderator;

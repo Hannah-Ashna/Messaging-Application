@@ -9,7 +9,6 @@ class User
 protected:
     std::string userID;
     std::string name;
-    std::string nickname;
     std::string status;
 
     bool online;
@@ -19,14 +18,13 @@ public:
 
     User();
     void setName(std::string username);
-    std::string changeName();
+    std::string getName();
+
     void subscribeToRoom(std::string room);
     void unsubscribeFromRoom(std::string room);
-    std::string getName();
-    std::string getStatus();
-    std::string getNickname();
-    bool getOnline();
 
+    std::string getStatus();
+    bool getOnline();
 };
 
 #endif // USER_H
