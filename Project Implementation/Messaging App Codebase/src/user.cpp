@@ -19,7 +19,7 @@ void User::subscribeToRoom(std::string room)
 
 void User::unsubscribeFromRoom(std::string room)
 {
-    for(int i = 0; i < rooms.size(); i++){
+    for(int i = 0; i < (int)rooms.size(); i++){
         if(rooms.at(i) == room){
             rooms.erase(rooms.begin() + i);
         }
@@ -33,10 +33,10 @@ std::string User::getName()
 
 std::string User::getStatus()
 {
-
+    return "stub";
 }
 
 bool User::getOnline()
 {
-
+    return "stub";
 }
