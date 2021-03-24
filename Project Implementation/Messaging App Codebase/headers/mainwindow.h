@@ -36,6 +36,7 @@ private slots:
     void setClientPort(int p);
     void on_buttonConnect_clicked();
 
+    void on_refreshButton_clicked();
     void notifyUser(std::string message);
 
     int getCurrentRoomIndex();

@@ -67,6 +67,12 @@ void MainWindow::setClientPort(int p)
     m_client->setPort(p);
 }
 
+void MainWindow::on_refreshButton_clicked() {
+    ui->roomDropDown->clear();
+    ui->channelDropDown->clear();
+
+    read_userConfig(currentUser.getName());
+}
 
 void MainWindow::notifyUser(std::string message) {
     QMessageBox notification;
@@ -113,7 +119,7 @@ void MainWindow::on_addRoomButton_clicked(){
         rooms.push_back(room);
 
         updateFile(roomFilepath, false);
-    }  
+    }
 }
 
 void MainWindow::on_deleteRoomButton_clicked() {
@@ -310,18 +316,19 @@ void MainWindow::updateFile(std::string filePath, bool isUser) {
                 for(int j = 0; j < (int)users.at(i).rooms.size(); j++){
                     line += " " + users.at(i).rooms.at(j);
                 }
+                line += "\n";
+                file << line;
             }
         } else {
             for(int i = 0; i < (int)rooms.size(); i++){
-                line = rooms.at(i).name;
+                line = rooms.at(i).getName();
                 for(int j = 0; j < (int)rooms.at(i).channels.size(); j++){
                     line += " " + rooms.at(i).channels.at(j).getName();
                 }
+                line += "\n";
+                file << line;
             }
         }
-        line += "\n";
-        file << line;
-
     }
     file.close();
 }
@@ -350,7 +357,6 @@ void MainWindow::read_userConfig(std::string username)
             }
 
         }
-
         configFile.close();
     }
 }
