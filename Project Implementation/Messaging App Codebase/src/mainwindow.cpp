@@ -82,7 +82,6 @@ void MainWindow::notifyUser(std::string message) {
     int ret = notification.exec();
 }
 
-
 void MainWindow::on_buttonConnect_clicked()
 {
     /*!
@@ -102,7 +101,6 @@ void MainWindow::on_buttonConnect_clicked()
     }
 }
 
-
 int MainWindow::getCurrentRoomIndex(){
     return ui->roomDropDown->currentIndex();
 }
@@ -115,10 +113,35 @@ void MainWindow::on_addRoomButton_clicked(){
         Room room;
         room.setName(roomName.toStdString().c_str());
         ui->roomDropDown->addItem(QString::fromStdString(room.getName()));
-
         rooms.push_back(room);
 
         updateFile(roomFilepath, false);
+
+        bool userFound;
+        int userIndex;
+
+        for (int i = 0; i < (int)users.size(); i++) {
+            if(users.at(i).getName() == currentUser.getName()){
+                userFound = true;
+                userIndex = i;
+            }
+        }
+        if(userFound) {
+            std::cout << "FUCKING SHIT: " << currentUser.getName() << std::endl;
+            users.at(userIndex).subscribeToRoom(rooms.back().getName());
+            rooms.back().addMembers(currentUser.getName());
+
+            std::ofstream file (userFilepath);
+            std::string line;
+            for(int i = 0; i < (int)users.size(); i++){
+                line = users.at(i).getName();
+                for(int j = 0; j < (int)users.at(i).rooms.size(); j++){
+                    line += " " + users.at(i).rooms.at(j);
+                }
+                line += "\n";
+                file << line;
+            }
+        }
     }
 }
 
@@ -146,7 +169,6 @@ void MainWindow::on_roomDropDown_activated(int index) {
         ui->channelDropDown->addItem(QString::fromStdString(room.channels[i].getName()));
     }
 }
-
 
 Channel MainWindow::getCurrentChannel() {
     return rooms[getCurrentRoomIndex()].channels[ui->channelDropDown->currentIndex()];
@@ -201,7 +223,6 @@ void MainWindow::on_channelDropDown_activated(int index)
     ui->channelLabel->setText(ui->channelDropDown->itemText(index));
     ui->messageLog->clear();
 }
-
 
 void MainWindow::on_sendButton_clicked()
 {
@@ -286,7 +307,6 @@ void MainWindow::on_removeUserButton_clicked() {
     }
 }
 
-
 void MainWindow::on_settingsButton_clicked()
 {
     /*!
@@ -302,8 +322,6 @@ void MainWindow::on_backButton_clicked()
     */
     ui->stackedWidget->setCurrentIndex(2);
 }
-
-
 
 void MainWindow::updateFile(std::string filePath, bool isUser) {
     std::ofstream file (filePath);
@@ -392,8 +410,6 @@ void MainWindow::read_roomConfig(std::string roomName)
         roomConfigFile.close();
     }
 }
-
-
 
 void MainWindow::on_loginButton_clicked()
 {

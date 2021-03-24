@@ -8,8 +8,6 @@ User::User()
 
 void User::setName(std::string username){
     name = username;
-    std::cout << name << std::endl;
-
 }
 
 void User::subscribeToRoom(std::string room)
