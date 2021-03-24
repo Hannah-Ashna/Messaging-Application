@@ -38,7 +38,7 @@ std::vector<std::string> Room::getMembers()
 
 void Room::removeMember(std::string member)
 {
-    for(int i = 0; i < members.size(); i++){
+    for(int i = 0; i < (int)members.size(); i++){
         if(members.at(i) == member){
             members.erase(members.begin() + i);
         }
