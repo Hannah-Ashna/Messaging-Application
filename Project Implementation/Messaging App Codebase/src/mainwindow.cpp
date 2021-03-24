@@ -87,35 +87,6 @@ void MainWindow::on_buttonConnect_clicked()
 }
 
 
-void MainWindow::updateFile(std::string filePath, bool isUser) {
-    std::ofstream file (filePath);
-    std::string line;
-
-    if(file.is_open()) {
-
-        if (isUser) {
-            for(int i = 0; i < users.size(); i++){
-                line = users.at(i).getName();
-                for(int j = 0; j < users.at(i).rooms.size(); j++){
-                    line += " " + users.at(i).rooms.at(j);
-                }
-            }
-        } else {
-            for(unsigned int i = 0; i < rooms.size(); i++){
-                line = rooms.at(i).name;
-                for(unsigned int j = 0; j < rooms.at(i).channels.size(); j++){
-                    line += " " + rooms.at(i).channels.at(j).getName();
-                }
-            }
-        }
-        line += "\n";
-        file << line;
-
-    }
-    file.close();
-}
-
-
 int MainWindow::getCurrentRoomIndex(){
     return ui->roomDropDown->currentIndex();
 }
@@ -319,6 +290,33 @@ void MainWindow::on_backButton_clicked()
 }
 
 
+
+void MainWindow::updateFile(std::string filePath, bool isUser) {
+    std::ofstream file (filePath);
+    std::string line;
+
+    if(file.is_open()) {
+        if (isUser) {
+            for(int i = 0; i < users.size(); i++){
+                line = users.at(i).getName();
+                for(int j = 0; j < users.at(i).rooms.size(); j++){
+                    line += " " + users.at(i).rooms.at(j);
+                }
+            }
+        } else {
+            for(int i = 0; i < rooms.size(); i++){
+                line = rooms.at(i).name;
+                for(int j = 0; j < rooms.at(i).channels.size(); j++){
+                    line += " " + rooms.at(i).channels.at(j).getName();
+                }
+            }
+        }
+        line += "\n";
+        file << line;
+
+    }
+    file.close();
+}
 
 void MainWindow::read_userConfig(std::string username)
 {
