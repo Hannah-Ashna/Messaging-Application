@@ -1,1 +1,2 @@
 RoomA ch1
+RoomB chb1

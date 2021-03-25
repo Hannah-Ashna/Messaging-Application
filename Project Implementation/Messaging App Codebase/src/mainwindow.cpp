@@ -40,20 +40,23 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(m_client, &QMqttClient::messageReceived, this, [this](const QByteArray &message, const QMqttTopicName &topic) {
         Message m;
-        if(Consts::topics.status == topic){
-            std::vector<std::string> splitMessage;
-            boost::split(splitMessage, message, boost::is_any_of(":"));
 
+        std::vector<std::string> splitMessage;
+        boost::split(splitMessage, message, boost::is_any_of(":"));
+
+        if(Consts::topics.status == topic){
             updateOnlineUsers(splitMessage[0], boost::lexical_cast<bool>(splitMessage[1]));
         }
         else{
+            User u;
+            u.setName(splitMessage[0]);
+
             Channel c = getCurrentChannel();
-            m.setMessageContent(QString(message).toStdString().c_str());
+            m.setMessageContent(QString::fromStdString(splitMessage[1]).toStdString().c_str());
             c.addMessage(m);
 
-            ui->messageLog->insertPlainText(m.getFormattedMessage(currentUser));
+            ui->messageLog->insertPlainText(m.getFormattedMessage(u));
         }
-
     });
 
     connect(ui->hostEdit, &QLineEdit::textChanged, m_client, &QMqttClient::setHostname);
@@ -181,7 +184,6 @@ void MainWindow::on_roomDropDown_activated(int index) {
         ui->channelDropDown->addItem(QString::fromStdString(room.channels[i].getName()));
     }
 
-    std::cout << "ADMIN: " << rooms[getCurrentRoomIndex()].admin.getName() << std::endl;
     for (int j = 0; j < (int)room.moderators.size(); j++){
         if(room.moderators[j].getName() == currentUser.getName()) {
             isMod = true;
@@ -299,8 +301,6 @@ void MainWindow::updateOnlineUsers(std::string name, bool status){
     ui->onlineUserList->clear();
     ui->offlineUserList->clear();
 
-    std::cout << "this is doing something?" << std::endl;
-
     for(int i = 0; i < (int)users.size(); i++){
         if(users[i].getName() == name) {
             users[i].setOnlineStatus(status);
@@ -321,7 +321,9 @@ void MainWindow::on_sendButton_clicked()
         Publish text in input box to message log if client is successfully connected
     */
     try {
-        m_client->publish(ui->channelDropDown->currentText(), ui->sendInput->text().toUtf8());
+        QString msg = QString::fromStdString(currentUser.getName()) + ':' + ui->sendInput->text();
+
+        m_client->publish(ui->channelDropDown->currentText(), msg.toUtf8());
         ui->sendInput->clear();
     }
     catch(...){
@@ -333,7 +335,7 @@ void MainWindow::on_addUserButton_clicked() {
     bool ok;
     bool userFound = false;
     bool userSubbed = false;
-    //int userIndex;
+
     try {
         QString userName = QInputDialog::getText(this, tr(Consts::dialogs.enterUsername.c_str()), tr(Consts::buttons.username.c_str()),QLineEdit::Normal, "",&ok);
 
@@ -362,7 +364,6 @@ void MainWindow::on_addUserButton_clicked() {
                 else {
                     while (std::getline(configFile, line)) {
                         boost::split(lineData, line, boost::is_any_of(" "));
-                        //for(int i =0; )
                         if (lineData[0] == userName.toStdString().c_str()) {
                             line += " " + rooms[getCurrentRoomIndex()].getName();
                             newConfig += line + "\n";
