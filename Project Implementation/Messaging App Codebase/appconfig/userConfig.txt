@@ -1,3 +1,2 @@
-uwu RoomA RoomN
-owo
-
+uwu RoomA RoomB
+owo RoomB

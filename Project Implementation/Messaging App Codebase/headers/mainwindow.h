@@ -22,6 +22,7 @@ public:
     const std::string credFilepath = "../appconfig/credentials.txt";
     const std::string userFilepath = "../appconfig/userConfig.txt";
     const std::string roomFilepath = "../appconfig/roomConfig.txt";
+    const std::string adminFilepath = "../appconfig/roomAdminConfig.txt";
 
     std::vector<Room> rooms;
     std::vector<User> users;
@@ -67,6 +68,7 @@ private slots:
     void on_signupBackButton_clicked();
 
     void setupUsers(); // Added by JAD
+    void loadAdmin();
 
 private:
     Ui::MainWindow *ui;

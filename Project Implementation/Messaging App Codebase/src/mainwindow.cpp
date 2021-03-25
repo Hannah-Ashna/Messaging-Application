@@ -150,6 +150,8 @@ void MainWindow::on_roomDropDown_activated(int index) {
     for(int i = 0; i < (int)room.channels.size(); i++) {
         ui->channelDropDown->addItem(QString::fromStdString(room.channels[i].getName()));
     }
+
+    std::cout << "ADMIN: " << rooms[getCurrentRoomIndex()].admin.getName() << std::endl;
 }
 
 Channel MainWindow::getCurrentChannel() {
@@ -440,7 +442,9 @@ void MainWindow::on_loginButton_clicked()
         }
         credentialsFile.close();
     }
-    setupUsers(); // Sets up users vector - JAD
+    // Sets up users vector - JAD
+    setupUsers();
+    loadAdmin();
 }
 
 void MainWindow::on_createAccButton_clicked()
@@ -495,4 +499,38 @@ void MainWindow::setupUsers(){
         users.push_back(aUser);
     }
     configFile.close();
+}
+
+void MainWindow::loadAdmin(){
+    std::fstream adminFile;
+    std::string line;
+    std::vector<std::string> adminData;
+
+    adminFile.open(adminFilepath, std::ios::in);
+
+    if(!adminFile){
+        std::cout << "RUH ROH" << std::endl;
+    }
+
+    else {
+        while (std::getline(adminFile, line)) {
+            boost::split(adminData, line, boost::is_any_of(" "));
+
+
+            for (int i = 0; i < rooms.size(); i++){
+                if (rooms[i].getName() == adminData[0]){
+                    Admin roomAdmin;
+                    roomAdmin.setName(adminData[1]);
+                    rooms[i].admin = roomAdmin;
+
+                    for (int j = 2; j < (int)adminData.size(); j++){
+                        Moderator roomMod;
+                        roomMod.setName(adminData[j]);
+                        rooms[i].moderators.push_back(roomMod);
+                    }
+                }
+            }
+        }
+        adminFile.close();
+    }
 }
