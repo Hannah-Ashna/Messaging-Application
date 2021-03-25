@@ -1,17 +1,26 @@
 #include "headers/mainwindow.h"
 #include "headers/message.h"
 #include "ui_mainwindow.h"
+#include "consts.h"
+
 #include <QtCore/QDateTime>
 #include <QtMqtt/QMqttClient>
 #include <QtWidgets/QMessageBox>
 #include <QInputDialog>
+
 #include <boost/algorithm/string.hpp>
-#include "consts.h"
+#include <boost/lexical_cast.hpp>
+
 #include <algorithm>
 #include <fstream>
 #include <iostream>
 #include <vector>
+
+
 using namespace Consts;
+
+QMqttTopicFilter status{"status"};
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -31,20 +40,27 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(m_client, &QMqttClient::disconnected, this, &MainWindow::brokerDisconnected);
 
-    connect(m_client, &QMqttClient::messageReceived, this, [this](const QByteArray &message) {
+    connect(m_client, &QMqttClient::messageReceived, this, [this](const QByteArray &message, const QMqttTopicName &topic) {
         Message m;
-        Channel c = getCurrentChannel();
+        if(status.match(topic)){
+            std::vector<std::string> parts;
+            boost::split(parts, message, boost::is_any_of(":"));
+            updateOnlineUsers(parts[0], boost::lexical_cast<bool>(parts[1]));
+        }
+        else{
+            Channel c = getCurrentChannel();
+            m.setMessageContent(QString(message).toStdString().c_str());
+            c.addMessage(m);
 
-        m.setMessageContent(QString(message).toStdString().c_str());
-        c.addMessage(m);
+            ui->messageLog->insertPlainText(m.getFormattedMessage(currentUser));
+        }
 
-        ui->messageLog->insertPlainText(m.getFormattedMessage(currentUser));
     });
 
     connect(ui->hostEdit, &QLineEdit::textChanged, m_client, &QMqttClient::setHostname);
     connect(ui->portSpinBox, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::setClientPort);
 
-    connect(ui->onlineRadio, &QRadioButton::toggled, this, &MainWindow::updateOnlineUsers);
+    //connect(ui->onlineRadio, &QRadioButton::toggled, this, &MainWindow::updateOnlineUsers);
 }
 
 MainWindow::~MainWindow()
@@ -261,16 +277,26 @@ void MainWindow::on_onlineRadio_toggled(bool isActive) {
         }
     }
     std::cout << currentUser.getOnlineStatus() << std::endl;
+    try {
+        m_client->subscribe(status);
+        QString msg = QString::fromStdString(currentUser.getName() + ":" + boost::lexical_cast<std::string>(currentUser.getOnlineStatus()));
+
+        m_client->publish(QMqttTopicName("status"), msg.toUtf8());
+        ui->sendInput->clear();
+    }
+    catch(...){
+        notifyUser("fuck");
+    }
 }
 
-void MainWindow::updateOnlineUsers(bool status){
+void MainWindow::updateOnlineUsers(std::string name, bool status){
     ui->onlineUserList->clear();
     ui->offlineUserList->clear();
 
     std::cout << "this is doing something?" << std::endl;
 
     for(int i = 0; i < (int)users.size(); i++){
-        if(users[i].getName() == currentUser.getName()) {
+        if(users[i].getName() == name) {
             users[i].setOnlineStatus(status);
         }
 

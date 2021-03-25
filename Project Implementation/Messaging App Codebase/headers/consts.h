@@ -24,7 +24,7 @@ namespace Consts {
         connect = "Connect",
         disconnect = "Disconnect",
         username = "Username:",
-        oomname = "Room Name:";
+        roomname = "Room Name:";
 
     }buttons;
     struct dialogs{
