@@ -152,6 +152,29 @@ void MainWindow::on_roomDropDown_activated(int index) {
     }
 
     std::cout << "ADMIN: " << rooms[getCurrentRoomIndex()].admin.getName() << std::endl;
+    for (int j = 0; j < (int)room.moderators.size(); j++){
+        if (room.moderators[j].getName() == currentUser.getName()){
+            ui->addUserButton->show();
+            ui->removeUserButton->show();
+            ui->addChannelButton->show();
+            ui->deleteChannelButton->show();
+
+            if (room.admin.getName() == currentUser.getName()){
+            }
+        }
+
+        else{
+            ui->addUserButton->hide();
+            ui->removeUserButton->hide();
+            ui->addChannelButton->hide();
+            ui->deleteChannelButton->hide();
+
+            if (room.admin.getName() != currentUser.getName()){
+                // Hide Remove Mod BUTTON
+            }
+        }
+    }
+
 }
 
 Channel MainWindow::getCurrentChannel() {
@@ -509,13 +532,11 @@ void MainWindow::loadAdmin(){
     adminFile.open(adminFilepath, std::ios::in);
 
     if(!adminFile){
-        std::cout << "RUH ROH" << std::endl;
     }
 
     else {
         while (std::getline(adminFile, line)) {
             boost::split(adminData, line, boost::is_any_of(" "));
-
 
             for (int i = 0; i < rooms.size(); i++){
                 if (rooms[i].getName() == adminData[0]){
@@ -523,7 +544,7 @@ void MainWindow::loadAdmin(){
                     roomAdmin.setName(adminData[1]);
                     rooms[i].admin = roomAdmin;
 
-                    for (int j = 2; j < (int)adminData.size(); j++){
+                    for (int j = 1; j < (int)adminData.size(); j++){
                         Moderator roomMod;
                         roomMod.setName(adminData[j]);
                         rooms[i].moderators.push_back(roomMod);

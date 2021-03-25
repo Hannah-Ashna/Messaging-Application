@@ -1,2 +1,2 @@
 uwu RoomA RoomB
-owo RoomB
+owo RoomB RoomA
