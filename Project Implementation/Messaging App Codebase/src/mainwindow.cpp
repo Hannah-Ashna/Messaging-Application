@@ -68,6 +68,12 @@ void MainWindow::setClientPort(int p)
 }
 
 void MainWindow::on_refreshButton_clicked() {
+    ui->roomDropDown->clear();
+    ui->channelDropDown->clear();
+    for (int i = 0; i < rooms.size(); i++){
+        rooms[i].channels.clear();
+    }
+
     read_userConfig(currentUser.getName());
 }
 
@@ -210,33 +216,71 @@ void MainWindow::on_sendButton_clicked()
 }
 
 void MainWindow::on_addUserButton_clicked() {
-    bool ok;
-    bool userFound = false;
-    int userIndex;
+      bool ok;
+//    bool userFound = false;
+//    int userIndex;
+
+//    try {
+//        QString userName = QInputDialog::getText(this, tr("Enter Username"), tr("Username:"),QLineEdit::Normal, "",&ok);
+
+//        for (int i = 0; i < (int)users.size(); i++) {
+//            if(users.at(i).getName() == userName.toStdString().c_str()){
+//                userFound = true;
+//                userIndex = i;
+//            }
+//        }
+//        if(ok && userFound && !userName.isEmpty()) {
+//            users.at(userIndex).subscribeToRoom(rooms[getCurrentRoomIndex()].getName());
+//            rooms[getCurrentRoomIndex()].addMembers(userName.toStdString().c_str());
+
+//            updateFile(userFilepath, true);
+//        }
+//        else {
+//            if(!userFound) {
+//                notifyUser("Error: Username Not Found");
+//            }
+//            if(userName.isEmpty()) {
+//                notifyUser("Error: Username Field Empty");
+//            }
+//        }
+//    }
+//    catch (...){
+//        notifyUser("Error: Room Not Selected");
+//    }
 
     try {
         QString userName = QInputDialog::getText(this, tr("Enter Username"), tr("Username:"),QLineEdit::Normal, "",&ok);
 
-        for (int i = 0; i < (int)users.size(); i++) {
-            if(users.at(i).getName() == userName.toStdString().c_str()){
-                userFound = true;
-                userIndex = i;
-            }
-        }
-        if(ok && userFound && !userName.isEmpty()) {
-            users.at(userIndex).subscribeToRoom(rooms[getCurrentRoomIndex()].getName());
-            rooms[getCurrentRoomIndex()].addMembers(userName.toStdString().c_str());
+        std::fstream configFile;
+        std::vector<std::string> lineData;
+        std::string line;
+        std::string newConfig;
 
-            updateFile(userFilepath, true);
+        configFile.open(userFilepath, std::ios::in);
+
+        if(!configFile){
         }
+
         else {
-            if(!userFound) {
-                notifyUser("Error: Username Not Found");
+            while (std::getline(configFile, line)) {
+                boost::split(lineData, line, boost::is_any_of(" "));
+
+                if (lineData[0] == userName.toStdString().c_str()) {
+                    line += " " + rooms[getCurrentRoomIndex()].getName();
+                    newConfig += line + "\n";
+                } else {
+                    newConfig += line + "\n";
+                }
             }
-            if(userName.isEmpty()) {
-                notifyUser("Error: Username Field Empty");
-            }
+            configFile.close();
         }
+
+        std::ofstream newConfigFile;
+        newConfigFile.open(userFilepath);
+        newConfigFile << newConfig;
+        newConfigFile.close();
+
+
     }
     catch (...){
         notifyUser("Error: Room Not Selected");
@@ -328,12 +372,6 @@ void MainWindow::read_userConfig(std::string username)
     std::vector<std::string> roomData;
     std::string line;
 
-    ui->roomDropDown->clear();
-    ui->channelDropDown->clear();
-    for (int i = 0; i < rooms.size(); i++){
-        rooms[i].channels.clear();
-    }
-
     configFile.open(userFilepath, std::ios::in);
     if(!configFile){
     }
@@ -347,7 +385,6 @@ void MainWindow::read_userConfig(std::string username)
                     room.setName(roomData[i]);
                     ui->roomDropDown->addItem(QString::fromStdString(room.getName()));
                     rooms.push_back(room);
-                    std::cout << "BEFORE ROOM CONFIG: " << rooms.at(getCurrentRoomIndex()).channels.size() << std::endl;
 
                     read_roomConfig(roomData[i]);
                 }
@@ -355,7 +392,6 @@ void MainWindow::read_userConfig(std::string username)
 
         }
         configFile.close();
-        std::cout << "USER CONFIG: " << rooms.at(getCurrentRoomIndex()).channels.size() << std::endl;
     }
 }
 
@@ -385,7 +421,6 @@ void MainWindow::read_roomConfig(std::string roomName)
                 }
             }
         }
-        std::cout << "ROOM CONFIG: " << rooms.at(getCurrentRoomIndex()).channels.size() << std::endl;
         roomConfigFile.close();
     }
 }
