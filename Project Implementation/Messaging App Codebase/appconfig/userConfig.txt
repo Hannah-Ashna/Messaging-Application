@@ -1,4 +1,2 @@
-uwu RoomA RoomB
-owo RoomA RoomA
-ewe
-awa
+uwu RoomA RoomB RoomC
+owo RoomA RoomC RoomB

@@ -1,7 +1,3 @@
-RoomA Channel1 Channel2
-RoomB
-RoomA Channel1 Channel2
-RoomB
-RoomA Channel1 Channel2
-RoomB
-RoomD
+RoomA ChannelA1 ChannelA2
+RoomB ChannelB1 ChannelB2
+RoomC ChannelC1
