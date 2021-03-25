@@ -121,9 +121,8 @@ void MainWindow::on_addRoomButton_clicked(){
 }
 
 void MainWindow::on_deleteRoomButton_clicked() {
-    if(ui->roomLabel->text() == "no-group-selected") {
-        notifyUser("Error: No Room Selected");
-    } else {
+    if(ui->roomLabel->text() == "no-group-selected") { notifyUser("Error: No Room Selected"); }
+    else {
         int index = ui->roomDropDown->currentIndex();
         Room room = rooms[getCurrentRoomIndex()];
 
@@ -150,9 +149,7 @@ Channel MainWindow::getCurrentChannel() {
 }
 
 void MainWindow::on_addChannelButton_clicked() {
-    if(ui->roomLabel->text() == "no-group-selected") {
-        notifyUser("Error: No Room Selected");
-    }
+    if(ui->roomLabel->text() == "no-group-selected") { notifyUser("Error: No Room Selected"); }
     else {
         bool ok;
         QString channelName = QInputDialog::getText(this, tr("Enter Channel Name"), tr("Channel Name:"),QLineEdit::Normal, "",&ok);
@@ -170,9 +167,8 @@ void MainWindow::on_addChannelButton_clicked() {
 }
 
 void MainWindow::on_deleteChannelButton_clicked() {
-    if(ui->roomLabel->text() == "no-channel-connected") {
-        notifyUser("Error: No Channel Selected");
-    } else {
+    if(ui->roomLabel->text() == "no-channel-connected") { notifyUser("Error: No Channel Selected"); }
+    else {
         int index = ui->channelDropDown->currentIndex();
         Room room = rooms[getCurrentRoomIndex()];
 
@@ -214,72 +210,54 @@ void MainWindow::on_sendButton_clicked()
 }
 
 void MainWindow::on_addUserButton_clicked() {
-      bool ok;
-//    bool userFound = false;
-//    int userIndex;
-
-//    try {
-//        QString userName = QInputDialog::getText(this, tr("Enter Username"), tr("Username:"),QLineEdit::Normal, "",&ok);
-
-//        for (int i = 0; i < (int)users.size(); i++) {
-//            if(users.at(i).getName() == userName.toStdString().c_str()){
-//                userFound = true;
-//                userIndex = i;
-//            }
-//        }
-//        if(ok && userFound && !userName.isEmpty()) {
-//            users.at(userIndex).subscribeToRoom(rooms[getCurrentRoomIndex()].getName());
-//            rooms[getCurrentRoomIndex()].addMembers(userName.toStdString().c_str());
-
-//            updateFile(userFilepath, true);
-//        }
-//        else {
-//            if(!userFound) {
-//                notifyUser("Error: Username Not Found");
-//            }
-//            if(userName.isEmpty()) {
-//                notifyUser("Error: Username Field Empty");
-//            }
-//        }
-//    }
-//    catch (...){
-//        notifyUser("Error: Room Not Selected");
-//    }
-
+    bool ok;
+    bool userFound = false;
+    int userIndex;
     try {
         QString userName = QInputDialog::getText(this, tr("Enter Username"), tr("Username:"),QLineEdit::Normal, "",&ok);
 
-        if(ok) {
-            std::fstream configFile;
-            std::vector<std::string> lineData;
-            std::string line;
-            std::string newConfig;
-
-            configFile.open(userFilepath, std::ios::in);
-
-            if(!configFile){
+        for (int i = 0; i < (int)users.size(); i++) {
+            if(users.at(i).getName() == userName.toStdString().c_str()){
+                userFound = true;
+                userIndex = i;
             }
+        }
 
+        if (ok) {
+            if (userName.isEmpty()) { notifyUser("Error: Username Field Empty"); }
+            else if (!userFound) { notifyUser("Error: Username Not Found"); }
             else {
-                while (std::getline(configFile, line)) {
-                    boost::split(lineData, line, boost::is_any_of(" "));
+                std::fstream configFile;
+                std::vector<std::string> lineData;
+                std::string line;
+                std::string newConfig;
 
-                    if (lineData[0] == userName.toStdString().c_str()) {
-                        line += " " + rooms[getCurrentRoomIndex()].getName();
-                        newConfig += line + "\n";
-                    } else {
-                        newConfig += line + "\n";
-                    }
+                configFile.open(userFilepath, std::ios::in);
+
+                if(!configFile){
                 }
-                configFile.close();
+
+                else {
+                    while (std::getline(configFile, line)) {
+                        boost::split(lineData, line, boost::is_any_of(" "));
+
+                        if (lineData[0] == userName.toStdString().c_str()) {
+                            line += " " + rooms[getCurrentRoomIndex()].getName();
+                            newConfig += line + "\n";
+                        } else {
+                            newConfig += line + "\n";
+                        }
+                    }
+                    configFile.close();
+                }
+
+                std::ofstream newConfigFile;
+                newConfigFile.open(userFilepath);
+                newConfigFile << newConfig;
+                newConfigFile.close();
+
+                rooms[getCurrentRoomIndex()].addMembers(userName.toStdString().c_str());
             }
-
-            std::ofstream newConfigFile;
-            newConfigFile.open(userFilepath);
-            newConfigFile << newConfig;
-            newConfigFile.close();
-
-            rooms[getCurrentRoomIndex()].addMembers(userName.toStdString().c_str());
         }
     }
     catch (...){
@@ -372,9 +350,7 @@ void MainWindow::read_userConfig(std::string username)
     std::string line;
 
     configFile.open(userFilepath, std::ios::in);
-    if(!configFile){
-    }
-
+    if(!configFile){  }
     else {
         while (std::getline(configFile, line)) {
             boost::split(roomData, line, boost::is_any_of(" "));
@@ -401,8 +377,7 @@ void MainWindow::read_roomConfig(std::string roomName)
     std::string line;
 
     roomConfigFile.open(roomFilepath, std::ios::in);
-    if(!roomConfigFile){
-    }
+    if(!roomConfigFile){  }
 
     else {
         while (std::getline(roomConfigFile, line)) {
