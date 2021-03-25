@@ -3,7 +3,6 @@
 
 #endif // CONSTS_H
 #include <string>
-#include <QtCore/QString>
 
 namespace Consts {
 
@@ -31,6 +30,7 @@ namespace Consts {
         const std::string enterChannelName = "Enter Channel Name";
         const std::string channelName = "Channel Name:";
         const std::string noChannel = "no-channel-connected";
+        const std::string noGroup = "no-group-selected";
         const std::string enterUsername = "Enter Username";
 
     }dialogs;
