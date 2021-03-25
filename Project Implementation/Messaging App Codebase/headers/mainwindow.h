@@ -53,6 +53,8 @@ private slots:
     void on_addChannelButton_clicked();
     void on_deleteChannelButton_clicked();
 
+    void updateContacts();
+
     void on_onlineRadio_toggled(bool active);
     void updateOnlineUsers(std::string name, bool status);
 

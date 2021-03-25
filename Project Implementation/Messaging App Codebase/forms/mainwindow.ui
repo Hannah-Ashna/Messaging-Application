@@ -398,6 +398,16 @@
         </spacer>
        </item>
        <item>
+        <widget class="QLabel" name="channelLabel_4">
+         <property name="text">
+          <string>Contacts</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="contactsDropDown"/>
+       </item>
+       <item>
         <spacer name="verticalSpacer_9">
          <property name="orientation">
           <enum>Qt::Vertical</enum>

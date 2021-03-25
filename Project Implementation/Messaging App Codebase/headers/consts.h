@@ -2,6 +2,7 @@
 #define CONSTS_H
 
 #endif // CONSTS_H
+#include <QtMqtt/QMqttClient>
 #include <string>
 
 namespace Consts {
@@ -19,6 +20,7 @@ namespace Consts {
         invalidCreds = "Login Credentials Invalid",
         emptyFields = "Error: Fields must not be empty";
     }errors;
+
     struct buttons{
         const std::string
         connect = "Connect",
@@ -27,6 +29,7 @@ namespace Consts {
         roomname = "Room Name:";
 
     }buttons;
+
     struct dialogs{
         const std::string
         enterroomname =  "Enter Room Name",
@@ -37,4 +40,8 @@ namespace Consts {
         enterUsername = "Enter Username";
     }dialogs;
 
+    struct topics{
+        const QMqttTopicFilter statusFilter{"status"};
+        const QMqttTopicName status{"status"};
+    }topics;
 }

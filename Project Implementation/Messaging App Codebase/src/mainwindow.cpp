@@ -19,8 +19,6 @@
 
 using namespace Consts;
 
-QMqttTopicFilter status{"status"};
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -42,10 +40,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(m_client, &QMqttClient::messageReceived, this, [this](const QByteArray &message, const QMqttTopicName &topic) {
         Message m;
-        if(status.match(topic)){
-            std::vector<std::string> parts;
-            boost::split(parts, message, boost::is_any_of(":"));
-            updateOnlineUsers(parts[0], boost::lexical_cast<bool>(parts[1]));
+        if(Consts::topics.status == topic){
+            std::vector<std::string> splitMessage;
+            boost::split(splitMessage, message, boost::is_any_of(":"));
+
+            updateOnlineUsers(splitMessage[0], boost::lexical_cast<bool>(splitMessage[1]));
         }
         else{
             Channel c = getCurrentChannel();
@@ -60,7 +59,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->hostEdit, &QLineEdit::textChanged, m_client, &QMqttClient::setHostname);
     connect(ui->portSpinBox, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::setClientPort);
 
-    //connect(ui->onlineRadio, &QRadioButton::toggled, this, &MainWindow::updateOnlineUsers);
 }
 
 MainWindow::~MainWindow()
@@ -92,7 +90,7 @@ void MainWindow::on_refreshButton_clicked() {
     rooms.clear();
 
     read_userConfig(currentUser.getName());
-    //updateOnlineUsers();
+    updateContacts();
 }
 
 void MainWindow::notifyUser(std::string message) {
@@ -264,6 +262,16 @@ void MainWindow::on_channelDropDown_activated(int index)
     ui->messageLog->clear();
 }
 
+void MainWindow::updateContacts() {
+    ui->contactsDropDown->clear();
+
+    for(int i = 0; i < (int)users.size(); i++){
+        if(users[i].getName() != currentUser.getName()) {
+            ui->contactsDropDown->addItem(QString::fromStdString(users[i].getName()));
+        }
+    }
+}
+
 void MainWindow::on_onlineRadio_toggled(bool isActive) {
     for(int i = 0; i < (int)users.size(); i++){
         if(users.at(i).getName() == currentUser.getName()){
@@ -276,16 +284,14 @@ void MainWindow::on_onlineRadio_toggled(bool isActive) {
             }
         }
     }
-    std::cout << currentUser.getOnlineStatus() << std::endl;
     try {
-        m_client->subscribe(status);
+        m_client->subscribe(Consts::topics.statusFilter);
         QString msg = QString::fromStdString(currentUser.getName() + ":" + boost::lexical_cast<std::string>(currentUser.getOnlineStatus()));
 
-        m_client->publish(QMqttTopicName("status"), msg.toUtf8());
-        ui->sendInput->clear();
+        m_client->publish(Consts::topics.status, msg.toUtf8());
     }
     catch(...){
-        notifyUser("fuck");
+        notifyUser("Something went wrong!");
     }
 }
 
@@ -560,6 +566,7 @@ void MainWindow::on_loginButton_clicked()
     // Sets up users vector - JAD
     setupUsers();
     loadAdmin();
+    updateContacts();
 }
 
 void MainWindow::on_createAccButton_clicked()
