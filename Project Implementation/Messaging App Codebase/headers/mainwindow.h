@@ -58,7 +58,7 @@ private slots:
     void on_settingsButton_clicked();
     void on_backButton_clicked();
 
-    void updateFile(std::string filePath, bool isUser);
+    void updateFile(std::string filePath);
     void read_userConfig(std::string username);
     void read_roomConfig(std::string username);
 

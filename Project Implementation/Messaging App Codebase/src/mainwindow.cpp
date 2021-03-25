@@ -113,9 +113,19 @@ void MainWindow::on_addRoomButton_clicked(){
         Room room;
         room.setName(roomName.toStdString().c_str());
         ui->roomDropDown->addItem(QString::fromStdString(room.getName()));
+
+        Admin newAdmin;
+        newAdmin.setName(currentUser.getName());
+        room.admin = newAdmin;
+
+        Moderator newMod;
+        newMod.setName(currentUser.getName());
+        room.moderators.push_back(newMod);
+
         rooms.push_back(room);
 
-        updateFile(roomFilepath, false);
+        updateFile(roomFilepath);
+        updateFile(adminFilepath);
 
         // JAD - BROKEN :/
         for(int i = 0; i < (int)users.size(); i++){
@@ -124,7 +134,7 @@ void MainWindow::on_addRoomButton_clicked(){
                 //currentUser.subscribeToRoom(room.getName());
             }
         }
-        updateFile(userFilepath, true);
+        updateFile(userFilepath);
     }
 }
 
@@ -137,7 +147,7 @@ void MainWindow::on_deleteRoomButton_clicked() {
         ui->roomDropDown->removeItem(index);
         rooms.erase(rooms.begin() + index);
 
-        updateFile(roomFilepath, false);
+        updateFile(roomFilepath);
     }
 }
 
@@ -199,7 +209,7 @@ void MainWindow::on_addChannelButton_clicked() {
 
             rooms[getCurrentRoomIndex()].channels.push_back(channel);
 
-            updateFile(roomFilepath, false);
+            updateFile(roomFilepath);
         }
     }
 }
@@ -213,7 +223,7 @@ void MainWindow::on_deleteChannelButton_clicked() {
         ui->channelDropDown->removeItem(index);
         room.channels.erase(room.channels.begin() + index);
 
-        updateFile(roomFilepath, false);
+        updateFile(roomFilepath);
     }
 }
 
@@ -323,7 +333,7 @@ void MainWindow::on_removeUserButton_clicked() {
             users.at(userIndex).unsubscribeFromRoom(rooms[getCurrentRoomIndex()].getName());
             rooms[getCurrentRoomIndex()].removeMember(userName.toStdString().c_str());
 
-            updateFile(userFilepath, true);
+            updateFile(userFilepath);
         } else {
             if(!userFound){
                 notifyUser(Consts::errors.userNotFound);
@@ -355,7 +365,7 @@ void MainWindow::on_backButton_clicked()
     ui->stackedWidget->setCurrentIndex(2);
 }
 
-void MainWindow::updateFile(std::string filePath, bool isUser) {
+void MainWindow::updateFile(std::string filePath) {
     std::ofstream file (filePath);
     std::string line;
 
@@ -381,7 +391,14 @@ void MainWindow::updateFile(std::string filePath, bool isUser) {
             }
         }
         else {
-            // pls
+            for(int i = 0; i < (int)rooms.size(); i++){
+                line = rooms.at(i).getName();
+                for(int j = 0; j < (int)rooms.at(i).moderators.size(); j++){
+                    line += " " + rooms.at(i).moderators.at(j).getName();
+                }
+                line += "\n";
+                file << line;
+            }
         }
     }
     file.close();
