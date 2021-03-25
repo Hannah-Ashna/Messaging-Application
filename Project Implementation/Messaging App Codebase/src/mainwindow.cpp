@@ -55,7 +55,7 @@ void MainWindow::brokerDisconnected()
     */
     ui->hostEdit->setEnabled(true);
     ui->portSpinBox->setEnabled(true);
-    ui->buttonConnect->setText(tr("Connect"));
+    ui->buttonConnect->setText(tr(Consts::buttons.connect.c_str()));
 }
 
 void MainWindow::setClientPort(int p)
@@ -91,12 +91,12 @@ void MainWindow::on_buttonConnect_clicked()
     if (m_client->state() == QMqttClient::Disconnected) {
         ui->hostEdit->setEnabled(false);
         ui->portSpinBox->setEnabled(false);
-        ui->buttonConnect->setText(tr("Disconnect"));
+        ui->buttonConnect->setText(tr(Consts::buttons.disconnect.c_str()));
         m_client->connectToHost();
     } else {
         ui->hostEdit->setEnabled(true);
         ui->portSpinBox->setEnabled(true);
-        ui->buttonConnect->setText(tr("Connect"));
+        ui->buttonConnect->setText(tr(Consts::buttons.connect.c_str()));
         m_client->disconnectFromHost();
     }
 }
@@ -107,7 +107,7 @@ int MainWindow::getCurrentRoomIndex(){
 
 void MainWindow::on_addRoomButton_clicked(){
     bool ok;
-    QString roomName = QInputDialog::getText(this, tr(Consts::enterroomname.c_str()), tr("Room Name:"),QLineEdit::Normal, "",&ok);
+    QString roomName = QInputDialog::getText(this, tr(Consts::dialogs.enterroomname.c_str()), tr(Consts::buttons.roomname.c_str()),QLineEdit::Normal, "",&ok);
 
     if(ok && !roomName.isEmpty()) {
         Room room;
@@ -129,7 +129,7 @@ void MainWindow::on_addRoomButton_clicked(){
 }
 
 void MainWindow::on_deleteRoomButton_clicked() {
-    if(ui->roomLabel->text() == "no-group-selected") { notifyUser(Consts::errors.noRoomSelected); }
+    if(ui->roomLabel->text() == Consts::dialogs.noGroup.c_str()) { notifyUser(Consts::errors.noRoomSelected); }
     else {
         int index = ui->roomDropDown->currentIndex();
         Room room = rooms[getCurrentRoomIndex()];
@@ -157,10 +157,10 @@ Channel MainWindow::getCurrentChannel() {
 }
 
 void MainWindow::on_addChannelButton_clicked() {
-    if(ui->roomLabel->text() == "no-group-selected") { notifyUser(Consts::errors.noRoomSelected); }
+    if(ui->roomLabel->text() == Consts::dialogs.noGroup.c_str()) { notifyUser(Consts::errors.noRoomSelected); }
     else {
         bool ok;
-        QString channelName = QInputDialog::getText(this, tr("Enter Channel Name"), tr("Channel Name:"),QLineEdit::Normal, "",&ok);
+        QString channelName = QInputDialog::getText(this, tr(Consts::dialogs.enterChannelName.c_str()), tr(Consts::dialogs.channelName.c_str()),QLineEdit::Normal, "",&ok);
 
         if(ok && !channelName.isEmpty()) {
             Channel channel;
@@ -175,7 +175,7 @@ void MainWindow::on_addChannelButton_clicked() {
 }
 
 void MainWindow::on_deleteChannelButton_clicked() {
-    if(ui->roomLabel->text() == "no-channel-connected") { notifyUser(Consts::errors.noChannelSelected); }
+    if(ui->roomLabel->text() == Consts::dialogs.noChannel.c_str()) { notifyUser(Consts::errors.noChannelSelected); }
     else {
         int index = ui->channelDropDown->currentIndex();
         Room room = rooms[getCurrentRoomIndex()];
@@ -196,7 +196,7 @@ void MainWindow::on_channelDropDown_activated(int index)
     */
     auto subscription = m_client->subscribe(ui->channelDropDown->itemText(index));
     if (!subscription) {
-        QMessageBox::critical(this, QLatin1String("Error"), QLatin1String(Consts::errors.subscription.c_str()));
+        QMessageBox::critical(this, QLatin1String(Consts::errors.error.c_str()), QLatin1String(Consts::errors.subscription.c_str()));
         return;
     }
     ui->channelLabel->setText(ui->channelDropDown->itemText(index));
@@ -223,7 +223,7 @@ void MainWindow::on_addUserButton_clicked() {
     bool userSubbed = false;
     //int userIndex;
     try {
-        QString userName = QInputDialog::getText(this, tr("Enter Username"), tr("Username:"),QLineEdit::Normal, "",&ok);
+        QString userName = QInputDialog::getText(this, tr(Consts::dialogs.enterUsername.c_str()), tr(Consts::buttons.username.c_str()),QLineEdit::Normal, "",&ok);
 
         for (int i = 0; i < (int)users.size(); i++) {
             if(users.at(i).getName() == userName.toStdString().c_str()){
@@ -281,7 +281,7 @@ void MainWindow::on_removeUserButton_clicked() {
     int userIndex;
 
     try {
-        QString userName = QInputDialog::getText(this, tr("Enter Username"), tr("Username:"),QLineEdit::Normal, "",&ok);
+        QString userName = QInputDialog::getText(this, tr(Consts::dialogs.enterUsername.c_str()), tr(Consts::buttons.username.c_str()),QLineEdit::Normal, "",&ok);
 
         for (int i = 0; i < (int)users.size(); i++) {
             if(users.at(i).getName() == userName.toStdString().c_str()){
