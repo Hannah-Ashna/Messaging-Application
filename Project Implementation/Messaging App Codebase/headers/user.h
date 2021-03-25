@@ -20,7 +20,7 @@ public:
     void setName(std::string username);
     std::string getName();
 
-    void subscribeToRoom(std::string room);
+    bool subscribeToRoom(std::string room);
     void unsubscribeFromRoom(std::string room);
 
     std::string getStatus();

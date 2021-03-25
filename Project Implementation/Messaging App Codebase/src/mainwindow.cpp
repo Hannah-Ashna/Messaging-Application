@@ -117,6 +117,15 @@ void MainWindow::on_addRoomButton_clicked(){
         rooms.push_back(room);
 
         updateFile(roomFilepath, false);
+
+        // JAD - BROKEN :/
+        for(int i = 0; i < (int)users.size(); i++){
+            if(users[i].getName() == currentUser.getName()){
+                users[i].subscribeToRoom(room.getName());
+                //currentUser.subscribeToRoom(room.getName());
+            }
+        }
+        updateFile(userFilepath, true);
     }
 }
 
@@ -212,20 +221,22 @@ void MainWindow::on_sendButton_clicked()
 void MainWindow::on_addUserButton_clicked() {
     bool ok;
     bool userFound = false;
-    int userIndex;
+    bool userSubbed = false;
+    //int userIndex;
     try {
         QString userName = QInputDialog::getText(this, tr("Enter Username"), tr("Username:"),QLineEdit::Normal, "",&ok);
 
         for (int i = 0; i < (int)users.size(); i++) {
             if(users.at(i).getName() == userName.toStdString().c_str()){
                 userFound = true;
-                userIndex = i;
+                userSubbed = users.at(i).subscribeToRoom(rooms[getCurrentRoomIndex()].getName());
             }
         }
 
         if (ok) {
             if (userName.isEmpty()) { notifyUser("Error: Username Field Empty"); }
             else if (!userFound) { notifyUser("Error: Username Not Found"); }
+            else if(!userSubbed) { notifyUser("Error: User Already Subscribed");}
             else {
                 std::fstream configFile;
                 std::vector<std::string> lineData;
@@ -240,7 +251,7 @@ void MainWindow::on_addUserButton_clicked() {
                 else {
                     while (std::getline(configFile, line)) {
                         boost::split(lineData, line, boost::is_any_of(" "));
-
+                        //for(int i =0; )
                         if (lineData[0] == userName.toStdString().c_str()) {
                             line += " " + rooms[getCurrentRoomIndex()].getName();
                             newConfig += line + "\n";
@@ -409,17 +420,12 @@ void MainWindow::on_loginButton_clicked()
     std::fstream credentialsFile;
     credentialsFile.open(credFilepath, std::ios::in);
     if(!credentialsFile){  }
-    else {
-        // Adding users to user vector - JAD uwu
-        User user = User();
-
+    else {        
         QString username = ui->passEdit->text();
         QString password = ui->userEdit->text();
 
         std::string line;
         while (std::getline(credentialsFile, line)) {
-            user.setName(line.substr(line.find(" ") + 1));
-            users.push_back(user);
             if (username.toStdString().c_str() == line.substr(line.find(" ") + 1)){
                 if (password.toStdString().c_str() == line.substr(0, line.find(" "))){
                     /*!
@@ -435,6 +441,7 @@ void MainWindow::on_loginButton_clicked()
         }
         credentialsFile.close();
     }
+    setupUsers(); // Sets up users vector - JAD
 }
 
 void MainWindow::on_createAccButton_clicked()
@@ -471,4 +478,22 @@ void MainWindow::on_signupBackButton_clicked()
         Set index of stacked widget to 0, take user to login page
     */
     ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::setupUsers(){
+    std::fstream configFile(userFilepath);
+    std::vector<std::string> roomData;
+    std::string line;
+
+    while(!configFile.eof()){
+        std::getline(configFile, line);
+        boost::split(roomData, line, boost::is_any_of(" "));
+        User aUser;
+        aUser.setName(roomData[0]);
+        for(int i = 1; i < (int)roomData.size(); i++){
+            aUser.subscribeToRoom(roomData[i]);
+        }
+        users.push_back(aUser);
+    }
+    configFile.close();
 }

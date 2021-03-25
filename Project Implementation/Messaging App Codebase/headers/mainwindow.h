@@ -66,6 +66,8 @@ private slots:
     void on_signupButton_clicked();
     void on_signupBackButton_clicked();
 
+    void setupUsers(); // Added by JAD
+
 private:
     Ui::MainWindow *ui;
     QMqttClient *m_client;
