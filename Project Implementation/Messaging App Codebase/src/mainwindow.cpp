@@ -1,18 +1,17 @@
 #include "headers/mainwindow.h"
 #include "headers/message.h"
 #include "ui_mainwindow.h"
-
 #include <QtCore/QDateTime>
 #include <QtMqtt/QMqttClient>
 #include <QtWidgets/QMessageBox>
 #include <QInputDialog>
 #include <boost/algorithm/string.hpp>
-
+#include "consts.h"
 #include <algorithm>
 #include <fstream>
 #include <iostream>
 #include <vector>
-
+using namespace Consts;
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -108,7 +107,7 @@ int MainWindow::getCurrentRoomIndex(){
 
 void MainWindow::on_addRoomButton_clicked(){
     bool ok;
-    QString roomName = QInputDialog::getText(this, tr("Enter Room Name"), tr("Room Name:"),QLineEdit::Normal, "",&ok);
+    QString roomName = QInputDialog::getText(this, tr(Consts::enterroomname.c_str()), tr("Room Name:"),QLineEdit::Normal, "",&ok);
 
     if(ok && !roomName.isEmpty()) {
         Room room;
@@ -130,7 +129,7 @@ void MainWindow::on_addRoomButton_clicked(){
 }
 
 void MainWindow::on_deleteRoomButton_clicked() {
-    if(ui->roomLabel->text() == "no-group-selected") { notifyUser("Error: No Room Selected"); }
+    if(ui->roomLabel->text() == "no-group-selected") { notifyUser(Consts::errors.noRoomSelected); }
     else {
         int index = ui->roomDropDown->currentIndex();
         Room room = rooms[getCurrentRoomIndex()];
@@ -158,7 +157,7 @@ Channel MainWindow::getCurrentChannel() {
 }
 
 void MainWindow::on_addChannelButton_clicked() {
-    if(ui->roomLabel->text() == "no-group-selected") { notifyUser("Error: No Room Selected"); }
+    if(ui->roomLabel->text() == "no-group-selected") { notifyUser(Consts::errors.noRoomSelected); }
     else {
         bool ok;
         QString channelName = QInputDialog::getText(this, tr("Enter Channel Name"), tr("Channel Name:"),QLineEdit::Normal, "",&ok);
@@ -176,7 +175,7 @@ void MainWindow::on_addChannelButton_clicked() {
 }
 
 void MainWindow::on_deleteChannelButton_clicked() {
-    if(ui->roomLabel->text() == "no-channel-connected") { notifyUser("Error: No Channel Selected"); }
+    if(ui->roomLabel->text() == "no-channel-connected") { notifyUser(Consts::errors.noChannelSelected); }
     else {
         int index = ui->channelDropDown->currentIndex();
         Room room = rooms[getCurrentRoomIndex()];
@@ -197,7 +196,7 @@ void MainWindow::on_channelDropDown_activated(int index)
     */
     auto subscription = m_client->subscribe(ui->channelDropDown->itemText(index));
     if (!subscription) {
-        QMessageBox::critical(this, QLatin1String("Error"), QLatin1String("Could not subscribe. Is there a valid connection?"));
+        QMessageBox::critical(this, QLatin1String("Error"), QLatin1String(Consts::errors.subscription.c_str()));
         return;
     }
     ui->channelLabel->setText(ui->channelDropDown->itemText(index));
@@ -214,7 +213,7 @@ void MainWindow::on_sendButton_clicked()
         ui->sendInput->clear();
     }
     catch(...){
-        notifyUser("Error: Could not Send Message");
+        notifyUser(Consts::errors.sendMessage);
     }
 }
 
@@ -234,9 +233,9 @@ void MainWindow::on_addUserButton_clicked() {
         }
 
         if (ok) {
-            if (userName.isEmpty()) { notifyUser("Error: Username Field Empty"); }
-            else if (!userFound) { notifyUser("Error: Username Not Found"); }
-            else if(!userSubbed) { notifyUser("Error: User Already Subscribed");}
+            if (userName.isEmpty()) { notifyUser(Consts::errors.emptyUser); }
+            else if (!userFound) { notifyUser(Consts::errors.userNotFound); }
+            else if(!userSubbed) { notifyUser(Consts::errors.userSubscribed);}
             else {
                 std::fstream configFile;
                 std::vector<std::string> lineData;
@@ -272,7 +271,7 @@ void MainWindow::on_addUserButton_clicked() {
         }
     }
     catch (...){
-        notifyUser("Error: Room Not Selected");
+        notifyUser(Consts::errors.noRoomSelected);
     }
 }
 
@@ -297,16 +296,16 @@ void MainWindow::on_removeUserButton_clicked() {
             updateFile(userFilepath, true);
         } else {
             if(!userFound){
-                notifyUser("Error: Username not found");
+                notifyUser(Consts::errors.userNotFound);
             }
             if(userName.isEmpty()) {
-                notifyUser("Error: Username Field Empty");
+                notifyUser(Consts::errors.emptyUser);
             }
         }
     }
 
     catch (...){
-        notifyUser("Error: Room Not Selected");
+        notifyUser(Consts::errors.noRoomSelected);
     }
 }
 
@@ -435,7 +434,7 @@ void MainWindow::on_loginButton_clicked()
                     read_userConfig(username.toStdString().c_str());
                     ui->stackedWidget->setCurrentIndex(2);
                 } else {
-                    notifyUser("Login Credentials Invalid");
+                    notifyUser(Consts::errors.invalidCreds);
                 }
             }
         }
@@ -468,7 +467,7 @@ void MainWindow::on_signupButton_clicked()
         credentialsFile << username.toStdString().c_str() << " " << password.toStdString().c_str();
         credentialsFile.close();
     } else {
-        notifyUser("Error: Fields must not be empty");
+        notifyUser(Consts::errors.emptyFields);
     }
 }
 

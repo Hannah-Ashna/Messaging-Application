@@ -26,6 +26,7 @@ SOURCES += \
 HEADERS += \
     headers/admin.h \
     headers/channel.h \
+    headers/consts.h \
     headers/mainwindow.h \
     headers/media.h \
     headers/image.h \
