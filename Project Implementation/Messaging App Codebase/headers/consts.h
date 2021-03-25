@@ -44,4 +44,9 @@ namespace Consts {
         const QMqttTopicFilter statusFilter{"status"};
         const QMqttTopicName status{"status"};
     }topics;
+
+    struct hashData{
+        const std::string salt = "uwu#!";
+        const std::string pepper = "!#owo";
+    }hashData;
 }

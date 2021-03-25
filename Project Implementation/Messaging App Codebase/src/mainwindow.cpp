@@ -1,5 +1,4 @@
 #include "headers/mainwindow.h"
-#include "headers/message.h"
 #include "ui_mainwindow.h"
 #include "consts.h"
 
@@ -15,7 +14,6 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
-
 
 using namespace Consts;
 
@@ -169,7 +167,12 @@ void MainWindow::on_deleteRoomButton_clicked() {
         ui->roomDropDown->removeItem(index);
         rooms.erase(rooms.begin() + index);
 
+        for(int i = 0; i < (int)users.size(); i++){
+            users[i].unsubscribeFromRoom(room.getName());
+        }
+
         updateFile(roomFilepath);
+        updateFile(userFilepath);
     }
 }
 
@@ -446,11 +449,12 @@ void MainWindow::updateFile(std::string filePath) {
         if (filePath == userFilepath) {
             for(int i = 0; i < (int)users.size(); i++){
                 line = users.at(i).getName();
-                for(int j = 0; j < (int)users.at(i).rooms.size(); j++){
-                    line += " " + users.at(i).rooms.at(j);
+                if(!line.empty()){
+                    for(int j = 0; j < (int)users.at(i).rooms.size(); j++){
+                        line += " " + users.at(i).rooms.at(j);
+                    }
+                    file << line << std::endl;
                 }
-                line += "\n";
-                file << line;
             }
         }
         else if(filePath == roomFilepath) {
@@ -459,8 +463,7 @@ void MainWindow::updateFile(std::string filePath) {
                 for(int j = 0; j < (int)rooms.at(i).channels.size(); j++){
                     line += " " + rooms.at(i).channels.at(j).getName();
                 }
-                line += "\n";
-                file << line;
+                file << line << std::endl;
             }
         }
         else {
@@ -469,8 +472,7 @@ void MainWindow::updateFile(std::string filePath) {
                 for(int j = 0; j < (int)rooms.at(i).moderators.size(); j++){
                     line += " " + rooms.at(i).moderators.at(j).getName();
                 }
-                line += "\n";
-                file << line;
+                file << line << std::endl;
             }
         }
     }
@@ -532,6 +534,14 @@ void MainWindow::read_roomConfig(std::string roomName)
     }
 }
 
+QString MainWindow::getHashedPassword(QString password){
+    std::hash<std::string> hasher;
+
+    std::string hashedPass = std::to_string(hasher(Consts::hashData.salt + password.toStdString().c_str() + Consts::hashData.pepper));
+    std::cout << hashedPass << std::endl;
+    return QString::fromStdString(hashedPass);
+}
+
 void MainWindow::on_loginButton_clicked()
 {
     /*!
@@ -544,13 +554,13 @@ void MainWindow::on_loginButton_clicked()
     credentialsFile.open(credFilepath, std::ios::in);
     if(!credentialsFile){  }
     else {        
-        QString username = ui->passEdit->text();
-        QString password = ui->userEdit->text();
+        QString username = ui->userEdit->text();
+        QString password = getHashedPassword(ui->passEdit->text().toStdString().c_str());
 
         std::string line;
         while (std::getline(credentialsFile, line)) {
-            if (username.toStdString().c_str() == line.substr(line.find(" ") + 1)){
-                if (password.toStdString().c_str() == line.substr(0, line.find(" "))){
+            if (username.toStdString().c_str() == line.substr(0, line.find(" "))){
+                if (password.toStdString().c_str() == line.substr(line.find(" ") + 1)){
                     /*!
                         Set index of stacked widget to 2, take user to main page
                     */
@@ -585,14 +595,21 @@ void MainWindow::on_signupButton_clicked()
       to ensure no empty credentials are added to the file.
       If it is not NULL, the credentials are successfully registered
     */
+
     QString username = ui->signupUserEdit->text();
-    QString password = ui->signupPassEdit->text();
+    QString password = getHashedPassword(ui->signupPassEdit->text().toStdString().c_str());
 
     if (username != NULL && password != NULL) {
         std::fstream credentialsFile;
-        credentialsFile.open(credFilepath, std::ios::out);
-        credentialsFile << username.toStdString().c_str() << " " << password.toStdString().c_str();
+        credentialsFile.open(credFilepath, std::ios::app);
+        credentialsFile << username.toStdString().c_str() << " " << password.toStdString().c_str() << std::endl;
         credentialsFile.close();
+
+        std::fstream usersFile;
+        usersFile.open(userFilepath, std::ios::app);
+        usersFile << username.toStdString().c_str() << std::endl;
+        usersFile.close();
+
     } else {
         notifyUser(Consts::errors.emptyFields);
     }
@@ -614,12 +631,15 @@ void MainWindow::setupUsers(){
     while(!configFile.eof()){
         std::getline(configFile, line);
         boost::split(roomData, line, boost::is_any_of(" "));
-        User aUser;
-        aUser.setName(roomData[0]);
-        for(int i = 1; i < (int)roomData.size(); i++){
-            aUser.subscribeToRoom(roomData[i]);
+
+        if(!roomData[0].empty()) {
+            User aUser;
+            aUser.setName(roomData[0]);
+            for(int i = 1; i < (int)roomData.size(); i++){
+                aUser.subscribeToRoom(roomData[i]);
+            }
+            users.push_back(aUser);
         }
-        users.push_back(aUser);
     }
     configFile.close();
 }

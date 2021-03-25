@@ -18,9 +18,6 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-signals:
-    void onlineStatusChanged(bool status, std::string name);
-
 public:
     const std::string credFilepath = "../appconfig/credentials.txt";
     const std::string userFilepath = "../appconfig/userConfig.txt";
@@ -69,6 +66,8 @@ private slots:
     void updateFile(std::string filePath);
     void read_userConfig(std::string username);
     void read_roomConfig(std::string username);
+
+    QString getHashedPassword(QString password);
 
     void on_loginButton_clicked();    
     void on_createAccButton_clicked();
