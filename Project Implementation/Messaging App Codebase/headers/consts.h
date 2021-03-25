@@ -46,7 +46,7 @@ namespace Consts {
     }topics;
 
     struct hashData{
-        const std::string salt = "uwu#!";
-        const std::string pepper = "!#owo";
+        const std::string salt = "frog#!";
+        const std::string pepper = "!#rats";
     }hashData;
 }
