@@ -18,6 +18,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    ui->stackedWidget->setCurrentIndex(0);
+
     /*!
       Create new instance of QMqttClient and set host and port values
       When CLient is disconnected call brokerDisconnect()
@@ -41,6 +43,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->hostEdit, &QLineEdit::textChanged, m_client, &QMqttClient::setHostname);
     connect(ui->portSpinBox, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::setClientPort);
+
+    connect(ui->onlineRadio, &QRadioButton::toggled, this, &MainWindow::updateOnlineUsers);
 }
 
 MainWindow::~MainWindow()
@@ -72,6 +76,7 @@ void MainWindow::on_refreshButton_clicked() {
     rooms.clear();
 
     read_userConfig(currentUser.getName());
+    //updateOnlineUsers();
 }
 
 void MainWindow::notifyUser(std::string message) {
@@ -241,6 +246,41 @@ void MainWindow::on_channelDropDown_activated(int index)
     }
     ui->channelLabel->setText(ui->channelDropDown->itemText(index));
     ui->messageLog->clear();
+}
+
+void MainWindow::on_onlineRadio_toggled(bool isActive) {
+    for(int i = 0; i < (int)users.size(); i++){
+        if(users.at(i).getName() == currentUser.getName()){
+            if(isActive) {
+                users[i].setOnlineStatus(true);
+                currentUser.setOnlineStatus(true);
+            } else {
+                users[i].setOnlineStatus(false);
+                currentUser.setOnlineStatus(false);
+            }
+        }
+    }
+    std::cout << currentUser.getOnlineStatus() << std::endl;
+}
+
+void MainWindow::updateOnlineUsers(bool status){
+    ui->onlineUserList->clear();
+    ui->offlineUserList->clear();
+
+    std::cout << "this is doing something?" << std::endl;
+
+    for(int i = 0; i < (int)users.size(); i++){
+        if(users[i].getName() == currentUser.getName()) {
+            users[i].setOnlineStatus(status);
+        }
+
+        if(users[i].getOnlineStatus()) {
+            ui->onlineUserList->addItem(QString::fromStdString(users[i].getName()));
+        }
+        else {
+            ui->offlineUserList->addItem(QString::fromStdString(users[i].getName()));
+        }
+    }
 }
 
 void MainWindow::on_sendButton_clicked()

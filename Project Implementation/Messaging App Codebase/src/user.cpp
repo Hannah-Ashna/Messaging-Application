@@ -36,12 +36,12 @@ std::string User::getName()
     return name;
 }
 
-std::string User::getStatus()
+void User::setOnlineStatus(bool online)
 {
-    return "stub";
+    this->online = online;
 }
 
-bool User::getOnline()
+bool User::getOnlineStatus()
 {
-    return "stub";
+    return online;
 }

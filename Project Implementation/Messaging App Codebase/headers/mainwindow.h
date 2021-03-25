@@ -18,6 +18,9 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
+signals:
+    void onlineStatusChanged(bool status, std::string name);
+
 public:
     const std::string credFilepath = "../appconfig/credentials.txt";
     const std::string userFilepath = "../appconfig/userConfig.txt";
@@ -49,6 +52,9 @@ private slots:
     void on_channelDropDown_activated(int index);
     void on_addChannelButton_clicked();
     void on_deleteChannelButton_clicked();
+
+    void on_onlineRadio_toggled(bool active);
+    void updateOnlineUsers(bool status);
 
     void on_sendButton_clicked();
 

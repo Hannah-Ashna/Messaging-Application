@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="LoginPage">
      <widget class="QLabel" name="label_8">
@@ -561,9 +561,9 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
        <item>
-        <widget class="QRadioButton" name="activeRadio">
+        <widget class="QRadioButton" name="onlineRadio">
          <property name="text">
-          <string>Active</string>
+          <string>Online</string>
          </property>
          <property name="checked">
           <bool>true</bool>
@@ -574,13 +574,6 @@ p, li { white-space: pre-wrap; }
         <widget class="QRadioButton" name="invisibleRadio">
          <property name="text">
           <string>Invisible</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QRadioButton" name="doNotDisturbRadio">
-         <property name="text">
-          <string>Busy</string>
          </property>
         </widget>
        </item>
@@ -697,7 +690,16 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
        <item>
-        <widget class="QListView" name="offlineUserList"/>
+        <widget class="QListWidget" name="offlineUserList">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>8</pointsize>
+          </font>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>

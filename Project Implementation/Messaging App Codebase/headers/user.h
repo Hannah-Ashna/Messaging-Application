@@ -11,7 +11,7 @@ protected:
     std::string name;
     std::string status;
 
-    bool online;
+    bool online = false;
 
 public:
     std::vector<std::string> rooms;
@@ -23,8 +23,8 @@ public:
     bool subscribeToRoom(std::string room);
     void unsubscribeFromRoom(std::string room);
 
-    std::string getStatus();
-    bool getOnline();
+    void setOnlineStatus(bool online);
+    bool getOnlineStatus();
 };
 
 #endif // USER_H
