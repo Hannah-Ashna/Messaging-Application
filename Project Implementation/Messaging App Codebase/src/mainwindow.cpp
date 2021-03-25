@@ -143,6 +143,7 @@ void MainWindow::on_deleteRoomButton_clicked() {
 
 void MainWindow::on_roomDropDown_activated(int index) {
     Room room = rooms[getCurrentRoomIndex()];
+    bool isMod = false;
 
     ui->roomLabel->setText(ui->roomDropDown->itemText(index));
     ui->channelDropDown->clear();
@@ -153,28 +154,32 @@ void MainWindow::on_roomDropDown_activated(int index) {
 
     std::cout << "ADMIN: " << rooms[getCurrentRoomIndex()].admin.getName() << std::endl;
     for (int j = 0; j < (int)room.moderators.size(); j++){
-        if (room.moderators[j].getName() == currentUser.getName()){
-            ui->addUserButton->show();
-            ui->removeUserButton->show();
-            ui->addChannelButton->show();
-            ui->deleteChannelButton->show();
-
-            if (room.admin.getName() == currentUser.getName()){
-            }
-        }
-
-        else{
-            ui->addUserButton->hide();
-            ui->removeUserButton->hide();
-            ui->addChannelButton->hide();
-            ui->deleteChannelButton->hide();
-
-            if (room.admin.getName() != currentUser.getName()){
-                // Hide Remove Mod BUTTON
-            }
+        if(room.moderators[j].getName() == currentUser.getName()) {
+            isMod = true;
         }
     }
 
+    if (isMod){
+        ui->addUserButton->show();
+        ui->removeUserButton->show();
+        ui->addChannelButton->show();
+        ui->deleteChannelButton->show();
+
+        if (room.admin.getName() == currentUser.getName()){
+            ui->addModButton->show();
+            ui->removeModButton->show();
+        } else {
+            ui->addModButton->hide();
+            ui->removeModButton->hide();
+        }
+    } else {
+        ui->addUserButton->hide();
+        ui->removeUserButton->hide();
+        ui->addChannelButton->hide();
+        ui->deleteChannelButton->hide();
+        ui->addModButton->hide();
+        ui->removeModButton->hide();
+    }
 }
 
 Channel MainWindow::getCurrentChannel() {
@@ -355,7 +360,7 @@ void MainWindow::updateFile(std::string filePath, bool isUser) {
     std::string line;
 
     if(file.is_open()) {
-        if (isUser) {
+        if (filePath == userFilepath) {
             for(int i = 0; i < (int)users.size(); i++){
                 line = users.at(i).getName();
                 for(int j = 0; j < (int)users.at(i).rooms.size(); j++){
@@ -364,7 +369,8 @@ void MainWindow::updateFile(std::string filePath, bool isUser) {
                 line += "\n";
                 file << line;
             }
-        } else {
+        }
+        else if(filePath == roomFilepath) {
             for(int i = 0; i < (int)rooms.size(); i++){
                 line = rooms.at(i).getName();
                 for(int j = 0; j < (int)rooms.at(i).channels.size(); j++){
@@ -373,6 +379,9 @@ void MainWindow::updateFile(std::string filePath, bool isUser) {
                 line += "\n";
                 file << line;
             }
+        }
+        else {
+            // pls
         }
     }
     file.close();
