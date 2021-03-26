@@ -416,12 +416,10 @@ void MainWindow::on_removeUserButton_clicked() {
 
             updateFile(userFilepath);
         } else {
-            if(!userFound){
-                notifyUser(Consts::errors.userNotFound);
-            }
-            if(userName.isEmpty()) {
-                notifyUser(Consts::errors.emptyUser);
-            }
+            if(!userFound) notifyUser(Consts::errors.userNotFound);
+
+            if(userName.isEmpty()) notifyUser(Consts::errors.emptyUser);
+
         }
     }
 
@@ -518,9 +516,7 @@ void MainWindow::read_roomConfig(std::string roomName)
     std::string line;
 
     roomConfigFile.open(roomFilepath, std::ios::in);
-    if(!roomConfigFile){  }
-
-    else {
+    if(roomConfigFile){
         while (std::getline(roomConfigFile, line)) {
             boost::split(channelData, line, boost::is_any_of(" "));
             if (channelData[0] == roomName) {
@@ -528,15 +524,13 @@ void MainWindow::read_roomConfig(std::string roomName)
                     Channel channel;
                     channel.setName(channelData[i]);
                     for(int j = 0; j < (int)rooms.size(); j++){
-                        if (rooms[j].getName() == roomName){
-                            rooms[j].channels.push_back(channel);
-                        }
+                        if (rooms[j].getName() == roomName) rooms[j].channels.push_back(channel);
                     }
                 }
             }
         }
         roomConfigFile.close();
-    }
+    } else notifyUser(Consts::errors.missingFile);
 }
 
 QString MainWindow::getHashedPassword(QString password){
@@ -625,9 +619,7 @@ void MainWindow::on_signupButton_clicked()
         usersFile << username.toStdString().c_str() << std::endl;
         usersFile.close();
 
-    } else {
-        notifyUser(Consts::errors.emptyFields);
-    }
+    } else notifyUser(Consts::errors.emptyFields);
 }
 
 void MainWindow::on_signupBackButton_clicked()
@@ -666,10 +658,7 @@ void MainWindow::loadAdmin(){
 
     adminFile.open(adminFilepath, std::ios::in);
 
-    if(!adminFile){
-    }
-
-    else {
+    if(adminFile){
         while (std::getline(adminFile, line)) {
             boost::split(adminData, line, boost::is_any_of(" "));
 

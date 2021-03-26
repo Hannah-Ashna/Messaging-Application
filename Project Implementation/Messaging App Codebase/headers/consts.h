@@ -19,7 +19,8 @@ namespace Consts {
         userSubscribed = "Error: User Already Subscribed",
         invalidCreds = "Login Credentials Invalid",
         emptyFields = "Error: Fields must not be empty",
-        somethingWrong = "Something went wrong!";
+        somethingWrong = "Something went wrong!",
+        missingFile = "Error: Missing file";
     }errors;
 
     struct buttons{
