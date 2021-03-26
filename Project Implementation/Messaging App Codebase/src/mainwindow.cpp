@@ -28,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget->setCurrentIndex(Consts::navigation.loginPage);
 
     /*!
       Create new instance of QMqttClient and set host and port values
@@ -435,7 +435,7 @@ void MainWindow::on_settingsButton_clicked()
     /*!
         Set index of stackedWidget to 3, take user to setting screen
     */
-    ui->stackedWidget->setCurrentIndex(3);
+    ui->stackedWidget->setCurrentIndex(Consts::navigation.settingsPage);
 }
 
 void MainWindow::on_backButton_clicked()
@@ -443,7 +443,7 @@ void MainWindow::on_backButton_clicked()
     /*!
         Set index of stacked widget to 2, take user to main page
     */
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(Consts::navigation.mainPage);
 }
 
 void MainWindow::updateFile(std::string filePath) {
@@ -577,11 +577,11 @@ void MainWindow::on_loginButton_clicked()
             if (username.toStdString().c_str() == line.substr(0, line.find(" "))){
                 if (password.toStdString().c_str() == line.substr(line.find(" ") + 1)){
                     /*!
-                        Set index of stacked widget to 2, take user to main page
+                        Set index of stacked widget to main page
                     */
                     currentUser.setName(username.toStdString().c_str());
                     read_userConfig(username.toStdString().c_str());
-                    ui->stackedWidget->setCurrentIndex(2);
+                    ui->stackedWidget->setCurrentIndex(Consts::navigation.mainPage);
                 } else {
                     notifyUser(Consts::errors.invalidCreds);
                 }
@@ -598,9 +598,9 @@ void MainWindow::on_loginButton_clicked()
 void MainWindow::on_createAccButton_clicked()
 {
     /*!
-        Set index of stacked widget to 1, take user to to signup page
+        Set index of stacked widget to signup page
     */
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget->setCurrentIndex(Consts::navigation.signupPage);
 }
 
 void MainWindow::on_signupButton_clicked()
@@ -635,7 +635,7 @@ void MainWindow::on_signupBackButton_clicked()
     /*!
         Set index of stacked widget to 0, take user to login page
     */
-    ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget->setCurrentIndex(Consts::navigation.loginPage);
 }
 
 void MainWindow::setupUsers(){

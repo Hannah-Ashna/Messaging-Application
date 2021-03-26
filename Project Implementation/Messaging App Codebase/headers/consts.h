@@ -50,4 +50,11 @@ namespace Consts {
         const std::string salt = "frog#!";
         const std::string pepper = "!#rats";
     }hashData;
+    struct navigation{
+        const int
+        loginPage = 0,
+        signupPage = 1,
+        mainPage = 2,
+        settingsPage = 3;
+    }navigation;
 }
