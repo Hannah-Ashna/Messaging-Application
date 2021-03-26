@@ -93,9 +93,16 @@ void MainWindow::setClientPort(int p)
 void MainWindow::on_refreshButton_clicked() {
     ui->roomDropDown->clear();
     ui->channelDropDown->clear();
+    ui->roomLabel->setText("no-group-selected");
+
     rooms.clear();
+    users.clear();
 
     read_userConfig(currentUser.getName());
+
+    setupUsers();
+    loadAdmin();
+
     updateContacts();
 }
 
