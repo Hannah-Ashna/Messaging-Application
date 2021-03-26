@@ -18,7 +18,8 @@ namespace Consts {
         userNotFound = "Error: Username Not Found",
         userSubscribed = "Error: User Already Subscribed",
         invalidCreds = "Login Credentials Invalid",
-        emptyFields = "Error: Fields must not be empty";
+        emptyFields = "Error: Fields must not be empty",
+        somethingWrong = "Something went wrong!";
     }errors;
 
     struct buttons{

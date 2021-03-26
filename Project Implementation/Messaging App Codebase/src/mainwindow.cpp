@@ -301,7 +301,7 @@ void MainWindow::on_onlineRadio_toggled(bool isActive) {
         m_client->publish(Consts::topics.status, msg.toUtf8());
     }
     catch(...){
-        notifyUser("Something went wrong!");
+        notifyUser(Consts::errors.somethingWrong);
     }
 }
 
@@ -673,7 +673,7 @@ void MainWindow::loadAdmin(){
         while (std::getline(adminFile, line)) {
             boost::split(adminData, line, boost::is_any_of(" "));
 
-            for (int i = 0; i < rooms.size(); i++){
+            for (int i = 0; i < (int)rooms.size(); i++){
                 if (rooms[i].getName() == adminData[0]){
                     Admin roomAdmin;
                     roomAdmin.setName(adminData[1]);
