@@ -19,6 +19,7 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include <random>
 
 using namespace Consts;
 
@@ -540,10 +541,18 @@ void MainWindow::read_roomConfig(std::string roomName)
     } else notifyUser(Consts::errors.missingFile);
 }
 
-QString MainWindow::getHashedPassword(QString password){
+QString MainWindow::generateSalt() {
+    std::random_device rd;
+    std::uniform_int_distribution<int> dist(1000, 9999);
+    std::string salt = std::to_string(dist(rd));
+
+    return QString::fromStdString(salt);
+}
+
+QString MainWindow::getHashedPassword(QString salt, QString password){
     CryptoPP::SHA256 hash;
 
-    std::string saltedPassword = Consts::hashData.salt + password.toStdString().c_str() + Consts::hashData.pepper;
+    std::string saltedPassword = (salt + password).toStdString().c_str() + Consts::hashData.pepper;
 
     byte digest[hash.DIGESTSIZE];
     hash.CalculateDigest(digest, (const byte*)saltedPassword.c_str(), saltedPassword.length());
@@ -571,12 +580,17 @@ void MainWindow::on_loginButton_clicked()
     if(!credentialsFile){  }
     else {        
         QString username = ui->userEdit->text();
-        QString password = getHashedPassword(ui->passEdit->text().toStdString().c_str());
+        QString password = ui->passEdit->text();
 
         std::string line;
         while (std::getline(credentialsFile, line)) {
             if (username.toStdString().c_str() == line.substr(0, line.find(" "))){
-                if (password.toStdString().c_str() == line.substr(line.find(" ") + 1)){
+                std::string saltPass = line.substr(line.find(" ") + 1);
+
+                std::vector<std::string> splitPassword;
+                boost::split(splitPassword, saltPass, boost::is_any_of(":"));
+
+                if (getHashedPassword(QString::fromStdString(splitPassword[0]), password) == QString::fromStdString(splitPassword[1])){
                     /*!
                         Set index of stacked widget to main page
                     */
@@ -613,7 +627,9 @@ void MainWindow::on_signupButton_clicked()
     */
 
     QString username = ui->signupUserEdit->text();
-    QString password = getHashedPassword(ui->signupPassEdit->text().toStdString().c_str());
+
+    QString salt = generateSalt();
+    QString password = salt + ":" + getHashedPassword(salt, ui->signupPassEdit->text().toStdString().c_str());
 
     if (username != NULL && password != NULL) {
         std::fstream credentialsFile;
@@ -625,6 +641,8 @@ void MainWindow::on_signupButton_clicked()
         usersFile.open(userFilepath, std::ios::app);
         usersFile << username.toStdString().c_str() << std::endl;
         usersFile.close();
+
+        ui->stackedWidget->setCurrentIndex(Consts::navigation.loginPage);
 
     } else notifyUser(Consts::errors.emptyFields);
 }

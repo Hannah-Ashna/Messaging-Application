@@ -67,7 +67,8 @@ private slots:
     void read_userConfig(std::string username);
     void read_roomConfig(std::string username);
 
-    QString getHashedPassword(QString password);
+    QString generateSalt();
+    QString getHashedPassword(QString salt, QString password);
 
     void on_loginButton_clicked();    
     void on_createAccButton_clicked();

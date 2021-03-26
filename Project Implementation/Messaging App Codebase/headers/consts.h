@@ -48,9 +48,9 @@ namespace Consts {
     }topics;
 
     struct hashData{
-        const std::string salt = "frog#!";
-        const std::string pepper = "!#rats";
+        const std::string pepper = "!#frog-_-rats#!";
     }hashData;
+
     struct navigation{
         const int
         loginPage = 0,
