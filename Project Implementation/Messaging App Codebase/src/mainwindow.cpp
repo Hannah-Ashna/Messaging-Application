@@ -10,6 +10,11 @@
 #include <boost/algorithm/string.hpp>
 #include <boost/lexical_cast.hpp>
 
+#include <crypto++/cryptlib.h>
+#include <crypto++/sha.h>
+#include <crypto++/hex.h>
+#include <crypto++/files.h>
+
 #include <algorithm>
 #include <fstream>
 #include <iostream>
@@ -535,11 +540,21 @@ void MainWindow::read_roomConfig(std::string roomName)
 }
 
 QString MainWindow::getHashedPassword(QString password){
-    std::hash<std::string> hasher;
+    CryptoPP::SHA256 hash;
 
-    std::string hashedPass = std::to_string(hasher(Consts::hashData.salt + password.toStdString().c_str() + Consts::hashData.pepper));
-    std::cout << hashedPass << std::endl;
-    return QString::fromStdString(hashedPass);
+    std::string saltedPassword = Consts::hashData.salt + password.toStdString().c_str() + Consts::hashData.pepper;
+
+    byte digest[hash.DIGESTSIZE];
+    hash.CalculateDigest(digest, (const byte*)saltedPassword.c_str(), saltedPassword.length());
+
+    CryptoPP::HexEncoder encoder;
+    std::string hashedPassword;
+
+    encoder.Attach(new CryptoPP::StringSink(hashedPassword));
+    encoder.Put(digest, sizeof(digest));
+    encoder.MessageEnd();
+
+    return QString::fromStdString(hashedPassword);
 }
 
 void MainWindow::on_loginButton_clicked()

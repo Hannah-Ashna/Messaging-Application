@@ -42,6 +42,8 @@ FORMS += \
 
 INCLUDEPATH += headers/
 
+LIBS += -L/usr/include/ -lcryptopp
+
 # Default rules for deployment.
 OBJECTS_DIR = $$_PRO_FILE_PWD_/bin/
 DESTDIR = $$_PRO_FILE_PWD_/bin/
