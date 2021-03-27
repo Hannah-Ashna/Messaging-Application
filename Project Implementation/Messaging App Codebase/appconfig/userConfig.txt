@@ -1,3 +1,0 @@
-user1 RoomA
-user2 RoomA
-user3

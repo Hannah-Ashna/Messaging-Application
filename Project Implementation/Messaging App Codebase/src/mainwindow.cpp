@@ -378,9 +378,9 @@ void MainWindow::on_addUserButton_clicked() {
 
                 else {
                     while (std::getline(configFile, line)) {
-                        boost::split(lineData, line, boost::is_any_of(" "));
+                        boost::split(lineData, line, boost::is_any_of(Consts::formatting.delimiterStr));
                         if (lineData[0] == userName.toStdString().c_str()) {
-                            line += " " + rooms[getCurrentRoomIndex()].getName();
+                            line += Consts::formatting.delimiterStr + rooms[getCurrentRoomIndex()].getName();
                             newConfig += line + "\n";
                         } else {
                             newConfig += line + "\n";
@@ -461,7 +461,7 @@ void MainWindow::updateFile(std::string filePath) {
                 line = users.at(i).getName();
                 if(!line.empty()){
                     for(int j = 0; j < (int)users.at(i).rooms.size(); j++){
-                        line += " " + users.at(i).rooms.at(j);
+                        line += Consts::formatting.delimiterStr + users.at(i).rooms.at(j);
                     }
                     file << line << std::endl;
                 }
@@ -471,7 +471,7 @@ void MainWindow::updateFile(std::string filePath) {
             for(int i = 0; i < (int)rooms.size(); i++){
                 line = rooms.at(i).getName();
                 for(int j = 0; j < (int)rooms.at(i).channels.size(); j++){
-                    line += " " + rooms.at(i).channels.at(j).getName();
+                    line += Consts::formatting.delimiterStr + rooms.at(i).channels.at(j).getName();
                 }
                 file << line << std::endl;
             }
@@ -480,7 +480,7 @@ void MainWindow::updateFile(std::string filePath) {
             for(int i = 0; i < (int)rooms.size(); i++){
                 line = rooms.at(i).getName();
                 for(int j = 0; j < (int)rooms.at(i).moderators.size(); j++){
-                    line += " " + rooms.at(i).moderators.at(j).getName();
+                    line += Consts::formatting.delimiterStr + rooms.at(i).moderators.at(j).getName();
                 }
                 file << line << std::endl;
             }
@@ -499,7 +499,7 @@ void MainWindow::read_userConfig(std::string username)
     if(!configFile){  }
     else {
         while (std::getline(configFile, line)) {
-            boost::split(roomData, line, boost::is_any_of(" "));
+            boost::split(roomData, line, boost::is_any_of(Consts::formatting.delimiterStr));
             if (roomData[0] == username) {
                 for(int i = 1; i < (int)roomData.size(); i++){
                     Room room;
@@ -525,7 +525,7 @@ void MainWindow::read_roomConfig(std::string roomName)
     roomConfigFile.open(roomFilepath, std::ios::in);
     if(roomConfigFile){
         while (std::getline(roomConfigFile, line)) {
-            boost::split(channelData, line, boost::is_any_of(" "));
+            boost::split(channelData, line, boost::is_any_of(Consts::formatting.delimiterStr));
             if (channelData[0] == roomName) {
                 for(int i = 1; i < (int)channelData.size(); i++){
                     Channel channel;
@@ -583,8 +583,8 @@ void MainWindow::on_loginButton_clicked()
 
         std::string line;
         while (std::getline(credentialsFile, line)) {
-            if (username.toStdString().c_str() == line.substr(0, line.find(" "))){
-                std::string saltPass = line.substr(line.find(" ") + 1);
+            if (username.toStdString().c_str() == line.substr(0, line.find(Consts::formatting.delimiterStr))){
+                std::string saltPass = line.substr(line.find(Consts::formatting.delimiterStr) + 1);
 
                 std::vector<std::string> splitPassword;
                 boost::split(splitPassword, saltPass, boost::is_any_of(":"));
@@ -603,7 +603,7 @@ void MainWindow::on_loginButton_clicked()
         }
         credentialsFile.close();
     }
-    // Sets up users vector - JAD
+    // Sets up vectors
     setupUsers();
     loadAdmin();
     updateContacts();
@@ -633,7 +633,7 @@ void MainWindow::on_signupButton_clicked()
     if (username != NULL && password != NULL) {
         std::fstream credentialsFile;
         credentialsFile.open(credFilepath, std::ios::app);
-        credentialsFile << username.toStdString().c_str() << " " << password.toStdString().c_str() << std::endl;
+        credentialsFile << username.toStdString().c_str() << Consts::formatting.delimiterStr << password.toStdString().c_str() << std::endl;
         credentialsFile.close();
 
         std::fstream usersFile;
@@ -661,7 +661,7 @@ void MainWindow::setupUsers(){
 
     while(!configFile.eof()){
         std::getline(configFile, line);
-        boost::split(roomData, line, boost::is_any_of(" "));
+        boost::split(roomData, line, boost::is_any_of(Consts::formatting.delimiterStr));
 
         if(!roomData[0].empty()) {
             User aUser;
@@ -684,7 +684,7 @@ void MainWindow::loadAdmin(){
 
     if(adminFile){
         while (std::getline(adminFile, line)) {
-            boost::split(adminData, line, boost::is_any_of(" "));
+            boost::split(adminData, line, boost::is_any_of(Consts::formatting.delimiterStr));
 
             for (int i = 0; i < (int)rooms.size(); i++){
                 if (rooms[i].getName() == adminData[0]){

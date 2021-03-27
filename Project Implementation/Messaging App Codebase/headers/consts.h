@@ -58,4 +58,10 @@ namespace Consts {
         mainPage = 2,
         settingsPage = 3;
     }navigation;
+
+    struct formatting{
+        const std::string delimiterStr = "|";
+
+        const char delimiterChar = '|';
+    }formatting;
 }
