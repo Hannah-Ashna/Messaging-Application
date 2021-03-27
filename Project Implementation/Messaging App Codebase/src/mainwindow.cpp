@@ -255,10 +255,9 @@ void MainWindow::on_deleteChannelButton_clicked() {
     if(ui->roomLabel->text() == Consts::dialogs.noChannel.c_str()) { notifyUser(Consts::errors.noChannelSelected); }
     else {
         int index = ui->channelDropDown->currentIndex();
-        Room room = rooms[getCurrentRoomIndex()];
 
         ui->channelDropDown->removeItem(index);
-        room.channels.erase(room.channels.begin() + index);
+        rooms[getCurrentRoomIndex()].channels.erase(rooms[getCurrentRoomIndex()].channels.begin() + index);
 
         updateFile(roomFilepath);
     }
