@@ -283,7 +283,7 @@
     <region xmi:type="uml:Region" xmi:id="_4iBjsGVzEeutZaOdWpjgww" name="Region1">
       <transition xmi:type="uml:Transition" xmi:id="_C_fBEGV0EeutZaOdWpjgww" name="Open login form" source="_7SmN4GVzEeutZaOdWpjgww" target="_-Ok20GVzEeutZaOdWpjgww"/>
       <transition xmi:type="uml:Transition" xmi:id="_mOXwsGV0EeutZaOdWpjgww" name="Enter credentials" source="_-Ok20GVzEeutZaOdWpjgww" target="_i6DgQGV0EeutZaOdWpjgww"/>
-      <transition xmi:type="uml:Transition" xmi:id="_qC2u8GV0EeutZaOdWpjgww" name="Check with database" source="_i6DgQGV0EeutZaOdWpjgww" target="_-LP3UGZ2EeuliecfMGHgCg"/>
+      <transition xmi:type="uml:Transition" xmi:id="_qC2u8GV0EeutZaOdWpjgww" name="Check with text file" source="_i6DgQGV0EeutZaOdWpjgww" target="_-LP3UGZ2EeuliecfMGHgCg"/>
       <transition xmi:type="uml:Transition" xmi:id="_uzrZoGV0EeutZaOdWpjgww" name="[rejected, try again]" source="_gPGV4GV0EeutZaOdWpjgww" target="_-Ok20GVzEeutZaOdWpjgww"/>
       <transition xmi:type="uml:Transition" xmi:id="_F_pJ8GV1EeutZaOdWpjgww" name="[accepted, load user space]" source="_gPGV4GV0EeutZaOdWpjgww" target="_X62nwGV0EeutZaOdWpjgww"/>
       <transition xmi:type="uml:Transition" xmi:id="_MO-aAGV1EeutZaOdWpjgww" source="_X62nwGV0EeutZaOdWpjgww" target="_KpvhkGV1EeutZaOdWpjgww"/>
@@ -297,9 +297,9 @@
       <subvertex xmi:type="uml:State" xmi:id="_gPGV4GV0EeutZaOdWpjgww" name="Authorise"/>
       <subvertex xmi:type="uml:State" xmi:id="_i6DgQGV0EeutZaOdWpjgww" name="Getting credentials"/>
       <subvertex xmi:type="uml:FinalState" xmi:id="_KpvhkGV1EeutZaOdWpjgww"/>
-      <subvertex xmi:type="uml:State" xmi:id="_-LP3UGZ2EeuliecfMGHgCg" name="Check Credentials Database Status"/>
+      <subvertex xmi:type="uml:State" xmi:id="_-LP3UGZ2EeuliecfMGHgCg" name="Check Credentials Text File Status"/>
       <subvertex xmi:type="uml:State" xmi:id="_TfppEGZ3EeuliecfMGHgCg" name="Notify User of Error"/>
-      <subvertex xmi:type="uml:State" xmi:id="_WPukAGZ3EeuliecfMGHgCg" name="Notify Database Admin"/>
+      <subvertex xmi:type="uml:State" xmi:id="_WPukAGZ3EeuliecfMGHgCg" name="Notify Application Admin"/>
     </region>
   </packagedElement>
   <packagedElement xmi:type="uml:StateMachine" xmi:id="_PQ12QGV6Eeuqt77GaTrtWA" name="Messaging Application">

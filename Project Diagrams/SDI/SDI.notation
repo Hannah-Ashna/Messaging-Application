@@ -3026,7 +3026,7 @@
       <element xmi:type="uml:Transition" href="SDI.uml#_VqLm8GZ3EeuliecfMGHgCg"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_VqS7smZ3EeuliecfMGHgCg" points="[680, 164, -643984, -643984]$[680, 220, -643984, -643984]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_VqjaYGZ3EeuliecfMGHgCg" id="(0.30927835051546393,1.0)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_VqjaYWZ3EeuliecfMGHgCg" id="(0.8888888888888888,0.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_VqjaYWZ3EeuliecfMGHgCg" id="(0.8108108108108109,0.0)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_Zp49wGZ3EeuliecfMGHgCg" type="Transition_Edge" source="_WP14wGZ3EeuliecfMGHgCg" target="_TfwWwGZ3EeuliecfMGHgCg">
       <children xmi:type="notation:DecorationNode" xmi:id="_Zp49w2Z3EeuliecfMGHgCg" type="Transition_NameLabel">
