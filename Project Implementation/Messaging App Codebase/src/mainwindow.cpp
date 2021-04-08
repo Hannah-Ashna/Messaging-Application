@@ -160,7 +160,6 @@ void MainWindow::on_addRoomButton_clicked(){
         updateFile(roomFilepath);
         updateFile(adminFilepath);
 
-        // JAD - BROKEN :/
         for(int i = 0; i < (int)users.size(); i++){
             if(users[i].getName() == currentUser.getName()){
                 users[i].subscribeToRoom(room.getName());

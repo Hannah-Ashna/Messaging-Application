@@ -6,6 +6,7 @@
 #include <QtTest>
 #include <QtWidgets>
 #include <QtCore>
+#include <fstream>
 
 class unitTests: public QObject
 {
@@ -17,8 +18,9 @@ private:
     QVector<QString> eventsToTest;
 
 private slots:
-    void guiTests_data();
-    void guiTests();
+    void Tests_data();
+    void Tests();
+    //void fileTests();
 
     // called before every test function
     void init();
