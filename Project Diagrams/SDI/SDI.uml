@@ -386,10 +386,10 @@
     <message xmi:type="uml:Message" xmi:id="_GJqKIGWMEeucceLrYqr4Cg" name="Incorrect credentials" messageSort="reply" receiveEvent="_GJqxMGWMEeucceLrYqr4Cg" sendEvent="_GJqKIWWMEeucceLrYqr4Cg"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Interaction" xmi:id="_4xS6gGWOEeuTDMjc4UjNkA" name="Messaging Application 1">
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_AWjbsGWPEeuTDMjc4UjNkA" name="Sender" coveredBy="_JW_hcGWPEeuTDMjc4UjNkA _JW-TUGWPEeuTDMjc4UjNkA _QZIHcGWPEeuTDMjc4UjNkA _JW_hcWWPEeuTDMjc4UjNkA _NF3I8GbZEeu7VKJwN3ccBA"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_BLSEQGWPEeuTDMjc4UjNkA" name="Application" coveredBy="_QZIHcWWPEeuTDMjc4UjNkA _Z2TzkWWPEeuTDMjc4UjNkA _K-nmkGWPEeuTDMjc4UjNkA _K-m_gGWPEeuTDMjc4UjNkA _c9YSMWWPEeuTDMjc4UjNkA _gOUegWWPEeuTDMjc4UjNkA _j5w1gGWPEeuTDMjc4UjNkA __bSQ0GWPEeuTDMjc4UjNkA _BvoSAWWQEeuTDMjc4UjNkA _TBvTAGWQEeuTDMjc4UjNkA _Ul83wGWQEeuTDMjc4UjNkA _WOQSUGWQEeuTDMjc4UjNkA _K-nmkWWPEeuTDMjc4UjNkA _NF3I8WbZEeu7VKJwN3ccBA _QGDjgWbZEeu7VKJwN3ccBA _oVfjAWbZEeu7VKJwN3ccBA"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_CwegcGWPEeuTDMjc4UjNkA" name="Recipient" coveredBy="_MfIXEGWPEeuTDMjc4UjNkA _MfHI8GWPEeuTDMjc4UjNkA _Z2TzkmWPEeuTDMjc4UjNkA _c9YSMGWPEeuTDMjc4UjNkA _gOUegGWPEeuTDMjc4UjNkA _MfIXEWWPEeuTDMjc4UjNkA _GitmgGWQEeuTDMjc4UjNkA _GisYYGWQEeuTDMjc4UjNkA _TBvTAWWQEeuTDMjc4UjNkA _Ul9e0GWQEeuTDMjc4UjNkA _WOQSUWWQEeuTDMjc4UjNkA _GitmgWWQEeuTDMjc4UjNkA _oVfjAmbZEeu7VKJwN3ccBA _yhXhImbZEeu7VKJwN3ccBA _9RgC4WbZEeu7VKJwN3ccBA"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_ErzksGWPEeuTDMjc4UjNkA" name="Text Tile" coveredBy="_N7F-wGWPEeuTDMjc4UjNkA _N7EwoGWPEeuTDMjc4UjNkA _j5w1gWWPEeuTDMjc4UjNkA __bSQ0WWPEeuTDMjc4UjNkA _BvoSAGWQEeuTDMjc4UjNkA _QGEKkGbZEeu7VKJwN3ccBA _yhXhIWbZEeu7VKJwN3ccBA _9RgC4mbZEeu7VKJwN3ccBA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_AWjbsGWPEeuTDMjc4UjNkA" name="Sender (Client)" coveredBy="_JW_hcGWPEeuTDMjc4UjNkA _JW-TUGWPEeuTDMjc4UjNkA _QZIHcGWPEeuTDMjc4UjNkA _JW_hcWWPEeuTDMjc4UjNkA _NF3I8GbZEeu7VKJwN3ccBA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_BLSEQGWPEeuTDMjc4UjNkA" name="MQTT Client" coveredBy="_QZIHcWWPEeuTDMjc4UjNkA _Z2TzkWWPEeuTDMjc4UjNkA _K-nmkGWPEeuTDMjc4UjNkA _K-m_gGWPEeuTDMjc4UjNkA _c9YSMWWPEeuTDMjc4UjNkA _gOUegWWPEeuTDMjc4UjNkA _j5w1gGWPEeuTDMjc4UjNkA __bSQ0GWPEeuTDMjc4UjNkA _BvoSAWWQEeuTDMjc4UjNkA _TBvTAGWQEeuTDMjc4UjNkA _Ul83wGWQEeuTDMjc4UjNkA _WOQSUGWQEeuTDMjc4UjNkA _K-nmkWWPEeuTDMjc4UjNkA _NF3I8WbZEeu7VKJwN3ccBA _QGDjgWbZEeu7VKJwN3ccBA _oVfjAWbZEeu7VKJwN3ccBA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_CwegcGWPEeuTDMjc4UjNkA" name="Recipient (Client)" coveredBy="_MfIXEGWPEeuTDMjc4UjNkA _MfHI8GWPEeuTDMjc4UjNkA _Z2TzkmWPEeuTDMjc4UjNkA _c9YSMGWPEeuTDMjc4UjNkA _gOUegGWPEeuTDMjc4UjNkA _MfIXEWWPEeuTDMjc4UjNkA _GitmgGWQEeuTDMjc4UjNkA _GisYYGWQEeuTDMjc4UjNkA _TBvTAWWQEeuTDMjc4UjNkA _Ul9e0GWQEeuTDMjc4UjNkA _WOQSUWWQEeuTDMjc4UjNkA _GitmgWWQEeuTDMjc4UjNkA _oVfjAmbZEeu7VKJwN3ccBA _yhXhImbZEeu7VKJwN3ccBA _9RgC4WbZEeu7VKJwN3ccBA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_ErzksGWPEeuTDMjc4UjNkA" name="Broker" coveredBy="_N7F-wGWPEeuTDMjc4UjNkA _N7EwoGWPEeuTDMjc4UjNkA _j5w1gWWPEeuTDMjc4UjNkA __bSQ0WWPEeuTDMjc4UjNkA _BvoSAGWQEeuTDMjc4UjNkA _QGEKkGbZEeu7VKJwN3ccBA _yhXhIWbZEeu7VKJwN3ccBA _9RgC4mbZEeu7VKJwN3ccBA"/>
     <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_JW_hcGWPEeuTDMjc4UjNkA" name="ActionExecutionSpecification5Start" covered="_AWjbsGWPEeuTDMjc4UjNkA" execution="_JW-TUGWPEeuTDMjc4UjNkA"/>
     <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_JW-TUGWPEeuTDMjc4UjNkA" name="ActionExecutionSpecification5" covered="_AWjbsGWPEeuTDMjc4UjNkA" finish="_JW_hcWWPEeuTDMjc4UjNkA" start="_JW_hcGWPEeuTDMjc4UjNkA"/>
     <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_MfIXEGWPEeuTDMjc4UjNkA" name="ActionExecutionSpecification11Start" covered="_CwegcGWPEeuTDMjc4UjNkA" execution="_MfHI8GWPEeuTDMjc4UjNkA"/>
@@ -899,7 +899,32 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Artifact" xmi:id="_VwAPgJhmEeuKrrf0O_1gBA" name="Text File"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_aTSNcJhmEeuKrrf0O_1gBA" client="_t0j7MGiDEeuloLrYI-XNfQ" supplier="_VwAPgJhmEeuKrrf0O_1gBA"/>
-  <packagedElement xmi:type="uml:Interaction" xmi:id="_tt79YJhoEeu72NR3p-8IZA" name="Interaction86"/>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_tt79YJhoEeu72NR3p-8IZA" name="New Channel">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="__5Z2AZhtEeu72NR3p-8IZA" name="" type="_tt79YJhoEeu72NR3p-8IZA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_XdtnIJhpEeu72NR3p-8IZA" name="Client" coveredBy="_h70kwJhpEeu72NR3p-8IZA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_ZGAaoJhpEeu72NR3p-8IZA" name="MQTT Broker" coveredBy="_kprSIJhpEeu72NR3p-8IZA _qgXYsJhpEeu72NR3p-8IZA _6bk4MJhpEeu72NR3p-8IZA _-3AhsZhpEeu72NR3p-8IZA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_azl90JhpEeu72NR3p-8IZA" name="MQTT Client" coveredBy="_h71L0JhpEeu72NR3p-8IZA _kpqrEJhpEeu72NR3p-8IZA _qgXYsZhpEeu72NR3p-8IZA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_xx5FkJhpEeu72NR3p-8IZA" name="Room" coveredBy="_6bk4MZhpEeu72NR3p-8IZA _-3AhsJhpEeu72NR3p-8IZA _b98boZhqEeu72NR3p-8IZA _b98bophqEeu72NR3p-8IZA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="__5Z2AJhtEeu72NR3p-8IZA" name="" represents="__5Z2AZhtEeu72NR3p-8IZA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_h70kwJhpEeu72NR3p-8IZA" name="Message4SendEvent" covered="_XdtnIJhpEeu72NR3p-8IZA" message="_h7yIgJhpEeu72NR3p-8IZA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_h71L0JhpEeu72NR3p-8IZA" name="Message4ReceiveEvent" covered="_azl90JhpEeu72NR3p-8IZA" message="_h7yIgJhpEeu72NR3p-8IZA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kpqrEJhpEeu72NR3p-8IZA" name="Message7SendEvent" covered="_azl90JhpEeu72NR3p-8IZA" message="_kpqEAJhpEeu72NR3p-8IZA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kprSIJhpEeu72NR3p-8IZA" name="Message7ReceiveEvent" covered="_ZGAaoJhpEeu72NR3p-8IZA" message="_kpqEAJhpEeu72NR3p-8IZA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_qgXYsJhpEeu72NR3p-8IZA" name="Message10SendEvent" covered="_ZGAaoJhpEeu72NR3p-8IZA" message="_qgWxoJhpEeu72NR3p-8IZA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_qgXYsZhpEeu72NR3p-8IZA" name="Message10ReceiveEvent" covered="_azl90JhpEeu72NR3p-8IZA" message="_qgWxoJhpEeu72NR3p-8IZA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_6bk4MJhpEeu72NR3p-8IZA" name="Message14SendEvent" covered="_ZGAaoJhpEeu72NR3p-8IZA" message="_6bkRIJhpEeu72NR3p-8IZA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_6bk4MZhpEeu72NR3p-8IZA" name="Message14ReceiveEvent" covered="_xx5FkJhpEeu72NR3p-8IZA" message="_6bkRIJhpEeu72NR3p-8IZA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_-3AhsJhpEeu72NR3p-8IZA" name="Message17SendEvent" covered="_xx5FkJhpEeu72NR3p-8IZA" message="_-2_6oJhpEeu72NR3p-8IZA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_-3AhsZhpEeu72NR3p-8IZA" name="Message17ReceiveEvent" covered="_ZGAaoJhpEeu72NR3p-8IZA" message="_-2_6oJhpEeu72NR3p-8IZA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_b98boZhqEeu72NR3p-8IZA" name="Message20SendEvent" covered="_xx5FkJhpEeu72NR3p-8IZA" message="_b98boJhqEeu72NR3p-8IZA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_b98bophqEeu72NR3p-8IZA" name="Message20ReceiveEvent" covered="_xx5FkJhpEeu72NR3p-8IZA" message="_b98boJhqEeu72NR3p-8IZA"/>
+    <message xmi:type="uml:Message" xmi:id="_h7yIgJhpEeu72NR3p-8IZA" name="1.1 Make New Room" messageSort="asynchCall" receiveEvent="_h71L0JhpEeu72NR3p-8IZA" sendEvent="_h70kwJhpEeu72NR3p-8IZA"/>
+    <message xmi:type="uml:Message" xmi:id="_kpqEAJhpEeu72NR3p-8IZA" name="1.2 New Room Request" messageSort="asynchCall" receiveEvent="_kprSIJhpEeu72NR3p-8IZA" sendEvent="_kpqrEJhpEeu72NR3p-8IZA"/>
+    <message xmi:type="uml:Message" xmi:id="_qgWxoJhpEeu72NR3p-8IZA" name="Confirmation of room Creation" messageSort="asynchCall" receiveEvent="_qgXYsZhpEeu72NR3p-8IZA" sendEvent="_qgXYsJhpEeu72NR3p-8IZA"/>
+    <message xmi:type="uml:Message" xmi:id="_6bkRIJhpEeu72NR3p-8IZA" name="1.4.1 Create new room" messageSort="asynchCall" receiveEvent="_6bk4MZhpEeu72NR3p-8IZA" sendEvent="_6bk4MJhpEeu72NR3p-8IZA"/>
+    <message xmi:type="uml:Message" xmi:id="_-2_6oJhpEeu72NR3p-8IZA" name="1.4.2 Confimation" messageSort="asynchCall" receiveEvent="_-3AhsZhpEeu72NR3p-8IZA" sendEvent="_-3AhsJhpEeu72NR3p-8IZA"/>
+    <message xmi:type="uml:Message" xmi:id="_b98boJhqEeu72NR3p-8IZA" name="1.4.1.1 Make client admin " messageSort="asynchCall" receiveEvent="_b98bophqEeu72NR3p-8IZA" sendEvent="_b98boZhqEeu72NR3p-8IZA"/>
+  </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0GpdkF5tEeuoDf1G-rjmnQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0Gr50F5tEeuoDf1G-rjmnQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
