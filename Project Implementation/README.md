@@ -1,5 +1,5 @@
 # Contribution Guide
-Prior to making a contribution to this repository, please first discuss the changes you intend to make via a meeting, text thread or issue 
+Before contributing to this repository, please first discuss the changes you intend to make via a meeting, text thread or issue 
 with the other team members/owners of this repository.
 As outlined below, please note we have a code of conduct. Do try to ensure that you adhere to it during all your interactions with this project.
 
