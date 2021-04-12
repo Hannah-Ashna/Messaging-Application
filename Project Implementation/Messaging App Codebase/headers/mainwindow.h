@@ -33,6 +33,8 @@ public:
     ~MainWindow();
 
 private slots:
+    void timeout(const boost::system::error_code& /*e*/, boost::asio::steady_timer* t, int* count);
+
     void brokerDisconnected();
     void setClientPort(int p);
     void on_buttonConnect_clicked();
@@ -59,6 +61,9 @@ private slots:
 
     void on_addUserButton_clicked();
     void on_removeUserButton_clicked();
+
+    void on_addModButton_clicked();
+    void on_removeModButton_clicked();
 
     void on_settingsButton_clicked();
     void on_backButton_clicked();

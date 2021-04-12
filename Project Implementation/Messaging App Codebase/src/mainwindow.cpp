@@ -9,6 +9,7 @@
 
 #include <boost/algorithm/string.hpp>
 #include <boost/lexical_cast.hpp>
+#include <boost/asio.hpp>
 
 #include <crypto++/cryptlib.h>
 #include <crypto++/sha.h>
@@ -28,8 +29,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
     ui->stackedWidget->setCurrentIndex(Consts::navigation.loginPage);
+
+    boost::asio::steady_timer t(io, boost::asio::chrono::seconds(15));
+    t.async_wait(&MainWindow::timeout);
 
     /*!
       Create new instance of QMqttClient and set host and port values
@@ -89,6 +92,10 @@ void MainWindow::setClientPort(int p)
         Set client port
     */
     m_client->setPort(p);
+}
+
+void MainWindow::timeout(const boost::system::error_code&/*e*/, boost::asio::steady_timer* t, int* count){
+    ui->stackedWidget->setCurrentIndex(Consts::navigation.loginPage);
 }
 
 void MainWindow::on_refreshButton_clicked() {
@@ -363,7 +370,7 @@ void MainWindow::on_addUserButton_clicked() {
         if (ok) {
             if (userName.isEmpty()) { notifyUser(Consts::errors.emptyUser); }
             else if (!userFound) { notifyUser(Consts::errors.userNotFound); }
-            else if(!userSubbed) { notifyUser(Consts::errors.userSubscribed);}
+            else if (!userSubbed) { notifyUser(Consts::errors.userSubscribed);}
             else {
                 std::fstream configFile;
                 std::vector<std::string> lineData;
@@ -423,13 +430,82 @@ void MainWindow::on_removeUserButton_clicked() {
             updateFile(userFilepath);
         } else {
             if(!userFound) notifyUser(Consts::errors.userNotFound);
-
             if(userName.isEmpty()) notifyUser(Consts::errors.emptyUser);
 
         }
     }
 
     catch (...){
+        notifyUser(Consts::errors.noRoomSelected);
+    }
+}
+
+void MainWindow::on_addModButton_clicked() {
+    bool ok;
+    bool userFound = false;
+    bool userMod = false;
+
+    try {
+        QString userName = QInputDialog::getText(this, tr(Consts::dialogs.enterUsername.c_str()), tr(Consts::buttons.username.c_str()),QLineEdit::Normal, "",&ok);
+
+        for (int i = 0; i < (int)users.size(); i++) {
+            if(users.at(i).getName() == userName.toStdString().c_str()){
+                userFound = true;
+            }
+        }
+        for(int i = 0; i < (int)rooms[getCurrentRoomIndex()].moderators.size(); i++){
+            if(rooms[getCurrentRoomIndex()].moderators.at(i).getName() == userName.toStdString().c_str()){
+                userMod = true;
+            }
+        }
+
+        if(ok){
+            if (userName.isEmpty()) { notifyUser(Consts::errors.emptyUser); }
+            else if (!userFound) { notifyUser(Consts::errors.userNotFound); }
+            else if (userMod) { notifyUser(Consts::errors.alreadyMod);}
+            else{
+                Moderator newMod;
+                newMod.setName(userName.toStdString().c_str());
+                rooms[getCurrentRoomIndex()].addMod(newMod);
+
+                updateFile(adminFilepath);
+            }
+        }
+    }
+    catch(...){
+        notifyUser(Consts::errors.noRoomSelected);
+    }
+}
+
+void MainWindow::on_removeModButton_clicked() {
+    bool ok;
+    bool userFound = false;
+    bool userMod = false;
+
+    try {
+        QString userName = QInputDialog::getText(this, tr(Consts::dialogs.enterUsername.c_str()), tr(Consts::buttons.username.c_str()),QLineEdit::Normal, "",&ok);
+
+        for (int i = 0; i < (int)users.size(); i++) {
+            if(users.at(i).getName() == userName.toStdString().c_str()){
+                userFound = true;
+            }
+        }
+        for(int i = 0; i < (int)rooms[getCurrentRoomIndex()].moderators.size(); i++){
+            if(rooms[getCurrentRoomIndex()].moderators.at(i).getName() == userName.toStdString().c_str()){
+                userMod = true;
+            }
+        }
+
+        if(ok && userFound && userMod && !userName.isEmpty()) {
+            rooms[getCurrentRoomIndex()].removeMod(userName.toStdString().c_str());
+            updateFile(adminFilepath);
+        } else {
+            if(!userFound) notifyUser(Consts::errors.userNotFound);
+            if(!userMod) notifyUser(Consts::errors.userNotMod);
+            if(userName.isEmpty()) notifyUser(Consts::errors.emptyUser);
+        }
+    }
+    catch(...){
         notifyUser(Consts::errors.noRoomSelected);
     }
 }
@@ -480,6 +556,7 @@ void MainWindow::updateFile(std::string filePath) {
                 line = rooms.at(i).getName();
                 for(int j = 0; j < (int)rooms.at(i).moderators.size(); j++){
                     line += Consts::formatting.delimiterStr + rooms.at(i).moderators.at(j).getName();
+                    std::cout << line;
                 }
                 file << line << std::endl;
             }
@@ -595,6 +672,9 @@ void MainWindow::on_loginButton_clicked()
                     currentUser.setName(username.toStdString().c_str());
                     read_userConfig(username.toStdString().c_str());
                     ui->stackedWidget->setCurrentIndex(Consts::navigation.mainPage);
+
+                    io.run();
+
                 } else {
                     notifyUser(Consts::errors.invalidCreds);
                 }

@@ -20,7 +20,9 @@ namespace Consts {
         invalidCreds = "Login Credentials Invalid",
         emptyFields = "Error: Fields must not be empty",
         somethingWrong = "Something went wrong!",
-        missingFile = "Error: Missing file";
+        missingFile = "Error: Missing file",
+        alreadyMod = "Error: User Already Mod",
+        userNotMod = "Error: User Not Mod";
     }errors;
 
     struct buttons{
