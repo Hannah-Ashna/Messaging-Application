@@ -10,6 +10,12 @@
 #include <QMqttClient>
 #include <QtCore/QString>
 
+#include <QTimer>
+
+#include <boost/algorithm/string.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/asio.hpp>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -83,8 +89,12 @@ private slots:
     void setupUsers(); // Added by JAD
     void loadAdmin();
 
+    void MyTimerSlot();
+
 private:
     Ui::MainWindow *ui;
     QMqttClient *m_client;
+
+    QTimer *timer;
 };
 #endif // MAINWINDOW_H

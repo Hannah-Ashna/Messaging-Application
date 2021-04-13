@@ -6,10 +6,7 @@
 #include <QtMqtt/QMqttClient>
 #include <QtWidgets/QMessageBox>
 #include <QInputDialog>
-
-#include <boost/algorithm/string.hpp>
-#include <boost/lexical_cast.hpp>
-#include <boost/asio.hpp>
+#include <QDebug>
 
 #include <crypto++/cryptlib.h>
 #include <crypto++/sha.h>
@@ -31,8 +28,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(Consts::navigation.loginPage);
 
-    boost::asio::steady_timer t(io, boost::asio::chrono::seconds(15));
-    t.async_wait(&MainWindow::timeout);
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(MyTimerSlot())); // MyTimerSlot is called on timeout
 
     /*!
       Create new instance of QMqttClient and set host and port values
@@ -673,7 +670,7 @@ void MainWindow::on_loginButton_clicked()
                     read_userConfig(username.toStdString().c_str());
                     ui->stackedWidget->setCurrentIndex(Consts::navigation.mainPage);
 
-                    io.run();
+                    timer->start(1000);
 
                 } else {
                     notifyUser(Consts::errors.invalidCreds);
@@ -781,4 +778,8 @@ void MainWindow::loadAdmin(){
         }
         adminFile.close();
     }
+}
+
+void MainWindow::MyTimerSlot(){
+    qDebug() << "Timer Test";
 }

@@ -14,13 +14,13 @@ class unitTests: public QObject
 public:
     void testApp();
 
-private:
-    QVector<QString> eventsToTest;
 
 private slots:
-    void Tests_data();
-    void Tests();
-    //void fileTests();
+    void guiTests_data();
+    void guiTests();
+
+    void fileTests_data();
+    void fileTests();
 
     // called before every test function
     void init();

@@ -1,2 +1,3 @@
-uwu|Room1
-owo|Room1
+Admin|Room X
+Mod|Room X
+User
