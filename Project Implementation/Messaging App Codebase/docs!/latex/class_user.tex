@@ -1,0 +1,173 @@
+\hypertarget{class_user}{}\doxysection{User Class Reference}
+\label{class_user}\index{User@{User}}
+
+
+{\ttfamily \#include $<$user.\+h$>$}
+
+
+
+Inheritance diagram for User\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=147pt]{class_user__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_user_a4a0137053e591fbb79d9057dd7d2283d}{User}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_user}{User}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_a76872b7bd24a7ce356202dd551d039e5}{set\+Name}} (std\+::string username)
+\item 
+std\+::string \mbox{\hyperlink{class_user_a33d343edda32a72bf28d41b22b0de1bd}{get\+Name}} ()
+\item 
+bool \mbox{\hyperlink{class_user_a028dbd10f8826ee83544504a02e2b47f}{subscribe\+To\+Room}} (std\+::string room)
+\item 
+void \mbox{\hyperlink{class_user_a0b9a85a80a19b8d42ac1f3d9cd61c264}{unsubscribe\+From\+Room}} (std\+::string room)
+\begin{DoxyCompactList}\small\item\em unsubscribes from room \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_a98ab2f530a12a7bfbd9884eea8f6d1a2}{set\+Online\+Status}} (bool \mbox{\hyperlink{class_user_a2db7d41bc9c903b617e9337853043508}{online}})
+\item 
+bool \mbox{\hyperlink{class_user_aa45350b220bcbd4280ece96825766796}{get\+Online\+Status}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_user_a853f11d24e39e3f1e599b04d23cf7b6f}{rooms}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_user_a23edbe719dce1faa2f50f858c211f652}{user\+ID}}
+\item 
+std\+::string \mbox{\hyperlink{class_user_a085d8d69282b6298964eab8351584536}{name}}
+\item 
+std\+::string \mbox{\hyperlink{class_user_a2153cf3464c6b37616c8920609a41a2d}{status}}
+\item 
+bool \mbox{\hyperlink{class_user_a2db7d41bc9c903b617e9337853043508}{online}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_user_a4a0137053e591fbb79d9057dd7d2283d}\label{class_user_a4a0137053e591fbb79d9057dd7d2283d}} 
+\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\doxysubsubsection{\texorpdfstring{User()}{User()}}
+{\footnotesize\ttfamily User\+::\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_user}{User}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_user_a33d343edda32a72bf28d41b22b0de1bd}\label{class_user_a33d343edda32a72bf28d41b22b0de1bd}} 
+\index{User@{User}!getName@{getName}}
+\index{getName@{getName}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string User\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the Users name 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a33d343edda32a72bf28d41b22b0de1bd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_user_aa45350b220bcbd4280ece96825766796}\label{class_user_aa45350b220bcbd4280ece96825766796}} 
+\index{User@{User}!getOnlineStatus@{getOnlineStatus}}
+\index{getOnlineStatus@{getOnlineStatus}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getOnlineStatus()}{getOnlineStatus()}}
+{\footnotesize\ttfamily bool User\+::get\+Online\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns users online status online\+:true offline\+:false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_user_a76872b7bd24a7ce356202dd551d039e5}\label{class_user_a76872b7bd24a7ce356202dd551d039e5}} 
+\index{User@{User}!setName@{setName}}
+\index{setName@{setName}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void User\+::set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{username }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a76872b7bd24a7ce356202dd551d039e5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_user_a98ab2f530a12a7bfbd9884eea8f6d1a2}\label{class_user_a98ab2f530a12a7bfbd9884eea8f6d1a2}} 
+\index{User@{User}!setOnlineStatus@{setOnlineStatus}}
+\index{setOnlineStatus@{setOnlineStatus}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setOnlineStatus()}{setOnlineStatus()}}
+{\footnotesize\ttfamily void User\+::set\+Online\+Status (\begin{DoxyParamCaption}\item[{bool}]{online }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em online} & status to be set online\+:true offline\+:false \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_user_a028dbd10f8826ee83544504a02e2b47f}\label{class_user_a028dbd10f8826ee83544504a02e2b47f}} 
+\index{User@{User}!subscribeToRoom@{subscribeToRoom}}
+\index{subscribeToRoom@{subscribeToRoom}!User@{User}}
+\doxysubsubsection{\texorpdfstring{subscribeToRoom()}{subscribeToRoom()}}
+{\footnotesize\ttfamily bool User\+::subscribe\+To\+Room (\begin{DoxyParamCaption}\item[{std\+::string}]{room }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_user_a0b9a85a80a19b8d42ac1f3d9cd61c264}\label{class_user_a0b9a85a80a19b8d42ac1f3d9cd61c264}} 
+\index{User@{User}!unsubscribeFromRoom@{unsubscribeFromRoom}}
+\index{unsubscribeFromRoom@{unsubscribeFromRoom}!User@{User}}
+\doxysubsubsection{\texorpdfstring{unsubscribeFromRoom()}{unsubscribeFromRoom()}}
+{\footnotesize\ttfamily void User\+::unsubscribe\+From\+Room (\begin{DoxyParamCaption}\item[{std\+::string}]{room }\end{DoxyParamCaption})}
+
+
+
+unsubscribes from room 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room} & name to be unsubscribed from \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_user_a085d8d69282b6298964eab8351584536}\label{class_user_a085d8d69282b6298964eab8351584536}} 
+\index{User@{User}!name@{name}}
+\index{name@{name}!User@{User}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string User\+::name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_user_a2db7d41bc9c903b617e9337853043508}\label{class_user_a2db7d41bc9c903b617e9337853043508}} 
+\index{User@{User}!online@{online}}
+\index{online@{online}!User@{User}}
+\doxysubsubsection{\texorpdfstring{online}{online}}
+{\footnotesize\ttfamily bool User\+::online = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_user_a853f11d24e39e3f1e599b04d23cf7b6f}\label{class_user_a853f11d24e39e3f1e599b04d23cf7b6f}} 
+\index{User@{User}!rooms@{rooms}}
+\index{rooms@{rooms}!User@{User}}
+\doxysubsubsection{\texorpdfstring{rooms}{rooms}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ User\+::rooms}
+
+\mbox{\Hypertarget{class_user_a2153cf3464c6b37616c8920609a41a2d}\label{class_user_a2153cf3464c6b37616c8920609a41a2d}} 
+\index{User@{User}!status@{status}}
+\index{status@{status}!User@{User}}
+\doxysubsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily std\+::string User\+::status\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_user_a23edbe719dce1faa2f50f858c211f652}\label{class_user_a23edbe719dce1faa2f50f858c211f652}} 
+\index{User@{User}!userID@{userID}}
+\index{userID@{userID}!User@{User}}
+\doxysubsubsection{\texorpdfstring{userID}{userID}}
+{\footnotesize\ttfamily std\+::string User\+::user\+ID\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+headers/\mbox{\hyperlink{user_8h}{user.\+h}}\item 
+src/\mbox{\hyperlink{user_8cpp}{user.\+cpp}}\end{DoxyCompactItemize}

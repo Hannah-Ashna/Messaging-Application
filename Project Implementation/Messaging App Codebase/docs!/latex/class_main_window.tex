@@ -1,0 +1,121 @@
+\hypertarget{class_main_window}{}\doxysection{Main\+Window Class Reference}
+\label{class_main_window}\index{MainWindow@{MainWindow}}
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+
+
+Inheritance diagram for Main\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{class_main_window__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Main\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{class_main_window__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (Q\+Widget $\ast$parent=nullptr)
+\item 
+\mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \mbox{\hyperlink{class_main_window_a58df240458a8c2c3450776e78f9d524c}{cred\+Filepath}} = \char`\"{}../appconfig/credentials.\+txt\char`\"{}
+\item 
+const std\+::string \mbox{\hyperlink{class_main_window_a7fb2925e983e5c46dbe413ccefbb2592}{user\+Filepath}} = \char`\"{}../appconfig/user\+Config.\+txt\char`\"{}
+\item 
+const std\+::string \mbox{\hyperlink{class_main_window_a3b893646bbb57ad06e67e922272ea7b8}{room\+Filepath}} = \char`\"{}../appconfig/room\+Config.\+txt\char`\"{}
+\item 
+const std\+::string \mbox{\hyperlink{class_main_window_a7761d378f33682d57c2f0770c6010ccf}{admin\+Filepath}} = \char`\"{}../appconfig/room\+Admin\+Config.\+txt\char`\"{}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_room}{Room}} $>$ \mbox{\hyperlink{class_main_window_a4940e63be8a5c6018f4a8e82bc2be01a}{rooms}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_user}{User}} $>$ \mbox{\hyperlink{class_main_window_aaffea07af6d0a7f0f1c3325f7ba3b0bb}{users}}
+\item 
+\mbox{\hyperlink{class_user}{User}} \mbox{\hyperlink{class_main_window_afdc4a561ae5eaf60bf988c0ff052ed7d}{current\+User}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_main_window_a996c5a2b6f77944776856f08ec30858d}\label{class_main_window_a996c5a2b6f77944776856f08ec30858d}} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Create new instance of Q\+Mqtt\+Client and set host and port values When C\+Lient is disconnected call broker\+Disconnect() When a message is recieved, create the format \textquotesingle{}Q\+Date + \char`\"{}\+:\char`\"{} + string\textquotesingle{} and send to message logHere is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a996c5a2b6f77944776856f08ec30858d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}} 
+\index{MainWindow@{MainWindow}!````~MainWindow@{$\sim$MainWindow}}
+\index{````~MainWindow@{$\sim$MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$MainWindow()}{~MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::$\sim$\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_main_window_a7761d378f33682d57c2f0770c6010ccf}\label{class_main_window_a7761d378f33682d57c2f0770c6010ccf}} 
+\index{MainWindow@{MainWindow}!adminFilepath@{adminFilepath}}
+\index{adminFilepath@{adminFilepath}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{adminFilepath}{adminFilepath}}
+{\footnotesize\ttfamily const std\+::string Main\+Window\+::admin\+Filepath = \char`\"{}../appconfig/room\+Admin\+Config.\+txt\char`\"{}}
+
+\mbox{\Hypertarget{class_main_window_a58df240458a8c2c3450776e78f9d524c}\label{class_main_window_a58df240458a8c2c3450776e78f9d524c}} 
+\index{MainWindow@{MainWindow}!credFilepath@{credFilepath}}
+\index{credFilepath@{credFilepath}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{credFilepath}{credFilepath}}
+{\footnotesize\ttfamily const std\+::string Main\+Window\+::cred\+Filepath = \char`\"{}../appconfig/credentials.\+txt\char`\"{}}
+
+\mbox{\Hypertarget{class_main_window_afdc4a561ae5eaf60bf988c0ff052ed7d}\label{class_main_window_afdc4a561ae5eaf60bf988c0ff052ed7d}} 
+\index{MainWindow@{MainWindow}!currentUser@{currentUser}}
+\index{currentUser@{currentUser}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{currentUser}{currentUser}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_user}{User}} Main\+Window\+::current\+User}
+
+\mbox{\Hypertarget{class_main_window_a3b893646bbb57ad06e67e922272ea7b8}\label{class_main_window_a3b893646bbb57ad06e67e922272ea7b8}} 
+\index{MainWindow@{MainWindow}!roomFilepath@{roomFilepath}}
+\index{roomFilepath@{roomFilepath}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{roomFilepath}{roomFilepath}}
+{\footnotesize\ttfamily const std\+::string Main\+Window\+::room\+Filepath = \char`\"{}../appconfig/room\+Config.\+txt\char`\"{}}
+
+\mbox{\Hypertarget{class_main_window_a4940e63be8a5c6018f4a8e82bc2be01a}\label{class_main_window_a4940e63be8a5c6018f4a8e82bc2be01a}} 
+\index{MainWindow@{MainWindow}!rooms@{rooms}}
+\index{rooms@{rooms}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{rooms}{rooms}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_room}{Room}}$>$ Main\+Window\+::rooms}
+
+\mbox{\Hypertarget{class_main_window_a7fb2925e983e5c46dbe413ccefbb2592}\label{class_main_window_a7fb2925e983e5c46dbe413ccefbb2592}} 
+\index{MainWindow@{MainWindow}!userFilepath@{userFilepath}}
+\index{userFilepath@{userFilepath}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{userFilepath}{userFilepath}}
+{\footnotesize\ttfamily const std\+::string Main\+Window\+::user\+Filepath = \char`\"{}../appconfig/user\+Config.\+txt\char`\"{}}
+
+\mbox{\Hypertarget{class_main_window_aaffea07af6d0a7f0f1c3325f7ba3b0bb}\label{class_main_window_aaffea07af6d0a7f0f1c3325f7ba3b0bb}} 
+\index{MainWindow@{MainWindow}!users@{users}}
+\index{users@{users}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{users}{users}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_user}{User}}$>$ Main\+Window\+::users}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+headers/\mbox{\hyperlink{mainwindow_8h}{mainwindow.\+h}}\item 
+src/\mbox{\hyperlink{mainwindow_8cpp}{mainwindow.\+cpp}}\end{DoxyCompactItemize}

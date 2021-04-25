@@ -27,7 +27,7 @@ bool User::subscribeToRoom(std::string room)
 void User::unsubscribeFromRoom(std::string room)
 //! unsubscribes from room
 /*!
- * \param room name to be unsubscribed from
+ * \param room the name to be unsubscribed from
  */
 {
     for(int i = 0; i < (int)rooms.size(); i++){

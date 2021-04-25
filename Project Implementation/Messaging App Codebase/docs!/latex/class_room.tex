@@ -1,0 +1,180 @@
+\hypertarget{class_room}{}\doxysection{Room Class Reference}
+\label{class_room}\index{Room@{Room}}
+
+
+{\ttfamily \#include $<$room.\+h$>$}
+
+
+
+Collaboration diagram for Room\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{class_room__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_room_ac6ef93a7d9c3e1d624e025058d5f16ff}{Room}} ()
+\item 
+void \mbox{\hyperlink{class_room_a5f47aab0e0b713b6aa8e72ae17456cf1}{set\+Name}} (std\+::string the\+Name)
+\item 
+std\+::string \mbox{\hyperlink{class_room_ae6a3be5861b657a2cbbada8e67ab7fde}{get\+Name}} ()
+\item 
+void \mbox{\hyperlink{class_room_af68d6a1e8becd3c8ab3d6636056d3f31}{set\+Room\+ID}} (int id)
+\item 
+int \mbox{\hyperlink{class_room_a682384ad7e6f2d231cfc4135dc6df56a}{get\+Room\+ID}} ()
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_room_a6a3bc6be92d7020bd7f867a571b91efc}{get\+Members}} ()
+\item 
+void \mbox{\hyperlink{class_room_a6c1817ffa7c1f3ea3d0385400410bde3}{add\+Members}} (std\+::string member)
+\item 
+void \mbox{\hyperlink{class_room_a67fd0a26b97c14cb973c63d2e4e69f39}{remove\+Member}} (std\+::string member)
+\item 
+void \mbox{\hyperlink{class_room_a1400bfd75ce38d9cdf9af239978e43e4}{add\+Mod}} (\mbox{\hyperlink{class_moderator}{Moderator}} mod)
+\item 
+void \mbox{\hyperlink{class_room_af03e0775c6c30432f034ec78ed5cee49}{remove\+Mod}} (std\+::string mod\+Name)
+\item 
+void \mbox{\hyperlink{class_room_aaea1d1e9449d0568a759fc5adea85085}{add\+Channel}} (\mbox{\hyperlink{class_channel}{Channel}} channel)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_channel}{Channel}} $>$ \mbox{\hyperlink{class_room_ada70da72f3cd9e6a51eb07c47ba52a33}{get\+Channel\+List}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_room_a72dc5f84fd63eb54d53bc9d992ca6dcb}{name}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_channel}{Channel}} $>$ \mbox{\hyperlink{class_room_a6905ddb077124145dbef7392a9a56fea}{channels}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_room_a3b948c93a63281efee179f87038cb297}{members}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_moderator}{Moderator}} $>$ \mbox{\hyperlink{class_room_a936a02872aae67f5fbd76cb761aafa28}{moderators}}
+\item 
+\mbox{\hyperlink{class_admin}{Admin}} \mbox{\hyperlink{class_room_a7587f5bfac024c6dc2c883d5af9d4719}{admin}}
+\item 
+int \mbox{\hyperlink{class_room_a89a94d7b18b2d759ca91c0230a3a7b7e}{room\+ID}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_room_ac6ef93a7d9c3e1d624e025058d5f16ff}\label{class_room_ac6ef93a7d9c3e1d624e025058d5f16ff}} 
+\index{Room@{Room}!Room@{Room}}
+\index{Room@{Room}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{Room()}{Room()}}
+{\footnotesize\ttfamily Room\+::\+Room (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_room_aaea1d1e9449d0568a759fc5adea85085}\label{class_room_aaea1d1e9449d0568a759fc5adea85085}} 
+\index{Room@{Room}!addChannel@{addChannel}}
+\index{addChannel@{addChannel}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{addChannel()}{addChannel()}}
+{\footnotesize\ttfamily void Room\+::add\+Channel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_channel}{Channel}}}]{channel }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_room_a6c1817ffa7c1f3ea3d0385400410bde3}\label{class_room_a6c1817ffa7c1f3ea3d0385400410bde3}} 
+\index{Room@{Room}!addMembers@{addMembers}}
+\index{addMembers@{addMembers}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{addMembers()}{addMembers()}}
+{\footnotesize\ttfamily void Room\+::add\+Members (\begin{DoxyParamCaption}\item[{std\+::string}]{member }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_room_a1400bfd75ce38d9cdf9af239978e43e4}\label{class_room_a1400bfd75ce38d9cdf9af239978e43e4}} 
+\index{Room@{Room}!addMod@{addMod}}
+\index{addMod@{addMod}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{addMod()}{addMod()}}
+{\footnotesize\ttfamily void Room\+::add\+Mod (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_moderator}{Moderator}}}]{mod }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_room_ada70da72f3cd9e6a51eb07c47ba52a33}\label{class_room_ada70da72f3cd9e6a51eb07c47ba52a33}} 
+\index{Room@{Room}!getChannelList@{getChannelList}}
+\index{getChannelList@{getChannelList}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{getChannelList()}{getChannelList()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_channel}{Channel}} $>$ Room\+::get\+Channel\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_room_a6a3bc6be92d7020bd7f867a571b91efc}\label{class_room_a6a3bc6be92d7020bd7f867a571b91efc}} 
+\index{Room@{Room}!getMembers@{getMembers}}
+\index{getMembers@{getMembers}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{getMembers()}{getMembers()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Room\+::get\+Members (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_room_ae6a3be5861b657a2cbbada8e67ab7fde}\label{class_room_ae6a3be5861b657a2cbbada8e67ab7fde}} 
+\index{Room@{Room}!getName@{getName}}
+\index{getName@{getName}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Room\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_room_a682384ad7e6f2d231cfc4135dc6df56a}\label{class_room_a682384ad7e6f2d231cfc4135dc6df56a}} 
+\index{Room@{Room}!getRoomID@{getRoomID}}
+\index{getRoomID@{getRoomID}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{getRoomID()}{getRoomID()}}
+{\footnotesize\ttfamily int Room\+::get\+Room\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_room_a67fd0a26b97c14cb973c63d2e4e69f39}\label{class_room_a67fd0a26b97c14cb973c63d2e4e69f39}} 
+\index{Room@{Room}!removeMember@{removeMember}}
+\index{removeMember@{removeMember}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{removeMember()}{removeMember()}}
+{\footnotesize\ttfamily void Room\+::remove\+Member (\begin{DoxyParamCaption}\item[{std\+::string}]{member }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_room_af03e0775c6c30432f034ec78ed5cee49}\label{class_room_af03e0775c6c30432f034ec78ed5cee49}} 
+\index{Room@{Room}!removeMod@{removeMod}}
+\index{removeMod@{removeMod}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{removeMod()}{removeMod()}}
+{\footnotesize\ttfamily void Room\+::remove\+Mod (\begin{DoxyParamCaption}\item[{std\+::string}]{mod\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_room_a5f47aab0e0b713b6aa8e72ae17456cf1}\label{class_room_a5f47aab0e0b713b6aa8e72ae17456cf1}} 
+\index{Room@{Room}!setName@{setName}}
+\index{setName@{setName}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Room\+::set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{the\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_room_af68d6a1e8becd3c8ab3d6636056d3f31}\label{class_room_af68d6a1e8becd3c8ab3d6636056d3f31}} 
+\index{Room@{Room}!setRoomID@{setRoomID}}
+\index{setRoomID@{setRoomID}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{setRoomID()}{setRoomID()}}
+{\footnotesize\ttfamily void Room\+::set\+Room\+ID (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_room_a7587f5bfac024c6dc2c883d5af9d4719}\label{class_room_a7587f5bfac024c6dc2c883d5af9d4719}} 
+\index{Room@{Room}!admin@{admin}}
+\index{admin@{admin}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{admin}{admin}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_admin}{Admin}} Room\+::admin}
+
+\mbox{\Hypertarget{class_room_a6905ddb077124145dbef7392a9a56fea}\label{class_room_a6905ddb077124145dbef7392a9a56fea}} 
+\index{Room@{Room}!channels@{channels}}
+\index{channels@{channels}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{channels}{channels}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_channel}{Channel}}$>$ Room\+::channels}
+
+\mbox{\Hypertarget{class_room_a3b948c93a63281efee179f87038cb297}\label{class_room_a3b948c93a63281efee179f87038cb297}} 
+\index{Room@{Room}!members@{members}}
+\index{members@{members}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{members}{members}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Room\+::members}
+
+\mbox{\Hypertarget{class_room_a936a02872aae67f5fbd76cb761aafa28}\label{class_room_a936a02872aae67f5fbd76cb761aafa28}} 
+\index{Room@{Room}!moderators@{moderators}}
+\index{moderators@{moderators}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{moderators}{moderators}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_moderator}{Moderator}}$>$ Room\+::moderators}
+
+\mbox{\Hypertarget{class_room_a72dc5f84fd63eb54d53bc9d992ca6dcb}\label{class_room_a72dc5f84fd63eb54d53bc9d992ca6dcb}} 
+\index{Room@{Room}!name@{name}}
+\index{name@{name}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string Room\+::name}
+
+\mbox{\Hypertarget{class_room_a89a94d7b18b2d759ca91c0230a3a7b7e}\label{class_room_a89a94d7b18b2d759ca91c0230a3a7b7e}} 
+\index{Room@{Room}!roomID@{roomID}}
+\index{roomID@{roomID}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{roomID}{roomID}}
+{\footnotesize\ttfamily int Room\+::room\+ID}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+headers/\mbox{\hyperlink{room_8h}{room.\+h}}\item 
+src/\mbox{\hyperlink{room_8cpp}{room.\+cpp}}\end{DoxyCompactItemize}
