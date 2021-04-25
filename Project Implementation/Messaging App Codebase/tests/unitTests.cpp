@@ -46,17 +46,17 @@ void unitTests::fileTests_data()
 
     QTest::newRow("credentials") << "Admin|5483:4E126B8C1C470693827C90C0679D239870668C57033575D0BD8E7773D2EBFBC6\n"
                                     "Mod|4571:2408638CBA0E278893064BCDA457090F4BBD9F32F3B51E98CE3CAADCE04165F6\n"
-                                    "User|5552:F186B25C10F7EA0F42DDB4074DB643C5B8BA3F861F45E6F395888C703CEE8388"
+                                    "User|5552:F186B25C10F7EA0F42DDB4074DB643C5B8BA3F861F45E6F395888C703CEE8388\n"
                                  << QString::fromStdString(w.credFilepath);
 
 
-    QTest::newRow("rooms") << "Room X|Channel Y" << QString::fromStdString(w.roomFilepath);
+    QTest::newRow("rooms") << "Room X|Channel Y\n" << QString::fromStdString(w.roomFilepath);
 
     QTest::newRow("users") << "Admin|Room X\n"
                               "Mod|Room X\n"
-                              "User" << QString::fromStdString(w.userFilepath);
+                              "User\n" << QString::fromStdString(w.userFilepath);
 
-    QTest::newRow("admins") << "Room X|Admin|Mod" << QString::fromStdString(w.adminFilepath);
+    QTest::newRow("admins") << "Room X|Admin|Mod\n" << QString::fromStdString(w.adminFilepath);
 
 }
 
