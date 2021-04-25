@@ -60,6 +60,9 @@ MainWindow::MainWindow(QWidget *parent)
             c.addMessage(m);
 
             ui->messageLog->insertPlainText(m.getFormattedMessage(u));
+            if(u.getName() != currentUser.getName()){
+                notifyUser("New Notification");
+            }
         }
     });
 

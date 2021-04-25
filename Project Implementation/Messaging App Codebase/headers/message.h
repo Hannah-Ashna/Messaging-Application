@@ -17,7 +17,6 @@ public:
     QString getMessageContent();
 
     void setMessageContent(std::string);
-    void notifyUser();
 };
 
 #endif // MESSAGE_H
