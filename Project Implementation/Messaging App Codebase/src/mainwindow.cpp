@@ -137,6 +137,7 @@ void MainWindow::on_buttonConnect_clicked()
         ui->portSpinBox->setEnabled(true);
         ui->buttonConnect->setText(tr(Consts::buttons.connect.c_str()));
         m_client->disconnectFromHost();
+        //jad
     }
 
 }
@@ -331,7 +332,11 @@ void MainWindow::updateOnlineUsers(std::string name, bool status){
 
     for(int i = 0; i < (int)users.size(); i++){
         if(users[i].getName() == name) {
-            users[i].setOnlineStatus(status);
+            if(users[i].getOnlineStatus() != status){
+                users[i].setOnlineStatus(status);
+                on_onlineRadio_toggled(currentUser.getOnlineStatus());
+            }
+
         }
 
         if(users[i].getOnlineStatus()) {
@@ -538,6 +543,14 @@ void MainWindow::on_backButton_clicked()
     */
     timer->start(Consts::timer.timerDuration);
     ui->stackedWidget->setCurrentIndex(Consts::navigation.mainPage);
+    //jad on_onlineRadio_toggled(bool isActive)
+    if (m_client->state() != QMqttClient::Disconnected) {
+        on_onlineRadio_toggled(ui->onlineRadio->isChecked());
+    }
+    else {
+        ui->onlineUserList->clear();
+        ui->offlineUserList->clear();
+    }
 }
 
 void MainWindow::updateFile(std::string filePath) {
