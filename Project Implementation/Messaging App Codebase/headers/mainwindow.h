@@ -39,7 +39,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void timeout(const boost::system::error_code& /*e*/, boost::asio::steady_timer* t, int* count);
+    //void timeout(const boost::system::error_code& /*e*/, boost::asio::steady_timer* t, int* count);
 
     void brokerDisconnected();
     void setClientPort(int p);
@@ -86,10 +86,10 @@ private slots:
     void on_signupButton_clicked();
     void on_signupBackButton_clicked();
 
-    void setupUsers(); // Added by JAD
+    void setupUsers();
     void loadAdmin();
 
-    void MyTimerSlot();
+    void TimerTimeout();
 
 private:
     Ui::MainWindow *ui;

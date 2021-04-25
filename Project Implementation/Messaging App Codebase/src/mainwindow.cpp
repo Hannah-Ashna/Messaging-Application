@@ -29,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->stackedWidget->setCurrentIndex(Consts::navigation.loginPage);
 
     timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(MyTimerSlot())); // MyTimerSlot is called on timeout
+    connect(timer, SIGNAL(timeout()), this, SLOT(TimerTimeout())); // calls TimerTimeout on timeout
 
     /*!
       Create new instance of QMqttClient and set host and port values
@@ -91,11 +91,8 @@ void MainWindow::setClientPort(int p)
     m_client->setPort(p);
 }
 
-void MainWindow::timeout(const boost::system::error_code&/*e*/, boost::asio::steady_timer* t, int* count){
-    ui->stackedWidget->setCurrentIndex(Consts::navigation.loginPage);
-}
-
 void MainWindow::on_refreshButton_clicked() {
+    timer->start(Consts::timer.timerDuration);
     ui->roomDropDown->clear();
     ui->channelDropDown->clear();
     ui->roomLabel->setText("no-group-selected");
@@ -112,6 +109,7 @@ void MainWindow::on_refreshButton_clicked() {
 }
 
 void MainWindow::notifyUser(std::string message) {
+    timer->start(Consts::timer.timerDuration);
     QMessageBox notification;
     notification.setText(QString::fromStdString(message));
     notification.setStandardButtons(QMessageBox::Ok);
@@ -125,6 +123,7 @@ void MainWindow::on_buttonConnect_clicked()
         If client is disconnected, button should say "connect" and attempt to call connectToHost() and disable the button on click
         If client is connected, button should say "disconnect" and attempt to call disconnectFromHost() and enable the button on click
     */
+    timer->start(Consts::timer.timerDuration);
     if (m_client->state() == QMqttClient::Disconnected) {
         ui->hostEdit->setEnabled(false);
         ui->portSpinBox->setEnabled(false);
@@ -136,6 +135,7 @@ void MainWindow::on_buttonConnect_clicked()
         ui->buttonConnect->setText(tr(Consts::buttons.connect.c_str()));
         m_client->disconnectFromHost();
     }
+
 }
 
 int MainWindow::getCurrentRoomIndex(){
@@ -143,6 +143,7 @@ int MainWindow::getCurrentRoomIndex(){
 }
 
 void MainWindow::on_addRoomButton_clicked(){
+    timer->start(Consts::timer.timerDuration);
     bool ok;
     QString roomName = QInputDialog::getText(this, tr(Consts::dialogs.enterroomname.c_str()), tr(Consts::buttons.roomname.c_str()),QLineEdit::Normal, "",&ok);
 
@@ -175,6 +176,7 @@ void MainWindow::on_addRoomButton_clicked(){
 }
 
 void MainWindow::on_deleteRoomButton_clicked() {
+    timer->start(Consts::timer.timerDuration);
     if(ui->roomLabel->text() == Consts::dialogs.noGroup.c_str()) { notifyUser(Consts::errors.noRoomSelected); }
     else {
         int index = ui->roomDropDown->currentIndex();
@@ -193,6 +195,7 @@ void MainWindow::on_deleteRoomButton_clicked() {
 }
 
 void MainWindow::on_roomDropDown_activated(int index) {
+    timer->start(Consts::timer.timerDuration);
     Room room = rooms[getCurrentRoomIndex()];
     bool isMod = false;
 
@@ -237,6 +240,7 @@ Channel MainWindow::getCurrentChannel() {
 }
 
 void MainWindow::on_addChannelButton_clicked() {
+    timer->start(Consts::timer.timerDuration);
     if(ui->roomLabel->text() == Consts::dialogs.noGroup.c_str()) { notifyUser(Consts::errors.noRoomSelected); }
     else {
         bool ok;
@@ -255,6 +259,7 @@ void MainWindow::on_addChannelButton_clicked() {
 }
 
 void MainWindow::on_deleteChannelButton_clicked() {
+    timer->start(Consts::timer.timerDuration);
     if(ui->roomLabel->text() == Consts::dialogs.noChannel.c_str()) { notifyUser(Consts::errors.noChannelSelected); }
     else {
         int index = ui->channelDropDown->currentIndex();
@@ -273,6 +278,7 @@ void MainWindow::on_channelDropDown_activated(int index)
         Set the label defining the topic for the user to the text in the currently selected dropdown box
         Clear the message log
     */
+    timer->start(Consts::timer.timerDuration);
     auto subscription = m_client->subscribe(ui->channelDropDown->itemText(index));
     if (!subscription) {
         QMessageBox::critical(this, QLatin1String(Consts::errors.error.c_str()), QLatin1String(Consts::errors.subscription.c_str()));
@@ -293,6 +299,7 @@ void MainWindow::updateContacts() {
 }
 
 void MainWindow::on_onlineRadio_toggled(bool isActive) {
+    timer->start(Consts::timer.timerDuration);
     for(int i = 0; i < (int)users.size(); i++){
         if(users.at(i).getName() == currentUser.getName()){
             if(isActive) {
@@ -338,6 +345,7 @@ void MainWindow::on_sendButton_clicked()
     /*!
         Publish text in input box to message log if client is successfully connected
     */
+    timer->start(Consts::timer.timerDuration);
     try {
         QString msg = QString::fromStdString(currentUser.getName()) + ':' + ui->sendInput->text();
 
@@ -350,6 +358,7 @@ void MainWindow::on_sendButton_clicked()
 }
 
 void MainWindow::on_addUserButton_clicked() {
+    timer->start(Consts::timer.timerDuration);
     bool ok;
     bool userFound = false;
     bool userSubbed = false;
@@ -407,6 +416,7 @@ void MainWindow::on_addUserButton_clicked() {
 }
 
 void MainWindow::on_removeUserButton_clicked() {
+    timer->start(Consts::timer.timerDuration);
     bool ok;
     bool userFound = false;
     int userIndex;
@@ -438,6 +448,7 @@ void MainWindow::on_removeUserButton_clicked() {
 }
 
 void MainWindow::on_addModButton_clicked() {
+    timer->start(Consts::timer.timerDuration);
     bool ok;
     bool userFound = false;
     bool userMod = false;
@@ -475,6 +486,7 @@ void MainWindow::on_addModButton_clicked() {
 }
 
 void MainWindow::on_removeModButton_clicked() {
+    timer->start(Consts::timer.timerDuration);
     bool ok;
     bool userFound = false;
     bool userMod = false;
@@ -512,6 +524,7 @@ void MainWindow::on_settingsButton_clicked()
     /*!
         Set index of stackedWidget to 3, take user to setting screen
     */
+    timer->start(Consts::timer.timerDuration);
     ui->stackedWidget->setCurrentIndex(Consts::navigation.settingsPage);
 }
 
@@ -520,6 +533,7 @@ void MainWindow::on_backButton_clicked()
     /*!
         Set index of stacked widget to 2, take user to main page
     */
+    timer->start(Consts::timer.timerDuration);
     ui->stackedWidget->setCurrentIndex(Consts::navigation.mainPage);
 }
 
@@ -670,7 +684,7 @@ void MainWindow::on_loginButton_clicked()
                     read_userConfig(username.toStdString().c_str());
                     ui->stackedWidget->setCurrentIndex(Consts::navigation.mainPage);
 
-                    timer->start(1000);
+                    timer->start(Consts::timer.timerDuration);
 
                 } else {
                     notifyUser(Consts::errors.invalidCreds);
@@ -780,6 +794,10 @@ void MainWindow::loadAdmin(){
     }
 }
 
-void MainWindow::MyTimerSlot(){
-    qDebug() << "Timer Test";
+void MainWindow::TimerTimeout(){
+    if (ui->sendInput->text() == NULL) {
+        qDebug() << "User Timeout";
+        ui->stackedWidget->setCurrentIndex(Consts::navigation.loginPage);
+        timer->stop();
+    }
 }

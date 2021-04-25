@@ -63,7 +63,10 @@ namespace Consts {
 
     struct formatting{
         const std::string delimiterStr = "|";
-
         const char delimiterChar = '|';
     }formatting;
+
+    struct timer{
+        const int timerDuration = 900000; // = 15 mins in milliseconds
+    }timer;
 }
