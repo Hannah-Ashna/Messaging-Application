@@ -12,13 +12,13 @@
 class Room
 {
 public:
-    std::string name;
-    std::vector<Channel> channels;
-    std::vector<std::string> members;
-    std::vector<Moderator> moderators;
+    std::string name;  //!< The room name
+    std::vector<Channel> channels;  //!< A vector of the channels contained in the room
+    std::vector<std::string> members;  //!< A vector of the memebers in the channel
+    std::vector<Moderator> moderators;  //!< A vector of the the users with moderator permissions in the room
 
-    Admin admin;
-    int roomID;
+    Admin admin;  //!< A user which has admin permisssion in the room
+    int roomID; //!< The room ID/
 
     Room();
     void setName(std::string theName);

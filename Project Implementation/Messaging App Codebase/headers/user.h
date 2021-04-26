@@ -7,14 +7,14 @@
 class User
 {
 protected:
-    std::string userID;
-    std::string name;
-    std::string status;
+    std::string userID;  //!< The users ID
+    std::string name; //!< The username of the user
+    std::string status;  //!< The current status of the user not implemented
 
-    bool online = false;
+    bool online = false;  //!< The online status of the user
 
 public:
-    std::vector<std::string> rooms;
+    std::vector<std::string> rooms;  //!< A vector of room names the user is in
 
     User();
     void setName(std::string username);

@@ -22,9 +22,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SDI Project
-   &#160;<span id="projectnumber">V1.0</span>
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
-   <div id="projectbrief">SDI project .</div>
+   <div id="projectbrief">A MQTT messageing program</div>
   </td>
  </tr>
  </tbody>
@@ -90,17 +90,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4fc4f717b634e66070366cb7722d7761"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message.html#a4fc4f717b634e66070366cb7722d7761">Message</a> ()</td></tr>
 <tr class="separator:a4fc4f717b634e66070366cb7722d7761"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a871cfc0ca519378d3c3de27051ff806a"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message.html#a871cfc0ca519378d3c3de27051ff806a">getFormattedMessage</a> (<a class="el" href="class_user.html">User</a> &amp;user)</td></tr>
+<tr class="memdesc:a871cfc0ca519378d3c3de27051ff806a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the message formatted message with the senders username and the message contents.  <a href="class_message.html#a871cfc0ca519378d3c3de27051ff806a">More...</a><br /></td></tr>
 <tr class="separator:a871cfc0ca519378d3c3de27051ff806a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2caddd7858d29944591b77c4ef311685"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message.html#a2caddd7858d29944591b77c4ef311685">getMessageContent</a> ()</td></tr>
+<tr class="memdesc:a2caddd7858d29944591b77c4ef311685"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the message content.  <a href="class_message.html#a2caddd7858d29944591b77c4ef311685">More...</a><br /></td></tr>
 <tr class="separator:a2caddd7858d29944591b77c4ef311685"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a556f0ae5a886c5c7f27ee30954dfe995"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message.html#a556f0ae5a886c5c7f27ee30954dfe995">setMessageContent</a> (std::string)</td></tr>
+<tr class="memdesc:a556f0ae5a886c5c7f27ee30954dfe995"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the message content.  <a href="class_message.html#a556f0ae5a886c5c7f27ee30954dfe995">More...</a><br /></td></tr>
 <tr class="separator:a556f0ae5a886c5c7f27ee30954dfe995"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a527b51780b6af20bf048242192bd7387"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message.html#a527b51780b6af20bf048242192bd7387">messageContent</a></td></tr>
+<tr class="memdesc:a527b51780b6af20bf048242192bd7387"><td class="mdescLeft">&#160;</td><td class="mdescRight">The content of the sent message.  <a href="class_message.html#a527b51780b6af20bf048242192bd7387">More...</a><br /></td></tr>
 <tr class="separator:a527b51780b6af20bf048242192bd7387"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae167ffd87ab266104bd84d2686eaddfe"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message.html#ae167ffd87ab266104bd84d2686eaddfe">username</a></td></tr>
+<tr class="memdesc:ae167ffd87ab266104bd84d2686eaddfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The username if the sender of the message.  <a href="class_message.html#ae167ffd87ab266104bd84d2686eaddfe">More...</a><br /></td></tr>
 <tr class="separator:ae167ffd87ab266104bd84d2686eaddfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -137,12 +142,21 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets the message formatted message with the senders username and the message contents. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td>A pointer to the sender used to get the senders username </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The formatted message in the format <em>username:message</em> </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_message_a871cfc0ca519378d3c3de27051ff806a_cgraph.png" border="0" usemap="#class_message_a871cfc0ca519378d3c3de27051ff806a_cgraph" alt=""/></div>
 <map name="class_message_a871cfc0ca519378d3c3de27051ff806a_cgraph" id="class_message_a871cfc0ca519378d3c3de27051ff806a_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,240,32"/>
+<area shape="rect" title="Gets the message formatted message with the senders username and the message contents." alt="" coords="5,5,240,32"/>
 <area shape="rect" href="class_user.html#a33d343edda32a72bf28d41b22b0de1bd" title=" " alt="" coords="288,5,408,32"/>
 </map>
 </div>
@@ -151,7 +165,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_message_a871cfc0ca519378d3c3de27051ff806a_icgraph.png" border="0" usemap="#class_message_a871cfc0ca519378d3c3de27051ff806a_icgraph" alt=""/></div>
 <map name="class_message_a871cfc0ca519378d3c3de27051ff806a_icgraph" id="class_message_a871cfc0ca519378d3c3de27051ff806a_icgraph">
-<area shape="rect" title=" " alt="" coords="252,5,487,32"/>
+<area shape="rect" title="Gets the message formatted message with the senders username and the message contents." alt="" coords="252,5,487,32"/>
 <area shape="rect" href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d" title=" " alt="" coords="5,5,204,32"/>
 </map>
 </div>
@@ -173,6 +187,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Gets the message content. </p>
+<dl class="section return"><dt>Returns</dt><dd>The content of a message </dd></dl>
+
 </div>
 </div>
 <a id="a556f0ae5a886c5c7f27ee30954dfe995"></a>
@@ -190,12 +207,20 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets the message content. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>The content to be set </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_message_a556f0ae5a886c5c7f27ee30954dfe995_icgraph.png" border="0" usemap="#class_message_a556f0ae5a886c5c7f27ee30954dfe995_icgraph" alt=""/></div>
 <map name="class_message_a556f0ae5a886c5c7f27ee30954dfe995_icgraph" id="class_message_a556f0ae5a886c5c7f27ee30954dfe995_icgraph">
-<area shape="rect" title=" " alt="" coords="252,5,469,32"/>
+<area shape="rect" title="Sets the message content." alt="" coords="252,5,469,32"/>
 <area shape="rect" href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d" title=" " alt="" coords="5,5,204,32"/>
 </map>
 </div>
@@ -215,6 +240,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>The content of the sent message. </p>
+
 </div>
 </div>
 <a id="ae167ffd87ab266104bd84d2686eaddfe"></a>
@@ -228,6 +255,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The username if the sender of the message. </p>
 
 </div>
 </div>

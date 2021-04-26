@@ -8,7 +8,7 @@
 class Moderator: public User
 {
 public:
-    std::vector<User> moderator;
+    std::vector<User> moderator;  //!< Vector of the moderators
 
     Moderator();
     User getUser();

@@ -22,9 +22,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SDI Project
-   &#160;<span id="projectnumber">V1.0</span>
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
-   <div id="projectbrief">SDI project .</div>
+   <div id="projectbrief">A MQTT messageing program</div>
   </td>
  </tr>
  </tbody>
@@ -82,8 +82,8 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_channel.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_channel.html">Channel</a></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_channel.html#ae080e1afd52f3b70e04c62fea46447aa">   12</a></span>&#160;    std::string <a class="code" href="class_channel.html#ae080e1afd52f3b70e04c62fea46447aa">name</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_channel.html#a70ae09ff05d8d84283e1648de9ba2d7a">   13</a></span>&#160;    std::vector&lt;Message&gt; <a class="code" href="class_channel.html#a70ae09ff05d8d84283e1648de9ba2d7a">messages</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_channel.html#ae080e1afd52f3b70e04c62fea46447aa">   12</a></span>&#160;    std::string <a class="code" href="class_channel.html#ae080e1afd52f3b70e04c62fea46447aa">name</a>; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_channel.html#a70ae09ff05d8d84283e1648de9ba2d7a">   13</a></span>&#160;    std::vector&lt;Message&gt; <a class="code" href="class_channel.html#a70ae09ff05d8d84283e1648de9ba2d7a">messages</a>;  </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_channel.html#af2b4b16288cbb2c592b1e0f6486c2430">Channel</a>();</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_channel.html#aa23a382ada4f4785d217deb28a2c3555">setName</a>(std::string <a class="code" href="class_channel.html#ae080e1afd52f3b70e04c62fea46447aa">name</a>);</div>
@@ -95,16 +95,16 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif // CHANNEL_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_channel_html_ae080e1afd52f3b70e04c62fea46447aa"><div class="ttname"><a href="class_channel.html#ae080e1afd52f3b70e04c62fea46447aa">Channel::name</a></div><div class="ttdeci">std::string name</div><div class="ttdef"><b>Definition:</b> channel.h:12</div></div>
-<div class="ttc" id="aclass_channel_html_a47bbe41c4e81ca500b27dd7efd1b3376"><div class="ttname"><a href="class_channel.html#a47bbe41c4e81ca500b27dd7efd1b3376">Channel::getName</a></div><div class="ttdeci">std::string getName()</div><div class="ttdef"><b>Definition:</b> channel.cpp:13</div></div>
-<div class="ttc" id="aclass_channel_html_af2b4b16288cbb2c592b1e0f6486c2430"><div class="ttname"><a href="class_channel.html#af2b4b16288cbb2c592b1e0f6486c2430">Channel::Channel</a></div><div class="ttdeci">Channel()</div><div class="ttdef"><b>Definition:</b> channel.cpp:3</div></div>
+<div class="ttc" id="aclass_channel_html_ae080e1afd52f3b70e04c62fea46447aa"><div class="ttname"><a href="class_channel.html#ae080e1afd52f3b70e04c62fea46447aa">Channel::name</a></div><div class="ttdeci">std::string name</div><div class="ttdoc">The name of the channel.</div><div class="ttdef"><b>Definition:</b> channel.h:12</div></div>
+<div class="ttc" id="aclass_channel_html_a47bbe41c4e81ca500b27dd7efd1b3376"><div class="ttname"><a href="class_channel.html#a47bbe41c4e81ca500b27dd7efd1b3376">Channel::getName</a></div><div class="ttdeci">std::string getName()</div><div class="ttdef"><b>Definition:</b> channel.cpp:18</div></div>
+<div class="ttc" id="aclass_channel_html_af2b4b16288cbb2c592b1e0f6486c2430"><div class="ttname"><a href="class_channel.html#af2b4b16288cbb2c592b1e0f6486c2430">Channel::Channel</a></div><div class="ttdeci">Channel()</div><div class="ttdoc">The Channel class Contains Messages sent by users.</div><div class="ttdef"><b>Definition:</b> channel.cpp:6</div></div>
 <div class="ttc" id="aclass_message_html"><div class="ttname"><a href="class_message.html">Message</a></div><div class="ttdef"><b>Definition:</b> message.h:9</div></div>
 <div class="ttc" id="amessage_8h_html"><div class="ttname"><a href="message_8h.html">message.h</a></div></div>
-<div class="ttc" id="aclass_channel_html_a51eb2c12a81aace9071af11bfba3bc7d"><div class="ttname"><a href="class_channel.html#a51eb2c12a81aace9071af11bfba3bc7d">Channel::deleteMessage</a></div><div class="ttdeci">void deleteMessage(Message message)</div><div class="ttdef"><b>Definition:</b> channel.cpp:23</div></div>
+<div class="ttc" id="aclass_channel_html_a51eb2c12a81aace9071af11bfba3bc7d"><div class="ttname"><a href="class_channel.html#a51eb2c12a81aace9071af11bfba3bc7d">Channel::deleteMessage</a></div><div class="ttdeci">void deleteMessage(Message message)</div><div class="ttdef"><b>Definition:</b> channel.cpp:32</div></div>
 <div class="ttc" id="aclass_channel_html"><div class="ttname"><a href="class_channel.html">Channel</a></div><div class="ttdef"><b>Definition:</b> channel.h:9</div></div>
-<div class="ttc" id="aclass_channel_html_aa23a382ada4f4785d217deb28a2c3555"><div class="ttname"><a href="class_channel.html#aa23a382ada4f4785d217deb28a2c3555">Channel::setName</a></div><div class="ttdeci">void setName(std::string name)</div><div class="ttdef"><b>Definition:</b> channel.cpp:8</div></div>
-<div class="ttc" id="aclass_channel_html_a3fe9093fa47d35bc072740590df5f014"><div class="ttname"><a href="class_channel.html#a3fe9093fa47d35bc072740590df5f014">Channel::addMessage</a></div><div class="ttdeci">void addMessage(Message message)</div><div class="ttdef"><b>Definition:</b> channel.cpp:18</div></div>
-<div class="ttc" id="aclass_channel_html_a70ae09ff05d8d84283e1648de9ba2d7a"><div class="ttname"><a href="class_channel.html#a70ae09ff05d8d84283e1648de9ba2d7a">Channel::messages</a></div><div class="ttdeci">std::vector&lt; Message &gt; messages</div><div class="ttdef"><b>Definition:</b> channel.h:13</div></div>
+<div class="ttc" id="aclass_channel_html_aa23a382ada4f4785d217deb28a2c3555"><div class="ttname"><a href="class_channel.html#aa23a382ada4f4785d217deb28a2c3555">Channel::setName</a></div><div class="ttdeci">void setName(std::string name)</div><div class="ttdef"><b>Definition:</b> channel.cpp:11</div></div>
+<div class="ttc" id="aclass_channel_html_a3fe9093fa47d35bc072740590df5f014"><div class="ttname"><a href="class_channel.html#a3fe9093fa47d35bc072740590df5f014">Channel::addMessage</a></div><div class="ttdeci">void addMessage(Message message)</div><div class="ttdef"><b>Definition:</b> channel.cpp:25</div></div>
+<div class="ttc" id="aclass_channel_html_a70ae09ff05d8d84283e1648de9ba2d7a"><div class="ttname"><a href="class_channel.html#a70ae09ff05d8d84283e1648de9ba2d7a">Channel::messages</a></div><div class="ttdeci">std::vector&lt; Message &gt; messages</div><div class="ttdoc">A vector of sent messages in the channel.</div><div class="ttdef"><b>Definition:</b> channel.h:13</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

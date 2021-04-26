@@ -4,7 +4,9 @@
 #endif // CONSTS_H
 #include <QtMqtt/QMqttClient>
 #include <string>
-
+/**
+ * @brief Consts contains all constants needed in the program
+ */
 namespace Consts {
 
     struct errors{

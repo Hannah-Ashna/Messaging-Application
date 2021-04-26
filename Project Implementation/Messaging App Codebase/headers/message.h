@@ -8,8 +8,8 @@
 
 class Message {
 public:
-    std::string messageContent;
-    std::string username;
+    std::string messageContent;  //!< The content of the sent message
+    std::string username;  //!< The username if the sender of the message
 
     Message();
 

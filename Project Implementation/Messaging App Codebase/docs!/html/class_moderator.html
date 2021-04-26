@@ -22,9 +22,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SDI Project
-   &#160;<span id="projectnumber">V1.0</span>
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
-   <div id="projectbrief">SDI project .</div>
+   <div id="projectbrief">A MQTT messageing program</div>
   </td>
  </tr>
  </tbody>
@@ -109,6 +109,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a33d343edda32a72bf28d41b22b0de1bd inherit pub_methods_class_user"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_user.html#a33d343edda32a72bf28d41b22b0de1bd">getName</a> ()</td></tr>
 <tr class="separator:a33d343edda32a72bf28d41b22b0de1bd inherit pub_methods_class_user"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a028dbd10f8826ee83544504a02e2b47f inherit pub_methods_class_user"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_user.html#a028dbd10f8826ee83544504a02e2b47f">subscribeToRoom</a> (std::string room)</td></tr>
+<tr class="memdesc:a028dbd10f8826ee83544504a02e2b47f inherit pub_methods_class_user"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribes user from room.  <a href="class_user.html#a028dbd10f8826ee83544504a02e2b47f">More...</a><br /></td></tr>
 <tr class="separator:a028dbd10f8826ee83544504a02e2b47f inherit pub_methods_class_user"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b9a85a80a19b8d42ac1f3d9cd61c264 inherit pub_methods_class_user"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_user.html#a0b9a85a80a19b8d42ac1f3d9cd61c264">unsubscribeFromRoom</a> (std::string room)</td></tr>
 <tr class="memdesc:a0b9a85a80a19b8d42ac1f3d9cd61c264 inherit pub_methods_class_user"><td class="mdescLeft">&#160;</td><td class="mdescRight">unsubscribes from room  <a href="class_user.html#a0b9a85a80a19b8d42ac1f3d9cd61c264">More...</a><br /></td></tr>
@@ -121,9 +122,11 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a2eb96264233cb9a424427537e8719047"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_user.html">User</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moderator.html#a2eb96264233cb9a424427537e8719047">moderator</a></td></tr>
+<tr class="memdesc:a2eb96264233cb9a424427537e8719047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of the moderators.  <a href="class_moderator.html#a2eb96264233cb9a424427537e8719047">More...</a><br /></td></tr>
 <tr class="separator:a2eb96264233cb9a424427537e8719047"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_user"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_user')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_user.html">User</a></td></tr>
 <tr class="memitem:a853f11d24e39e3f1e599b04d23cf7b6f inherit pub_attribs_class_user"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_user.html#a853f11d24e39e3f1e599b04d23cf7b6f">rooms</a></td></tr>
+<tr class="memdesc:a853f11d24e39e3f1e599b04d23cf7b6f inherit pub_attribs_class_user"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector of room names the user is in.  <a href="class_user.html#a853f11d24e39e3f1e599b04d23cf7b6f">More...</a><br /></td></tr>
 <tr class="separator:a853f11d24e39e3f1e599b04d23cf7b6f inherit pub_attribs_class_user"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
@@ -137,12 +140,16 @@ Protected Member Functions</h2></td></tr>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_user"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_user')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_user.html">User</a></td></tr>
 <tr class="memitem:a23edbe719dce1faa2f50f858c211f652 inherit pro_attribs_class_user"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_user.html#a23edbe719dce1faa2f50f858c211f652">userID</a></td></tr>
+<tr class="memdesc:a23edbe719dce1faa2f50f858c211f652 inherit pro_attribs_class_user"><td class="mdescLeft">&#160;</td><td class="mdescRight">The users ID.  <a href="class_user.html#a23edbe719dce1faa2f50f858c211f652">More...</a><br /></td></tr>
 <tr class="separator:a23edbe719dce1faa2f50f858c211f652 inherit pro_attribs_class_user"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a085d8d69282b6298964eab8351584536 inherit pro_attribs_class_user"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_user.html#a085d8d69282b6298964eab8351584536">name</a></td></tr>
+<tr class="memdesc:a085d8d69282b6298964eab8351584536 inherit pro_attribs_class_user"><td class="mdescLeft">&#160;</td><td class="mdescRight">The username of the user.  <a href="class_user.html#a085d8d69282b6298964eab8351584536">More...</a><br /></td></tr>
 <tr class="separator:a085d8d69282b6298964eab8351584536 inherit pro_attribs_class_user"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2153cf3464c6b37616c8920609a41a2d inherit pro_attribs_class_user"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_user.html#a2153cf3464c6b37616c8920609a41a2d">status</a></td></tr>
+<tr class="memdesc:a2153cf3464c6b37616c8920609a41a2d inherit pro_attribs_class_user"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current status of the user not implemented.  <a href="class_user.html#a2153cf3464c6b37616c8920609a41a2d">More...</a><br /></td></tr>
 <tr class="separator:a2153cf3464c6b37616c8920609a41a2d inherit pro_attribs_class_user"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2db7d41bc9c903b617e9337853043508 inherit pro_attribs_class_user"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_user.html#a2db7d41bc9c903b617e9337853043508">online</a> = false</td></tr>
+<tr class="memdesc:a2db7d41bc9c903b617e9337853043508 inherit pro_attribs_class_user"><td class="mdescLeft">&#160;</td><td class="mdescRight">The online status of the user.  <a href="class_user.html#a2db7d41bc9c903b617e9337853043508">More...</a><br /></td></tr>
 <tr class="separator:a2db7d41bc9c903b617e9337853043508 inherit pro_attribs_class_user"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -245,6 +252,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Vector of the moderators. </p>
 
 </div>
 </div>

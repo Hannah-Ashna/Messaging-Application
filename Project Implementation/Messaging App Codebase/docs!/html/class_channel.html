@@ -22,9 +22,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SDI Project
-   &#160;<span id="projectnumber">V1.0</span>
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
-   <div id="projectbrief">SDI project .</div>
+   <div id="projectbrief">A MQTT messageing program</div>
   </td>
  </tr>
  </tbody>
@@ -77,6 +77,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af2b4b16288cbb2c592b1e0f6486c2430"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#af2b4b16288cbb2c592b1e0f6486c2430">Channel</a> ()</td></tr>
+<tr class="memdesc:af2b4b16288cbb2c592b1e0f6486c2430"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="class_channel.html">Channel</a> class Contains Messages sent by users.  <a href="class_channel.html#af2b4b16288cbb2c592b1e0f6486c2430">More...</a><br /></td></tr>
 <tr class="separator:af2b4b16288cbb2c592b1e0f6486c2430"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa23a382ada4f4785d217deb28a2c3555"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#aa23a382ada4f4785d217deb28a2c3555">setName</a> (std::string <a class="el" href="class_channel.html#ae080e1afd52f3b70e04c62fea46447aa">name</a>)</td></tr>
 <tr class="separator:aa23a382ada4f4785d217deb28a2c3555"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -90,8 +91,10 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ae080e1afd52f3b70e04c62fea46447aa"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#ae080e1afd52f3b70e04c62fea46447aa">name</a></td></tr>
+<tr class="memdesc:ae080e1afd52f3b70e04c62fea46447aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the channel.  <a href="class_channel.html#ae080e1afd52f3b70e04c62fea46447aa">More...</a><br /></td></tr>
 <tr class="separator:ae080e1afd52f3b70e04c62fea46447aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70ae09ff05d8d84283e1648de9ba2d7a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_message.html">Message</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#a70ae09ff05d8d84283e1648de9ba2d7a">messages</a></td></tr>
+<tr class="memdesc:a70ae09ff05d8d84283e1648de9ba2d7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector of sent messages in the channel.  <a href="class_channel.html#a70ae09ff05d8d84283e1648de9ba2d7a">More...</a><br /></td></tr>
 <tr class="separator:a70ae09ff05d8d84283e1648de9ba2d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -109,6 +112,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The <a class="el" href="class_channel.html">Channel</a> class Contains Messages sent by users. </p>
 
 </div>
 </div>
@@ -128,6 +133,12 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Addes a message to the channel </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>the message to be added to the channel. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -155,6 +166,12 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Removes a message to the channel </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>The message to be removed from the channel. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -172,6 +189,7 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Returns the <a class="el" href="class_channel.html">Channel</a> name </p><dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="class_channel.html">Channel</a>'s name </dd></dl>
 
 </div>
 </div>
@@ -190,6 +208,12 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Sets the <a class="el" href="class_channel.html">Channel</a> name </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name to set to the room </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -206,6 +230,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>A vector of sent messages in the channel. </p>
+
 </div>
 </div>
 <a id="ae080e1afd52f3b70e04c62fea46447aa"></a>
@@ -219,6 +245,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The name of the channel. </p>
 
 </div>
 </div>

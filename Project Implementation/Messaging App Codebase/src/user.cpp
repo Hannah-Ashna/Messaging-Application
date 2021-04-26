@@ -9,10 +9,17 @@ User::User()
 }
 
 void User::setName(std::string username){
+    //! Sets the users name
+    //! \param username the name to be set
+
     name = username;
 }
 
 bool User::subscribeToRoom(std::string room)
+//! Unsubscribes user from room
+/*!
+ * \param room the name to be subscribed to
+ */
 {
     for(int i = 0; i < (int)rooms.size(); i++){
         if(rooms.at(i) == room){
@@ -27,7 +34,7 @@ bool User::subscribeToRoom(std::string room)
 void User::unsubscribeFromRoom(std::string room)
 //! unsubscribes from room
 /*!
- * \param room name to be unsubscribed from
+ * \param room the name to be unsubscribed from
  */
 {
     for(int i = 0; i < (int)rooms.size(); i++){

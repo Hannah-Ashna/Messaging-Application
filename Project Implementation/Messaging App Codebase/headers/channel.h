@@ -9,8 +9,8 @@
 class Channel
 {
 public:
-    std::string name;
-    std::vector<Message> messages;
+    std::string name; //!< The name of the channel
+    std::vector<Message> messages;  //!< A vector of sent messages in the channel
 
     Channel();
     void setName(std::string name);
