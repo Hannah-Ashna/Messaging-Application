@@ -5,6 +5,7 @@
 #include "moderator.h"
 
 class Admin: public Moderator
+        //! Admin class handles admin functions
 {
 public:
     User admin;

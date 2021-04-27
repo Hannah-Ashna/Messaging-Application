@@ -6,7 +6,7 @@
 
 #include "message.h"
 
-class Channel
+class Channel //! Channel contains messages
 {
 public:
     std::string name; //!< The name of the channel

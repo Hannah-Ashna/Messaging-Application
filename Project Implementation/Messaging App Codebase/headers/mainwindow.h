@@ -21,6 +21,7 @@ namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
+        //! The main GUI   
 {
     Q_OBJECT
 
@@ -30,10 +31,9 @@ public:
     const std::string roomFilepath = "../appconfig/roomConfig.txt";
     const std::string adminFilepath = "../appconfig/roomAdminConfig.txt";
 
-    std::vector<Room> rooms;
-    std::vector<User> users;
-
-    User currentUser;
+    std::vector<Room> rooms;    //! Vector of current rooms
+    std::vector<User> users;    //! Vector of all users
+    User currentUser;//! current user object
 
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
@@ -74,11 +74,11 @@ private slots:
     void on_settingsButton_clicked();
     void on_backButton_clicked();
 
-    void updateFile(std::string filePath);
+    void updateFile(std::string filePath); //! Updates files
     void read_userConfig(std::string username);
     void read_roomConfig(std::string username);
 
-    QString generateSalt();
+    QString generateSalt(); //! Generates salt for password encription
     QString getHashedPassword(QString salt, QString password);
 
     void on_loginButton_clicked();    

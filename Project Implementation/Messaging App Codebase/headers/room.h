@@ -10,6 +10,7 @@
 #include "admin.h"
 
 class Room
+        //! room contains modeators channels and the memeberrs
 {
 public:
     std::string name;  //!< The room name

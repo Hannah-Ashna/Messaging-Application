@@ -4,6 +4,7 @@
 #include "media.h"
 
 class Video: public Media
+        //! Contains functions for media playback
 {
 public:
     Video();

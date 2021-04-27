@@ -6,7 +6,9 @@
 
 #include "user.h"
 
-class Message {
+class Message //! Contains message contents and sender
+{
+
 public:
     std::string messageContent;  //!< The content of the sent message
     std::string username;  //!< The username if the sender of the message
