@@ -2,7 +2,7 @@
 ### Login Use-Case:
 This diagram shows the login process. It assumes that the user is valid and will use their credentials to log in. The credentials introduced by the user are then validated by the database.
 
-<p align = "center"><img src = "https://github.com/Hannah-Ashna/SDI-Project/blob/main/Project%20Diagrams/Diagrams/UseCase%20-%20Login.PNG"></p> 
+<p align = "center"><img src = "https://github.com/Hannah-Ashna/SDI-Project/blob/8145a5d1c644c6eb1cd5129ffa92940a2fb52e00/Project%20Diagrams/SDI/Activity-Login.png"></p> 
 
 ### Send Message Use-Case:
 A user attempts to send a message, the system will first need to validate their connection to ensure that the target user is online and connected to the broker.  
