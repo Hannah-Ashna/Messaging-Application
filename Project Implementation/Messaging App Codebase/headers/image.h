@@ -3,7 +3,7 @@
 
 #include "media.h"
 
-class Image: public Media
+class Image: public Media //! Image class extends media includes functions for accessing image files in program.
 {
 public:
     Image();

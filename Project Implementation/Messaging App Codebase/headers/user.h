@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-class User
+class User//! Contains all user infomation includeing their ID name and status
 {
 protected:
     std::string userID;  //!< The users ID

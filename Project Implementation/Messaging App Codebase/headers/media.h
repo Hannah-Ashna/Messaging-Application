@@ -3,7 +3,7 @@
 
 #include "message.h"
 
-class Media: public Message
+class Media: public Message //! Media class extends Message contains functions for downloading files.
 {
 public:
     Media();

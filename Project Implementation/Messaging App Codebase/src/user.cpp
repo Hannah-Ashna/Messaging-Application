@@ -2,6 +2,7 @@
 #include <iostream>
 /**
  * @brief User class
+ * Contains user infomation and functions
  */
 User::User()
 {

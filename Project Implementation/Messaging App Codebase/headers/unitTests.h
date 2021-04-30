@@ -8,7 +8,7 @@
 #include <QtCore>
 #include <fstream>
 
-class unitTests: public QObject
+class unitTests: public QObject //! Contains unit testing
 {
     Q_OBJECT
 public:
