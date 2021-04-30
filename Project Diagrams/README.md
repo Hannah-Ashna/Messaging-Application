@@ -17,7 +17,7 @@ If the user is offline:
   - The source user’s connection is then repeatedly checked until they are confirmed to be online
   - Once the source user is online, their message is then sent to the target user, and the following stages mentioned above occur
 
-<p align = "center"><img src = "https://github.com/Hannah-Ashna/SDI-Project/blob/main/Project%20Diagrams/Diagrams/UseCase%20-%20SendMessage.PNG"></p> 
+<p align = "center"><img src = "https://github.com/Hannah-Ashna/SDI-Project/blob/4062ebbb7d89a2aac79789378dc3664e23cd220f/Project%20Diagrams/SDI/Activity-SendMessage.png"></p> 
 
 ### Make Room Use-Case:
 The diagram shows the process that occurs when a user makes a new room. The user is assumed to be Admin as by making a room the user becomes that Room’s Admin by default. The new room is made, and the database is updated.  
