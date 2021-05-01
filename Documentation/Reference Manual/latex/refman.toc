@@ -1,0 +1,215 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Namespace Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Namespace List}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Hierarchical Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class Hierarchy}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Class Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}File Index}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}File List}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Namespace Documentation}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Consts Namespace Reference}{9}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Variable Documentation}{9}{subsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1.1}buttons}{9}{subsubsection.5.1.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1.2}dialogs}{10}{subsubsection.5.1.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.1.3}errors}{10}{subsubsection.5.1.1.3}%
+\contentsline {subsubsection}{\numberline {5.1.1.4}formatting}{10}{subsubsection.5.1.1.4}%
+\contentsline {subsubsection}{\numberline {5.1.1.5}hashData}{10}{subsubsection.5.1.1.5}%
+\contentsline {subsubsection}{\numberline {5.1.1.6}navigation}{10}{subsubsection.5.1.1.6}%
+\contentsline {subsubsection}{\numberline {5.1.1.7}timer}{10}{subsubsection.5.1.1.7}%
+\contentsline {subsubsection}{\numberline {5.1.1.8}topics}{10}{subsubsection.5.1.1.8}%
+\contentsline {section}{\numberline {5.2}Ui Namespace Reference}{10}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Class Documentation}{11}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Admin Class Reference}{11}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Constructor \& Destructor Documentation}{12}{subsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.1.1}Admin()}{12}{subsubsection.6.1.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Member Data Documentation}{12}{subsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.1}admin}{13}{subsubsection.6.1.2.1}%
+\contentsline {section}{\numberline {6.2}Consts\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::buttons Struct Reference}{13}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Member Data Documentation}{13}{subsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.1.1}connect}{13}{subsubsection.6.2.1.1}%
+\contentsline {subsubsection}{\numberline {6.2.1.2}disconnect}{13}{subsubsection.6.2.1.2}%
+\contentsline {subsubsection}{\numberline {6.2.1.3}roomname}{13}{subsubsection.6.2.1.3}%
+\contentsline {subsubsection}{\numberline {6.2.1.4}username}{14}{subsubsection.6.2.1.4}%
+\contentsline {section}{\numberline {6.3}Channel Class Reference}{14}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Constructor \& Destructor Documentation}{14}{subsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.1.1}Channel()}{14}{subsubsection.6.3.1.1}%
+\contentsline {subsection}{\numberline {6.3.2}Member Function Documentation}{14}{subsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.1}addMessage()}{15}{subsubsection.6.3.2.1}%
+\contentsline {subsubsection}{\numberline {6.3.2.2}deleteMessage()}{15}{subsubsection.6.3.2.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.3}getName()}{15}{subsubsection.6.3.2.3}%
+\contentsline {subsubsection}{\numberline {6.3.2.4}setName()}{15}{subsubsection.6.3.2.4}%
+\contentsline {subsection}{\numberline {6.3.3}Member Data Documentation}{15}{subsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.3.1}messages}{15}{subsubsection.6.3.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.3.2}name}{16}{subsubsection.6.3.3.2}%
+\contentsline {section}{\numberline {6.4}Consts\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::dialogs Struct Reference}{16}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Member Data Documentation}{16}{subsection.6.4.1}%
+\contentsline {subsubsection}{\numberline {6.4.1.1}channelName}{16}{subsubsection.6.4.1.1}%
+\contentsline {subsubsection}{\numberline {6.4.1.2}enterChannelName}{16}{subsubsection.6.4.1.2}%
+\contentsline {subsubsection}{\numberline {6.4.1.3}enterroomname}{16}{subsubsection.6.4.1.3}%
+\contentsline {subsubsection}{\numberline {6.4.1.4}enterUsername}{17}{subsubsection.6.4.1.4}%
+\contentsline {subsubsection}{\numberline {6.4.1.5}noChannel}{17}{subsubsection.6.4.1.5}%
+\contentsline {subsubsection}{\numberline {6.4.1.6}noGroup}{17}{subsubsection.6.4.1.6}%
+\contentsline {section}{\numberline {6.5}Consts\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::errors Struct Reference}{17}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Member Data Documentation}{17}{subsection.6.5.1}%
+\contentsline {subsubsection}{\numberline {6.5.1.1}alreadyMod}{18}{subsubsection.6.5.1.1}%
+\contentsline {subsubsection}{\numberline {6.5.1.2}emptyFields}{18}{subsubsection.6.5.1.2}%
+\contentsline {subsubsection}{\numberline {6.5.1.3}emptyUser}{18}{subsubsection.6.5.1.3}%
+\contentsline {subsubsection}{\numberline {6.5.1.4}error}{18}{subsubsection.6.5.1.4}%
+\contentsline {subsubsection}{\numberline {6.5.1.5}invalidCreds}{18}{subsubsection.6.5.1.5}%
+\contentsline {subsubsection}{\numberline {6.5.1.6}missingFile}{18}{subsubsection.6.5.1.6}%
+\contentsline {subsubsection}{\numberline {6.5.1.7}noChannelSelected}{18}{subsubsection.6.5.1.7}%
+\contentsline {subsubsection}{\numberline {6.5.1.8}noRoomSelected}{18}{subsubsection.6.5.1.8}%
+\contentsline {subsubsection}{\numberline {6.5.1.9}sendMessage}{19}{subsubsection.6.5.1.9}%
+\contentsline {subsubsection}{\numberline {6.5.1.10}somethingWrong}{19}{subsubsection.6.5.1.10}%
+\contentsline {subsubsection}{\numberline {6.5.1.11}subscription}{19}{subsubsection.6.5.1.11}%
+\contentsline {subsubsection}{\numberline {6.5.1.12}userNotFound}{19}{subsubsection.6.5.1.12}%
+\contentsline {subsubsection}{\numberline {6.5.1.13}userNotMod}{19}{subsubsection.6.5.1.13}%
+\contentsline {subsubsection}{\numberline {6.5.1.14}userSubscribed}{19}{subsubsection.6.5.1.14}%
+\contentsline {section}{\numberline {6.6}Consts\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::formatting Struct Reference}{19}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Member Data Documentation}{20}{subsection.6.6.1}%
+\contentsline {subsubsection}{\numberline {6.6.1.1}delimiterChar}{20}{subsubsection.6.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.6.1.2}delimiterStr}{20}{subsubsection.6.6.1.2}%
+\contentsline {section}{\numberline {6.7}Consts\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::hash\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data Struct Reference}{20}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Member Data Documentation}{20}{subsection.6.7.1}%
+\contentsline {subsubsection}{\numberline {6.7.1.1}pepper}{20}{subsubsection.6.7.1.1}%
+\contentsline {section}{\numberline {6.8}Image Class Reference}{21}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Constructor \& Destructor Documentation}{22}{subsection.6.8.1}%
+\contentsline {subsubsection}{\numberline {6.8.1.1}Image()}{22}{subsubsection.6.8.1.1}%
+\contentsline {subsection}{\numberline {6.8.2}Member Function Documentation}{22}{subsection.6.8.2}%
+\contentsline {subsubsection}{\numberline {6.8.2.1}getImage()}{22}{subsubsection.6.8.2.1}%
+\contentsline {subsubsection}{\numberline {6.8.2.2}view()}{22}{subsubsection.6.8.2.2}%
+\contentsline {section}{\numberline {6.9}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Window Class Reference}{22}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}Constructor \& Destructor Documentation}{23}{subsection.6.9.1}%
+\contentsline {subsubsection}{\numberline {6.9.1.1}MainWindow()}{23}{subsubsection.6.9.1.1}%
+\contentsline {subsubsection}{\numberline {6.9.1.2}$\sim $MainWindow()}{24}{subsubsection.6.9.1.2}%
+\contentsline {subsection}{\numberline {6.9.2}Member Data Documentation}{24}{subsection.6.9.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.1}adminFilepath}{24}{subsubsection.6.9.2.1}%
+\contentsline {subsubsection}{\numberline {6.9.2.2}credFilepath}{24}{subsubsection.6.9.2.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.3}currentUser}{24}{subsubsection.6.9.2.3}%
+\contentsline {subsubsection}{\numberline {6.9.2.4}roomFilepath}{25}{subsubsection.6.9.2.4}%
+\contentsline {subsubsection}{\numberline {6.9.2.5}rooms}{25}{subsubsection.6.9.2.5}%
+\contentsline {subsubsection}{\numberline {6.9.2.6}userFilepath}{25}{subsubsection.6.9.2.6}%
+\contentsline {subsubsection}{\numberline {6.9.2.7}users}{25}{subsubsection.6.9.2.7}%
+\contentsline {section}{\numberline {6.10}Media Class Reference}{25}{section.6.10}%
+\contentsline {subsection}{\numberline {6.10.1}Constructor \& Destructor Documentation}{26}{subsection.6.10.1}%
+\contentsline {subsubsection}{\numberline {6.10.1.1}Media()}{26}{subsubsection.6.10.1.1}%
+\contentsline {subsection}{\numberline {6.10.2}Member Function Documentation}{26}{subsection.6.10.2}%
+\contentsline {subsubsection}{\numberline {6.10.2.1}Download()}{26}{subsubsection.6.10.2.1}%
+\contentsline {section}{\numberline {6.11}Message Class Reference}{27}{section.6.11}%
+\contentsline {subsection}{\numberline {6.11.1}Constructor \& Destructor Documentation}{27}{subsection.6.11.1}%
+\contentsline {subsubsection}{\numberline {6.11.1.1}Message()}{27}{subsubsection.6.11.1.1}%
+\contentsline {subsection}{\numberline {6.11.2}Member Function Documentation}{27}{subsection.6.11.2}%
+\contentsline {subsubsection}{\numberline {6.11.2.1}getFormattedMessage()}{28}{subsubsection.6.11.2.1}%
+\contentsline {subsubsection}{\numberline {6.11.2.2}getMessageContent()}{28}{subsubsection.6.11.2.2}%
+\contentsline {subsubsection}{\numberline {6.11.2.3}setMessageContent()}{28}{subsubsection.6.11.2.3}%
+\contentsline {subsection}{\numberline {6.11.3}Member Data Documentation}{29}{subsection.6.11.3}%
+\contentsline {subsubsection}{\numberline {6.11.3.1}messageContent}{29}{subsubsection.6.11.3.1}%
+\contentsline {subsubsection}{\numberline {6.11.3.2}username}{29}{subsubsection.6.11.3.2}%
+\contentsline {section}{\numberline {6.12}Moderator Class Reference}{29}{section.6.12}%
+\contentsline {subsection}{\numberline {6.12.1}Constructor \& Destructor Documentation}{30}{subsection.6.12.1}%
+\contentsline {subsubsection}{\numberline {6.12.1.1}Moderator()}{30}{subsubsection.6.12.1.1}%
+\contentsline {subsection}{\numberline {6.12.2}Member Function Documentation}{30}{subsection.6.12.2}%
+\contentsline {subsubsection}{\numberline {6.12.2.1}addUser()}{31}{subsubsection.6.12.2.1}%
+\contentsline {subsubsection}{\numberline {6.12.2.2}getUser()}{31}{subsubsection.6.12.2.2}%
+\contentsline {subsubsection}{\numberline {6.12.2.3}removeUser()}{31}{subsubsection.6.12.2.3}%
+\contentsline {subsection}{\numberline {6.12.3}Member Data Documentation}{31}{subsection.6.12.3}%
+\contentsline {subsubsection}{\numberline {6.12.3.1}moderator}{31}{subsubsection.6.12.3.1}%
+\contentsline {section}{\numberline {6.13}Consts\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::navigation Struct Reference}{31}{section.6.13}%
+\contentsline {subsection}{\numberline {6.13.1}Member Data Documentation}{31}{subsection.6.13.1}%
+\contentsline {subsubsection}{\numberline {6.13.1.1}loginPage}{32}{subsubsection.6.13.1.1}%
+\contentsline {subsubsection}{\numberline {6.13.1.2}mainPage}{32}{subsubsection.6.13.1.2}%
+\contentsline {subsubsection}{\numberline {6.13.1.3}settingsPage}{32}{subsubsection.6.13.1.3}%
+\contentsline {subsubsection}{\numberline {6.13.1.4}signupPage}{32}{subsubsection.6.13.1.4}%
+\contentsline {section}{\numberline {6.14}Room Class Reference}{32}{section.6.14}%
+\contentsline {subsection}{\numberline {6.14.1}Constructor \& Destructor Documentation}{33}{subsection.6.14.1}%
+\contentsline {subsubsection}{\numberline {6.14.1.1}Room()}{33}{subsubsection.6.14.1.1}%
+\contentsline {subsection}{\numberline {6.14.2}Member Function Documentation}{33}{subsection.6.14.2}%
+\contentsline {subsubsection}{\numberline {6.14.2.1}addChannel()}{33}{subsubsection.6.14.2.1}%
+\contentsline {subsubsection}{\numberline {6.14.2.2}addMembers()}{33}{subsubsection.6.14.2.2}%
+\contentsline {subsubsection}{\numberline {6.14.2.3}addMod()}{34}{subsubsection.6.14.2.3}%
+\contentsline {subsubsection}{\numberline {6.14.2.4}getChannelList()}{34}{subsubsection.6.14.2.4}%
+\contentsline {subsubsection}{\numberline {6.14.2.5}getMembers()}{34}{subsubsection.6.14.2.5}%
+\contentsline {subsubsection}{\numberline {6.14.2.6}getName()}{34}{subsubsection.6.14.2.6}%
+\contentsline {subsubsection}{\numberline {6.14.2.7}getRoomID()}{34}{subsubsection.6.14.2.7}%
+\contentsline {subsubsection}{\numberline {6.14.2.8}removeMember()}{34}{subsubsection.6.14.2.8}%
+\contentsline {subsubsection}{\numberline {6.14.2.9}removeMod()}{34}{subsubsection.6.14.2.9}%
+\contentsline {subsubsection}{\numberline {6.14.2.10}setName()}{35}{subsubsection.6.14.2.10}%
+\contentsline {subsubsection}{\numberline {6.14.2.11}setRoomID()}{35}{subsubsection.6.14.2.11}%
+\contentsline {subsection}{\numberline {6.14.3}Member Data Documentation}{35}{subsection.6.14.3}%
+\contentsline {subsubsection}{\numberline {6.14.3.1}admin}{35}{subsubsection.6.14.3.1}%
+\contentsline {subsubsection}{\numberline {6.14.3.2}channels}{35}{subsubsection.6.14.3.2}%
+\contentsline {subsubsection}{\numberline {6.14.3.3}members}{35}{subsubsection.6.14.3.3}%
+\contentsline {subsubsection}{\numberline {6.14.3.4}moderators}{35}{subsubsection.6.14.3.4}%
+\contentsline {subsubsection}{\numberline {6.14.3.5}name}{35}{subsubsection.6.14.3.5}%
+\contentsline {subsubsection}{\numberline {6.14.3.6}roomID}{36}{subsubsection.6.14.3.6}%
+\contentsline {section}{\numberline {6.15}Consts\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::timer Struct Reference}{36}{section.6.15}%
+\contentsline {subsection}{\numberline {6.15.1}Member Data Documentation}{36}{subsection.6.15.1}%
+\contentsline {subsubsection}{\numberline {6.15.1.1}timerDuration}{36}{subsubsection.6.15.1.1}%
+\contentsline {section}{\numberline {6.16}Consts\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::topics Struct Reference}{36}{section.6.16}%
+\contentsline {subsection}{\numberline {6.16.1}Member Data Documentation}{36}{subsection.6.16.1}%
+\contentsline {subsubsection}{\numberline {6.16.1.1}status}{37}{subsubsection.6.16.1.1}%
+\contentsline {subsubsection}{\numberline {6.16.1.2}statusFilter}{37}{subsubsection.6.16.1.2}%
+\contentsline {section}{\numberline {6.17}unit\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tests Class Reference}{37}{section.6.17}%
+\contentsline {subsection}{\numberline {6.17.1}Member Function Documentation}{38}{subsection.6.17.1}%
+\contentsline {subsubsection}{\numberline {6.17.1.1}testApp()}{38}{subsubsection.6.17.1.1}%
+\contentsline {section}{\numberline {6.18}User Class Reference}{38}{section.6.18}%
+\contentsline {subsection}{\numberline {6.18.1}Constructor \& Destructor Documentation}{39}{subsection.6.18.1}%
+\contentsline {subsubsection}{\numberline {6.18.1.1}User()}{39}{subsubsection.6.18.1.1}%
+\contentsline {subsection}{\numberline {6.18.2}Member Function Documentation}{39}{subsection.6.18.2}%
+\contentsline {subsubsection}{\numberline {6.18.2.1}getName()}{39}{subsubsection.6.18.2.1}%
+\contentsline {subsubsection}{\numberline {6.18.2.2}getOnlineStatus()}{40}{subsubsection.6.18.2.2}%
+\contentsline {subsubsection}{\numberline {6.18.2.3}setName()}{40}{subsubsection.6.18.2.3}%
+\contentsline {subsubsection}{\numberline {6.18.2.4}setOnlineStatus()}{40}{subsubsection.6.18.2.4}%
+\contentsline {subsubsection}{\numberline {6.18.2.5}subscribeToRoom()}{40}{subsubsection.6.18.2.5}%
+\contentsline {subsubsection}{\numberline {6.18.2.6}unsubscribeFromRoom()}{41}{subsubsection.6.18.2.6}%
+\contentsline {subsection}{\numberline {6.18.3}Member Data Documentation}{41}{subsection.6.18.3}%
+\contentsline {subsubsection}{\numberline {6.18.3.1}name}{41}{subsubsection.6.18.3.1}%
+\contentsline {subsubsection}{\numberline {6.18.3.2}online}{41}{subsubsection.6.18.3.2}%
+\contentsline {subsubsection}{\numberline {6.18.3.3}rooms}{41}{subsubsection.6.18.3.3}%
+\contentsline {subsubsection}{\numberline {6.18.3.4}status}{41}{subsubsection.6.18.3.4}%
+\contentsline {subsubsection}{\numberline {6.18.3.5}userID}{41}{subsubsection.6.18.3.5}%
+\contentsline {section}{\numberline {6.19}Video Class Reference}{42}{section.6.19}%
+\contentsline {subsection}{\numberline {6.19.1}Constructor \& Destructor Documentation}{43}{subsection.6.19.1}%
+\contentsline {subsubsection}{\numberline {6.19.1.1}Video()}{43}{subsubsection.6.19.1.1}%
+\contentsline {subsection}{\numberline {6.19.2}Member Function Documentation}{43}{subsection.6.19.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.1}load()}{43}{subsubsection.6.19.2.1}%
+\contentsline {subsubsection}{\numberline {6.19.2.2}play()}{43}{subsubsection.6.19.2.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.3}stop()}{43}{subsubsection.6.19.2.3}%
+\contentsline {chapter}{\numberline {7}File Documentation}{45}{chapter.7}%
+\contentsline {section}{\numberline {7.1}appconfig/credentials.txt File Reference}{45}{section.7.1}%
+\contentsline {section}{\numberline {7.2}appconfig/room\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Admin\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config.txt File Reference}{45}{section.7.2}%
+\contentsline {section}{\numberline {7.3}appconfig/room\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config.txt File Reference}{45}{section.7.3}%
+\contentsline {section}{\numberline {7.4}appconfig/user\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config.txt File Reference}{45}{section.7.4}%
+\contentsline {section}{\numberline {7.5}headers/admin.h File Reference}{45}{section.7.5}%
+\contentsline {section}{\numberline {7.6}headers/channel.h File Reference}{46}{section.7.6}%
+\contentsline {section}{\numberline {7.7}headers/consts.h File Reference}{48}{section.7.7}%
+\contentsline {section}{\numberline {7.8}headers/image.h File Reference}{49}{section.7.8}%
+\contentsline {section}{\numberline {7.9}headers/mainwindow.h File Reference}{50}{section.7.9}%
+\contentsline {section}{\numberline {7.10}headers/media.h File Reference}{51}{section.7.10}%
+\contentsline {section}{\numberline {7.11}headers/message.h File Reference}{52}{section.7.11}%
+\contentsline {section}{\numberline {7.12}headers/moderator.h File Reference}{53}{section.7.12}%
+\contentsline {section}{\numberline {7.13}headers/room.h File Reference}{54}{section.7.13}%
+\contentsline {section}{\numberline {7.14}headers/unit\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tests.h File Reference}{55}{section.7.14}%
+\contentsline {section}{\numberline {7.15}headers/user.h File Reference}{56}{section.7.15}%
+\contentsline {section}{\numberline {7.16}headers/video.h File Reference}{57}{section.7.16}%
+\contentsline {section}{\numberline {7.17}src/admin.cpp File Reference}{58}{section.7.17}%
+\contentsline {section}{\numberline {7.18}src/channel.cpp File Reference}{59}{section.7.18}%
+\contentsline {section}{\numberline {7.19}src/image.cpp File Reference}{59}{section.7.19}%
+\contentsline {section}{\numberline {7.20}src/main.cpp File Reference}{60}{section.7.20}%
+\contentsline {subsection}{\numberline {7.20.1}Macro Definition Documentation}{61}{subsection.7.20.1}%
+\contentsline {subsubsection}{\numberline {7.20.1.1}RUN\_TESTS}{61}{subsubsection.7.20.1.1}%
+\contentsline {subsection}{\numberline {7.20.2}Function Documentation}{61}{subsection.7.20.2}%
+\contentsline {subsubsection}{\numberline {7.20.2.1}main()}{61}{subsubsection.7.20.2.1}%
+\contentsline {section}{\numberline {7.21}src/mainwindow.cpp File Reference}{61}{section.7.21}%
+\contentsline {section}{\numberline {7.22}src/media.cpp File Reference}{62}{section.7.22}%
+\contentsline {section}{\numberline {7.23}src/message.cpp File Reference}{62}{section.7.23}%
+\contentsline {subsection}{\numberline {7.23.1}Variable Documentation}{63}{subsection.7.23.1}%
+\contentsline {subsubsection}{\numberline {7.23.1.1}messageContent}{63}{subsubsection.7.23.1.1}%
+\contentsline {section}{\numberline {7.24}src/moderator.cpp File Reference}{64}{section.7.24}%
+\contentsline {section}{\numberline {7.25}src/room.cpp File Reference}{65}{section.7.25}%
+\contentsline {section}{\numberline {7.26}src/unit\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tests.cpp File Reference}{65}{section.7.26}%
+\contentsline {section}{\numberline {7.27}tests/unit\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tests.cpp File Reference}{66}{section.7.27}%
+\contentsline {section}{\numberline {7.28}src/user.cpp File Reference}{66}{section.7.28}%
+\contentsline {section}{\numberline {7.29}src/video.cpp File Reference}{67}{section.7.29}%
+\contentsline {chapter}{Index}{69}{section*.115}%

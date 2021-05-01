@@ -1,0 +1,424 @@
+\begin{theindex}
+
+  \item {$\sim$MainWindow}
+    \subitem {MainWindow}, \hyperpage{24}
+
+  \indexspace
+
+  \item {addChannel}
+    \subitem {Room}, \hyperpage{33}
+  \item {addMembers}
+    \subitem {Room}, \hyperpage{33}
+  \item {addMessage}
+    \subitem {Channel}, \hyperpage{14}
+  \item {addMod}
+    \subitem {Room}, \hyperpage{33}
+  \item {addUser}
+    \subitem {Moderator}, \hyperpage{30}
+  \item {Admin}, \hyperpage{11}
+    \subitem {Admin}, \hyperpage{12}
+    \subitem {admin}, \hyperpage{12}
+  \item {admin}
+    \subitem {Admin}, \hyperpage{12}
+    \subitem {Room}, \hyperpage{35}
+  \item {adminFilepath}
+    \subitem {MainWindow}, \hyperpage{24}
+  \item {alreadyMod}
+    \subitem {Consts::errors}, \hyperpage{17}
+  \item {appconfig/credentials.txt}, \hyperpage{45}
+  \item {appconfig/roomAdminConfig.txt}, \hyperpage{45}
+  \item {appconfig/roomConfig.txt}, \hyperpage{45}
+  \item {appconfig/userConfig.txt}, \hyperpage{45}
+
+  \indexspace
+
+  \item {buttons}
+    \subitem {Consts}, \hyperpage{9}
+
+  \indexspace
+
+  \item {Channel}, \hyperpage{14}
+    \subitem {addMessage}, \hyperpage{14}
+    \subitem {Channel}, \hyperpage{14}
+    \subitem {deleteMessage}, \hyperpage{15}
+    \subitem {getName}, \hyperpage{15}
+    \subitem {messages}, \hyperpage{15}
+    \subitem {name}, \hyperpage{15}
+    \subitem {setName}, \hyperpage{15}
+  \item {channelName}
+    \subitem {Consts::dialogs}, \hyperpage{16}
+  \item {channels}
+    \subitem {Room}, \hyperpage{35}
+  \item {connect}
+    \subitem {Consts::buttons}, \hyperpage{13}
+  \item {Consts}, \hyperpage{9}
+    \subitem {buttons}, \hyperpage{9}
+    \subitem {dialogs}, \hyperpage{9}
+    \subitem {errors}, \hyperpage{10}
+    \subitem {formatting}, \hyperpage{10}
+    \subitem {hashData}, \hyperpage{10}
+    \subitem {navigation}, \hyperpage{10}
+    \subitem {timer}, \hyperpage{10}
+    \subitem {topics}, \hyperpage{10}
+  \item {Consts::buttons}, \hyperpage{13}
+    \subitem {connect}, \hyperpage{13}
+    \subitem {disconnect}, \hyperpage{13}
+    \subitem {roomname}, \hyperpage{13}
+    \subitem {username}, \hyperpage{13}
+  \item {Consts::dialogs}, \hyperpage{16}
+    \subitem {channelName}, \hyperpage{16}
+    \subitem {enterChannelName}, \hyperpage{16}
+    \subitem {enterroomname}, \hyperpage{16}
+    \subitem {enterUsername}, \hyperpage{16}
+    \subitem {noChannel}, \hyperpage{17}
+    \subitem {noGroup}, \hyperpage{17}
+  \item {Consts::errors}, \hyperpage{17}
+    \subitem {alreadyMod}, \hyperpage{17}
+    \subitem {emptyFields}, \hyperpage{18}
+    \subitem {emptyUser}, \hyperpage{18}
+    \subitem {error}, \hyperpage{18}
+    \subitem {invalidCreds}, \hyperpage{18}
+    \subitem {missingFile}, \hyperpage{18}
+    \subitem {noChannelSelected}, \hyperpage{18}
+    \subitem {noRoomSelected}, \hyperpage{18}
+    \subitem {sendMessage}, \hyperpage{18}
+    \subitem {somethingWrong}, \hyperpage{19}
+    \subitem {subscription}, \hyperpage{19}
+    \subitem {userNotFound}, \hyperpage{19}
+    \subitem {userNotMod}, \hyperpage{19}
+    \subitem {userSubscribed}, \hyperpage{19}
+  \item {Consts::formatting}, \hyperpage{19}
+    \subitem {delimiterChar}, \hyperpage{20}
+    \subitem {delimiterStr}, \hyperpage{20}
+  \item {Consts::hashData}, \hyperpage{20}
+    \subitem {pepper}, \hyperpage{20}
+  \item {Consts::navigation}, \hyperpage{31}
+    \subitem {loginPage}, \hyperpage{31}
+    \subitem {mainPage}, \hyperpage{32}
+    \subitem {settingsPage}, \hyperpage{32}
+    \subitem {signupPage}, \hyperpage{32}
+  \item {Consts::timer}, \hyperpage{36}
+    \subitem {timerDuration}, \hyperpage{36}
+  \item {Consts::topics}, \hyperpage{36}
+    \subitem {status}, \hyperpage{36}
+    \subitem {statusFilter}, \hyperpage{37}
+  \item {credFilepath}
+    \subitem {MainWindow}, \hyperpage{24}
+  \item {currentUser}
+    \subitem {MainWindow}, \hyperpage{24}
+
+  \indexspace
+
+  \item {deleteMessage}
+    \subitem {Channel}, \hyperpage{15}
+  \item {delimiterChar}
+    \subitem {Consts::formatting}, \hyperpage{20}
+  \item {delimiterStr}
+    \subitem {Consts::formatting}, \hyperpage{20}
+  \item {dialogs}
+    \subitem {Consts}, \hyperpage{9}
+  \item {disconnect}
+    \subitem {Consts::buttons}, \hyperpage{13}
+  \item {Download}
+    \subitem {Media}, \hyperpage{26}
+
+  \indexspace
+
+  \item {emptyFields}
+    \subitem {Consts::errors}, \hyperpage{18}
+  \item {emptyUser}
+    \subitem {Consts::errors}, \hyperpage{18}
+  \item {enterChannelName}
+    \subitem {Consts::dialogs}, \hyperpage{16}
+  \item {enterroomname}
+    \subitem {Consts::dialogs}, \hyperpage{16}
+  \item {enterUsername}
+    \subitem {Consts::dialogs}, \hyperpage{16}
+  \item {error}
+    \subitem {Consts::errors}, \hyperpage{18}
+  \item {errors}
+    \subitem {Consts}, \hyperpage{10}
+
+  \indexspace
+
+  \item {formatting}
+    \subitem {Consts}, \hyperpage{10}
+
+  \indexspace
+
+  \item {getChannelList}
+    \subitem {Room}, \hyperpage{34}
+  \item {getFormattedMessage}
+    \subitem {Message}, \hyperpage{27}
+  \item {getImage}
+    \subitem {Image}, \hyperpage{22}
+  \item {getMembers}
+    \subitem {Room}, \hyperpage{34}
+  \item {getMessageContent}
+    \subitem {Message}, \hyperpage{28}
+  \item {getName}
+    \subitem {Channel}, \hyperpage{15}
+    \subitem {Room}, \hyperpage{34}
+    \subitem {User}, \hyperpage{39}
+  \item {getOnlineStatus}
+    \subitem {User}, \hyperpage{39}
+  \item {getRoomID}
+    \subitem {Room}, \hyperpage{34}
+  \item {getUser}
+    \subitem {Moderator}, \hyperpage{31}
+
+  \indexspace
+
+  \item {hashData}
+    \subitem {Consts}, \hyperpage{10}
+  \item {headers/admin.h}, \hyperpage{45}
+  \item {headers/channel.h}, \hyperpage{46}
+  \item {headers/consts.h}, \hyperpage{48}
+  \item {headers/image.h}, \hyperpage{49}
+  \item {headers/mainwindow.h}, \hyperpage{50}
+  \item {headers/media.h}, \hyperpage{51}
+  \item {headers/message.h}, \hyperpage{52}
+  \item {headers/moderator.h}, \hyperpage{53}
+  \item {headers/room.h}, \hyperpage{54}
+  \item {headers/unitTests.h}, \hyperpage{55}
+  \item {headers/user.h}, \hyperpage{56}
+  \item {headers/video.h}, \hyperpage{57}
+
+  \indexspace
+
+  \item {Image}, \hyperpage{21}
+    \subitem {getImage}, \hyperpage{22}
+    \subitem {Image}, \hyperpage{22}
+    \subitem {view}, \hyperpage{22}
+  \item {invalidCreds}
+    \subitem {Consts::errors}, \hyperpage{18}
+
+  \indexspace
+
+  \item {load}
+    \subitem {Video}, \hyperpage{43}
+  \item {loginPage}
+    \subitem {Consts::navigation}, \hyperpage{31}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.cpp}, \hyperpage{61}
+  \item {main.cpp}
+    \subitem {main}, \hyperpage{61}
+    \subitem {RUN\_TESTS}, \hyperpage{61}
+  \item {mainPage}
+    \subitem {Consts::navigation}, \hyperpage{32}
+  \item {MainWindow}, \hyperpage{22}
+    \subitem {$\sim$MainWindow}, \hyperpage{24}
+    \subitem {adminFilepath}, \hyperpage{24}
+    \subitem {credFilepath}, \hyperpage{24}
+    \subitem {currentUser}, \hyperpage{24}
+    \subitem {MainWindow}, \hyperpage{23}
+    \subitem {roomFilepath}, \hyperpage{24}
+    \subitem {rooms}, \hyperpage{25}
+    \subitem {userFilepath}, \hyperpage{25}
+    \subitem {users}, \hyperpage{25}
+  \item {Media}, \hyperpage{25}
+    \subitem {Download}, \hyperpage{26}
+    \subitem {Media}, \hyperpage{26}
+  \item {members}
+    \subitem {Room}, \hyperpage{35}
+  \item {Message}, \hyperpage{27}
+    \subitem {getFormattedMessage}, \hyperpage{27}
+    \subitem {getMessageContent}, \hyperpage{28}
+    \subitem {Message}, \hyperpage{27}
+    \subitem {messageContent}, \hyperpage{29}
+    \subitem {setMessageContent}, \hyperpage{28}
+    \subitem {username}, \hyperpage{29}
+  \item {message.cpp}
+    \subitem {messageContent}, \hyperpage{63}
+  \item {messageContent}
+    \subitem {Message}, \hyperpage{29}
+    \subitem {message.cpp}, \hyperpage{63}
+  \item {messages}
+    \subitem {Channel}, \hyperpage{15}
+  \item {missingFile}
+    \subitem {Consts::errors}, \hyperpage{18}
+  \item {Moderator}, \hyperpage{29}
+    \subitem {addUser}, \hyperpage{30}
+    \subitem {getUser}, \hyperpage{31}
+    \subitem {Moderator}, \hyperpage{30}
+    \subitem {moderator}, \hyperpage{31}
+    \subitem {removeUser}, \hyperpage{31}
+  \item {moderator}
+    \subitem {Moderator}, \hyperpage{31}
+  \item {moderators}
+    \subitem {Room}, \hyperpage{35}
+
+  \indexspace
+
+  \item {name}
+    \subitem {Channel}, \hyperpage{15}
+    \subitem {Room}, \hyperpage{35}
+    \subitem {User}, \hyperpage{41}
+  \item {navigation}
+    \subitem {Consts}, \hyperpage{10}
+  \item {noChannel}
+    \subitem {Consts::dialogs}, \hyperpage{17}
+  \item {noChannelSelected}
+    \subitem {Consts::errors}, \hyperpage{18}
+  \item {noGroup}
+    \subitem {Consts::dialogs}, \hyperpage{17}
+  \item {noRoomSelected}
+    \subitem {Consts::errors}, \hyperpage{18}
+
+  \indexspace
+
+  \item {online}
+    \subitem {User}, \hyperpage{41}
+
+  \indexspace
+
+  \item {pepper}
+    \subitem {Consts::hashData}, \hyperpage{20}
+  \item {play}
+    \subitem {Video}, \hyperpage{43}
+
+  \indexspace
+
+  \item {removeMember}
+    \subitem {Room}, \hyperpage{34}
+  \item {removeMod}
+    \subitem {Room}, \hyperpage{34}
+  \item {removeUser}
+    \subitem {Moderator}, \hyperpage{31}
+  \item {Room}, \hyperpage{32}
+    \subitem {addChannel}, \hyperpage{33}
+    \subitem {addMembers}, \hyperpage{33}
+    \subitem {addMod}, \hyperpage{33}
+    \subitem {admin}, \hyperpage{35}
+    \subitem {channels}, \hyperpage{35}
+    \subitem {getChannelList}, \hyperpage{34}
+    \subitem {getMembers}, \hyperpage{34}
+    \subitem {getName}, \hyperpage{34}
+    \subitem {getRoomID}, \hyperpage{34}
+    \subitem {members}, \hyperpage{35}
+    \subitem {moderators}, \hyperpage{35}
+    \subitem {name}, \hyperpage{35}
+    \subitem {removeMember}, \hyperpage{34}
+    \subitem {removeMod}, \hyperpage{34}
+    \subitem {Room}, \hyperpage{33}
+    \subitem {roomID}, \hyperpage{35}
+    \subitem {setName}, \hyperpage{34}
+    \subitem {setRoomID}, \hyperpage{35}
+  \item {roomFilepath}
+    \subitem {MainWindow}, \hyperpage{24}
+  \item {roomID}
+    \subitem {Room}, \hyperpage{35}
+  \item {roomname}
+    \subitem {Consts::buttons}, \hyperpage{13}
+  \item {rooms}
+    \subitem {MainWindow}, \hyperpage{25}
+    \subitem {User}, \hyperpage{41}
+  \item {RUN\_TESTS}
+    \subitem {main.cpp}, \hyperpage{61}
+
+  \indexspace
+
+  \item {sendMessage}
+    \subitem {Consts::errors}, \hyperpage{18}
+  \item {setMessageContent}
+    \subitem {Message}, \hyperpage{28}
+  \item {setName}
+    \subitem {Channel}, \hyperpage{15}
+    \subitem {Room}, \hyperpage{34}
+    \subitem {User}, \hyperpage{40}
+  \item {setOnlineStatus}
+    \subitem {User}, \hyperpage{40}
+  \item {setRoomID}
+    \subitem {Room}, \hyperpage{35}
+  \item {settingsPage}
+    \subitem {Consts::navigation}, \hyperpage{32}
+  \item {signupPage}
+    \subitem {Consts::navigation}, \hyperpage{32}
+  \item {somethingWrong}
+    \subitem {Consts::errors}, \hyperpage{19}
+  \item {src/admin.cpp}, \hyperpage{58}
+  \item {src/channel.cpp}, \hyperpage{59}
+  \item {src/image.cpp}, \hyperpage{59}
+  \item {src/main.cpp}, \hyperpage{60}
+  \item {src/mainwindow.cpp}, \hyperpage{61}
+  \item {src/media.cpp}, \hyperpage{62}
+  \item {src/message.cpp}, \hyperpage{62}
+  \item {src/moderator.cpp}, \hyperpage{64}
+  \item {src/room.cpp}, \hyperpage{65}
+  \item {src/unitTests.cpp}, \hyperpage{65}
+  \item {src/user.cpp}, \hyperpage{66}
+  \item {src/video.cpp}, \hyperpage{67}
+  \item {status}
+    \subitem {Consts::topics}, \hyperpage{36}
+    \subitem {User}, \hyperpage{41}
+  \item {statusFilter}
+    \subitem {Consts::topics}, \hyperpage{37}
+  \item {stop}
+    \subitem {Video}, \hyperpage{43}
+  \item {subscribeToRoom}
+    \subitem {User}, \hyperpage{40}
+  \item {subscription}
+    \subitem {Consts::errors}, \hyperpage{19}
+
+  \indexspace
+
+  \item {testApp}
+    \subitem {unitTests}, \hyperpage{38}
+  \item {tests/unitTests.cpp}, \hyperpage{66}
+  \item {timer}
+    \subitem {Consts}, \hyperpage{10}
+  \item {timerDuration}
+    \subitem {Consts::timer}, \hyperpage{36}
+  \item {topics}
+    \subitem {Consts}, \hyperpage{10}
+
+  \indexspace
+
+  \item {Ui}, \hyperpage{10}
+  \item {unitTests}, \hyperpage{37}
+    \subitem {testApp}, \hyperpage{38}
+  \item {unsubscribeFromRoom}
+    \subitem {User}, \hyperpage{40}
+  \item {User}, \hyperpage{38}
+    \subitem {getName}, \hyperpage{39}
+    \subitem {getOnlineStatus}, \hyperpage{39}
+    \subitem {name}, \hyperpage{41}
+    \subitem {online}, \hyperpage{41}
+    \subitem {rooms}, \hyperpage{41}
+    \subitem {setName}, \hyperpage{40}
+    \subitem {setOnlineStatus}, \hyperpage{40}
+    \subitem {status}, \hyperpage{41}
+    \subitem {subscribeToRoom}, \hyperpage{40}
+    \subitem {unsubscribeFromRoom}, \hyperpage{40}
+    \subitem {User}, \hyperpage{39}
+    \subitem {userID}, \hyperpage{41}
+  \item {userFilepath}
+    \subitem {MainWindow}, \hyperpage{25}
+  \item {userID}
+    \subitem {User}, \hyperpage{41}
+  \item {username}
+    \subitem {Consts::buttons}, \hyperpage{13}
+    \subitem {Message}, \hyperpage{29}
+  \item {userNotFound}
+    \subitem {Consts::errors}, \hyperpage{19}
+  \item {userNotMod}
+    \subitem {Consts::errors}, \hyperpage{19}
+  \item {users}
+    \subitem {MainWindow}, \hyperpage{25}
+  \item {userSubscribed}
+    \subitem {Consts::errors}, \hyperpage{19}
+
+  \indexspace
+
+  \item {Video}, \hyperpage{42}
+    \subitem {load}, \hyperpage{43}
+    \subitem {play}, \hyperpage{43}
+    \subitem {stop}, \hyperpage{43}
+    \subitem {Video}, \hyperpage{43}
+  \item {view}
+    \subitem {Image}, \hyperpage{22}
+
+\end{theindex}
