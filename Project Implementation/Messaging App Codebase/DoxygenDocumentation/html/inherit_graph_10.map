@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_message.html" title="Contains message contents and sender." alt="" coords="5,31,85,57"/>
+<area shape="rect" id="node2" href="$class_media.html" title="Media class extends Message contains functions for downloading files." alt="" coords="133,31,196,57"/>
+<area shape="rect" id="node3" href="$class_image.html" title="Image class extends media includes functions for accessing image files in program." alt="" coords="244,5,307,32"/>
+<area shape="rect" id="node4" href="$class_video.html" title="Contains functions for media playback." alt="" coords="246,56,305,83"/>
+</map>

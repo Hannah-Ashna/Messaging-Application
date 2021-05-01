@@ -1,0 +1,4 @@
+<map id="Media" name="Media">
+<area shape="rect" id="node1" title="Media class extends Message contains functions for downloading files." alt="" coords="14,80,77,107"/>
+<area shape="rect" id="node2" href="$class_message.html" title="Contains message contents and sender." alt="" coords="5,5,85,32"/>
+</map>

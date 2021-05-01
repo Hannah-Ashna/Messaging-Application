@@ -1,0 +1,5 @@
+<map id="MainWindow" name="MainWindow">
+<area shape="rect" id="node1" title="The main GUI" alt="" coords="63,95,170,121"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,121,32"/>
+<area shape="rect" id="node3" href="$class_user.html" title="Contains all user infomation includeing their ID name and status." alt="" coords="145,5,197,32"/>
+</map>

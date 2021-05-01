@@ -1,0 +1,6 @@
+<map id="Room" name="Room">
+<area shape="rect" id="node1" title="room contains modeators channels and the memeberrs" alt="" coords="21,247,81,273"/>
+<area shape="rect" id="node2" href="$class_admin.html" title="Admin class handles admin functions." alt="" coords="19,157,83,184"/>
+<area shape="rect" id="node3" href="$class_moderator.html" title="Moderator class handles moderation functions." alt="" coords="85,81,175,108"/>
+<area shape="rect" id="node4" href="$class_user.html" title="Contains all user infomation includeing their ID name and status." alt="" coords="5,5,57,32"/>
+</map>
