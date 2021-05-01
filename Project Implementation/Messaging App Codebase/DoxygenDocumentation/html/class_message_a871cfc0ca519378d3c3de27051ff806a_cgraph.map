@@ -1,0 +1,4 @@
+<map id="Message::getFormattedMessage" name="Message::getFormattedMessage">
+<area shape="rect" id="node1" title="Gets the message formatted message with the senders username and the message contents." alt="" coords="5,5,240,32"/>
+<area shape="rect" id="node2" href="$class_user.html#a33d343edda32a72bf28d41b22b0de1bd" title=" " alt="" coords="288,5,408,32"/>
+</map>

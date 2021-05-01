@@ -1,0 +1,5 @@
+<map id="User::getName" name="User::getName">
+<area shape="rect" id="node1" title=" " alt="" coords="535,31,655,57"/>
+<area shape="rect" id="node2" href="$class_message.html#a871cfc0ca519378d3c3de27051ff806a" title="Gets the message formatted message with the senders username and the message contents." alt="" coords="252,5,487,32"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a996c5a2b6f77944776856f08ec30858d" title="current user object" alt="" coords="5,31,204,57"/>
+</map>

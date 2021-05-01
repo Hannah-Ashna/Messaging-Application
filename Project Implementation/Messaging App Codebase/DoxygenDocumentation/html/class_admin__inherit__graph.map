@@ -1,0 +1,5 @@
+<map id="Admin" name="Admin">
+<area shape="rect" id="node1" title="Admin class handles admin functions." alt="" coords="18,155,82,181"/>
+<area shape="rect" id="node2" href="$class_moderator.html" title="Moderator class handles moderation functions." alt="" coords="5,80,95,107"/>
+<area shape="rect" id="node3" href="$class_user.html" title="Contains all user infomation includeing their ID name and status." alt="" coords="24,5,76,32"/>
+</map>

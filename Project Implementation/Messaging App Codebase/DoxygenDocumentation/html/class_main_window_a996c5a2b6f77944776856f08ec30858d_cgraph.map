@@ -1,0 +1,8 @@
+<map id="MainWindow::MainWindow" name="MainWindow::MainWindow">
+<area shape="rect" id="node1" title="current user object" alt="" coords="5,107,204,133"/>
+<area shape="rect" id="node2" href="$class_channel.html#a3fe9093fa47d35bc072740590df5f014" title=" " alt="" coords="287,5,452,32"/>
+<area shape="rect" id="node3" href="$class_message.html#a871cfc0ca519378d3c3de27051ff806a" title="Gets the message formatted message with the senders username and the message contents." alt="" coords="252,56,487,83"/>
+<area shape="rect" id="node4" href="$class_user.html#a33d343edda32a72bf28d41b22b0de1bd" title=" " alt="" coords="535,81,655,108"/>
+<area shape="rect" id="node5" href="$class_message.html#a556f0ae5a886c5c7f27ee30954dfe995" title="Sets the message content." alt="" coords="261,157,478,184"/>
+<area shape="rect" id="node6" href="$class_user.html#a76872b7bd24a7ce356202dd551d039e5" title=" " alt="" coords="310,208,429,235"/>
+</map>
