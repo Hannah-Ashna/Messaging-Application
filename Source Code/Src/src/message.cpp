@@ -1,8 +1,5 @@
 #include "headers/message.h"
 
-#include <QtCore/QDateTime>
-#include <QMessageBox>
-
 std::string messageContent;
 
 Message::Message()

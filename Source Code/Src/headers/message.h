@@ -1,10 +1,12 @@
 #ifndef MESSAGE_H
 #define MESSAGE_H
 
+#include "user.h"
+
 #include <string>
 #include <QtCore/QString>
-
-#include "user.h"
+#include <QtCore/QDateTime>
+#include <QMessageBox>
 
 class Message //! Contains message contents and sender
 {

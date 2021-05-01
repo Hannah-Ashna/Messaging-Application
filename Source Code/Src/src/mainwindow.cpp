@@ -2,23 +2,6 @@
 #include "ui_mainwindow.h"
 #include "consts.h"
 
-#include <QtCore/QDateTime>
-#include <QtMqtt/QMqttClient>
-#include <QtWidgets/QMessageBox>
-#include <QInputDialog>
-#include <QDebug>
-
-#include <crypto++/cryptlib.h>
-#include <crypto++/sha.h>
-#include <crypto++/hex.h>
-#include <crypto++/files.h>
-
-#include <algorithm>
-#include <fstream>
-#include <iostream>
-#include <vector>
-#include <random>
-
 using namespace Consts;
 
 MainWindow::MainWindow(QWidget *parent)

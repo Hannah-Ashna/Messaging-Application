@@ -1,13 +1,13 @@
 #ifndef ROOM_H
 #define ROOM_H
 
-#include <string>
-#include <vector>
-
 #include "channel.h"
 #include "user.h"
 #include "moderator.h"
 #include "admin.h"
+
+#include <string>
+#include <vector>
 
 class Room
         //! room contains modeators channels and the memeberrs

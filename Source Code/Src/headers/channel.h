@@ -1,10 +1,10 @@
 #ifndef CHANNEL_H
 #define CHANNEL_H
 
+#include "message.h"
+
 #include <string>
 #include <vector>
-
-#include "message.h"
 
 class Channel //! Channel contains messages and channel metadata
 {

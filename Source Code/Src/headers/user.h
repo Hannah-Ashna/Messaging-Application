@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
 
 class User//! Contains all user infomation includeing their ID name and status
 {

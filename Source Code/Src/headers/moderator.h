@@ -1,9 +1,9 @@
 #ifndef MODERATOR_H
 #define MODERATOR_H
 
-#include <vector>
-
 #include "user.h"
+
+#include <vector>
 
 class Moderator: public User //! Moderator class handles moderation functions
 {

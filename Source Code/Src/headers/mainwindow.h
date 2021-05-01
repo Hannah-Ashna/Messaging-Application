@@ -6,15 +6,30 @@
 #include "headers/room.h"
 #include "headers/user.h"
 
+#include <algorithm>
+#include <fstream>
+#include <iostream>
+#include <vector>
+#include <random>
+
 #include <QMainWindow>
 #include <QMqttClient>
 #include <QtCore/QString>
-
+#include <QtCore/QDateTime>
+#include <QtMqtt/QMqttClient>
+#include <QtWidgets/QMessageBox>
+#include <QInputDialog>
+#include <QDebug>
 #include <QTimer>
 
 #include <boost/algorithm/string.hpp>
 #include <boost/lexical_cast.hpp>
 #include <boost/asio.hpp>
+
+#include <crypto++/cryptlib.h>
+#include <crypto++/sha.h>
+#include <crypto++/hex.h>
+#include <crypto++/files.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

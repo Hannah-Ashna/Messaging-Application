@@ -1,5 +1,5 @@
 #include "headers/user.h"
-#include <iostream>
+
 /**
  * @brief User class
  * Contains user infomation and functions
